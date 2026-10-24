@@ -1,0 +1,373 @@
+{
+  "dataset": "MC-Fake",
+  "verified_at_utc": "2026-10-24T14:08:24.825538+00:00",
+  "official_repository": "https://github.com/qwerfdsaplking/MC-Fake",
+  "official_dataset_page": "https://www.nactem.ac.uk/mc-fake/",
+  "paper": {
+    "title": "Divide-and-Conquer: Post-User Interaction Network for Fake News Detection on Social Media",
+    "year": 2022,
+    "doi": "10.1145/3485447.3512163",
+    "url": "https://www.nactem.ac.uk/mc-fake/Min_et_al.pdf",
+    "label_count_table_pdf_page": 5
+  },
+  "documents": {
+    "official_github_README.md": {
+      "requested_url": "https://raw.githubusercontent.com/qwerfdsaplking/MC-Fake/master/README.md",
+      "resolved_url": "https://raw.githubusercontent.com/qwerfdsaplking/MC-Fake/master/README.md",
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "2748",
+        "Cache-Control": "max-age=300",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "\"dbccaff66d98ff536775be689c49e31ebfc248095865ad1139c875ed13f698a3\"",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-GitHub-Request-Id": "DC6C:F1E5A:4B9FF5:4EA86C:6ADCAF1C",
+        "x-github-edge-region": "uksouth",
+        "Accept-Ranges": "bytes",
+        "Date": "Sat, 24 Oct 2026 14:08:19 GMT",
+        "Via": "1.1 varnish",
+        "X-Served-By": "cache-sin-wsap440061-SIN",
+        "X-Cache": "HIT",
+        "X-Cache-Hits": "0",
+        "X-Timer": "S1792850899.433115,VS0,VE1",
+        "Vary": "Authorization,Accept-Encoding",
+        "Access-Control-Allow-Origin": "*",
+        "Cross-Origin-Resource-Policy": "cross-origin",
+        "X-Fastly-Request-ID": "01f5ea9837263648fbc8bd708dfaeed5d3f7aaa5",
+        "Expires": "Sat, 24 Oct 2026 14:13:19 GMT",
+        "Source-Age": "206"
+      },
+      "bytes": 2748,
+      "sha256": "787070c07cd8df239c50667fcdeca4d97c98c092ec80f4f7240adc1f23cf3be3"
+    },
+    "official_nactem_page.html": {
+      "requested_url": "https://www.nactem.ac.uk/mc-fake/",
+      "resolved_url": "https://www.nactem.ac.uk/mc-fake/",
+      "status": 200,
+      "headers": {
+        "Date": "Sat, 24 Oct 2026 14:08:20 GMT",
+        "Server": "Apache/2.4.69 (Fedora Linux) OpenSSL/3.5.9 mod_perl/2.0.13 Perl/v5.42.3",
+        "X-Powered-By": "PHP/8.4.27",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "origin, x-requested-with, content-type",
+        "Access-Control-Allow-Methods": "PUT, GET, POST, DELETE, OPTIONS",
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "bytes": 23579,
+      "sha256": "d5dd9721f137e26623a28f573707a0d8fce32ccf25424400d905afb5b8e4dfe7"
+    },
+    "Min_et_al_WWW2022.pdf": {
+      "requested_url": "https://www.nactem.ac.uk/mc-fake/Min_et_al.pdf",
+      "resolved_url": "https://www.nactem.ac.uk/mc-fake/Min_et_al.pdf",
+      "status": 200,
+      "headers": {
+        "Date": "Sat, 24 Oct 2026 14:08:19 GMT",
+        "Server": "Apache/2.4.69 (Fedora Linux) OpenSSL/3.5.9 mod_perl/2.0.13 Perl/v5.42.3",
+        "Last-Modified": "Tue, 23 May 2023 12:36:50 GMT",
+        "ETag": "\"309e5a-5fc5ba42a1c80\"",
+        "Accept-Ranges": "bytes",
+        "Content-Length": "3186266",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "origin, x-requested-with, content-type",
+        "Access-Control-Allow-Methods": "PUT, GET, POST, DELETE, OPTIONS",
+        "Connection": "close",
+        "Content-Type": "application/pdf"
+      },
+      "bytes": 3186266,
+      "sha256": "69575a979693c53fe5ed04d51e925b4ab8735de99a3f282fdcf406da6f5c42bb"
+    }
+  },
+  "download_head_checks": [
+    {
+      "requested_url": "https://www.nactem.ac.uk/data/MC_Fake_dataset.csv.gz",
+      "resolved_url": "https://www.nactem.ac.uk/data/MC_Fake_dataset.csv.gz",
+      "status": 404,
+      "headers": {
+        "Date": "Sat, 24 Oct 2026 14:08:21 GMT",
+        "Server": "Apache/2.4.69 (Fedora Linux) OpenSSL/3.5.9 mod_perl/2.0.13 Perl/v5.42.3",
+        "Connection": "close",
+        "Content-Type": "text/html; charset=iso-8859-1"
+      },
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "requested_url": "https://nactem.ac.uk/data/MC_Fake_dataset.csv.gz",
+      "resolved_url": "https://nactem.ac.uk/data/MC_Fake_dataset.csv.gz",
+      "status": 404,
+      "headers": {
+        "Date": "Sat, 24 Oct 2026 14:08:21 GMT",
+        "Server": "Apache/2.4.69 (Fedora Linux) OpenSSL/3.5.9 mod_perl/2.0.13 Perl/v5.42.3",
+        "Connection": "close",
+        "Content-Type": "text/html; charset=iso-8859-1"
+      },
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "requested_url": "https://www.nactem.ac.uk/mc-fake/MC_Fake_dataset.csv.gz",
+      "resolved_url": "https://www.nactem.ac.uk/mc-fake/MC_Fake_dataset.csv.gz",
+      "status": 404,
+      "headers": {
+        "Date": "Sat, 24 Oct 2026 14:08:21 GMT",
+        "Server": "Apache/2.4.69 (Fedora Linux) OpenSSL/3.5.9 mod_perl/2.0.13 Perl/v5.42.3",
+        "Connection": "close",
+        "Content-Type": "text/html; charset=iso-8859-1"
+      },
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "requested_url": "https://drive.usercontent.google.com/download?id=1WAyOVLqM1JOQdlpsCdKKuRltOGVC9bGt&export=download&confirm=t",
+      "resolved_url": "https://drive.usercontent.google.com/download?id=1WAyOVLqM1JOQdlpsCdKKuRltOGVC9bGt&export=download&confirm=t",
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/octet-stream",
+        "X-GUploader-UploadID": "AP6rU81fKsyD_oBNM9YAeTgiWi9IMd7DjaluXpLgc6I06Tlap-_VuSm2BdxdYuvPgfWQhF7pB3WHB5k",
+        "Content-Security-Policy": "sandbox",
+        "X-Content-Security-Policy": "sandbox",
+        "Cross-Origin-Opener-Policy": "same-origin",
+        "Cross-Origin-Embedder-Policy": "require-corp",
+        "Cross-Origin-Resource-Policy": "same-site",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Disposition": "attachment; filename=\"MC_Fake_dataset.csv\"",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "false",
+        "Access-Control-Allow-Headers": "Accept, Accept-Language, Authorization, Cache-Control, Content-Disposition, Content-Encoding, Content-Language, Content-Length, Content-MD5, Content-Range, Content-Type, Date, developer-token, DPoP, financial-institution-id, X-Goog-Sn-Metadata, X-Goog-Sn-PatientId, GData-Version, google-cloud-resource-prefix, linked-customer-id, login-customer-id, login-account, linked-account, x-goog-request-params, Host, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Origin, OriginToken, Pragma, Range, request-id, Signature, Signature-Agent, Signature-Input, Slug, Transfer-Encoding, User-Agent, hotrod-board-name, hotrod-chrome-cpu-model, hotrod-chrome-processors, Want-Digest, X-Ad-Manager-Impersonation, x-chrome-connected, X-ClientDetails, X-Client-Pctx, X-Client-Version, x-debug-settings-metadata, X-Firebase-AppId, X-Firebase-AppVersion, X-Firebase-Locale, X-Goog-Firebase-Installations-Auth, X-Firebase-Client, X-Firebase-Client-Log-Type, X-Firebase-GMPID, X-Firebase-Auth-Token, X-Firebase-AppCheck, X-Firebase-RC-Fetch-Type, X-Firebase-Token, X-Goog-Drive-Client-Version, X-Goog-Drive-Resource-Keys, X-GData-Client, X-GData-Key, X-GoogApps-Allowed-Domains, X-Goog-AdX-Buyer-Impersonation, X-Goog-Api-Client, X-Goog-Visibilities, X-Goog-AuthUser, X-Google-EOM, x-goog-ext-124712974-jspb, x-goog-ext-467253834-jspb, x-goog-ext-353267353-bin, x-goog-ext-353267353-jspb, x-goog-ext-251363160-jspb, X-Restricted-Content-Limit, x-goog-ext-259736195-jspb, x-goog-ext-477772811-jspb, x-goog-ext-359275022-bin, x-goog-ext-328800237-jspb, x-goog-ext-198889211-bin, x-goog-ext-202735639-bin, x-goog-ext-223261916-bin, x-goog-ext-223435598-bin, x-goog-ext-233818517-bin, x-goog-ext-202964622-bin, X-Goog-PageId, X-Goog-Encode-Response-If-Executable, X-Goog-Correlation-Id, X-Goog-Request-Info, X-Goog-Request-Reason, X-Goog-Request-Time, X-Goog-Experiments, x-goog-iam-authority-selector, x-goog-iam-authorization-token, X-Goog-Spatula, X-Goog-Travel-Bgr, X-Goog-Travel-Settings, X-Goog-Upload-Command, X-Goog-Upload-Content-Disposition, X-Goog-Upload-Content-Length, X-Goog-Upload-Content-Type, X-Goog-Upload-File-Name, X-Goog-Upload-Header-Content-Encoding, X-Goog-Upload-Header-Content-Length, X-Goog-Upload-Header-Content-Type, X-Goog-Upload-Header-Transfer-Encoding, X-Goog-Upload-Offset, X-Goog-Upload-Protocol, x-goog-user-project, X-Goog-Visitor-Id, X-Goog-FieldMask, X-Google-Project-Override, x-goog-maps-api-salt, x-goog-maps-api-signature, x-goog-maps-client-id, X-Goog-Api-Key, x-goog-spanner-database-role, X-HTTP-Method-Override, X-JavaScript-User-Agent, X-Pan-Versionid, X-Proxied-User-IP, X-Origin, X-Referer, X-Requested-With, X-Stadia-Client-Context, X-Upload-Content-Length, X-Upload-Content-Type, X-Use-Alt-Service, X-Use-HTTP-Status-Code-Override, X-Ios-Bundle-Identifier, X-Places-Ios-Sdk, X-Android-Package, X-Android-Cert, X-Places-Android-Sdk, X-Goog-Maps-Ios-Uuid, X-Goog-Maps-Android-Uuid, X-Ariane-Xsrf-Token, X-A2A-Extensions, A2A-Extensions, A2A-Version, X-YouTube-Bootstrap-Logged-In, X-Youtube-Client-Name, X-Youtube-Client-Version, X-Youtube-Finch-Config-Data, X-Youtube-Finch-Hash-Data, X-YouTube-Lava-Device-Context, X-YouTube-VVT, X-YouTube-Page-CL, X-YouTube-Page-Label, X-YouTube-Page-Timestamp, X-Compass-Routing-Destination, x-framework-xsrf-token, X-Goog-Meeting-ABR, X-Goog-Meeting-Botguardid, X-Goog-Meeting-Bot-Info, X-Goog-Meeting-ClientInfo, X-Goog-Meeting-ClientVersion, X-Goog-Meeting-Debugid, X-Goog-Meeting-Identifier, X-Goog-Meeting-Interop-Cohorts, X-Goog-Meeting-Interop-Type, X-Goog-Meeting-OidcIdToken, X-Goog-Meeting-RtcClient, X-Goog-Meeting-StartSource, X-Goog-Meeting-Token, X-Goog-Meeting-Viewer-Token, X-Goog-Healthcare-Audit-First-Party-Application-Access, Prefer, X-Client-Data, x-sdm-id-token, X-Sfdc-Authorization, MIME-Version, Content-Transfer-Encoding, X-Earth-Engine-App-ID-Token, X-Earth-Engine-Computation-Profile, X-Earth-Engine-Computation-Profiling, X-Play-Console-Experiments-Override, X-Play-Console-Session-Id, x-tab-id, x-alkali-account-key, x-alkali-application-key, x-alkali-auth-apps-namespace, x-alkali-auth-entities-namespace, x-alkali-auth-entity, x-alkali-client-locale, EES-S7E-MODE, cast-device-capabilities, X-Server-Timeout, x-foyer-client-environment, x-goog-greenenergyuserappservice-metadata, x-goog-sherlog-context, X-Server-Token, X-WebChannel-Content-Type, x-rfui-request-context, X-Workflow-Client, X-Tenant-Scope, x-goog-nest-jwt, X-Cloud-Trace-Context, traceparent, x-goog-chat-space-id, x-goog-pan-request-context, X-AppInt-Credentials, X-Iceberg-Access-Delegation, x-goog-firestore-api-requester, x-Goog-Ws-AgentId, x-impersonate-sid, X-Goog-Gemini-Enterprise-SidePanel",
+        "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS",
+        "Accept-Ranges": "bytes",
+        "Content-Length": "588955484",
+        "Last-Modified": "Wed, 19 Oct 2022 04:58:37 GMT",
+        "Date": "Sat, 24 Oct 2026 14:08:22 GMT",
+        "Expires": "Sat, 24 Oct 2026 14:08:22 GMT",
+        "Cache-Control": "private, max-age=0",
+        "Server": "UploadServer",
+        "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "Connection": "close"
+      }
+    }
+  ],
+  "official_fields_verbatim": {
+    "title": "title of the news",
+    "text": "text content of the news",
+    "labels": "veracity label of the news",
+    "data_name": "news category"
+  },
+  "numeric_label_verification": {
+    "mapping": {
+      "0": "legitimate/real",
+      "1": "fake"
+    },
+    "unified_mapping": {
+      "0": 0,
+      "1": 1
+    },
+    "method": "Cross-verification against the original paper Table 1: label 1 matches every fake-news count; label 0 matches real-news counts in four domains. Current politics real count differs from the paper version.",
+    "limitation": "The official column documentation calls labels a veracity label but does not explicitly state the numeric encoding. The direction is verified by independent table counts rather than an unsupported convention assumption.",
+    "table_1_cross_checks": [
+      {
+        "domain": "entertainment",
+        "paper_fake": 2587,
+        "paper_real": 8846,
+        "current_label_1": 2587,
+        "current_label_0": 8846,
+        "fake_count_agrees": true,
+        "real_count_agrees": true
+      },
+      {
+        "domain": "health",
+        "paper_fake": 590,
+        "paper_real": 5120,
+        "current_label_1": 590,
+        "current_label_0": 5120,
+        "fake_count_agrees": true,
+        "real_count_agrees": true
+      },
+      {
+        "domain": "covid19",
+        "paper_fake": 843,
+        "paper_real": 5393,
+        "current_label_1": 843,
+        "current_label_0": 5393,
+        "fake_count_agrees": true,
+        "real_count_agrees": true
+      },
+      {
+        "domain": "syria_war",
+        "paper_fake": 194,
+        "paper_real": 2230,
+        "current_label_1": 194,
+        "current_label_0": 2230,
+        "fake_count_agrees": true,
+        "real_count_agrees": true
+      },
+      {
+        "domain": "politics",
+        "paper_fake": 225,
+        "paper_real": 1026,
+        "current_label_1": 225,
+        "current_label_0": 2307,
+        "fake_count_agrees": true,
+        "real_count_agrees": false
+      }
+    ],
+    "do_not_infer_labels_from_data_name": "FakeCovid contains both 393 label-0 real articles and 284 label-1 fake articles. data_name is a category/subsource and is only used for domain analysis."
+  },
+  "local_input": {
+    "path": "D:\\老电脑\\e盘\\DFJSP代码及UI\\DFJSP111\\.dataset_download_work\\MC-Fake\\MC_Fake_text.csv",
+    "bytes": 102118130,
+    "sha256": "adfee5fcc0953cede73da8271970cb4ab9c9f638b46f8cd8ef6cd478ff33ff2e",
+    "columns": [
+      "news_id",
+      "title",
+      "text",
+      "labels",
+      "data_name"
+    ],
+    "rows": 28335,
+    "unique_news_ids": 28335,
+    "label_counts": {
+      "1": 4439,
+      "0": 23896
+    },
+    "empty_body_rows": 202
+  },
+  "existing_download_provenance": {
+    "source_download_url": "https://drive.usercontent.google.com/download?id=1WAyOVLqM1JOQdlpsCdKKuRltOGVC9bGt&export=download&confirm=t",
+    "downloaded_at_utc": "2026-10-24T13:16:39.786109+00:00",
+    "source_bytes": 588955484,
+    "source_sha256": "7ac5f4830aa679d8610fcb4878ab793e9a96c75d772e2cf7d325e45e6dac3949",
+    "output_sha256": "adfee5fcc0953cede73da8271970cb4ab9c9f638b46f8cd8ef6cd478ff33ff2e"
+  },
+  "data_name_domain_mapping": {
+    "politifact": "politics",
+    "RealPolitics": "politics",
+    "gossipcop": "entertainment",
+    "HealthStory": "health",
+    "HealthRelease": "health",
+    "RealHealth": "health",
+    "FakeCovidClaimFiltered": "covid19",
+    "FakeCovid": "covid19",
+    "RealCovid": "covid19",
+    "FA-KES": "syria_war",
+    "RealSyria": "syria_war"
+  },
+  "data_name_label_counts": [
+    {
+      "data_name": "FA-KES",
+      "domain": "syria_war",
+      "label_0_real": 231,
+      "label_1_fake": 194
+    },
+    {
+      "data_name": "FakeCovid",
+      "domain": "covid19",
+      "label_0_real": 393,
+      "label_1_fake": 284
+    },
+    {
+      "data_name": "FakeCovidClaimFiltered",
+      "domain": "covid19",
+      "label_0_real": 0,
+      "label_1_fake": 559
+    },
+    {
+      "data_name": "HealthRelease",
+      "domain": "health",
+      "label_0_real": 286,
+      "label_1_fake": 247
+    },
+    {
+      "data_name": "HealthStory",
+      "domain": "health",
+      "label_0_real": 869,
+      "label_1_fake": 343
+    },
+    {
+      "data_name": "RealCovid",
+      "domain": "covid19",
+      "label_0_real": 5000,
+      "label_1_fake": 0
+    },
+    {
+      "data_name": "RealHealth",
+      "domain": "health",
+      "label_0_real": 3965,
+      "label_1_fake": 0
+    },
+    {
+      "data_name": "RealPolitics",
+      "domain": "politics",
+      "label_0_real": 2193,
+      "label_1_fake": 0
+    },
+    {
+      "data_name": "RealSyria",
+      "domain": "syria_war",
+      "label_0_real": 1999,
+      "label_1_fake": 0
+    },
+    {
+      "data_name": "gossipcop",
+      "domain": "entertainment",
+      "label_0_real": 8846,
+      "label_1_fake": 2587
+    },
+    {
+      "data_name": "politifact",
+      "domain": "politics",
+      "label_0_real": 114,
+      "label_1_fake": 225
+    }
+  ],
+  "domain_label_counts": [
+    {
+      "domain": "covid19",
+      "label_0_real": 5393,
+      "label_1_fake": 843
+    },
+    {
+      "domain": "entertainment",
+      "label_0_real": 8846,
+      "label_1_fake": 2587
+    },
+    {
+      "domain": "health",
+      "label_0_real": 5120,
+      "label_1_fake": 590
+    },
+    {
+      "domain": "politics",
+      "label_0_real": 2307,
+      "label_1_fake": 225
+    },
+    {
+      "domain": "syria_war",
+      "label_0_real": 2230,
+      "label_1_fake": 194
+    }
+  ],
+  "text_policy": "Use title plus text only. Retain all 202 empty-body rows because their titles are present. Do not use source/url/social fields.",
+  "excluded_fields": [
+    "url",
+    "publish_date",
+    "source",
+    "n_tweets",
+    "n_retweets",
+    "n_replies",
+    "n_users",
+    "tweet_ids",
+    "retweet_ids",
+    "reply_ids",
+    "user_ids",
+    "retweet_relations",
+    "reply_relations"
+  ],
+  "social_network_policy": "No Twitter API calls, tweet/user hydration or follow-network downloads are needed. No social information is present in the existing text projection.",
+  "version_note": "The official README/page state 28334 news events, but the current author-hosted CSV projection has 28335 unique news IDs. Do not remove a valid row to force the documented count. HEAD metadata alone cannot prove byte equality of two download versions.",
+  "license": "CC BY 4.0; attribute NaCTeM, University of Manchester, and cite Min et al. WWW 2022."
+}

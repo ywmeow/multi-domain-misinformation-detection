@@ -1,0 +1,1 @@
+These files record the sources, original fields, original labels, and SHA-256 hashes of the downloaded text projections. They are not the metadata for the final harmonized datasets. For statistics after label mapping, text merging, and domain classification, see `metadata.json` in the delivery root directory.

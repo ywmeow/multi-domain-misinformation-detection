@@ -1,0 +1,292 @@
+SOURCE: https://www.nactem.ac.uk/mc-fake/Min_et_al.pdf
+
+PDF PAGE 3
+Divide-and-Conquer: Post-User Interaction Network for Fake News Detection on Social Media WWW ’22, April 25–29, 2022, Virtual Event, Lyon, France
+Figure 2: An illustration of a news event, which can be
+considered as a heterogeneous graph.The user-user follow-
+ing relations shall be directional since one can not infer B-
+follow-A from A-follow-B.
+2.2 Social Context-based Fake News Detection
+We briefly introduce existing work on fake news detection on so-
+cial media. Fake news detection methods generally focus on using
+news contents and social contexts. News content based models
+generally include 1) style-based: capturing specific writing styles
+such as deception [10, 31] and non-objectivity [29]; 2) Knowledge-
+based: using external sources to fact-check claims in news content
+[27, 49]. Some work also make use of multi-modal features such as
+pictures or videos [46]. Apart from news contents, social context
+related to news pieces contains rich information to help detect
+fake news. Social context based approaches generally include post-
+based and user-based approaches. Post-based methods attempt to
+exploit the stance information and propagation patterns in the
+post propagation trees. Previous models can be categorized into
+three groups: Sequential Modeling [20, 24, 30, 52], Explicit respond-
+ing path modeling [4, 19, 26, 47] and Implicit attention modeling
+[17, 43]. Sequential Modeling methods treat the posts as a sequence
+in chronological order, ignoring the propagation structure. Explicit
+responding path modeling methods use topology-aware models
+like graph neural networks to model the explicit responding paths,
+ignoring the implicit relations between posts. Implicit attention
+modeling methods use self-attention mechanisms [41] to capture
+the relations between all posts, but has the potential risk of intro-
+ducing extra noise, and the computational complexity is quadratic
+to the post count. The limitations of these methods stimulate us to
+explore more principled method for propagation tree modeling. In
+terms of user-based approaches, Yang et al [50] proposes an unsu-
+pervised fake news detection algorithm by utilizing users’ opinions
+on social media and estimating their credibilities. TriFN [39] is a tri-
+relationship embedding framework, which models publisher-news
+relations and user-news interactions simulataneously for fake news
+classification. FANG [28] is a graphical model which model the
+relations among user, source and news simultaneously. However,
+as far as we know, none of previous work jointly consider all of
+post propagation tree, user social graph and post-user interaction
+graph at the same time.
+3 PROBLEM STATEMENT
+We define a fake news dataset with social contexts as
+D ={T, GU , GU P},
+where T = {T1,T2, ...T|T|} is the set of news events, and Ti =
+{pi
+1, pi
+2, ...pi
+Mi
+, GP
+i} is the related post set of i-th news event, with
+Mi denoting the number of posts, pi
+j denoting the j-th post. GP
+i
+is the propagation structure of posts, which can be a set of tree
+structures. Specifically, GP
+i is defined as a graph{V P
+i , EP
+i}, where
+V P
+i = {pi
+1, pi
+2, ...pi
+Mi
+}, and EP
+i = {eP
+i(st)|s, t = 1., , , .Mi} repre-
+sents the set of edges from responded posts to responsive posts.
+GU ={V U , EU} is the user network, where V U ={u1, u2, ...uN}
+is the set of all users involved in the entire dataset, and EU =
+{eU
+st|s, t = 1, 2, , ,N} represents the set of following edges from
+users to their followings. GU P ={V U∪ V P , EU P} is the the bipar-
+tite graph between all involved users V U and all involved posts V P
+in T, with EU P ={eU P
+st |s = 1, ...N , t = 1, ..., M} denotes the set of
+is-author edges from users to their published posts. Based on the
+global graph GU and GU P , we can generate two induced graphs
+GU
+i and GU P
+i for each news event Ti , according to its involved
+posts. Therefore, we reformulate Ti as a heterogeneous graph with
+Ti ={pi
+1, pi
+2, ...pi
+Mi
+, GP
+i , ui
+1, ui
+2, ...ui
+Ni
+, GU
+i , GU P
+i }, where Ni denotes
+the number of involved users. As illustrated in Figure 2, each news
+event Ti can be considered as a heterogeneous graph, with two
+types of nodes: post and user, and three types of edges: post-post,
+user-user and user-post. Each event Ti is associated with a ground-
+truth veracity label yV
+i ∈ {F , R} (i.e. Fake, news or Real news).
+In our dataset, we also associate Ti with a topic labelyC
+i ∈ {Poli-
+tics, Entertainment, Health, Covid-19, Sryia War}. We formulate
+the social context based fake news detection task as a supervised
+classification problem:
+Problem 1. Given the training setTtrain ={Ttrain, Y V
+train, Y C
+train},
+and the testing setTtest ={Ttest}, how to learn a classifier f : Ti→
+yv
+i fromTtrain and then predict the veracity label Ytest forTtest.
+Note that the connection between news events via shared users
+might also contain useful evidences, but considering them would
+make the definition and modeling much more complicated, so we
+will take this part as future work. Naturally, we do not assume the
+topic labels of test data are available as novel topics are continuously
+emerging in real world. This constitutes the distribution shift issue.
+4 DATASET CONSTRUCTION AND
+STATISTICS
+To obtain reliable ground truth labels on veracity of news, the
+most common solution is to utilize fact-checking websites such
+as PolitiFact, Snope and so on. There are already many previous
+work along this line of research. Therefore, we do not repeat this
+actions, instead, we collect labelled fake news from existing datasets
+and collect real news from reliable sources. We conduct a uniform
+filter criterion to select reliable instance. Then we retrieve related
+tweets, retweets and replies, with the corresponding users on the
+Twitter platform. The “following” relationship between users are
+also retrieved to obtain the induced user network. We elaborate
+the detailed construction process in Appendix A due to the space
+limits.
+After the data retrieval and construction, we obtain a fake news
+dataset with 27,155 news events from five topics: Politics, Enter-
+tainment, Health, Covid-19 and Syria War, 5 million posts, 2 million
+users and an induced user social graph with 0.2 billion edges. Table
+1 illustrates the statistics of collected datasets. Here we compare the
+distributions of tweets count, retweets count, reply count and user
+count to illustrate the difference between fake and real news. For
+1150
+
+PDF PAGE 5
+Divide-and-Conquer: Post-User Interaction Network for Fake News Detection on Social Media WWW ’22, April 25–29, 2022, Virtual Event, Lyon, France
+Table 1: The statistics of the dataset
+Topics Politics Entertainment Health Covid Syria War
+Labels Fake Real Fake Real Fake Real Fake Real Fake Real
+News Count 225 1026 2587 8846 590 5120 843 5393 194 2230
+Tweet Count (Sum)51343 140940 128109 504936 75465 695225 33201 285511 9532 227663
+Tweet Count (Avg)228.19 137.37 49.52 57.08 127.91 135.79 39.38 52.94 49.13 102.09
+Retweet Count (Sum)71143 221364 190851 788937 27142 547610 178777 455269 5433 245316
+Retweet Count (Avg)316.19 215.75 73.77 89.19 46 106.96 212.07 84.42 28.01 110.01
+Reply Count (Sum) 39342 162108 99362 490452 5682 188730 157835 297559 465 123279
+Reply Count (Avg) 174.85 158 38.41 55.44 9.63 36.86 187.23 55.18 2.40 55.28
+User Count (Sum) 135338 400815 362195 1504381 91924 1262745 315739 888650 13517 517419
+User Count (Avg) 601.50 390.66 140.01 170.06 155.80 246.63 374.54 164.78 69.68 232.03
+Figure 3: The architecture of PSIN. We decompose the original propagation tree with user information as three subgraphs:
+post propagation tree, user social graph, and user-post interaction graph. We first use the HNFD module to represent post and
+user nodes. Afterwards, We use Tree-GAT, R-GAT to represent the augmented post tree and directed user graph individually,
+and then integrate them via a GAT-based fusion network on the augmented user-post interaction graph. The concatenated
+and pooled representation is fed into a veracity classifier and an adversarial topic classifier.
+Figure 4: The structure of the hybrid node feature encoder
+Figure 5: The structure of a post tree. The blue solid lines de-
+note the responsive relations, and the red dash lines denote
+the augmented edges.
+where dmax is the maximum depth of propagation trees in the
+news event.
+- Depth-aware Graph Attention: Given the augmented adjacent
+matrix bAP and post node feature matrix H0 ={h0
+1, h0
+2, ..., h0
+M},
+we adopt a modified Graph Attention Network (a.k.a GATv2) [5]
+as our backbone to represent the graph, which fixes the static
+attention problem of the standard Graph Attention Network [42]
+and show more robust performance. It adopts the attention mech-
+anism that assigns different importance scores to the neighbors.
+The attention score between i-th node and j-th node can be for-
+mulated as:
+ei j = a⊤LeakyReLU(W·[ hi|| hj]),
+αi j = Softmax(ei j) = exp(ei j)Í
+k∈N( i) exp(eik) , (2)
+where a∈ Rd is a parameter vector,W =[Ws|| Wd] with Ws and
+Wd are parameter matrices to project source nodes and target
+nodes, ei j andαi j are unnormalized and normalized attention
+between the adjacent nodesi and j. After calculating the attention
+scores for all neighbor nodes, the central node’s representation is
+updated by the aggregating features weighted by the attention
+scores:
+h′
+i =σ(
+Õ
+j∈N( i)
+αi jWd hj),
+whereσ denotes any non-linear functions. GAT treats all edges
+equally, however, in a propagation tree, there is semantic drift
+in distant nodes. Therefore, we propose depth-aware graph at-
+tention, which integrates the relative depth information into the
+attention by modifying the calculation of attention score as:
+ei j = a⊤LeakyReLU(W·[ hi|| hj] + v[d(i, j)]),
+where d(i, j) = di−dj +dmax with di being the depth of i-th node
+and dmax is the maximum depth of all trees. v[d(i, j)]∈ Rd are
+also trainable position vectors, enabling the network being aware
+1152
+
+PDF PAGE 10
+WWW ’22, April 25–29, 2022, Virtual Event, Lyon, France Trovato and Tobin, et al.
+A DATA CONSTRUCTION
+In this section, we introduce the dataset construction process. We
+elaborate how we collect news contents with reliable ground truth
+labels, how we obtain additional social context and induced social
+graph.
+A.1 News with ground truth
+We collect fake news with ground truth labels from 7 existing
+datasets: FakeNewsNet [ 36], FakeHealth [ 8],FA-KES [32], Fake-
+Covid [34], MM-COVID [21], COAID [7] and CFND [2]. We ran-
+domly sample real news from the all-the-news corpus4 and a Covid-
+19 news corpus[14], which contain news collected from credible
+sources. We use the most frequent keywords in the collect fake
+news to retrieve real news of similar topics from this corpus. Sim-
+ilar to previous work, we choose to use the news title to retrieve
+related social context, so the titles should be informative enough to
+represent the contents of the news, and should not be too general.
+Therefore, we filter news whose titles are too short and do not
+express a specific event. For example, we would filter news with
+titles like "U.S. Imports & Exports" or "The early catastrophe".
+A.2 Social Context Retrieval
+We retrieve the social context of the source news from the Twitter,
+which is one of the most popular social media platform. Twitter
+provides several APIs to collect tweets and user engagement. We
+adopted Twitter’s Academic Search API 5, which provides full-
+archive access to all historical data, to search tweets that directly
+post the news. Following [8], we used the titles as queries to search
+tweets. Then, we remove meaningless stop words and special tokens
+in the title to generate more general queries to search tweets. We
+filter tweets which contains overlapped words fewer than 5 with
+the original queries. Finally, we search tweets with the URLs of
+news if available. Note that we filter the URLs who refers to the
+fact checking articles instead of source news, which is a common
+noise in several datasets (i.e., FakeNewsNet, COAID, etc.). With
+the three search strategies, we obtained 2,150,000 tweets in total.
+After obtaining the directly posted tweets, we further scraped the
+retweets and replies. We limit the maximum number of replies for
+a tweet as 5000 for efficiency. We construct the propagation tree
+structures of each news based on the retweet relations and replying
+relations. Note that each news could associate several propagation
+trees.
+A.3 User Social Network Construction
+After we acquire all the tweets related to the news, we use a user
+crawler to obtain all involved users who tweet, retweet and reply
+in these tweets. Different from previous works [2, 7, 36], we further
+retrieve the users followings list and followers list to construct a
+large user social network, which is a induced graph of Twitter users’
+social relation graph. Due to the rate limits of Twitter APIs, we
+limit the user numbers in both followings list and followers list as
+5000 for efficiency.
+4https://components.one/datasets/all-the-news-2-news-articles-dataset/
+5https://developer.twitter.com/en/products/twitter-api/academic-research
+Table 5: The average sentiment scores of both real news and
+fake news
+Compound Negative Neutral Positive
+Real 0.080 0.079 0.771 0.150
+Fake 0.065 0.092 0.776 0.122
+B DATA ANALYSIS
+In this section, we perform an exploratory study of posts, user
+profiles, network structures.
+B.1 An Overview of Text Contents
+In order to analyze the topic distribution of social context of fake
+and real news. We construct word cloud figure to visualize it. From
+Figures 10(a) and 10(b), we can observe that the general topics of
+them are similar, covering topics of politics, entertainment, health,
+coronavirus and Syria wars. Furthermore, we also visualize the
+word distribution in user descriptions. As illustrated in Figure 11(a)
+and 11(b), we have that user description usually express a user’s
+appetite for news and political preference, which are useful to
+describe the social context of news.
+(a) Real
+ (b) Fake
+Figure 10: The word cloud of post texts for real and fake
+news
+(a) Real
+ (b) Fake
+Figure 11: The word cloud of user descriptions for real and
+fake news
+B.2 Post and Response
+Users express their opinions or emotions towards fake news through
+social media posts, such as sensational reactions or skeptical opin-
+ions, which are crucial signals to assess news credibility in general.
+To obtain statistical information from these, we perform sentiment
+analysis on replies to reveal the difference on sentiment polarity
+1157

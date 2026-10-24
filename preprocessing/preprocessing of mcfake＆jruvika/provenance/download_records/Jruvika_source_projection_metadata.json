@@ -1,0 +1,44 @@
+{
+  "dataset_name": "Fake News detection",
+  "owner": "jruvika",
+  "kaggle_ref": "jruvika/fake-news-detection",
+  "kaggle_dataset_id": 6410,
+  "version": 1,
+  "source_url": "https://www.kaggle.com/datasets/jruvika/fake-news-detection",
+  "download_url": "https://www.kaggle.com/api/v1/datasets/download/jruvika/fake-news-detection/data.csv",
+  "source_file": "data.csv",
+  "source_sha256": "15a8a968b7f6de5c789bf7d775cf62d0fe2d9337f7f729f08b20db390a1a360c",
+  "source_size_bytes": 12571451,
+  "original_fields": [
+    "URLs",
+    "Headline",
+    "Body",
+    "Label"
+  ],
+  "output_file": "Jruvika_text.csv",
+  "output_sha256": "b1e572834f3b95a55f01f9b707050b47a14dc4c1b59a1088fdb56be4501e2aa1",
+  "output_size_bytes": 12123951,
+  "output_encoding": "UTF-8 with BOM",
+  "fields": [
+    "Headline",
+    "Body",
+    "Label"
+  ],
+  "row_count": 4009,
+  "original_label_counts": {
+    "0": 2137,
+    "1": 1872
+  },
+  "empty_body_count": 21,
+  "empty_headline_count": 0,
+  "license_name": "Database: Open Database, Contents: © Original Authors",
+  "transformations": [
+    "Removed URLs column",
+    "Retained Headline, Body, Label without content cleaning or label recoding",
+    "Retained every source row",
+    "Exported CSV as UTF-8 with BOM"
+  ],
+  "label_mapping_note": "官方数据集元数据未说明 0/1 标签的语义映射；本版本保留原始标签，不推断或重编码。",
+  "social_relationship_data": false,
+  "verification": "CSV round-trip verified: all 4009 rows and retained field values match the source exactly."
+}

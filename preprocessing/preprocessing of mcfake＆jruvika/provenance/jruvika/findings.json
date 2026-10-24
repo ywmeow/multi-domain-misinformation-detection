@@ -1,0 +1,95 @@
+{
+  "checked_date_local": "2026-10-24",
+  "dataset": "Jruvika Fake News",
+  "creator_handle": "jruvika",
+  "official_dataset_url": "https://www.kaggle.com/datasets/jruvika/fake-news-detection",
+  "original_columns": [
+    "URLs",
+    "Headline",
+    "Body",
+    "Label"
+  ],
+  "native_label_meanings": {
+    "0": "fake",
+    "1": "real/legitimate"
+  },
+  "unified_mapping": {
+    "0": 1,
+    "1": 0
+  },
+  "mapping_expression": "1 - int(original_Label)",
+  "numeric_orientation_confidence": "high_from_explicit_third_party_code_and_matching_counts_and_original_examples",
+  "creator_explicit_numeric_label_definition_obtained": false,
+  "evidence_files": [
+    "notebook_label_excerpt.json",
+    "local_quality_audit.json",
+    "标签核实说明.md"
+  ],
+  "evidence_hierarchy": [
+    {
+      "level": "official_data_preview_via_third_party_renderer",
+      "read_url": "https://r.jina.ai/https://www.kaggle.com/datasets/jruvika/fake-news-detection",
+      "observed": "Kaggle preview showed native label 0 count 2,137 and native label 1 count 1,872, with BBC/Reuters samples labeled 1 and a BeforeItsNews sample labeled 0.",
+      "limitation": "Rendered through Jina Reader; no original page copy was saved by this subtask. The retrieved preview does not explicitly define fake/real numeric semantics."
+    },
+    {
+      "level": "third_party_reproducible_implementation",
+      "source": "https://raw.githubusercontent.com/tbabinet/fake-news-challenge/7820ad5014eca63bd2324348df20844e6bf5173b/main.ipynb",
+      "observed": "Explicit fake_data = data[labels==0], real_data = data[labels==1]; output (4009,), fake 2137, correct 1872.",
+      "verified_full_response_bytes": 62449,
+      "verified_full_response_sha256": "eb9b6baaeee24e286e8a02306cbd597645c8eda8043779d150dd3fa81821b7fd",
+      "zero_based_cell_index": 6,
+      "fixed_commit_online_reverified": true,
+      "limitation": "The pinned commit response was independently obtained and checked using a read-only request. This is third-party code, not a declaration authored by Jruvika; only the observed excerpt was saved."
+    },
+    {
+      "level": "local_source_cross_check",
+      "observed": "Local source has 4,009 rows with native counts 0:2,137 and 1:1,872, matching the notebook and official preview. Original source hosts and article examples support the same orientation.",
+      "limitation": "No full mirror data was fetched or compared. Source-host patterns do not constitute individual article fact-checking."
+    }
+  ],
+  "license_observation": {
+    "text": "Database: Open Database, Contents: © Original Authors",
+    "link": "http://opendatacommons.org/licenses/odbl/1.0/",
+    "observed_via": "https://r.jina.ai/https://www.kaggle.com/datasets/jruvika/fake-news-detection?select=data.csv",
+    "qualification": "Observed in one successful rendered Kaggle card response. Subsequent responses from the same URL returned only a data preview; no full original response was archived. Treat this as an observed card statement, not independently archived proof of all content rights."
+  },
+  "direct_access_results_observed": [
+    {
+      "url": "https://www.kaggle.com/datasets/jruvika/fake-news-detection",
+      "status": 404
+    },
+    {
+      "url": "https://www.kaggle.com/api/v1/datasets/view/jruvika/fake-news-detection",
+      "status": 404
+    },
+    {
+      "url": "https://www.kaggle.com/api/v1/datasets/metadata/jruvika/fake-news-detection",
+      "status": 404
+    },
+    {
+      "url": "https://www.kaggle.com/api/v1/datasets/list/jruvika/fake-news-detection",
+      "status": 404
+    },
+    {
+      "url": "https://www.kaggle.com/api/v1/datasets/download/jruvika/fake-news-detection/data.csv",
+      "status": 404
+    }
+  ],
+  "access_limitation": "These statuses describe this subtask's current read-only requests; they do not prove the dataset was removed, and do not invalidate a dataset downloaded successfully by another session/agent.",
+  "paper_cross_check": {
+    "url": "https://arxiv.org/html/2106.02607",
+    "title": "Defending Democracy: Using Deep Learning to Identify and Prevent Misinformation",
+    "observed": "The paper names Kaggle user Jruvika and cites the dataset; its merged dataset uses 1=fake,0=real after transformation.",
+    "limitation": "That is the paper's transformed mapping and must not be mistaken for Jruvika's native labels. No paper evidence found directly defining original Jruvika 0/1 semantics."
+  },
+  "required_text": "Join Headline and nonblank Body with two newline characters; retain Headline when Body is blank; do not insert URLs.",
+  "required_domain": "No native topical domain column exists. Infer topic from news text; mark the domain as inferred and never infer from URLs or the fake/real label.",
+  "unperformed_checks": [
+    "No full GitHub CSV mirror download",
+    "No full local-versus-mirror equality comparison",
+    "No complete original notebook archival",
+    "No complete Kaggle page archival",
+    "No independent per-article fact-checking"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "dataset": "Jruvika Fake News",
+  "source_repository": "https://github.com/tbabinet/fake-news-challenge",
+  "source_commit": "7820ad5014eca63bd2324348df20844e6bf5173b",
+  "observed_notebook_url": "https://raw.githubusercontent.com/tbabinet/fake-news-challenge/7820ad5014eca63bd2324348df20844e6bf5173b/main.ipynb",
+  "pinned_notebook_url": "https://raw.githubusercontent.com/tbabinet/fake-news-challenge/7820ad5014eca63bd2324348df20844e6bf5173b/main.ipynb",
+  "repository_description_observed": "Github for the Kaggle fake news classification challenge https://www.kaggle.com/jruvika/fake-news-detection#data.csv)",
+  "evidence_level": "third_party_implementation_with_explicit_label_semantics",
+  "creator_authored_statement": false,
+  "complete_original_notebook_saved": false,
+  "verified_full_response_bytes": 62449,
+  "verified_full_response_sha256": "eb9b6baaeee24e286e8a02306cbd597645c8eda8043779d150dd3fa81821b7fd",
+  "zero_based_cell_index": 6,
+  "capture_note": "This exact excerpt was first observed through master/main.ipynb and then independently verified online from the pinned commit URL. A read-only request returned 62449 bytes, SHA-256 eb9b6baaeee24e286e8a02306cbd597645c8eda8043779d150dd3fa81821b7fd, with identical source and output at zero-based cell index 6. Only the excerpt is saved; no complete notebook was archived and no GitHub CSV mirror was downloaded or fully compared.",
+  "source": "print(data.shape)\nfake_data = data[labels==0]\nreal_data = data[labels==1]\nfake_labels = labels[labels==0]\nreal_labels = labels[labels==1]\nprint(\"Nombre de fake news : {}\".format(len(fake_data)))\nprint(\"Nombre de news correctes : {}\".format(len(real_data)))",
+  "stdout": "(4009,)\nNombre de fake news : 2137\nNombre de news correctes : 1872\n",
+  "interpretation": {
+    "native_0": "fake",
+    "native_1": "real/legitimate",
+    "unified_0": "real/legitimate",
+    "unified_1": "fake",
+    "mapping": "unified_label = 1 - int(original_Label)"
+  }
+}
