@@ -4,8 +4,7 @@ Fine-tunes transformer encoders for binary misinformation detection (0 = real, 1
 (AMT, MultiFC, MC-Fake, Jruvika - the `preprocessing/output/*/binary_{train,dev,test}` splits, unchanged).
 Everything ran on **one NVIDIA H100 80GB**, bf16 autocast, max 512 tokens, batch 32, 3 epochs, seed 42.
 
-- Data (private): https://huggingface.co/datasets/ngqtrung/ee6405-misinfo-pooled-binary
-- Models (private): `ngqtrung/ee6405-roberta-base-misinfo`, `ngqtrung/ee6405-deberta-v3-base-misinfo`, `ngqtrung/ee6405-roberta-base-muon-misinfo`
+- Data + 3 checkpoints + results + code, one public repo: https://huggingface.co/ngqtrung/ee6405-misinfo-detection (detailed README there)
 - Dataset note: the first discussion doc lists ISOT/CoAID/COVID-19/LIAR; the repo (and these runs) use AMT/MultiFC/MC-Fake/Jruvika.
 
 ## Results (test macro-F1; model picked on dev mean macro-F1 over the 4 datasets, test touched once)
