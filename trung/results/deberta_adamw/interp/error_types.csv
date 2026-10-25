@@ -1,0 +1,5 @@
+dataset,FP(real->fake),FN(fake->real),n
+amt,0,7,48
+jruvika,2,8,401
+mc_fake,63,187,2832
+multifc,298,340,2434

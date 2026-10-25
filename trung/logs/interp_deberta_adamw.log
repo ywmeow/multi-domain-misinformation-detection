@@ -1,0 +1,48 @@
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+The tokenizer you are loading from '/scratch/users/astar/ares/suns1/trung/nlp/ckpt/deberta_adamw/best' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+{
+ "ece": {
+  "amt": 0.1578,
+  "jruvika": 0.0248,
+  "mc_fake": 0.0316,
+  "multifc": 0.1119,
+  "overall": 0.0653
+ },
+ "errors_shared_by_all": 490,
+ "errors_any": 1346,
+ "oracle_acc_any_model_right": 0.9143,
+ "majority_vote": {
+  "amt": 0.873,
+  "jruvika": 0.9875,
+  "mc_fake": 0.8139,
+  "multifc": 0.7121
+ }
+}
+                               n    acc  macro_f1
+dataset len_bucket                               
+amt     33-128              13.0  0.923     0.921
+        129-256             34.0  0.824     0.813
+        257-512              1.0  1.000       NaN
+jruvika <=32                 2.0  1.000     1.000
+        33-128              41.0  0.976     0.972
+        129-256             48.0  0.958     0.956
+        257-512            103.0  0.990     0.990
+        >512 (truncated)   207.0  0.971     0.971
+mc_fake <=32                41.0  0.902     0.900
+        33-128             133.0  0.925     0.668
+        129-256            291.0  0.890     0.768
+        257-512            842.0  0.898     0.808
+        >512 (truncated)  1525.0  0.923     0.817
+multifc <=32              2101.0  0.750     0.708
+        33-128             324.0  0.660     0.659
+        129-256              8.0  0.750     0.429
+        >512 (truncated)     1.0  1.000       NaN
+         FP(real->fake)  FN(fake->real)     n
+dataset                                      
+amt                   0               7    48
+jruvika               2               8   401
+mc_fake              63             187  2832
+multifc             298             340  2434

@@ -1,0 +1,18 @@
+{
+ "ece": {
+  "amt": 0.1578,
+  "jruvika": 0.0248,
+  "mc_fake": 0.0316,
+  "multifc": 0.1119,
+  "overall": 0.0653
+ },
+ "errors_shared_by_all": 490,
+ "errors_any": 1346,
+ "oracle_acc_any_model_right": 0.9143,
+ "majority_vote": {
+  "amt": 0.873,
+  "jruvika": 0.9875,
+  "mc_fake": 0.8139,
+  "multifc": 0.7121
+ }
+}

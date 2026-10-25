@@ -1,0 +1,56 @@
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/transformers/convert_slow_tokenizer.py:566: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+{'train': 45871, 'dev': 5727, 'test': 5715}
+Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-v3-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+ep0 step 100/4302 loss 0.6517 11097 tok/s
+ep0 step 200/4302 loss 0.4942 12457 tok/s
+ep0 step 300/4302 loss 0.4344 13338 tok/s
+ep0 step 400/4302 loss 0.4016 14571 tok/s
+ep0 step 500/4302 loss 0.3788 15687 tok/s
+ep0 step 600/4302 loss 0.3703 16367 tok/s
+ep0 step 700/4302 loss 0.3876 17008 tok/s
+ep0 step 800/4302 loss 0.3596 17467 tok/s
+ep0 step 900/4302 loss 0.3641 17758 tok/s
+ep0 step 1000/4302 loss 0.3640 18049 tok/s
+ep0 step 1100/4302 loss 0.3489 18350 tok/s
+ep0 step 1200/4302 loss 0.3489 18554 tok/s
+ep0 step 1300/4302 loss 0.3383 18734 tok/s
+ep0 step 1400/4302 loss 0.3428 18878 tok/s
+== epoch 1 dev mean macro-F1 0.8050 | amt:0.788 jruvika:0.982 mc_fake:0.770 multifc:0.679
+ep1 step 1500/4302 loss 0.1938 18634 tok/s
+ep1 step 1600/4302 loss 0.2877 19260 tok/s
+ep1 step 1700/4302 loss 0.2876 19979 tok/s
+ep1 step 1800/4302 loss 0.2969 20596 tok/s
+ep1 step 1900/4302 loss 0.3044 21200 tok/s
+ep1 step 2000/4302 loss 0.2823 21782 tok/s
+ep1 step 2100/4302 loss 0.2828 22340 tok/s
+ep1 step 2200/4302 loss 0.2934 22879 tok/s
+ep1 step 2300/4302 loss 0.2820 23386 tok/s
+ep1 step 2400/4302 loss 0.2760 23878 tok/s
+ep1 step 2500/4302 loss 0.2756 24346 tok/s
+ep1 step 2600/4302 loss 0.2855 24798 tok/s
+ep1 step 2700/4302 loss 0.2795 25242 tok/s
+ep1 step 2800/4302 loss 0.2798 25659 tok/s
+== epoch 2 dev mean macro-F1 0.8315 | amt:0.831 jruvika:0.980 mc_fake:0.800 multifc:0.716
+ep2 step 2900/4302 loss 0.0767 25889 tok/s
+ep2 step 3000/4302 loss 0.2091 26303 tok/s
+ep2 step 3100/4302 loss 0.2355 26666 tok/s
+ep2 step 3200/4302 loss 0.2118 27029 tok/s
+ep2 step 3300/4302 loss 0.2133 27348 tok/s
+ep2 step 3400/4302 loss 0.2265 27667 tok/s
+ep2 step 3500/4302 loss 0.2191 27992 tok/s
+ep2 step 3600/4302 loss 0.1993 28305 tok/s
+ep2 step 3700/4302 loss 0.2171 28608 tok/s
+ep2 step 3800/4302 loss 0.2272 28880 tok/s
+ep2 step 3900/4302 loss 0.2161 28811 tok/s
+ep2 step 4000/4302 loss 0.2098 29085 tok/s
+ep2 step 4100/4302 loss 0.2080 29341 tok/s
+ep2 step 4200/4302 loss 0.2023 29592 tok/s
+ep2 step 4300/4302 loss 0.2047 29847 tok/s
+== epoch 3 dev mean macro-F1 0.8385 | amt:0.831 jruvika:0.982 mc_fake:0.824 multifc:0.717
+TEST {"amt": 0.851, "jruvika": 0.975, "mc_fake": 0.8105, "multifc": 0.7052} overall 0.8337 | train 18.4 min

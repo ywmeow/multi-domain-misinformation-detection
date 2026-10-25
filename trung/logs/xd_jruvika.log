@@ -1,0 +1,18 @@
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+{'train': 3209, 'dev': 399, 'test': 5715}
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at roberta-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+ep0 step 100/505 loss 0.2515 26099 tok/s
+== epoch 1 dev mean macro-F1 0.9899 | jruvika:0.990
+ep1 step 200/505 loss 0.0100 26762 tok/s
+== epoch 2 dev mean macro-F1 0.9950 | jruvika:0.995
+ep2 step 300/505 loss 0.0026 27478 tok/s
+== epoch 3 dev mean macro-F1 0.9950 | jruvika:0.995
+ep3 step 400/505 loss 0.0037 27678 tok/s
+== epoch 4 dev mean macro-F1 0.9975 | jruvika:0.998
+ep4 step 500/505 loss 0.0020 27742 tok/s
+== epoch 5 dev mean macro-F1 0.9925 | jruvika:0.993
+TEST {"amt": 0.5306, "jruvika": 0.9925, "mc_fake": 0.6386, "multifc": 0.3515} overall 0.5581 | train 3.3 min

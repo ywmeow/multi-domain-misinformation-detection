@@ -1,0 +1,12378 @@
+[
+ {
+  "id": "edu-017-legit",
+  "dataset": "amt",
+  "domain": "education",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.006,
+  "top_tokens": [
+   [
+    ",",
+    -0.058
+   ],
+   [
+    ",",
+    0.043
+   ],
+   [
+    ",",
+    0.043
+   ],
+   [
+    "\u2581I",
+    0.032
+   ],
+   [
+    ",",
+    -0.032
+   ],
+   [
+    "\u2581which",
+    -0.031
+   ],
+   [
+    ",",
+    -0.031
+   ],
+   [
+    "\u2581Florida",
+    -0.029
+   ]
+  ],
+  "text_head": "The Teacher Shortage Crisis Is Here As students headed back to school this year in and around Tampa, Florida, thousands of teacher positions had yet to be filled. It followed a year in which tens of thousands of teachers were hired on emerg"
+ },
+ {
+  "id": "edu-003-fake",
+  "dataset": "amt",
+  "domain": "education",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.985,
+  "top_tokens": [
+   [
+    ".",
+    -0.176
+   ],
+   [
+    ".",
+    -0.136
+   ],
+   [
+    "'",
+    0.029
+   ],
+   [
+    "s",
+    0.027
+   ],
+   [
+    ",",
+    0.023
+   ],
+   [
+    "s",
+    0.019
+   ],
+   [
+    ".",
+    0.019
+   ],
+   [
+    "\u2581students",
+    0.018
+   ]
+  ],
+  "text_head": "Betsy DeVos's Education Hearing Brings Creationism One Step Closer To Public School Curriculum. Washington - At her confirmation hearing on Tuesday to be education secretary, Betsy DeVos outlined her plan to teach creationism in public scho"
+ },
+ {
+  "id": "biz-016-legit",
+  "dataset": "amt",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.06,
+  "top_tokens": [
+   [
+    "medical",
+    -0.122
+   ],
+   [
+    ".",
+    0.115
+   ],
+   [
+    "ink",
+    0.048
+   ],
+   [
+    "called",
+    0.047
+   ],
+   [
+    "neural",
+    -0.04
+   ],
+   [
+    "\u2581Tesla",
+    -0.03
+   ],
+   [
+    "\u2581Mr",
+    -0.024
+   ],
+   [
+    "\u2581brains",
+    0.018
+   ]
+  ],
+  "text_head": "Elon Musk creates Neuralink brain electrode firm Tesla chief executive Elon Musk has launched Neuralink a start-up which aims to develop technology that connects our brains to computers. A report from the Wall Street Journal later confirmed"
+ },
+ {
+  "id": "edu-023-legit",
+  "dataset": "amt",
+  "domain": "education",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ".",
+    -0.118
+   ],
+   [
+    ".",
+    -0.038
+   ],
+   [
+    ".",
+    -0.037
+   ],
+   [
+    "s",
+    0.03
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    ".",
+    -0.023
+   ],
+   [
+    "'",
+    0.021
+   ],
+   [
+    ".",
+    -0.02
+   ]
+  ],
+  "text_head": "Toronto Cancels U.S. Class Trips Due To Trump Travel Ban Concerns Canada's largest school board has barred all future field trips to the United States because of concerns that some students could get caught up in President Donald Trump's tr"
+ },
+ {
+  "id": "entmt-011-legit",
+  "dataset": "amt",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.239
+   ],
+   [
+    ".",
+    -0.059
+   ],
+   [
+    "'",
+    0.024
+   ],
+   [
+    "\u2581who",
+    0.02
+   ],
+   [
+    "\u2581pictures",
+    0.02
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    "\u2581flowers",
+    0.015
+   ],
+   [
+    "\u2581for",
+    0.015
+   ]
+  ],
+  "text_head": "Rapper Wiz Khalifa sparks outrage for visit to Pablo Escobar's grave American rap artist Wiz Khalifa has kicked up quite the controversy on his visit to Colombia. During a trip to perform at a festival in Medellin the celebrity posted pictu"
+ },
+ {
+  "id": "polit-006-legit",
+  "dataset": "amt",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.237
+   ],
+   [
+    "CNN",
+    -0.175
+   ],
+   [
+    ")",
+    -0.065
+   ],
+   [
+    ",",
+    -0.02
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    "\u2581working",
+    0.016
+   ],
+   [
+    "ing",
+    0.016
+   ],
+   [
+    "'",
+    -0.014
+   ]
+  ],
+  "text_head": "State Department tightens scrutiny for certain foreigners Washington (CNN)Secretary of State Rex Tillerson sent four cables directing embassies worldwide to identify certain groups that should get extra scrutiny when they apply for visas, i"
+ },
+ {
+  "id": "entmt-030-legit",
+  "dataset": "amt",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.06,
+  "top_tokens": [
+   [
+    ".",
+    0.105
+   ],
+   [
+    ".",
+    0.09
+   ],
+   [
+    ".",
+    0.079
+   ],
+   [
+    ".",
+    0.051
+   ],
+   [
+    ".",
+    0.04
+   ],
+   [
+    ".",
+    0.03
+   ],
+   [
+    ".",
+    0.014
+   ],
+   [
+    "For",
+    -0.012
+   ]
+  ],
+  "text_head": "Olivia Newton-John hints at possible reunion with John Travolta for 40th anniversary of 'Grease' Good news for fans hopelessly devoted to \"Grease\" stars John Travolta and Olivia Newton-John. Newtwon-John told Britain's The Mirror that a reu"
+ },
+ {
+  "id": "sports-001-legit",
+  "dataset": "amt",
+  "domain": "sports",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.012,
+  "top_tokens": [
+   [
+    ".",
+    0.405
+   ],
+   [
+    "\u2581'",
+    0.026
+   ],
+   [
+    "'",
+    0.026
+   ],
+   [
+    "'",
+    0.025
+   ],
+   [
+    "'",
+    0.02
+   ],
+   [
+    "\"",
+    0.019
+   ],
+   [
+    "\u2581sets",
+    0.016
+   ],
+   [
+    "-",
+    -0.015
+   ]
+  ],
+  "text_head": "Basketball 'bible' auction sets sports memorabilia record The first 13 rules of basketball sold Friday for more than $4 million setting a record for the highest sales price for sports memorabilia according to Sotheby's which conducted the a"
+ },
+ {
+  "id": "edu-040-fake",
+  "dataset": "amt",
+  "domain": "education",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.98,
+  "top_tokens": [
+   [
+    ".",
+    -0.158
+   ],
+   [
+    ".",
+    -0.127
+   ],
+   [
+    ".",
+    -0.072
+   ],
+   [
+    "\u2581to",
+    0.052
+   ],
+   [
+    "\u2581a",
+    0.046
+   ],
+   [
+    ".",
+    -0.018
+   ],
+   [
+    "\u2581Make",
+    0.017
+   ],
+   [
+    "\u2581exams",
+    0.015
+   ]
+  ],
+  "text_head": "School Choice Proven to Make a Big Difference in Students Lives School choice advocates have been finally proven correct. A new study by Fortune magazine, which looked at 100 students who were given school choice vouchers to attend any scho"
+ },
+ {
+  "id": "entmt-030-fake",
+  "dataset": "amt",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.981,
+  "top_tokens": [
+   [
+    ".",
+    0.136
+   ],
+   [
+    ".",
+    0.079
+   ],
+   [
+    ".",
+    0.072
+   ],
+   [
+    "'",
+    0.021
+   ],
+   [
+    "\"",
+    0.02
+   ],
+   [
+    "\u2581working",
+    0.018
+   ],
+   [
+    "\u2581doing",
+    0.018
+   ],
+   [
+    ".",
+    0.018
+   ]
+  ],
+  "text_head": "Olivia Newton-John reunites with John Travolta for 40th anniversary of 'Grease' Newton-John told Britain's The Mirror that a reunion is in the works and could happen as soon as next year which would mark the Grease's 40th anniversary. Newto"
+ },
+ {
+  "id": "entmt-035-fake",
+  "dataset": "amt",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.027,
+  "top_tokens": [
+   [
+    ".",
+    -0.128
+   ],
+   [
+    ".",
+    -0.034
+   ],
+   [
+    "Milli",
+    0.033
+   ],
+   [
+    "\u2581Instagram",
+    -0.03
+   ],
+   [
+    "year",
+    -0.028
+   ],
+   [
+    "\u2581\"",
+    -0.027
+   ],
+   [
+    "\"",
+    0.02
+   ],
+   [
+    "\"",
+    0.019
+   ]
+  ],
+  "text_head": "Millie Bobby Brown checks into rehab after cancelling appearances and not showing up for 'Stranger Things' filming \"Millie Bobby Brown has failed to promote \"Stranger Things\" after she was absent from several important appearances we are no"
+ },
+ {
+  "id": "edu-040-legit",
+  "dataset": "amt",
+  "domain": "education",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.029,
+  "top_tokens": [
+   [
+    "\u2581Fail",
+    -0.045
+   ],
+   [
+    ".",
+    -0.043
+   ],
+   [
+    ".",
+    -0.041
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    "\u2581Economist",
+    -0.029
+   ],
+   [
+    "s",
+    -0.027
+   ],
+   [
+    "\u2581a",
+    0.023
+   ],
+   [
+    "\u2581to",
+    0.022
+   ]
+  ],
+  "text_head": "School Choice Fails to Make a Difference This is the kind of news that school-choice advocates and skeptics alike need to pay attention to: The Economist magazine reports that a team of academic economists found that students who won a lott"
+ },
+ {
+  "id": "entmt-016-legit",
+  "dataset": "amt",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.007,
+  "top_tokens": [
+   [
+    ".",
+    -0.114
+   ],
+   [
+    ".",
+    -0.079
+   ],
+   [
+    "'",
+    0.06
+   ],
+   [
+    ".",
+    0.039
+   ],
+   [
+    "\"",
+    0.037
+   ],
+   [
+    "\"",
+    0.028
+   ],
+   [
+    "\"",
+    0.016
+   ],
+   [
+    "'",
+    0.015
+   ]
+  ],
+  "text_head": "Is Huck really dead on 'Scandal?' Don't bury him just yet Gladiators. The actor who plays Huck on \"Scandal\" has some words of hope for fans who were upset about last week's cliffhanger episode in which his character was shot multiple times."
+ },
+ {
+  "id": "biz-018-legit",
+  "dataset": "amt",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.092,
+  "top_tokens": [
+   [
+    ".",
+    0.237
+   ],
+   [
+    ".",
+    0.117
+   ],
+   [
+    ".",
+    0.108
+   ],
+   [
+    ".",
+    0.063
+   ],
+   [
+    "'",
+    0.024
+   ],
+   [
+    "'",
+    0.022
+   ],
+   [
+    "\u2581putting",
+    0.022
+   ],
+   [
+    ".",
+    0.02
+   ]
+  ],
+  "text_head": "Aircraft orders increase tenfold in a year in boost for UK manufacturing The global aerospace industry enjoyed a surge in aircraft orders in February putting it on track for another record year of deliveries and boosting the UK economy. The"
+ },
+ {
+  "id": "tech-016-legit",
+  "dataset": "amt",
+  "domain": "technology",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ",",
+    -0.072
+   ],
+   [
+    ",",
+    0.059
+   ],
+   [
+    ".",
+    -0.041
+   ],
+   [
+    "m",
+    -0.038
+   ],
+   [
+    ".",
+    -0.032
+   ],
+   [
+    ".",
+    0.028
+   ],
+   [
+    ",",
+    -0.027
+   ],
+   [
+    ",",
+    -0.026
+   ]
+  ],
+  "text_head": "No new threat led to airline laptop limits, officials say U.S. and British officials said Tuesday the decision to bar laptops and tablets from the cabins of some international flights wasn't based on any specific threat but on longstanding "
+ },
+ {
+  "id": "biz-016-fake",
+  "dataset": "amt",
+  "domain": "business",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.998,
+  "top_tokens": [
+   [
+    ".",
+    0.27
+   ],
+   [
+    ".",
+    0.11
+   ],
+   [
+    ".",
+    0.057
+   ],
+   [
+    ",",
+    0.032
+   ],
+   [
+    ",",
+    0.025
+   ],
+   [
+    "\u2581brains",
+    0.02
+   ],
+   [
+    ",",
+    0.018
+   ],
+   [
+    "\u2581the",
+    0.017
+   ]
+  ],
+  "text_head": "Elon Musk, the brains behind Tesla, SpaceX, and PayPal has decided to go into early retirement and abandon all current projects. His most recent project named Neuralink was met with much dissapointment from the medical community when Musk a"
+ },
+ {
+  "id": "tech-015-legit",
+  "dataset": "amt",
+  "domain": "technology",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.026,
+  "top_tokens": [
+   [
+    ".",
+    -0.117
+   ],
+   [
+    "artificial",
+    -0.063
+   ],
+   [
+    "the",
+    -0.035
+   ],
+   [
+    "friendly",
+    -0.022
+   ],
+   [
+    "'",
+    0.021
+   ],
+   [
+    "\u2581scientists",
+    0.021
+   ],
+   [
+    "like",
+    -0.021
+   ],
+   [
+    "\u2581being",
+    0.02
+   ]
+  ],
+  "text_head": "Let there be light: German scientists test 'artificial sun' Scientists in Germany flipped the switch Thursday on what's being described as \"the world's largest artificial sun,\" a device they hope will help shed light on new ways of making c"
+ },
+ {
+  "id": "sports-034-fake",
+  "dataset": "amt",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.997,
+  "top_tokens": [
+   [
+    ".",
+    -0.254
+   ],
+   [
+    ".",
+    -0.153
+   ],
+   [
+    "\u2581making",
+    0.043
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    "ng",
+    -0.017
+   ],
+   [
+    "o",
+    0.016
+   ],
+   [
+    "\u2581just",
+    0.015
+   ]
+  ],
+  "text_head": "Christiano Ronaldo just missed making it into the so-called Top Tier Club of scorers. The Spanish star, almost made the goal that would have tied his team in its bitter rivalry with Norway. As it was the Norweigans won 3-2, on Thursday, and"
+ },
+ {
+  "id": "polit-010-fake",
+  "dataset": "amt",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.998,
+  "top_tokens": [
+   [
+    ".",
+    0.113
+   ],
+   [
+    ".",
+    -0.033
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    "\u2581,",
+    0.027
+   ],
+   [
+    ".",
+    0.025
+   ],
+   [
+    "\u2581emails",
+    0.022
+   ],
+   [
+    "s",
+    0.02
+   ],
+   [
+    "\u2581Questions",
+    0.019
+   ]
+  ],
+  "text_head": "Moderator Chris Wallace sat , horrified at Wednesday night's debate between Clinton and Trump. Despite Clinton's bleeding heart , blow hard style, she was unable to solidify the yet undecided voter. Questions that were taken from the audien"
+ },
+ {
+  "id": "edu-003-legit",
+  "dataset": "amt",
+  "domain": "education",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.002,
+  "top_tokens": [
+   [
+    ".",
+    -0.337
+   ],
+   [
+    "rupt",
+    -0.056
+   ],
+   [
+    "s",
+    0.047
+   ],
+   [
+    "one",
+    -0.022
+   ],
+   [
+    "\u2581Education",
+    0.017
+   ],
+   [
+    "\u2581students",
+    0.016
+   ],
+   [
+    ",",
+    0.016
+   ],
+   [
+    "'",
+    0.015
+   ]
+  ],
+  "text_head": "Betsy DeVos's Education Hearing Erupts Into Partisan Debate WASHINGTON - At her confirmation hearing on Tuesday to be education secretary, Betsy DeVos vigorously defended her work steering taxpayer dollars from traditional public schools, a"
+ },
+ {
+  "id": "tech-015-fake",
+  "dataset": "amt",
+  "domain": "technology",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.234,
+  "top_tokens": [
+   [
+    ".",
+    -0.247
+   ],
+   [
+    ".",
+    -0.035
+   ],
+   [
+    "\u2581being",
+    0.027
+   ],
+   [
+    "\u2581Let",
+    0.024
+   ],
+   [
+    "\u2581elites",
+    -0.021
+   ],
+   [
+    "'",
+    0.021
+   ],
+   [
+    ")",
+    0.018
+   ],
+   [
+    "\u2581Scientist",
+    -0.017
+   ]
+  ],
+  "text_head": "Let there be Light: German scientist test 'artificial sun' as elites prepare for doomsday scenario. Scientist in Germany flipped the switch Thursday on what's being described as \"the world's largest artificial sun,\" a device they hope will "
+ },
+ {
+  "id": "sports-001-fake",
+  "dataset": "amt",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.925,
+  "top_tokens": [
+   [
+    ".",
+    0.212
+   ],
+   [
+    ".",
+    0.159
+   ],
+   [
+    "\u2581Signed",
+    0.021
+   ],
+   [
+    "\u2581of",
+    0.018
+   ],
+   [
+    "\u2581sets",
+    0.016
+   ],
+   [
+    "s",
+    0.016
+   ],
+   [
+    ",",
+    0.016
+   ],
+   [
+    "\"",
+    0.013
+   ]
+  ],
+  "text_head": "Signed autograph of Michael Jordan's 'Basketball' auction sets sports memorabilia record \"The famous basketball legend Michael Jordan autographed basketball sold in Ebay's live auctions Friday for more than $5 million setting a record for t"
+ },
+ {
+  "id": "sports-011-legit",
+  "dataset": "amt",
+  "domain": "sports",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    0.115
+   ],
+   [
+    ".",
+    0.071
+   ],
+   [
+    ".",
+    0.068
+   ],
+   [
+    ".",
+    0.061
+   ],
+   [
+    "\u2581findings",
+    0.029
+   ],
+   [
+    ":",
+    0.022
+   ],
+   [
+    "\u2581BBC",
+    -0.021
+   ],
+   [
+    "\u2581(",
+    0.019
+   ]
+  ],
+  "text_head": "State of Sport: Amateur doping findings 'concern' sports minister The extent of doping in amateur sport - revealed by a poll for the BBC - is a \"concern\" says sports minister Tracey Crouch. A BBC State of Sport investigation found more than"
+ },
+ {
+  "id": "tech-005-fake",
+  "dataset": "amt",
+  "domain": "technology",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.008,
+  "top_tokens": [
+   [
+    ".",
+    0.195
+   ],
+   [
+    ".",
+    0.161
+   ],
+   [
+    ".",
+    0.102
+   ],
+   [
+    "\u2581-",
+    -0.035
+   ],
+   [
+    "\u2581A",
+    0.019
+   ],
+   [
+    "s",
+    0.018
+   ],
+   [
+    ",",
+    0.016
+   ],
+   [
+    ",",
+    0.015
+   ]
+  ],
+  "text_head": "A surprise new iPhone is here -- and it's red Apple (AAPL, Tech30) unveiled Tuesday a special red version of the iPhone 7 and 7 Plus. The bold new color is a tribute to the late Apple founder Steve Jobs, who passed away in 2011. In an inter"
+ },
+ {
+  "id": "sports-034-legit",
+  "dataset": "amt",
+  "domain": "sports",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.013,
+  "top_tokens": [
+   [
+    ".",
+    0.241
+   ],
+   [
+    ".",
+    0.168
+   ],
+   [
+    "'",
+    0.025
+   ],
+   [
+    "'",
+    0.022
+   ],
+   [
+    "75",
+    -0.022
+   ],
+   [
+    "third",
+    -0.018
+   ],
+   [
+    ".",
+    0.017
+   ],
+   [
+    "\u2581into",
+    0.016
+   ]
+  ],
+  "text_head": "Cristiano Ronaldo into all-time top 10 international goalscorers Cristiano Ronaldo's 71st goal for Portugal took him into the all-time top 10 in international history. The Portuguese star netted the opener in their 3-2 friendly defeat again"
+ },
+ {
+  "id": "entmt-011-fake",
+  "dataset": "amt",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ".",
+    0.075
+   ],
+   [
+    ".",
+    0.07
+   ],
+   [
+    ".",
+    -0.034
+   ],
+   [
+    "\u2581Khalifa",
+    0.025
+   ],
+   [
+    "\u2581Wiz",
+    0.022
+   ],
+   [
+    "'",
+    0.021
+   ],
+   [
+    "'",
+    0.018
+   ],
+   [
+    "\u2581the",
+    0.018
+   ]
+  ],
+  "text_head": "Rapper Wiz Khalifa suprises his critics with his comments when visiting Pablo Escobar's grave America rap artist Wiz Khalifa typically kicks up controversy and negative criticism with his public antics. However, this was not the case when h"
+ },
+ {
+  "id": "polit-006-fake",
+  "dataset": "amt",
+  "domain": "politics",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "CNN",
+    -0.16
+   ],
+   [
+    ".",
+    -0.092
+   ],
+   [
+    ".",
+    -0.069
+   ],
+   [
+    ".",
+    -0.036
+   ],
+   [
+    "\u2581which",
+    -0.022
+   ],
+   [
+    ";",
+    -0.021
+   ],
+   [
+    ",",
+    -0.02
+   ],
+   [
+    "\u2581(",
+    0.02
+   ]
+  ],
+  "text_head": "State Department relaxes travel restrictions for certain foreigners. Washington (CNN) Secretary of State Rex Tillerson sent out a memorandum today to various worldwide embassies directing them to ease restrictions on foreigners' ability to "
+ },
+ {
+  "id": "biz-008-legit",
+  "dataset": "amt",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.005,
+  "top_tokens": [
+   [
+    ".",
+    0.325
+   ],
+   [
+    ".",
+    0.079
+   ],
+   [
+    "'",
+    0.043
+   ],
+   [
+    "\"",
+    0.039
+   ],
+   [
+    ".",
+    0.029
+   ],
+   [
+    "\"",
+    0.016
+   ],
+   [
+    "in",
+    0.015
+   ],
+   [
+    "-",
+    0.013
+   ]
+  ],
+  "text_head": "BrewDog threatened lawsuit against plan for bar with 'punk' in name BrewDog threatened legal action to prevent a bar from using the term \"punk\" in its name it has emerged a day after the brewer blamed \"trigger-happy\" lawyers for a similar d"
+ },
+ {
+  "id": "edu-017-fake",
+  "dataset": "amt",
+  "domain": "education",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.911,
+  "top_tokens": [
+   [
+    "ANC",
+    -0.056
+   ],
+   [
+    "IES",
+    -0.052
+   ],
+   [
+    "RANT",
+    -0.032
+   ],
+   [
+    "t",
+    0.026
+   ],
+   [
+    ",",
+    -0.025
+   ],
+   [
+    ",",
+    0.024
+   ],
+   [
+    "\u2581offenses",
+    0.023
+   ],
+   [
+    "RU",
+    0.02
+   ]
+  ],
+  "text_head": "ILLEGAL IMMIGRANTS BEING RECRUITED TO FILL TEACHING VACANCIES IN MULTIPLE STATES Officials in several states, including Florida, Oklahoma and Arizona, have resorted to filling teaching positions with illegal immigrants when traditional hiri"
+ },
+ {
+  "id": "sports-011-fake",
+  "dataset": "amt",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.612,
+  "top_tokens": [
+   [
+    "\u2581BBC",
+    -0.08
+   ],
+   [
+    "\u2581Find",
+    -0.035
+   ],
+   [
+    "I",
+    -0.031
+   ],
+   [
+    "\u2581BBS",
+    -0.025
+   ],
+   [
+    "\u2581Levels",
+    0.023
+   ],
+   [
+    "s",
+    0.022
+   ],
+   [
+    "\u2581Crouch",
+    -0.021
+   ],
+   [
+    "\u2581concluded",
+    0.019
+   ]
+  ],
+  "text_head": "Doping Levels Surprisingly Low, Finds Sports Minister Sports Minister Tracey Crouch, in light of the poll recently conducted by the BBS, has said that she viewed doping in sports as \"no concern\". The BBC State of Sport Investigation conclud"
+ },
+ {
+  "id": "entmt-035-legit",
+  "dataset": "amt",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ".",
+    -0.07
+   ],
+   [
+    "\u2581taking",
+    0.063
+   ],
+   [
+    "old",
+    -0.035
+   ],
+   [
+    ".",
+    0.032
+   ],
+   [
+    "year",
+    -0.032
+   ],
+   [
+    "-",
+    -0.024
+   ],
+   [
+    "\"",
+    0.019
+   ],
+   [
+    "\u2581a",
+    0.017
+   ]
+  ],
+  "text_head": "Millie Bobby Brown taking a 'rest' between appearances and 'Stranger Things' filming Millie Bobby Brown has been promoting \"Stranger Things\" seemingly nonstop lately and is now taking some time for herself. Brown who plays the mysterious El"
+ },
+ {
+  "id": "polit-008-fake",
+  "dataset": "amt",
+  "domain": "politics",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.023,
+  "top_tokens": [
+   [
+    ".",
+    0.209
+   ],
+   [
+    ".",
+    0.065
+   ],
+   [
+    "as",
+    -0.052
+   ],
+   [
+    "s",
+    0.027
+   ],
+   [
+    "'",
+    0.024
+   ],
+   [
+    "'",
+    0.021
+   ],
+   [
+    "\u2581\"",
+    -0.021
+   ],
+   [
+    "\u2581Trump",
+    -0.019
+   ]
+  ],
+  "text_head": "Melania Trump: Women First, Only In Washington, first lady Melania Trump, third wife to Donald Trump, US President, spoke about equality and freedom for women at the International Women's Day luncheon at the White House. The invite-only lun"
+ },
+ {
+  "id": "polit-008-legit",
+  "dataset": "amt",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "'",
+    -0.047
+   ],
+   [
+    "\"",
+    -0.045
+   ],
+   [
+    "\u2581\"",
+    -0.04
+   ],
+   [
+    "As",
+    -0.028
+   ],
+   [
+    ",",
+    -0.026
+   ],
+   [
+    ",",
+    -0.023
+   ],
+   [
+    "\u2581luncheon",
+    -0.021
+   ],
+   [
+    ",",
+    -0.02
+   ]
+  ],
+  "text_head": "First lady Melania Trump touts equality at International Women's Day luncheon Washington (CNN) First lady Melania Trump spoke about equality, freedom and the responsibility women have to help each other achieve success at an invitation-only"
+ },
+ {
+  "id": "biz-008-fake",
+  "dataset": "amt",
+  "domain": "business",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.992,
+  "top_tokens": [
+   [
+    ".",
+    0.216
+   ],
+   [
+    ".",
+    0.133
+   ],
+   [
+    ".",
+    0.048
+   ],
+   [
+    ".",
+    0.042
+   ],
+   [
+    "\u2581accusations",
+    0.03
+   ],
+   [
+    "\u2581for",
+    0.028
+   ],
+   [
+    ".",
+    0.026
+   ],
+   [
+    "\"",
+    0.017
+   ]
+  ],
+  "text_head": "BrewDog under fire for accusations of canine involvement in their brewing process \"BrewDog was recently found to include dog saliva in their brewing process. BrewDog reports that they has been serving the beer for a few weeks now and have h"
+ },
+ {
+  "id": "polit-004-fake",
+  "dataset": "amt",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.996,
+  "top_tokens": [
+   [
+    ".",
+    -0.06
+   ],
+   [
+    "\"",
+    0.046
+   ],
+   [
+    "'",
+    0.041
+   ],
+   [
+    ",",
+    0.034
+   ],
+   [
+    "\u2581\"",
+    0.033
+   ],
+   [
+    ",",
+    0.03
+   ],
+   [
+    "t",
+    0.03
+   ],
+   [
+    "\u2581a",
+    0.029
+   ]
+  ],
+  "text_head": "Presided Trump pretends to be a worker bee President Trump agreed to participate in the undercover boss discovery mission. Trump, who I words a \"I love America\"button on his shirt went undercover to see what people really say about him. He "
+ },
+ {
+  "id": "sports-035-legit",
+  "dataset": "amt",
+  "domain": "sports",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.009,
+  "top_tokens": [
+   [
+    "vital",
+    -0.069
+   ],
+   [
+    "ic",
+    -0.045
+   ],
+   [
+    "ic",
+    -0.043
+   ],
+   [
+    "ic",
+    -0.032
+   ],
+   [
+    "\u2581sources",
+    0.03
+   ],
+   [
+    "ic",
+    -0.028
+   ],
+   [
+    "-",
+    -0.025
+   ],
+   [
+    "2",
+    -0.024
+   ]
+  ],
+  "text_head": "Slaven Bilic still has support of West Ham's owners West Ham's owners still have faith in manager Slaven Bilic despite his team winning only three of their 11 games this year according to Sky sources. Bilic's contract runs out in the summer"
+ },
+ {
+  "id": "biz-002-legit",
+  "dataset": "amt",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.004,
+  "top_tokens": [
+   [
+    ".",
+    0.17
+   ],
+   [
+    ".",
+    0.15
+   ],
+   [
+    ".",
+    0.115
+   ],
+   [
+    ".",
+    0.08
+   ],
+   [
+    ".",
+    0.035
+   ],
+   [
+    ".",
+    0.032
+   ],
+   [
+    "card",
+    -0.018
+   ],
+   [
+    "-",
+    -0.015
+   ]
+  ],
+  "text_head": "Banks and Tech Firms Battle Over Something Akin to Gold: Your Data The big banks and Silicon Valley are waging an escalating battle over your personal financial data: your dinner bill last night your monthly mortgage payment the interest ra"
+ },
+ {
+  "id": "edu-023-fake",
+  "dataset": "amt",
+  "domain": "education",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.98,
+  "top_tokens": [
+   [
+    ".",
+    -0.099
+   ],
+   [
+    ".",
+    -0.042
+   ],
+   [
+    "s",
+    0.04
+   ],
+   [
+    "\u2581To",
+    0.031
+   ],
+   [
+    "\u2581U",
+    0.015
+   ],
+   [
+    "S",
+    0.014
+   ],
+   [
+    "\u2581girls",
+    0.014
+   ],
+   [
+    "\u2581Canadians",
+    0.014
+   ]
+  ],
+  "text_head": "Torona Cancels U.S. Class Trips Due To Trump Calling Canadians Low Energy Cowards. Canada's largest school board has barred all future field trips to the United States because of concerns over comments made at one of President Trump's recen"
+ },
+ {
+  "id": "tech-016-fake",
+  "dataset": "amt",
+  "domain": "technology",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.959,
+  "top_tokens": [
+   [
+    ".",
+    0.145
+   ],
+   [
+    ".",
+    0.14
+   ],
+   [
+    ".",
+    0.045
+   ],
+   [
+    "\u2581stated",
+    0.028
+   ],
+   [
+    "\u2581\"",
+    0.023
+   ],
+   [
+    ",",
+    -0.022
+   ],
+   [
+    ",",
+    0.021
+   ],
+   [
+    "\u2581New",
+    0.021
+   ]
+  ],
+  "text_head": "New intelligence suggests ISIS rigging laptop batteries to cause explosion on planes On Tuesday, US and British intelligence cited intelligence that ISIS recruits have been trained to rig laptop computers and tablets into explosive devices "
+ },
+ {
+  "id": "polit-004-legit",
+  "dataset": "amt",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    "s",
+    -0.086
+   ],
+   [
+    "'",
+    -0.065
+   ],
+   [
+    ".",
+    0.058
+   ],
+   [
+    "\u2581That",
+    -0.049
+   ],
+   [
+    ":",
+    0.029
+   ],
+   [
+    ",",
+    0.027
+   ],
+   [
+    "\u2581pretends",
+    -0.023
+   ],
+   [
+    "\u2581an",
+    0.02
+   ]
+  ],
+  "text_head": "President Trump climbs into an 18-wheeler and pretends to be a trucker That's the role the president briefly assumed Thursday when he climbed into the drivers seat of a Mack 18-wheeler parked on the South Lawn of the White House. Trump, who"
+ },
+ {
+  "id": "tech-008-fake",
+  "dataset": "amt",
+  "domain": "technology",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.982,
+  "top_tokens": [
+   [
+    ".",
+    0.211
+   ],
+   [
+    ".",
+    0.107
+   ],
+   [
+    ".",
+    0.083
+   ],
+   [
+    "'",
+    0.041
+   ],
+   [
+    "s",
+    0.036
+   ],
+   [
+    "\u2581of",
+    0.031
+   ],
+   [
+    "\"",
+    0.023
+   ],
+   [
+    "\u2581are",
+    0.021
+   ]
+  ],
+  "text_head": "California's Department of Motor Vehicles cracking down on automated cars. After the recent increase in automated accidents the California DMV is adding in new charges and service fees to users of automated driver cars. These charges are in"
+ },
+ {
+  "id": "sports-035-fake",
+  "dataset": "amt",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.997,
+  "top_tokens": [
+   [
+    ".",
+    0.092
+   ],
+   [
+    ".",
+    -0.025
+   ],
+   [
+    "\u2581Slave",
+    0.024
+   ],
+   [
+    "'",
+    0.021
+   ],
+   [
+    "'",
+    0.016
+   ],
+   [
+    "\u2581Co",
+    0.016
+   ],
+   [
+    "\u2581faith",
+    -0.014
+   ],
+   [
+    "\u2581of",
+    0.013
+   ]
+  ],
+  "text_head": "Slaven Bilic still has no support of West Ham's owners \"West Ham's owners have no faith in manager Slaven Bilic as his team won only six of their 11 games this year according to Sky sources. Bilic's contract runs out in the summer of 2018 a"
+ },
+ {
+  "id": "entmt-016-fake",
+  "dataset": "amt",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.01,
+  "top_tokens": [
+   [
+    ".",
+    -0.06
+   ],
+   [
+    ".",
+    -0.059
+   ],
+   [
+    "\u2581-",
+    -0.047
+   ],
+   [
+    ",",
+    0.033
+   ],
+   [
+    ".",
+    0.029
+   ],
+   [
+    "\"",
+    0.022
+   ],
+   [
+    "\"",
+    0.019
+   ],
+   [
+    "-",
+    -0.019
+   ]
+  ],
+  "text_head": "In midst of speculation, Huck is confirmed dead on 'Scandal' \"Bury him, fans, he died. The actor who plays Huck on \"Scandal\" has some words of confirmation for fans who speculated Huck was still alive after last week's cliffhanger episode i"
+ },
+ {
+  "id": "polit-010-legit",
+  "dataset": "amt",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.002,
+  "top_tokens": [
+   [
+    ".",
+    -0.098
+   ],
+   [
+    ".",
+    -0.035
+   ],
+   [
+    "t",
+    0.035
+   ],
+   [
+    "\u2581J",
+    -0.029
+   ],
+   [
+    "ll",
+    -0.028
+   ],
+   [
+    "s",
+    0.027
+   ],
+   [
+    "\u2581Mrs",
+    -0.025
+   ],
+   [
+    ".",
+    -0.025
+   ]
+  ],
+  "text_head": "Donald Trump Won't Say if He'll Accept Result of Election In a remarkable statement that seemed to cast doubt on American democracy, Donald J. Trump said Wednesday that he might not accept the results of next month's election if he felt it "
+ },
+ {
+  "id": "tech-008-legit",
+  "dataset": "amt",
+  "domain": "technology",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.005,
+  "top_tokens": [
+   [
+    ".",
+    -0.31
+   ],
+   [
+    "-",
+    -0.04
+   ],
+   [
+    "'",
+    0.035
+   ],
+   [
+    "board",
+    -0.03
+   ],
+   [
+    ".",
+    0.026
+   ],
+   [
+    "\u2581to",
+    0.023
+   ],
+   [
+    ",",
+    0.021
+   ],
+   [
+    "?",
+    -0.017
+   ]
+  ],
+  "text_head": "Are Autonomous Cars Ready to Go It Alone? Training wheels for autonomous vehicles come in the shape of a human behind the wheel. But when you remove the safety driver from a robotic car, two tons of metal is let loose. Just last week, Calif"
+ },
+ {
+  "id": "biz-018-fake",
+  "dataset": "amt",
+  "domain": "business",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.596,
+  "top_tokens": [
+   [
+    ".",
+    0.096
+   ],
+   [
+    ".",
+    0.062
+   ],
+   [
+    "haul",
+    0.053
+   ],
+   [
+    "haul",
+    0.042
+   ],
+   [
+    ".",
+    0.022
+   ],
+   [
+    ".",
+    0.019
+   ],
+   [
+    "\u2581sends",
+    0.018
+   ],
+   [
+    "\u2581sales",
+    0.018
+   ]
+  ],
+  "text_head": "An increase in short-haul airliner global sales sends the UK economy skyward February saw airlines receiving some 100 aircraft and order another 43 for future delivery. The airlines have shown a preference for short-haul airliners with one "
+ },
+ {
+  "id": "biz-002-fake",
+  "dataset": "amt",
+  "domain": "business",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.22
+   ],
+   [
+    ".",
+    0.112
+   ],
+   [
+    ".",
+    0.031
+   ],
+   [
+    "\u2581looking",
+    0.027
+   ],
+   [
+    ",",
+    0.021
+   ],
+   [
+    "\u2581Companies",
+    0.018
+   ],
+   [
+    "\u2581and",
+    0.017
+   ],
+   [
+    "\u2581or",
+    0.015
+   ]
+  ],
+  "text_head": "THE BIG DATA CONSPIRACY Government and Silicon Valley are looking to enslave us. Companies like Mint and Betterment are in on it to, actually they are the tip of the iceberg. Under government pressure companies are complying to get as much "
+ },
+ {
+  "id": "tech-005-legit",
+  "dataset": "amt",
+  "domain": "technology",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ".",
+    -0.338
+   ],
+   [
+    "'",
+    0.071
+   ],
+   [
+    ")",
+    0.037
+   ],
+   [
+    ".",
+    -0.034
+   ],
+   [
+    "\"",
+    0.033
+   ],
+   [
+    "s",
+    0.026
+   ],
+   [
+    "\u2581helps",
+    0.021
+   ],
+   [
+    "\u2581A",
+    0.021
+   ]
+  ],
+  "text_head": "A surprise new iPhone is here -- and it's red Apple (AAPL, Tech30) unveiled Tuesday a special red version of the iPhone 7 and 7 Plus, to commemorate the 10-year partnership between the tech giant and Red, an organization that helps fights A"
+ },
+ {
+  "id": "Jruvika-Fake-News:001398",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.002,
+  "top_tokens": [
+   [
+    "strong",
+    -0.017
+   ],
+   [
+    "-",
+    -0.016
+   ],
+   [
+    "off",
+    0.014
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    "\u2581have",
+    -0.012
+   ],
+   [
+    "\u2581curtain",
+    -0.012
+   ],
+   [
+    "\u2581World",
+    0.011
+   ],
+   [
+    ".",
+    -0.011
+   ]
+  ],
+  "text_head": "Women's Rugby League World Cup: England name 10 Bradford Bulls players From the section Bradford Bulls claimed a league and cup double this season after going the full campaign unbeaten England have named 10 Bradford Bulls players in their "
+ },
+ {
+  "id": "Jruvika-Fake-News:000526",
+  "dataset": "jruvika",
+  "domain": "technology",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    0.18
+   ],
+   [
+    ".",
+    0.122
+   ],
+   [
+    ".",
+    0.111
+   ],
+   [
+    ".",
+    0.08
+   ],
+   [
+    ".",
+    0.028
+   ],
+   [
+    ".",
+    0.019
+   ],
+   [
+    ".",
+    -0.01
+   ],
+   [
+    ".",
+    0.008
+   ]
+  ],
+  "text_head": "U.S. small-cap firms look to spend tax savings on tech, not jobs NEW YORK (Reuters) - A Texas-based chain of strip clubs would go on a buying spree. A growing technology company would move fewer jobs overseas. And a regional bank would boos"
+ },
+ {
+  "id": "Jruvika-Fake-News:003757",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.998,
+  "top_tokens": [
+   [
+    ".",
+    -0.057
+   ],
+   [
+    ".",
+    0.04
+   ],
+   [
+    ".",
+    -0.038
+   ],
+   [
+    ".",
+    0.031
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    "\u2581A",
+    0.019
+   ],
+   [
+    "\u2019",
+    0.015
+   ],
+   [
+    "-",
+    0.015
+   ]
+  ],
+  "text_head": "They Put A Go-Pro On This Dog, Now Watch What Happens When He Runs In The Snow! Snow has always been a lot of fun \u2013 and not just for adults and children, but animals too! We usually can\u2019t get enough of those viral videos of animals, they al"
+ },
+ {
+  "id": "Jruvika-Fake-News:003479",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ".",
+    0.133
+   ],
+   [
+    ".",
+    0.11
+   ],
+   [
+    ".",
+    0.101
+   ],
+   [
+    ".",
+    0.097
+   ],
+   [
+    ".",
+    0.066
+   ],
+   [
+    ".",
+    -0.056
+   ],
+   [
+    ".",
+    0.03
+   ],
+   [
+    ",",
+    0.01
+   ]
+  ],
+  "text_head": "Respected Liberal Writer Blames Vegas Shooting on White Privilege Respected Liberal Writer Blames Vegas Shooting on White Privilege (Before It's News) CDN \u2013 http://www.conservativedailynews.com By Donn Marten Black Lives Matter agitator, Ne"
+ },
+ {
+  "id": "Jruvika-Fake-News:002314",
+  "dataset": "jruvika",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.248
+   ],
+   [
+    ".",
+    -0.067
+   ],
+   [
+    ".",
+    -0.058
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    ".",
+    -0.011
+   ],
+   [
+    "'",
+    0.01
+   ]
+  ],
+  "text_head": "Sir Ian McKellen says King Lear is his 'last big Shakespeare part' Media playback is unsupported on your device Media caption Sir Ian McKellen: 'That's it, isn't it' Ian McKellen has said his King Lear, which is currently on at Chichester F"
+ },
+ {
+  "id": "Jruvika-Fake-News:001457",
+  "dataset": "jruvika",
+  "domain": "other",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.996,
+  "top_tokens": [
+   [
+    ",",
+    0.085
+   ],
+   [
+    ",",
+    0.07
+   ],
+   [
+    ".",
+    0.057
+   ],
+   [
+    ",",
+    0.045
+   ],
+   [
+    "\u2581&",
+    -0.04
+   ],
+   [
+    "\u2581video",
+    0.038
+   ],
+   [
+    ".",
+    0.038
+   ],
+   [
+    ".",
+    0.035
+   ]
+  ],
+  "text_head": "10 Characteristics of False Flags By Melissa Dykes In this video, Melissa Dykes of Truthstream Media breaks down the 10 common characteristics of false flags to help better understand why the official story of Vegas shooting is suspect at b"
+ },
+ {
+  "id": "Jruvika-Fake-News:000136",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.05
+   ],
+   [
+    "\u201d",
+    0.042
+   ],
+   [
+    "ling",
+    0.035
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    "d",
+    0.024
+   ],
+   [
+    "\u2581players",
+    0.022
+   ],
+   [
+    "\u2581The",
+    -0.021
+   ],
+   [
+    "\u2581readers",
+    0.021
+   ]
+  ],
+  "text_head": "Kneeling For The National Anthem Isn\u2019t Disrespectful, It\u2019s Patriotic Kneeling For The National Anthem Isn\u2019t Disrespectful, It\u2019s Patriotic % of readers think this story is Fact. Add your two cents. (Before It's News) \u201cColin Kaepernick, howev"
+ },
+ {
+  "id": "Jruvika-Fake-News:003368",
+  "dataset": "jruvika",
+  "domain": "other",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.214
+   ],
+   [
+    ".",
+    -0.08
+   ],
+   [
+    ".",
+    -0.053
+   ],
+   [
+    ".",
+    -0.043
+   ],
+   [
+    ".",
+    -0.041
+   ],
+   [
+    "\u2581entities",
+    0.016
+   ],
+   [
+    ".",
+    -0.014
+   ],
+   [
+    "geist",
+    0.014
+   ]
+  ],
+  "text_head": "Female Poltergeist Caught Haunting West Yorkshire Pub! Many believe that paranormal entities can be sensed travelling through the veil that separates our tangible reality and the ethereal planes. These are often called spirits or ghosts tha"
+ },
+ {
+  "id": "Jruvika-Fake-News:002647",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.028
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    "\u2019",
+    0.027
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    "\u2581Continue",
+    0.016
+   ],
+   [
+    "\u2581Continue",
+    0.016
+   ],
+   [
+    ".",
+    -0.014
+   ],
+   [
+    "\u2581reading",
+    0.013
+   ]
+  ],
+  "text_head": "Che Guevara\u2019s Fiery Life and Bloody Death \u201cThe orders to his troops were simple,\u201d the article said. \u201c\u2018Go in and attack!\u2019\u201d Photo As the rebels consolidated control, a reporter asked Guevara what he planned to do now. \u201cWe are waiting for Fide"
+ },
+ {
+  "id": "Jruvika-Fake-News:000845",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ".",
+    0.074
+   ],
+   [
+    "'",
+    0.052
+   ],
+   [
+    "\u2581says",
+    0.037
+   ],
+   [
+    ".",
+    -0.03
+   ],
+   [
+    "\u201d",
+    0.029
+   ],
+   [
+    ".",
+    -0.024
+   ],
+   [
+    "\u2581a",
+    -0.018
+   ],
+   [
+    "\u2581that",
+    0.016
+   ]
+  ],
+  "text_head": "Trump says 'very important' NFL players stand for anthem Sunday Trump says 'very important' NFL players stand for anthem Sunday % of readers think this story is Fact. Add your two cents. (Before It's News) On the eve of a host of National F"
+ },
+ {
+  "id": "Jruvika-Fake-News:003786",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.325
+   ],
+   [
+    ".",
+    0.075
+   ],
+   [
+    "\u2581a",
+    0.039
+   ],
+   [
+    "d",
+    0.035
+   ],
+   [
+    "d",
+    0.029
+   ],
+   [
+    "\u2581readers",
+    0.021
+   ],
+   [
+    "\u2019",
+    0.016
+   ],
+   [
+    "\u2581senses",
+    0.015
+   ]
+  ],
+  "text_head": "The Islamophobic Ad Campaign That Won a Significant Victory For AfD The Islamophobic Ad Campaign That Won a Significant Victory For AfD % of readers think this story is Fact. Add your two cents. (Before It's News) The German far-right party"
+ },
+ {
+  "id": "Jruvika-Fake-News:001643",
+  "dataset": "jruvika",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.131
+   ],
+   [
+    ".",
+    0.097
+   ],
+   [
+    ".",
+    0.07
+   ],
+   [
+    ".",
+    0.061
+   ],
+   [
+    ".",
+    0.06
+   ],
+   [
+    ".",
+    0.053
+   ],
+   [
+    ".",
+    0.035
+   ],
+   [
+    ".",
+    0.031
+   ]
+  ],
+  "text_head": "US Rapper BoB is raising funds to prove Flat Earth theory Rapper from the US raising $200,000 to prove Earth is not round. Anyone thinking that the shape of the Earth was established centuries ago might want to think again as a rapper from "
+ },
+ {
+  "id": "Jruvika-Fake-News:003201",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ".",
+    0.156
+   ],
+   [
+    ".",
+    0.098
+   ],
+   [
+    ".",
+    0.077
+   ],
+   [
+    ".",
+    0.071
+   ],
+   [
+    ".",
+    0.054
+   ],
+   [
+    ".",
+    0.052
+   ],
+   [
+    ".",
+    0.045
+   ],
+   [
+    ".",
+    0.037
+   ]
+  ],
+  "text_head": "Where is The Oppression? Where is The Oppression? (Before It's News) CDN \u2013 http://www.conservativedailynews.com By Chris Vaca Maybe I don\u2019t know because, according to social justice warriors, I am a white, racist, bigot, but could someone t"
+ },
+ {
+  "id": "Jruvika-Fake-News:001678",
+  "dataset": "jruvika",
+  "domain": "environment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    "CNN",
+    -0.316
+   ],
+   [
+    ".",
+    0.109
+   ],
+   [
+    ")",
+    -0.068
+   ],
+   [
+    ",",
+    0.044
+   ],
+   [
+    ".",
+    0.044
+   ],
+   [
+    "\u2581More",
+    -0.031
+   ],
+   [
+    "\u2581staggering",
+    -0.029
+   ],
+   [
+    "\u2581humidity",
+    -0.024
+   ]
+  ],
+  "text_head": "The California wildfires, by the staggering numbers (CNN) More than a dozen wildfires are scorching Northern California, aided by low humidity and high winds. Here are some eye-popping numbers that tell the scope of the tragedy."
+ },
+ {
+  "id": "Jruvika-Fake-News:003533",
+  "dataset": "jruvika",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.068
+   ],
+   [
+    ".",
+    -0.036
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    "\u2019",
+    0.026
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    "\u2019",
+    0.019
+   ]
+  ],
+  "text_head": "What\u2019s on TV Tuesday: The BET \u2018Hip-Hop Awards\u2019 and \u2018The Flash\u2019 Photo BET celebrates hip-hop\u2019s prized artists and producers. And the Flash is reborn in the superhero series\u2019 fourth season. What\u2019s on TV HIP-HOP AWARDS 8 p.m. on BET. The produ"
+ },
+ {
+  "id": "Jruvika-Fake-News:000188",
+  "dataset": "jruvika",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.098
+   ],
+   [
+    ".",
+    -0.068
+   ],
+   [
+    "Reuters",
+    -0.019
+   ],
+   [
+    ",",
+    -0.019
+   ],
+   [
+    ",",
+    -0.018
+   ],
+   [
+    "\u2581buys",
+    0.017
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    "\u2581U",
+    0.014
+   ]
+  ],
+  "text_head": "Australia's AMP buys U.S. logistics group from Carlyle SYDNEY (Reuters) - Australia\u2019s AMP Capital has bought U.S. logistics group ITS ConGlobal from Carlyle Infrastructure Partners, marking the Australian fund manager\u2019s largest-ever North A"
+ },
+ {
+  "id": "Jruvika-Fake-News:001306",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.273
+   ],
+   [
+    ".",
+    -0.132
+   ],
+   [
+    ".",
+    0.094
+   ],
+   [
+    ".",
+    0.025
+   ],
+   [
+    "\u2019",
+    0.022
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    "\u2581Trump",
+    0.015
+   ],
+   [
+    ".",
+    -0.009
+   ]
+  ],
+  "text_head": "Trump Claims His Attacks On NFL Players Have \u2018Nothing To Do With Race\u2019 Shahzaib Elahi Contributor profile | More stories By Story Views Now: Last Hour: Last 24 Hours: Total: Trump Claims His Attacks On NFL Players Have \u2018Nothing To Do With R"
+ },
+ {
+  "id": "Jruvika-Fake-News:000020",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ",",
+    -0.064
+   ],
+   [
+    ",",
+    -0.058
+   ],
+   [
+    "\u201d",
+    0.051
+   ],
+   [
+    "\u2581Talks",
+    0.043
+   ],
+   [
+    ")",
+    0.028
+   ],
+   [
+    "S",
+    0.025
+   ],
+   [
+    "\u2581readers",
+    0.025
+   ],
+   [
+    "\u2581Talks",
+    0.024
+   ]
+  ],
+  "text_head": "In Meeting With Military, Trump Talks Of 'Calm Before The Storm' In Meeting With Military, Trump Talks Of 'Calm Before The Storm' % of readers think this story is Fact. Add your two cents. (Before It's News) After discussing Iran and North "
+ },
+ {
+  "id": "Jruvika-Fake-News:000128",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.161
+   ],
+   [
+    ".",
+    -0.082
+   ],
+   [
+    ".",
+    -0.068
+   ],
+   [
+    ".",
+    -0.064
+   ],
+   [
+    ".",
+    -0.043
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    ".",
+    -0.015
+   ]
+  ],
+  "text_head": "Wall Street Vs. Kremlin: Who Really Runs The White House? [gard align='center'] By Tony Cartalucci Perhaps the only thing more incredible than quickly expanding conspiracy theories regarding the Kremlin\u2019s influence over the White House is w"
+ },
+ {
+  "id": "Jruvika-Fake-News:002478",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ",",
+    -0.017
+   ],
+   [
+    "-",
+    -0.016
+   ],
+   [
+    "\u2581BBC",
+    -0.015
+   ],
+   [
+    "-",
+    -0.014
+   ],
+   [
+    "-",
+    -0.012
+   ],
+   [
+    ".",
+    -0.011
+   ],
+   [
+    "\u2581&",
+    -0.011
+   ],
+   [
+    "-",
+    -0.01
+   ]
+  ],
+  "text_head": "Rugby League World Cup: Sam Tomkins not in England squad Sam Tomkins won the Man of Steel award in 2012 Rugby League World Cup on the BBC Venues: Australia, New Zealand and Papua New Guinea Dates: 27 October to 2 December Coverage: Watch li"
+ },
+ {
+  "id": "Jruvika-Fake-News:003669",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.129
+   ],
+   [
+    ".",
+    0.07
+   ],
+   [
+    ".",
+    0.07
+   ],
+   [
+    ".",
+    0.064
+   ],
+   [
+    ".",
+    0.048
+   ],
+   [
+    ".",
+    0.046
+   ],
+   [
+    ".",
+    -0.043
+   ],
+   [
+    ".",
+    0.039
+   ]
+  ],
+  "text_head": "Trial set to begin in burning death of Mississippi teen (CNN) A jury was chosen Monday in trial of a Mississippi man accused of killing 19-year-old Jessica Chambers, who died after being set on fire in her car in 2014. Quinton Tellis, 29, f"
+ },
+ {
+  "id": "Jruvika-Fake-News:001775",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.042
+   ],
+   [
+    ".",
+    -0.038
+   ],
+   [
+    ".",
+    -0.036
+   ],
+   [
+    ".",
+    -0.032
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    ".",
+    -0.023
+   ],
+   [
+    "\u2019",
+    0.023
+   ],
+   [
+    ".",
+    -0.019
+   ]
+  ],
+  "text_head": "The Marathon Ends: Pirates Take Finale By 11-8 Count The Marathon Ends: Pirates Take Finale By 11-8 Count (Before It's News) Quite the Bucco jump out of the gates against Gio Gonzalez. A leadoff single, followed two outs later by a couple o"
+ },
+ {
+  "id": "Jruvika-Fake-News:001286",
+  "dataset": "jruvika",
+  "domain": "conflict",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "Reuters",
+    -0.065
+   ],
+   [
+    ".",
+    -0.06
+   ],
+   [
+    "\u2581-",
+    -0.04
+   ],
+   [
+    ")",
+    -0.019
+   ],
+   [
+    ",",
+    -0.018
+   ],
+   [
+    ",",
+    -0.017
+   ],
+   [
+    ",",
+    -0.017
+   ],
+   [
+    ",",
+    -0.016
+   ]
+  ],
+  "text_head": "U.S. bombs dropped in Afghanistan at highest since 2010, under new Trump strategy KABUL (Reuters) - American warplanes in Afghanistan are dropping bombs in numbers not seen since the height of the U.S. troop surge in 2010, after President D"
+ },
+ {
+  "id": "Jruvika-Fake-News:001282",
+  "dataset": "jruvika",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.002,
+  "top_tokens": [
+   [
+    "\u2019",
+    0.094
+   ],
+   [
+    ".",
+    -0.021
+   ],
+   [
+    "Tom",
+    -0.017
+   ],
+   [
+    "He",
+    -0.016
+   ],
+   [
+    ",",
+    -0.015
+   ],
+   [
+    "We",
+    -0.014
+   ],
+   [
+    "\u201d",
+    -0.014
+   ],
+   [
+    "\u2019",
+    0.014
+   ]
+  ],
+  "text_head": "Review: \u2018Tom of Finland\u2019 Is a Portrait of a Boundary-Pushing Artist Photo A biopic can take any life, no matter how transgressive or interesting, and reduce it to check marks on a list. In \u201cTom of Finland,\u201d a primarily Finnish-language feat"
+ },
+ {
+  "id": "Jruvika-Fake-News:003041",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.116
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    "\u2581Leaves",
+    0.026
+   ],
+   [
+    "S",
+    0.022
+   ],
+   [
+    ",",
+    -0.019
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    "\u2581players",
+    0.018
+   ],
+   [
+    "\u2581readers",
+    0.017
+   ]
+  ],
+  "text_head": "Pence Leaves NFL Game After Players Kneel During Anthem Pence Leaves NFL Game After Players Kneel During Anthem % of readers think this story is Fact. Add your two cents. (Before It's News) U.S. Vice President Mike Pence walked out of a Nat"
+ },
+ {
+  "id": "Jruvika-Fake-News:003856",
+  "dataset": "jruvika",
+  "domain": "health",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.157
+   ],
+   [
+    ".",
+    -0.067
+   ],
+   [
+    ".",
+    0.046
+   ],
+   [
+    "\u2581is",
+    0.024
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    "\u2581to",
+    0.013
+   ],
+   [
+    "\u2581can",
+    0.01
+   ]
+  ],
+  "text_head": "NYPD Commissioner Says Most Drug Violence Due to Cannabis, Entirely Missing the Point of Legalization By Isaac Davis As cannabis legalization gains ground in the United States and other nations, more evidence emerges to confirm that society"
+ },
+ {
+  "id": "Jruvika-Fake-News:003498",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.327
+   ],
+   [
+    ".",
+    -0.193
+   ],
+   [
+    "\u2581for",
+    0.021
+   ],
+   [
+    "\u2581the",
+    0.02
+   ],
+   [
+    "'",
+    0.011
+   ],
+   [
+    ".",
+    -0.009
+   ],
+   [
+    "\u2581talks",
+    0.009
+   ],
+   [
+    "\u2581says",
+    0.009
+   ]
+  ],
+  "text_head": "Wait for the talks, says UK PM's spokesman on possible Brexit breakthrough LONDON (Reuters) - A speech in Italy by Prime Minister Theresa May created momentum in Brexit talks with the European Union, her spokesman said on Monday, but was no"
+ },
+ {
+  "id": "Jruvika-Fake-News:002227",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.03
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    ".",
+    -0.025
+   ],
+   [
+    ",",
+    -0.021
+   ],
+   [
+    "\u2581but",
+    -0.018
+   ],
+   [
+    ",",
+    -0.014
+   ],
+   [
+    ",",
+    -0.013
+   ],
+   [
+    ".",
+    -0.012
+   ]
+  ],
+  "text_head": "Melania Trump Wears First Lady Cred on Her Sleeve Photo On Tuesday, the day after the slightly surreal public tussle between Ivana and Melania Trump over who actually was first lady (Mrs. Trump #1 joked it was she; the current occupant of t"
+ },
+ {
+  "id": "Jruvika-Fake-News:002286",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.164
+   ],
+   [
+    ".",
+    -0.072
+   ],
+   [
+    ".",
+    -0.035
+   ],
+   [
+    "\u2019",
+    0.029
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    "\u2581Packers",
+    0.018
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    ",",
+    -0.016
+   ]
+  ],
+  "text_head": "Packers RB Ty Montgomery Doubtful Sunday Against Dallas Packers RB Ty Montgomery Doubtful Sunday Against Dallas % of readers think this story is Fact. Add your two cents. (Before It's News) Packers running back Ty Montgomery is listed as do"
+ },
+ {
+  "id": "Jruvika-Fake-News:002160",
+  "dataset": "jruvika",
+  "domain": "conflict",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ".",
+    0.116
+   ],
+   [
+    ".",
+    -0.071
+   ],
+   [
+    ".",
+    0.023
+   ],
+   [
+    "\u2019",
+    0.017
+   ],
+   [
+    "\u2581Antifa",
+    0.017
+   ],
+   [
+    "\u2581in",
+    0.013
+   ],
+   [
+    "\u2581are",
+    0.012
+   ],
+   [
+    ":",
+    0.012
+   ]
+  ],
+  "text_head": "Undercover in Antifa: Tactics and Media Support Exposed [video] Undercover in Antifa: Tactics and Media Support Exposed [video] (Before It's News) CDN \u2013 http://www.conservativedailynews.com By Rich Mitchell Conservative comedian and comment"
+ },
+ {
+  "id": "Jruvika-Fake-News:001953",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.041
+   ],
+   [
+    ".",
+    -0.039
+   ],
+   [
+    ".",
+    0.038
+   ],
+   [
+    "\u2019",
+    0.035
+   ],
+   [
+    ".",
+    -0.033
+   ],
+   [
+    "\u2019",
+    0.02
+   ],
+   [
+    "\u2019",
+    0.018
+   ],
+   [
+    "\u2019",
+    0.017
+   ]
+  ],
+  "text_head": "Yankees and Red Sox Both Head Home in Deep Holes Following Road Losses Yankees and Red Sox Both Head Home in Deep Holes Following Road Losses (Before It's News) CDN \u2013 http://www.conservativedailynews.com By Donn Marten The Boston Red Sox we"
+ },
+ {
+  "id": "Jruvika-Fake-News:003768",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.174
+   ],
+   [
+    ".",
+    0.14
+   ],
+   [
+    ".",
+    0.096
+   ],
+   [
+    ".",
+    0.092
+   ],
+   [
+    ".",
+    0.079
+   ],
+   [
+    ".",
+    0.024
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    ".",
+    0.013
+   ]
+  ],
+  "text_head": "A fudged Brexit is May's best hope Garvan Walshe is a former policy adviser to the British Conservative Party. He is also the CEO of Brexit Analytics. The opinions in this article belong to the author. (CNN) In last year's referendum on the"
+ },
+ {
+  "id": "Jruvika-Fake-News:002859",
+  "dataset": "jruvika",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    "\u2019",
+    0.03
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    ".",
+    -0.018
+   ],
+   [
+    "'",
+    0.012
+   ],
+   [
+    "\u2581His",
+    -0.011
+   ],
+   [
+    ".",
+    -0.01
+   ],
+   [
+    "\u2581d",
+    0.01
+   ]
+  ],
+  "text_head": "BlackWolfOscar Shows His Growth As An Artist On His Latest Single 'Marigold' BlackWolfOscar Shows His Growth As An Artist On His Latest Single \u2018Marigold\u2019 (Before It's News) BlackWolfOscar presents 'Marigold' the lead single of his fourth mi"
+ },
+ {
+  "id": "Jruvika-Fake-News:000344",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.204
+   ],
+   [
+    ".",
+    0.115
+   ],
+   [
+    ".",
+    0.091
+   ],
+   [
+    ".",
+    0.066
+   ],
+   [
+    "Reuters",
+    -0.031
+   ],
+   [
+    ".",
+    0.03
+   ],
+   [
+    ".",
+    -0.023
+   ],
+   [
+    ".",
+    -0.02
+   ]
+  ],
+  "text_head": "Brazil police say JBS owners 'profited' from inside information BRASILIA (Reuters) - Brazil\u2019s police investigation into insider trading by the owners of the world\u2019s largest meatpacker JBS SA (JBSS3.SA) has found that they made a profit by t"
+ },
+ {
+  "id": "Jruvika-Fake-News:002325",
+  "dataset": "jruvika",
+  "domain": "technology",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.002,
+  "top_tokens": [
+   [
+    ".",
+    -0.066
+   ],
+   [
+    "\u2581to",
+    0.025
+   ],
+   [
+    "\u2019",
+    0.02
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    "\u2019",
+    0.015
+   ]
+  ],
+  "text_head": "From Innovation to Provocation, China\u2019s Artists on a Global Path Language is a primary medium in an exhibition that , unlike the one at Asia Society, leans heavily toward Conceptualism. In a 1991 video by another pioneering figure, Zhang Pe"
+ },
+ {
+  "id": "Jruvika-Fake-News:002362",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.282
+   ],
+   [
+    ".",
+    0.073
+   ],
+   [
+    ".",
+    -0.044
+   ],
+   [
+    "\u2581of",
+    0.016
+   ],
+   [
+    "\u2581Returns",
+    0.015
+   ],
+   [
+    "\u2581went",
+    0.013
+   ],
+   [
+    ".",
+    -0.012
+   ],
+   [
+    "\u2581an",
+    0.011
+   ]
+  ],
+  "text_head": "Freddie Bishop Returns Freddie Bishop Returns % of readers think this story is Fact. Add your two cents. (Before It's News) The New York Jets had an extra roster spot available after waiving Neal Sterling. That roster spot, for this week at"
+ },
+ {
+  "id": "Jruvika-Fake-News:003921",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.181
+   ],
+   [
+    ".",
+    -0.072
+   ],
+   [
+    ".",
+    -0.07
+   ],
+   [
+    ".",
+    -0.045
+   ],
+   [
+    ".",
+    -0.043
+   ],
+   [
+    ",",
+    -0.027
+   ],
+   [
+    ".",
+    -0.011
+   ],
+   [
+    ".",
+    -0.011
+   ]
+  ],
+  "text_head": "Folk Choke: Tampa Bay Bucs Kicker Misses Three Field Goals in Thursday Night Debacle Folk Choke: Tampa Bay Bucs Kicker Misses Three Field Goals in Thursday Night Debacle (Before It's News) CDN \u2013 http://www.conservativedailynews.com By Donn "
+ },
+ {
+  "id": "Jruvika-Fake-News:002126",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "CNN",
+    -0.163
+   ],
+   [
+    ".",
+    -0.107
+   ],
+   [
+    ")",
+    -0.041
+   ],
+   [
+    ".",
+    -0.035
+   ],
+   [
+    "\u2581Story",
+    -0.027
+   ],
+   [
+    "\u2581highlights",
+    -0.022
+   ],
+   [
+    ",",
+    -0.015
+   ],
+   [
+    ".",
+    -0.015
+   ]
+  ],
+  "text_head": "Corker: Trump setting US 'on the path to World War III' Story highlights The flare-up highlights the long-simmering differences between GOP leaders and the President It also comes as Trump prepares to press Congress to advance his agenda Wa"
+ },
+ {
+  "id": "Jruvika-Fake-News:003676",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.143
+   ],
+   [
+    ".",
+    0.134
+   ],
+   [
+    ".",
+    0.131
+   ],
+   [
+    ".",
+    0.106
+   ],
+   [
+    ".",
+    0.051
+   ],
+   [
+    ".",
+    0.034
+   ],
+   [
+    ".",
+    0.019
+   ],
+   [
+    ".",
+    0.013
+   ]
+  ],
+  "text_head": "Jake Arrieta says he feels \u201cgood\u201d ahead of Game 4 start in NLDS Jake Arrieta says he feels \u201cgood\u201d ahead of Game 4 start in NLDS (Before It's News) Just hours before the Chicago Cubs and Washington Nationals play a crucial Game 3 of the NLDS"
+ },
+ {
+  "id": "Jruvika-Fake-News:002989",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.263
+   ],
+   [
+    ".",
+    0.176
+   ],
+   [
+    ".",
+    0.152
+   ],
+   [
+    ".",
+    0.084
+   ],
+   [
+    "\u2581night",
+    0.013
+   ],
+   [
+    ".",
+    -0.011
+   ],
+   [
+    "\u25812017",
+    0.007
+   ],
+   [
+    ".",
+    0.007
+   ]
+  ],
+  "text_head": "2017 NLDS schedule: Chicago Cubs vs. Washington Nationals 2017 NLDS schedule: Chicago Cubs vs. Washington Nationals (Before It's News) The Chicago Cubs are officially going back to the postseason with their NL Central-clinching win over the"
+ },
+ {
+  "id": "Jruvika-Fake-News:001667",
+  "dataset": "jruvika",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.099
+   ],
+   [
+    ".",
+    -0.056
+   ],
+   [
+    ".",
+    -0.047
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    "-",
+    -0.022
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    "\u2581caption",
+    -0.019
+   ],
+   [
+    ".",
+    0.016
+   ]
+  ],
+  "text_head": "Tunisia health minister Slim Chaker dies after charity run Image copyright AFP Image caption Slim Chaker became health minister only last month Tunisia's health minister has died of a heart attack after taking part in a charity marathon to "
+ },
+ {
+  "id": "Jruvika-Fake-News:002226",
+  "dataset": "jruvika",
+  "domain": "health",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.994,
+  "top_tokens": [
+   [
+    ".",
+    -0.132
+   ],
+   [
+    ".",
+    -0.04
+   ],
+   [
+    "ers",
+    0.014
+   ],
+   [
+    "exit",
+    0.014
+   ],
+   [
+    "\u2581By",
+    0.013
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    ",",
+    -0.012
+   ],
+   [
+    "p",
+    0.01
+   ]
+  ],
+  "text_head": "Deepwater Horizon Gulf Oil Spill And The Corexit Oil Dispersant Health Problems Confirmed By Catherine J. Frompovich Back on April 20, 2010, a major environmental catastrophe occurred in the Gulf of Mexico when the Deepwater Horizon oil dri"
+ },
+ {
+  "id": "Jruvika-Fake-News:003851",
+  "dataset": "jruvika",
+  "domain": "other",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.002,
+  "top_tokens": [
+   [
+    "-",
+    -0.039
+   ],
+   [
+    "\u2581BBC",
+    -0.025
+   ],
+   [
+    ",",
+    -0.018
+   ],
+   [
+    ",",
+    -0.016
+   ],
+   [
+    "\u2581dying",
+    -0.015
+   ],
+   [
+    "-",
+    -0.015
+   ],
+   [
+    "much",
+    -0.012
+   ],
+   [
+    ",",
+    -0.011
+   ]
+  ],
+  "text_head": "Europe Open Championships: England beat Wales to retain title World number three side England were the highest-ranked team in the tournament England retained their Europe Open Championships title with a 72-50 victory over hosts Wales. Engla"
+ },
+ {
+  "id": "Jruvika-Fake-News:002050",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.266
+   ],
+   [
+    ".",
+    0.21
+   ],
+   [
+    ".",
+    0.156
+   ],
+   [
+    ".",
+    -0.023
+   ],
+   [
+    ".",
+    0.017
+   ],
+   [
+    "ers",
+    0.006
+   ],
+   [
+    "\u2581lady",
+    0.006
+   ],
+   [
+    "le",
+    0.006
+   ]
+  ],
+  "text_head": "Las Vegas Mass Shooting Eyewitness: Crazy Women Warned Concert Goers That Everyone Was Going To Die 45 Minutes Before Shooting (Before It's News) In yet another startling revelation in a night full of pure craziness, an eyewitness to the sh"
+ },
+ {
+  "id": "Jruvika-Fake-News:002616",
+  "dataset": "jruvika",
+  "domain": "conflict",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.066
+   ],
+   [
+    ".",
+    -0.056
+   ],
+   [
+    ",",
+    0.055
+   ],
+   [
+    "lson",
+    0.039
+   ],
+   [
+    ".",
+    -0.031
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    ".",
+    -0.021
+   ],
+   [
+    "life",
+    -0.02
+   ]
+  ],
+  "text_head": "US Missile Machinations Undoes Non-Proliferation Efforts By Ulson Gunnar When it comes to nuclear weapons upon the international stage, the general consensus is certainly not \u201cthe more the merrier.\u201d Attempts to limit the number and variety "
+ },
+ {
+  "id": "Jruvika-Fake-News:003830",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.318
+   ],
+   [
+    ",",
+    -0.025
+   ],
+   [
+    ".",
+    -0.024
+   ],
+   [
+    "\u2019",
+    0.017
+   ],
+   [
+    "\u2019",
+    0.013
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    "S",
+    0.01
+   ],
+   [
+    "\u2581\"",
+    0.009
+   ]
+  ],
+  "text_head": "What Happens To The Media\u2019s \"Stale\" News? By Catherine J. Frompovich Have you ever questioned what happens to \u2018stale news\u2019 and why we don\u2019t hear updates as to how a \u201cnews issue of the day\u201d somehow disappears down a convenient \u2018memory hole\u2019?"
+ },
+ {
+  "id": "Jruvika-Fake-News:001155",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.005,
+  "top_tokens": [
+   [
+    ".",
+    -0.177
+   ],
+   [
+    ".",
+    -0.124
+   ],
+   [
+    "\u2581BBC",
+    -0.023
+   ],
+   [
+    "\u2581turning",
+    0.018
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    "no",
+    -0.011
+   ],
+   [
+    "The",
+    -0.01
+   ],
+   [
+    ".",
+    -0.01
+   ]
+  ],
+  "text_head": "Girls go along with sex acts, says teacher Are children turning to pornography to educate themselves about sex? Are boys coercing girls to do things they later regret? A 24-year-old secondary school teacher tells the BBC she's shocked by th"
+ },
+ {
+  "id": "Jruvika-Fake-News:001502",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.108
+   ],
+   [
+    ".",
+    0.075
+   ],
+   [
+    ".",
+    0.072
+   ],
+   [
+    ".",
+    0.071
+   ],
+   [
+    ".",
+    -0.042
+   ],
+   [
+    ".",
+    -0.037
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    "\u2019",
+    0.017
+   ]
+  ],
+  "text_head": "Chicago Cubs Relievers Choke Away All But Certain Win as Nationals Tie NLDS at 1-1 Chicago Cubs Relievers Choke Away All But Certain Win as Nationals Tie NLDS at 1-1 (Before It's News) CDN \u2013 http://www.conservativedailynews.com By Donn Mart"
+ },
+ {
+  "id": "Jruvika-Fake-News:003551",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    "\u2581now",
+    -0.084
+   ],
+   [
+    "\u2581like",
+    -0.078
+   ],
+   [
+    "\u2581news",
+    -0.07
+   ],
+   [
+    "\u2581like",
+    -0.069
+   ],
+   [
+    ":",
+    -0.059
+   ],
+   [
+    "\u2581now",
+    -0.052
+   ],
+   [
+    "\u2581What",
+    -0.049
+   ],
+   [
+    ".",
+    0.047
+   ]
+  ],
+  "text_head": "Latest news on California fires JUST WATCHED WATCH LIVE: What the wildfires look like right now Replay More Videos ... MUST WATCH WATCH LIVE: What the wildfires look like right now"
+ },
+ {
+  "id": "Jruvika-Fake-News:000788",
+  "dataset": "jruvika",
+  "domain": "technology",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.078
+   ],
+   [
+    ".",
+    -0.07
+   ],
+   [
+    ".",
+    -0.051
+   ],
+   [
+    ".",
+    -0.032
+   ],
+   [
+    "\u2581to",
+    0.021
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    ".",
+    -0.018
+   ]
+  ],
+  "text_head": "HAARP to 'make the sky glow' with radio waves over western Arctic starting Thursday For four nights beginning on Thursday night, a scientist in Alaska is attempting to create an artificial aurora that could perhaps be seen as far away as Yu"
+ },
+ {
+  "id": "Jruvika-Fake-News:001949",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ".",
+    0.247
+   ],
+   [
+    ".",
+    0.19
+   ],
+   [
+    ".",
+    0.18
+   ],
+   [
+    ",",
+    0.01
+   ],
+   [
+    "\u2019",
+    0.01
+   ],
+   [
+    "\u2581mark",
+    0.007
+   ],
+   [
+    "\u2581prevented",
+    0.007
+   ],
+   [
+    "\u2581intent",
+    0.005
+   ]
+  ],
+  "text_head": "Liberal Gun Control Ideas Fall Apart Quickly Liberal Gun Control Ideas Fall Apart Quickly (Before It's News) CDN \u2013 http://www.conservativedailynews.com By Dave King - Fox News Host Tucker Carlson has had several liberals on his program sinc"
+ },
+ {
+  "id": "Jruvika-Fake-News:003356",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.295
+   ],
+   [
+    ".",
+    -0.03
+   ],
+   [
+    "\u2019",
+    0.028
+   ],
+   [
+    ".",
+    -0.026
+   ],
+   [
+    "!",
+    -0.017
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    "\u2581Bengals",
+    0.016
+   ],
+   [
+    "\u2581and",
+    -0.013
+   ]
+  ],
+  "text_head": "Bengals TE Tyler Eifert and WR John Ross Among Those Ruled Out For Sunday Bengals TE Tyler Eifert and WR John Ross Among Those Ruled Out For Sunday % of readers think this story is Fact. Add your two cents. (Before It's News) Bengals tight "
+ },
+ {
+  "id": "Jruvika-Fake-News:001710",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ")",
+    0.059
+   ],
+   [
+    "\u2019",
+    0.052
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    "ers",
+    0.027
+   ],
+   [
+    ",",
+    -0.026
+   ],
+   [
+    ".",
+    -0.024
+   ],
+   [
+    "d",
+    0.024
+   ],
+   [
+    "\u2581come",
+    0.024
+   ]
+  ],
+  "text_head": "In January, Expect White House Staffers To Leave En Masse In January, Expect White House Staffers To Leave En Masse % of readers think this story is Fact. Add your two cents. (Before It's News) It hasn\u2019t even been a full year since Trump to"
+ },
+ {
+  "id": "Jruvika-Fake-News:000098",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    "\u2581copyright",
+    -0.134
+   ],
+   [
+    "\u2581copyright",
+    -0.052
+   ],
+   [
+    "\u2581caption",
+    -0.03
+   ],
+   [
+    "\u2581Image",
+    -0.024
+   ],
+   [
+    "\u2581Getty",
+    -0.015
+   ],
+   [
+    "\u2581Image",
+    -0.011
+   ],
+   [
+    "\u2581caption",
+    -0.01
+   ],
+   [
+    "\u2581Australia",
+    -0.009
+   ]
+  ],
+  "text_head": "The rising profile of football in Australia Image copyright Getty Images Image caption Football is proving popular at Borroloola, in Australia's Northern Territory The Socceroos have won an all-or-nothing clash against Syria, meaning their "
+ },
+ {
+  "id": "Jruvika-Fake-News:001217",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.009,
+  "top_tokens": [
+   [
+    "\u2581for",
+    0.031
+   ],
+   [
+    "\u2581Advertisement",
+    -0.022
+   ],
+   [
+    ".",
+    -0.021
+   ],
+   [
+    "\u2581Catholics",
+    0.019
+   ],
+   [
+    "\u2019",
+    0.018
+   ],
+   [
+    "\u2581told",
+    -0.016
+   ],
+   [
+    "\u2581thing",
+    0.015
+   ],
+   [
+    "\u2581at",
+    0.014
+   ]
+  ],
+  "text_head": "Polish Catholics Gather at Border for Vast Rosary Prayer Event \u201cIt\u2019s a really serious thing for us,\u201d Basia Sibinska told The Associated Press. \u201cWe want to pray for peace, we want to pray for our safety. Of course, everyone comes here with a"
+ },
+ {
+  "id": "Jruvika-Fake-News:000855",
+  "dataset": "jruvika",
+  "domain": "environment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.009,
+  "top_tokens": [
+   [
+    ":",
+    0.213
+   ],
+   [
+    ".",
+    0.176
+   ],
+   [
+    "\u2581from",
+    0.079
+   ],
+   [
+    "\u2581before",
+    -0.055
+   ],
+   [
+    "\u2581Wildfire",
+    -0.04
+   ],
+   [
+    "\u2581minutes",
+    0.037
+   ],
+   [
+    "\u2581he",
+    -0.03
+   ],
+   [
+    "\u2581region",
+    0.027
+   ]
+  ],
+  "text_head": "Wildfire victim: We had 5 minutes to evacuate California resident Zach Block says he only had five minutes to evacuate his family from their home before it was destroyed by the deadly wildfires sweeping the region."
+ },
+ {
+  "id": "Jruvika-Fake-News:003652",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.169
+   ],
+   [
+    ".",
+    -0.13
+   ],
+   [
+    ".",
+    -0.097
+   ],
+   [
+    ".",
+    -0.051
+   ],
+   [
+    ".",
+    -0.039
+   ],
+   [
+    ",",
+    -0.027
+   ],
+   [
+    "\u2581Houston",
+    0.013
+   ],
+   [
+    ".",
+    -0.012
+   ]
+  ],
+  "text_head": "Houston Texans Suffer Devastating Blow with J.J. Watt Injury During Loss to Chiefs Houston Texans Suffer Devastating Blow with J.J. Watt Injury During Loss to Chiefs (Before It's News) CDN \u2013 http://www.conservativedailynews.com By Donn Mart"
+ },
+ {
+  "id": "Jruvika-Fake-News:000145",
+  "dataset": "jruvika",
+  "domain": "other",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    "\u2581\"",
+    0.062
+   ],
+   [
+    "\u2581a",
+    -0.06
+   ],
+   [
+    "\"",
+    0.047
+   ],
+   [
+    "\u2581than",
+    -0.043
+   ],
+   [
+    "'",
+    0.039
+   ],
+   [
+    "\u2581past",
+    -0.035
+   ],
+   [
+    ".",
+    -0.034
+   ],
+   [
+    ".",
+    -0.033
+   ]
+  ],
+  "text_head": "Harlem hatter brings past to life\u200b Harlem hatter brings past to life\u200b The Wonder List with Bill Weir For more than 30 years, this custom hatter has been a fixture of one of New York's oldest neighborhoods. \"The Wonder List\" returns Oct 7 at"
+ },
+ {
+  "id": "Jruvika-Fake-News:000588",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.989,
+  "top_tokens": [
+   [
+    ".",
+    -0.113
+   ],
+   [
+    ".",
+    -0.033
+   ],
+   [
+    "dler",
+    0.025
+   ],
+   [
+    "\u25817",
+    0.024
+   ],
+   [
+    "that",
+    -0.02
+   ],
+   [
+    "\u2581birthday",
+    0.013
+   ],
+   [
+    "\u2581\u2013",
+    0.013
+   ],
+   [
+    "\u2581\u2013",
+    0.012
+   ]
+  ],
+  "text_head": "7 Truly Terrible Things The Agency Has Done In 70 Years By Carey Wedler On Monday, President Trump tweeted birthday wishes to the Air Force and the CIA. Both became official organizations 70 years ago on September 18, 1947, with the impleme"
+ },
+ {
+  "id": "Jruvika-Fake-News:004009",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.075
+   ],
+   [
+    ".",
+    -0.031
+   ],
+   [
+    ".",
+    0.022
+   ],
+   [
+    ".",
+    -0.021
+   ],
+   [
+    "\u2019",
+    0.021
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    "\u2019",
+    0.012
+   ],
+   [
+    ".",
+    -0.012
+   ]
+  ],
+  "text_head": "Vice President Mike Pence Leaves NFL Game Because of Anti-American Protests Vice President Mike Pence Leaves NFL Game Because of Anti-American Protests % of readers think this story is Fact. Add your two cents. (Before It's News) By Donn Ma"
+ },
+ {
+  "id": "Jruvika-Fake-News:001520",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    0.12
+   ],
+   [
+    ".",
+    0.118
+   ],
+   [
+    ".",
+    0.091
+   ],
+   [
+    ".",
+    0.051
+   ],
+   [
+    ".",
+    0.039
+   ],
+   [
+    ".",
+    0.024
+   ],
+   [
+    ".",
+    0.021
+   ],
+   [
+    ".",
+    0.012
+   ]
+  ],
+  "text_head": "NFL Picks Week 5 NFL Picks Week 5 (Before It's News) Many who stayed up late to watch the end of the Monday night game between the Washington football team and the Kansas City Chiefs saw a bizarre finish that could only be dubbed one thing:"
+ },
+ {
+  "id": "Jruvika-Fake-News:003800",
+  "dataset": "jruvika",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.046
+   ],
+   [
+    ",",
+    -0.031
+   ],
+   [
+    "\u2581works",
+    0.03
+   ],
+   [
+    ",",
+    -0.029
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    ".",
+    -0.026
+   ],
+   [
+    ")",
+    -0.025
+   ],
+   [
+    ",",
+    -0.023
+   ]
+  ],
+  "text_head": "Russian PM: oil price 'reasonable' as global deal works - RIA Russian Prime Minister Dmitry Medvedev meets his Finnish counterpart Juha Sipila (not in picture) in Saint Petersburg, Russia September 21, 2017. Lehtikuva/Martti Kainulainen via"
+ },
+ {
+  "id": "Jruvika-Fake-News:002574",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.148
+   ],
+   [
+    ".",
+    -0.127
+   ],
+   [
+    ".",
+    -0.052
+   ],
+   [
+    ".",
+    -0.048
+   ],
+   [
+    "\u2581A",
+    0.011
+   ],
+   [
+    "\u2019",
+    0.009
+   ],
+   [
+    ".",
+    -0.009
+   ],
+   [
+    "\u2581Meant",
+    -0.009
+   ]
+  ],
+  "text_head": "A New Street Was Meant to Bridge Belfast\u2019s Sectarian Divide. Then the Doorbell Rang. For several days afterward, those who fled were forced to stay in a different friend\u2019s house each night, said the cook, who asked that he and his fianc\u00e9e n"
+ },
+ {
+  "id": "Jruvika-Fake-News:000544",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.129
+   ],
+   [
+    ".",
+    0.125
+   ],
+   [
+    ".",
+    0.104
+   ],
+   [
+    ".",
+    0.084
+   ],
+   [
+    "\u2019",
+    0.019
+   ],
+   [
+    ".",
+    0.018
+   ],
+   [
+    "Reuters",
+    -0.016
+   ],
+   [
+    "\u2019",
+    0.012
+   ]
+  ],
+  "text_head": "One of Liberia's main parties calls for halt to election results MONROVIA (Reuters) - One of Liberia\u2019s leading political parties called for a halt in announcing the result of Tuesday\u2019s presidential election, citing irregularities in the vot"
+ },
+ {
+  "id": "Jruvika-Fake-News:001912",
+  "dataset": "jruvika",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.28
+   ],
+   [
+    "Reuters",
+    -0.027
+   ],
+   [
+    "\u2581-",
+    -0.014
+   ],
+   [
+    ".",
+    -0.012
+   ],
+   [
+    "gard",
+    0.011
+   ],
+   [
+    ".",
+    -0.01
+   ],
+   [
+    "'",
+    0.009
+   ],
+   [
+    "jar",
+    -0.009
+   ]
+  ],
+  "text_head": "Mexico economy minister downplays trade deficits ahead of NAFTA talks Mexico's Economy Minister Ildefonso Guajardo addresses the media to close the second round of NAFTA talks involving the United States, Mexico and Canada at Secretary of E"
+ },
+ {
+  "id": "Jruvika-Fake-News:001160",
+  "dataset": "jruvika",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.997,
+  "top_tokens": [
+   [
+    ".",
+    -0.128
+   ],
+   [
+    ".",
+    -0.086
+   ],
+   [
+    ".",
+    -0.059
+   ],
+   [
+    ".",
+    -0.042
+   ],
+   [
+    ".",
+    -0.035
+   ],
+   [
+    ".",
+    0.025
+   ],
+   [
+    "\u2581People",
+    0.015
+   ],
+   [
+    "\u2581Of",
+    0.009
+   ]
+  ],
+  "text_head": "People Want A Reality Show Where Flat Earthers Look For The Edge Of Earth Flat Earthers are a group who believe that as the name suggests, that the Earth is actually flat but that the mainstream media, the government, and the world\u2019s major "
+ },
+ {
+  "id": "Jruvika-Fake-News:001060",
+  "dataset": "jruvika",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.154
+   ],
+   [
+    ".",
+    0.101
+   ],
+   [
+    ".",
+    0.099
+   ],
+   [
+    ".",
+    0.075
+   ],
+   [
+    ".",
+    0.046
+   ],
+   [
+    ".",
+    0.044
+   ],
+   [
+    ".",
+    0.044
+   ],
+   [
+    ".",
+    0.042
+   ]
+  ],
+  "text_head": "UK stuck in slow growth gear, BoE on course to raise rates LONDON (Reuters) - Britain\u2019s Brexit-bound economy remains stuck in a low gear but is probably not weak enough to dissuade the Bank of England from raising interest rates next month,"
+ },
+ {
+  "id": "Jruvika-Fake-News:003866",
+  "dataset": "jruvika",
+  "domain": "conflict",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.998,
+  "top_tokens": [
+   [
+    ".",
+    -0.103
+   ],
+   [
+    ".",
+    -0.074
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    ".",
+    -0.024
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    ".",
+    -0.021
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    ".",
+    -0.015
+   ]
+  ],
+  "text_head": "MSM Ignores Videos Of Syrians Celebrating SAA Deir ez Zor Liberation By Brandon Turbeville While the Western media laments over the recent liberation of Deir ez Zor by the Syrian military and the impending defeat of America\u2019s ISIS terrorist"
+ },
+ {
+  "id": "Jruvika-Fake-News:001713",
+  "dataset": "jruvika",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    0.111
+   ],
+   [
+    ".",
+    0.085
+   ],
+   [
+    ".",
+    0.06
+   ],
+   [
+    ".",
+    0.05
+   ],
+   [
+    ".",
+    0.041
+   ],
+   [
+    ".",
+    0.038
+   ],
+   [
+    ".",
+    0.036
+   ],
+   [
+    ".",
+    0.035
+   ]
+  ],
+  "text_head": "Fear of Federal Debt Has Faded, but Risks Remain The amount owed to investors is $14.4 trillion. That\u2019s already a record, but economists prefer to measure the debt in relation to the economy. The United States can afford a larger debt as th"
+ },
+ {
+  "id": "Jruvika-Fake-News:002449",
+  "dataset": "jruvika",
+  "domain": "business",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.992,
+  "top_tokens": [
+   [
+    ".",
+    -0.112
+   ],
+   [
+    ".",
+    -0.093
+   ],
+   [
+    ".",
+    -0.058
+   ],
+   [
+    ".",
+    0.039
+   ],
+   [
+    ".",
+    -0.037
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    "\u2581will",
+    0.027
+   ],
+   [
+    "\u2581will",
+    0.026
+   ]
+  ],
+  "text_head": "Venezuela Just Stopped Accepting US Dollars for Oil As Countries Join Forces to Kill US Petrodollar By Jay Syrmopoulos In what is the latest move to undermine the imperial world order maintained by the United States, which is underpinned th"
+ },
+ {
+  "id": "Jruvika-Fake-News:000980",
+  "dataset": "jruvika",
+  "domain": "technology",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.108
+   ],
+   [
+    ".",
+    -0.021
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    ",",
+    -0.012
+   ],
+   [
+    ",",
+    -0.011
+   ],
+   [
+    "\u2581\u2014",
+    -0.01
+   ]
+  ],
+  "text_head": "Tech and Real Estate Lift the Fortunes of China\u2019s Richest Hurun valued the wealth of Mr. Xu, chairman and founder of China Evergrande, at $43 billion, largely because of his firm\u2019s Hong Kong-listed shares, which have soared five times in th"
+ },
+ {
+  "id": "Jruvika-Fake-News:002773",
+  "dataset": "jruvika",
+  "domain": "sports",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ".",
+    -0.062
+   ],
+   [
+    ".",
+    -0.044
+   ],
+   [
+    "\u2581.",
+    -0.041
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    "Before",
+    0.027
+   ],
+   [
+    "Disney",
+    0.024
+   ],
+   [
+    "\u2581Discussion",
+    0.02
+   ],
+   [
+    ".",
+    0.019
+   ]
+  ],
+  "text_head": "ACC Network headed to Bristol and other ACC Network Notes. ACC Network headed to Bristol and other ACC Network Notes. (Before It's News) It\u2019s been awhile since we\u2019ve had any updates on the ACC Network, but some news came out this week. Firs"
+ },
+ {
+  "id": "Jruvika-Fake-News:001747",
+  "dataset": "jruvika",
+  "domain": "business",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.14
+   ],
+   [
+    ".",
+    0.102
+   ],
+   [
+    ".",
+    0.078
+   ],
+   [
+    ".",
+    0.069
+   ],
+   [
+    ".",
+    0.048
+   ],
+   [
+    ".",
+    0.028
+   ],
+   [
+    ".",
+    0.017
+   ],
+   [
+    ",",
+    0.016
+   ]
+  ],
+  "text_head": "India's Modi, under fire, eases burden on small companies NEW DELHI (Reuters) - Indian Prime Minister Narendra Modi\u2019s government on Friday eased tax rules for small and medium-sized companies, as it rushes to address growing criticism of it"
+ },
+ {
+  "id": "Jruvika-Fake-News:001461",
+  "dataset": "jruvika",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.134
+   ],
+   [
+    ".",
+    0.12
+   ],
+   [
+    ".",
+    0.074
+   ],
+   [
+    ".",
+    0.072
+   ],
+   [
+    ".",
+    0.06
+   ],
+   [
+    ".",
+    0.046
+   ],
+   [
+    ".",
+    0.032
+   ],
+   [
+    ".",
+    0.03
+   ]
+  ],
+  "text_head": "Exclusive: EU may shun Myanmar generals in new sanctions - draft BRUSSELS (Reuters) - The European Union will cut back contacts with Myanmar\u2019s top generals in a first step to increase sanctions over an army offensive that has driven more th"
+ },
+ {
+  "id": "Jruvika-Fake-News:000579",
+  "dataset": "jruvika",
+  "domain": "society",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.002,
+  "top_tokens": [
+   [
+    ".",
+    -0.041
+   ],
+   [
+    "\u2581.",
+    -0.024
+   ],
+   [
+    ".",
+    -0.023
+   ],
+   [
+    "\u2019",
+    0.021
+   ],
+   [
+    "\u2581\u2014",
+    -0.019
+   ],
+   [
+    "\u2019",
+    0.019
+   ],
+   [
+    "\u2581and",
+    0.017
+   ],
+   [
+    ".",
+    -0.016
+   ]
+  ],
+  "text_head": "Review: Dead Again \u2026 and Again in \u2018Happy Death Day\u2019 Photo Becoming a decent person requires an awful lot of dying in \u201cHappy Death Day,\u201d a snappy horror-comedy with a gentle romantic spine. The person in need of improvement is Tree (an unimp"
+ },
+ {
+  "id": "Jruvika-Fake-News:003562",
+  "dataset": "jruvika",
+  "domain": "technology",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.935,
+  "top_tokens": [
+   [
+    ".",
+    -0.027
+   ],
+   [
+    "trust",
+    -0.026
+   ],
+   [
+    "\u201d",
+    0.025
+   ],
+   [
+    "\u2581Charles",
+    0.023
+   ],
+   [
+    "residents",
+    -0.018
+   ],
+   [
+    "\u2013",
+    -0.018
+   ],
+   [
+    "\u2581To",
+    0.015
+   ],
+   [
+    "S",
+    0.013
+   ]
+  ],
+  "text_head": "Are Facebook and Google the New Colonial Powers? By Charles Hugh Smith To qualify as colonial powers, Facebook and Google must effectively limit the choices and power of users, and punish or coerce those who question or resist their power. "
+ },
+ {
+  "id": "Jruvika-Fake-News:001707",
+  "dataset": "jruvika",
+  "domain": "technology",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.117
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    ",",
+    -0.013
+   ],
+   [
+    ",",
+    -0.012
+   ],
+   [
+    ",",
+    -0.012
+   ],
+   [
+    ".",
+    -0.011
+   ],
+   [
+    ".",
+    -0.011
+   ],
+   [
+    ",",
+    -0.011
+   ]
+  ],
+  "text_head": "ICE Rounds Up Nearly 500 Illegal Aliens Primarily from Sanctuary Cities ICE Rounds Up Nearly 500 Illegal Aliens Primarily from Sanctuary Cities (Before It's News) CDN \u2013 http://www.conservativedailynews.com By Rich Mitchell Immigration offic"
+ },
+ {
+  "id": "Jruvika-Fake-News:000781",
+  "dataset": "jruvika",
+  "domain": "conflict",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.131
+   ],
+   [
+    ",",
+    0.03
+   ],
+   [
+    "Reuters",
+    -0.029
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    "\u2581-",
+    -0.017
+   ],
+   [
+    ",",
+    -0.013
+   ],
+   [
+    ",",
+    0.013
+   ],
+   [
+    "\u2581Related",
+    -0.012
+   ]
+  ],
+  "text_head": "U.N. bans four ships over North Korea coal, U.S. delays four more The flag of North Korea is seen in Geneva, Switzerland, June 20, 2017. REUTERS/Pierre Albouy UNITED NATIONS (Reuters) - The United Nations Security Council has banned four sh"
+ },
+ {
+  "id": "Jruvika-Fake-News:000647",
+  "dataset": "jruvika",
+  "domain": "other",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.008,
+  "top_tokens": [
+   [
+    ".",
+    0.052
+   ],
+   [
+    "\u2581-",
+    -0.031
+   ],
+   [
+    "Reuters",
+    -0.031
+   ],
+   [
+    ",",
+    -0.029
+   ],
+   [
+    "\u2581(",
+    -0.027
+   ],
+   [
+    ",",
+    -0.024
+   ],
+   [
+    "000",
+    -0.023
+   ],
+   [
+    ",",
+    -0.022
+   ]
+  ],
+  "text_head": "Italy culls birds after five H5N8 avian flu outbreaks in October ROME (Reuters) - Italy has had five outbreaks of highly pathogenic H5N8 avian flu in farms the central and northern parts of the country since the start of the month and about"
+ },
+ {
+  "id": "Jruvika-Fake-News:001498",
+  "dataset": "jruvika",
+  "domain": "technology",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.234
+   ],
+   [
+    "CNN",
+    -0.04
+   ],
+   [
+    ".",
+    -0.038
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    "\u2581Catch",
+    -0.021
+   ],
+   [
+    "\u2581ET",
+    -0.016
+   ],
+   [
+    "\u2581CNN",
+    -0.012
+   ]
+  ],
+  "text_head": "Is India big enough for man and man-eater? Catch \"The Wonder List\" on CNN Saturdays at 9 p.m. ET/PT starting October 7. (CNN) \u2014 \"The Law of the Jungle, which never orders anything without a reason, forbids every beast to eat Man.\" I still r"
+ },
+ {
+  "id": "MC-Fake:RealCovid_003061",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ".",
+    0.086
+   ],
+   [
+    ".",
+    0.085
+   ],
+   [
+    ".",
+    0.074
+   ],
+   [
+    ".",
+    0.073
+   ],
+   [
+    ".",
+    0.064
+   ],
+   [
+    ".",
+    0.049
+   ],
+   [
+    ".",
+    0.04
+   ],
+   [
+    ".",
+    0.036
+   ]
+  ],
+  "text_head": "7% plunge in S&P triggered a trading halt on New York Stock Exchange | Here's how circuit breakers work A plunge in U.S. markets on Monday triggered a 15-minute trading halt in stocks after the S&P 500 fell 7 per cent shortly after the mark"
+ },
+ {
+  "id": "MC-Fake:story_reviews_00395",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.764,
+  "top_tokens": [
+   [
+    ".",
+    -0.237
+   ],
+   [
+    ".",
+    -0.024
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    "\u2581News",
+    0.013
+   ],
+   [
+    ".",
+    -0.009
+   ],
+   [
+    ".",
+    -0.009
+   ],
+   [
+    "\u2581canals",
+    0.008
+   ],
+   [
+    "\u2581told",
+    -0.007
+   ]
+  ],
+  "text_head": "stem cell research aims to put an end to root canals Could root canal procedures go by the wayside in the not-too-distant future? Scientists from the University of Nottingham and Harvard University's Wyss Institute hope so. They're developi"
+ },
+ {
+  "id": "MC-Fake:gossipcop-653088275",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.622,
+  "top_tokens": [
+   [
+    ".",
+    0.059
+   ],
+   [
+    ".",
+    0.057
+   ],
+   [
+    ".",
+    0.034
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    "\u2581chris",
+    -0.022
+   ],
+   [
+    "\u2581react",
+    -0.02
+   ],
+   [
+    "igen",
+    -0.015
+   ],
+   [
+    "hen",
+    -0.015
+   ]
+  ],
+  "text_head": "chrissy teigen, andy cohen and more celebs react to donald trump's shocking mika brzezinski tweets President Donald Trump's tweets are once again causing plenty of controversy. Trump's tweets about Morning Joe co-hosts Mika Brzezinski and J"
+ },
+ {
+  "id": "MC-Fake:Covid_0303",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.03,
+  "top_tokens": [
+   [
+    ".",
+    0.217
+   ],
+   [
+    ".",
+    0.192
+   ],
+   [
+    ".",
+    0.064
+   ],
+   [
+    ".",
+    0.063
+   ],
+   [
+    ".",
+    0.058
+   ],
+   [
+    ".",
+    0.019
+   ],
+   [
+    "-",
+    -0.018
+   ],
+   [
+    "'",
+    0.015
+   ]
+  ],
+  "text_head": "Sri Lanka suspends visa on arrival for Chinese travellers after confirmed case of Corona virus Sri Lankan Government has suspended granting of on arrival visa for Chinese travellers after a Chinese tourist was confirmed positive of Novel Co"
+ },
+ {
+  "id": "MC-Fake:Covid_1450",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.015,
+  "top_tokens": [
+   [
+    ".",
+    -0.131
+   ],
+   [
+    ".",
+    -0.096
+   ],
+   [
+    ".",
+    -0.04
+   ],
+   [
+    ".",
+    -0.024
+   ],
+   [
+    ".",
+    -0.023
+   ],
+   [
+    "virus",
+    -0.023
+   ],
+   [
+    "virus",
+    -0.018
+   ],
+   [
+    "virus",
+    -0.017
+   ]
+  ],
+  "text_head": "Traveling? Beware: Novel Coronavirus (2019-nCoV) On Friday, January 24, the Senate Health Committee and the Senate Foreign Relations Committee will host a briefing for all senators with top administration health officials regarding the nove"
+ },
+ {
+  "id": "MC-Fake:RealPolitics-76743",
+  "dataset": "mc_fake",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.124
+   ],
+   [
+    ".",
+    0.099
+   ],
+   [
+    ".",
+    0.093
+   ],
+   [
+    ".",
+    -0.021
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    "\u2581.",
+    -0.016
+   ],
+   [
+    ".",
+    0.015
+   ]
+  ],
+  "text_head": "Democrats in Congress still want to make infrastructure week happen The energy within the Democratic base lies with issues including Medicare-for-all, abolishing Immigration and Customs Enforcement, and holding the Trump administration acco"
+ },
+ {
+  "id": "MC-Fake:RealCovid_003995",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    0.136
+   ],
+   [
+    ".",
+    0.095
+   ],
+   [
+    ".",
+    0.085
+   ],
+   [
+    ".",
+    0.062
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    ".",
+    0.021
+   ],
+   [
+    ".",
+    -0.018
+   ],
+   [
+    ".",
+    0.015
+   ]
+  ],
+  "text_head": "Rajasthan govt launches mobile OPD services for routine health care The Rajasthan government has launched 400 has decided to launch mobile OPD vans to provide health care in a bid to provide medical services to people near their doorstep am"
+ },
+ {
+  "id": "MC-Fake:RealHealth-390395",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.002,
+  "top_tokens": [
+   [
+    ".",
+    -0.064
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    ",",
+    0.015
+   ],
+   [
+    ",",
+    0.014
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    "\u2581I",
+    0.012
+   ],
+   [
+    "\u2581Using",
+    -0.012
+   ],
+   [
+    ".",
+    -0.011
+   ]
+  ],
+  "text_head": "This Artist Is Using Drone Music to Help People With Anxiety and Depression On a warm, drizzly August weekend in the quiet town of Meaford, Ontario, musicians prepared to take the stage. This past summer marked the twelfth year of Electric "
+ },
+ {
+  "id": "MC-Fake:RealCovid_003565",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.033,
+  "top_tokens": [
+   [
+    "vid",
+    0.056
+   ],
+   [
+    "\u2581SINGAPORE",
+    -0.039
+   ],
+   [
+    "vid",
+    0.031
+   ],
+   [
+    ".",
+    -0.025
+   ],
+   [
+    ",",
+    -0.016
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    "\u2581\u2014",
+    -0.015
+   ],
+   [
+    ".",
+    -0.013
+   ]
+  ],
+  "text_head": "covid-19: smes across various industries facing liquidity crunch as lenders try to ease pressure SINGAPORE \u2014 Unable to fulfil customer orders, one precision engineering firm is now seeing the backlogs snowball as flight cancellations and ma"
+ },
+ {
+  "id": "MC-Fake:Claim-MMreuters-9181369975",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    "\u2581CO",
+    0.18
+   ],
+   [
+    ")",
+    0.132
+   ],
+   [
+    "virus",
+    0.127
+   ],
+   [
+    "\u2581(",
+    0.126
+   ],
+   [
+    "-",
+    0.087
+   ],
+   [
+    "-",
+    0.073
+   ],
+   [
+    "VID",
+    0.065
+   ],
+   [
+    "\u2581a",
+    0.058
+   ]
+  ],
+  "text_head": "the new coronavirus (covid-19) is a common cold COVID-19 a common cold"
+ },
+ {
+  "id": "MC-Fake:gossipcop-951003",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.005,
+  "top_tokens": [
+   [
+    ".",
+    -0.188
+   ],
+   [
+    "ney",
+    -0.034
+   ],
+   [
+    ".",
+    -0.03
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    "\u2581whit",
+    -0.014
+   ],
+   [
+    "\u2019",
+    0.012
+   ],
+   [
+    "\u2581'",
+    0.011
+   ],
+   [
+    "\u2581(",
+    0.011
+   ]
+  ],
+  "text_head": "whitney houston's mom cissy calls molestation claims 'unfathomable' It\u2019s been nearly two months since the new documentary Whitney debuted at Cannes on May 16, making public a shocking claim that the late superstar was molested as a child by"
+ },
+ {
+  "id": "MC-Fake:gossipcop-916751",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.012,
+  "top_tokens": [
+   [
+    "ham",
+    -0.035
+   ],
+   [
+    "el",
+    -0.034
+   ],
+   [
+    ",",
+    0.02
+   ],
+   [
+    ",",
+    0.02
+   ],
+   [
+    ",",
+    0.02
+   ],
+   [
+    ",",
+    0.018
+   ],
+   [
+    ",",
+    0.017
+   ],
+   [
+    ",",
+    0.014
+   ]
+  ],
+  "text_head": "josh duhamel catches a mouse in the today show green room Josh Duhamel's mouse-catching skills may have to do with his love for the outdoors Josh Duhamel Catches a Mouse in the Today Show Green Room \u2014 and Al Roker Has the Best Reaction! Jos"
+ },
+ {
+  "id": "MC-Fake:RealCovid_005884",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    0.146
+   ],
+   [
+    ".",
+    0.087
+   ],
+   [
+    ".",
+    0.086
+   ],
+   [
+    ".",
+    0.074
+   ],
+   [
+    ".",
+    0.054
+   ],
+   [
+    "virus",
+    -0.027
+   ],
+   [
+    "RUS",
+    -0.019
+   ],
+   [
+    ".",
+    -0.019
+   ]
+  ],
+  "text_head": "Navarro says mobilization 'just like in World War II' in progress as coronavirus spreads White House trade adviser Peter Navarro weighs in on the federal government\u2019s response to COVID-19 on \u2018Sunday Morning Futures.\u2019 White House trade advis"
+ },
+ {
+  "id": "MC-Fake:gossipcop-934634",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.023,
+  "top_tokens": [
+   [
+    ".",
+    -0.02
+   ],
+   [
+    "\u2019",
+    0.02
+   ],
+   [
+    "\u2581Tes",
+    -0.014
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    "s",
+    0.013
+   ],
+   [
+    "\u2581The",
+    -0.012
+   ],
+   [
+    "\u2581E",
+    -0.011
+   ],
+   [
+    "\u2581Instagram",
+    -0.01
+   ]
+  ],
+  "text_head": "a definitive timeline of bella hadid and the weeknd\u2019s relationship Quick refresher: Bella Hadid and The Weeknd, aka Abel Tesfaye, broke up in November 2016 after more than a year of dating. Their demanding work schedules were reportedly the"
+ },
+ {
+  "id": "MC-Fake:RealHealth-344935",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    0.304
+   ],
+   [
+    ".",
+    0.051
+   ],
+   [
+    ",",
+    -0.033
+   ],
+   [
+    "2",
+    -0.027
+   ],
+   [
+    "\u2581loses",
+    0.025
+   ],
+   [
+    ",",
+    0.025
+   ],
+   [
+    "\u2581claims",
+    -0.025
+   ],
+   [
+    ".",
+    0.023
+   ]
+  ],
+  "text_head": "Bayer loses $10 billion after Roundup cancer ruling Bayer stock fell more than 10% on Monday, representing a loss of more than $10 billion in market cap, on the first day of trading after a California jury found that the German company owed"
+ },
+ {
+  "id": "MC-Fake:gossipcop-886760",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ".",
+    -0.172
+   ],
+   [
+    ",",
+    -0.146
+   ],
+   [
+    "\u2019",
+    0.051
+   ],
+   [
+    "!",
+    -0.043
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    "\u2581making",
+    0.02
+   ],
+   [
+    "\u2581wag",
+    -0.019
+   ],
+   [
+    "la",
+    -0.014
+   ]
+  ],
+  "text_head": "wags la\u2019s amber nichole miller is excited to show off her relationship with ufc hall of famer tito ortiz Meet the woman behind Tito Ortiz! With her outspoken personality and brutal honesty, the UFC Hall of Famer\u2019s longtime girlfriend Amber "
+ },
+ {
+  "id": "MC-Fake:RealHealth-828052",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "\u2581will",
+    -0.024
+   ],
+   [
+    ".",
+    -0.023
+   ],
+   [
+    "\u2019",
+    0.014
+   ],
+   [
+    "\u2581newsstand",
+    -0.012
+   ],
+   [
+    ".",
+    -0.011
+   ],
+   [
+    ".",
+    -0.011
+   ],
+   [
+    "\u2581Couric",
+    -0.011
+   ],
+   [
+    ".",
+    -0.01
+   ]
+  ],
+  "text_head": "Katie Couric on Her Deeply Personal Anti-Cancer Crusade This is one fight from which Katie Couric will not back down. \u201cCancer has had a huge impact on me personally, having lost my husband, Jay, in 1998 from colon cancer and my sister, Emil"
+ },
+ {
+  "id": "MC-Fake:RealPolitics-5232",
+  "dataset": "mc_fake",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "\u2581TMZ",
+    -0.037
+   ],
+   [
+    "\u2581.",
+    -0.026
+   ],
+   [
+    "\u2581'",
+    -0.019
+   ],
+   [
+    "\u2581.",
+    -0.018
+   ],
+   [
+    "\u2581.",
+    -0.017
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    ",",
+    -0.014
+   ]
+  ],
+  "text_head": "DeMar DeRozan on Raptors White House Visit, 'I Wouldn't Go, Either' Add DeMar DeRozan to the list of athletes against visiting Donald Trump ... 'cause the NBA superstar says even if he was still on the Raptors, he wouldn't celebrate their t"
+ },
+ {
+  "id": "MC-Fake:gossipcop-849300",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.549,
+  "top_tokens": [
+   [
+    ".",
+    -0.052
+   ],
+   [
+    "\u2581kat",
+    -0.035
+   ],
+   [
+    "\u2581swift",
+    0.029
+   ],
+   [
+    "\u2581reconciliation",
+    0.021
+   ],
+   [
+    "\u2581Cyrus",
+    -0.02
+   ],
+   [
+    "ry",
+    -0.019
+   ],
+   [
+    "\u2581Katy",
+    0.018
+   ],
+   [
+    "\u2581Miley",
+    -0.016
+   ]
+  ],
+  "text_head": "taylor swift and katy perry ended bad blood with an olive branch. here\u2019s how it started. [See Katy Perry and Taylor Swift seal their reconciliation in Swift\u2019s \u201cYou Need to Calm Down\u201d video.] The camera also shows a note written by Ms. Perry"
+ },
+ {
+  "id": "MC-Fake:gossipcop-922031",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.005,
+  "top_tokens": [
+   [
+    "ton",
+    -0.099
+   ],
+   [
+    "\u2581kate",
+    -0.049
+   ],
+   [
+    "!",
+    -0.044
+   ],
+   [
+    "\u2019",
+    0.039
+   ],
+   [
+    ".",
+    -0.034
+   ],
+   [
+    "\u2581middle",
+    -0.031
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    "\u2581the",
+    -0.027
+   ]
+  ],
+  "text_head": "kate middleton spring style: get her looks for less When: April 23, 2018 Where: Introducing the new royal baby outside the Lindo Wing at London's St. Mary\u2019s Hospital Wearing: Jenny Packham red dress Get the Look! Maje Rangat Minidress, $320"
+ },
+ {
+  "id": "MC-Fake:gossipcop-927541",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.108,
+  "top_tokens": [
+   [
+    ".",
+    -0.058
+   ],
+   [
+    ".",
+    -0.051
+   ],
+   [
+    ".",
+    -0.024
+   ],
+   [
+    "ye",
+    -0.021
+   ],
+   [
+    "\u2581kan",
+    -0.018
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    "mar",
+    -0.012
+   ]
+  ],
+  "text_head": "kanye west returns to twitter, gets sentimental about lamar odom Nearly one year after quitting Twitter, Kanye Westmade a grand return to the social media platform on Friday, April 13. And he\u2019s showing his sentimental side. The 21-time Gram"
+ },
+ {
+  "id": "MC-Fake:gossipcop-2853982179",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.02,
+  "top_tokens": [
+   [
+    ".",
+    0.24
+   ],
+   [
+    ".",
+    0.212
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    "\u2581kevin",
+    -0.011
+   ],
+   [
+    "\u2581morning",
+    0.01
+   ],
+   [
+    ".",
+    -0.01
+   ],
+   [
+    "iko",
+    -0.01
+   ],
+   [
+    "\u2581\"",
+    -0.009
+   ]
+  ],
+  "text_head": "kevin hart and eniko parrish welcome baby boy Kevin Hart and his wife Eniko Parrish welcomed their baby son Kenzo Kash Hart early Tuesday morning. The comedian wrote on Twitter that his new son is \"healthy & already smiling.\" Hart thanked h"
+ },
+ {
+  "id": "MC-Fake:RealHealth-185705",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.124
+   ],
+   [
+    ".",
+    -0.12
+   ],
+   [
+    ".",
+    -0.056
+   ],
+   [
+    ".",
+    -0.052
+   ],
+   [
+    ".",
+    -0.05
+   ],
+   [
+    ".",
+    -0.042
+   ],
+   [
+    ".",
+    -0.025
+   ],
+   [
+    ".",
+    -0.013
+   ]
+  ],
+  "text_head": "Supreme Court Justice Ginsburg back at court after cancer bout WASHINGTON (Reuters) - U.S. Supreme Court Justice Ruth Bader Ginsburg returned to the court on Friday for the first time after weeks of recuperating from lung cancer surgery and"
+ },
+ {
+  "id": "MC-Fake:gossipcop-842038",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.085,
+  "top_tokens": [
+   [
+    ".",
+    -0.094
+   ],
+   [
+    ".",
+    -0.032
+   ],
+   [
+    ".",
+    0.03
+   ],
+   [
+    "'",
+    0.024
+   ],
+   [
+    "\u2581harry",
+    -0.02
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    "\u2581Direction",
+    0.012
+   ]
+  ],
+  "text_head": "harry styles would be 'honoured' to be godfather to liam payne and cheryl's baby It's been a busy week for Harry Styles. After premiering his first solo single 'Sign Of The Times' on BBC Radio 1, he's been chinwagging away to Key 103 about "
+ },
+ {
+  "id": "MC-Fake:gossipcop-859490",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.009,
+  "top_tokens": [
+   [
+    ".",
+    -0.083
+   ],
+   [
+    "\u2581a",
+    0.052
+   ],
+   [
+    ".",
+    -0.052
+   ],
+   [
+    "\u2581releases",
+    0.045
+   ],
+   [
+    "\u2581as",
+    0.042
+   ],
+   [
+    "\u2581for",
+    0.037
+   ],
+   [
+    "\u2581raise",
+    -0.032
+   ],
+   [
+    "\u2581the",
+    -0.03
+   ]
+  ],
+  "text_head": "ariana grande releases somewhere over the rainbow as charity single for manchester benefit Ariana Grande has released a cover of The Wizard of Oz song Somewhere Over the Rainbow as a charity single to raise money for the Manchester benefit."
+ },
+ {
+  "id": "MC-Fake:gossipcop-9312571596",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.452,
+  "top_tokens": [
+   [
+    ".",
+    -0.087
+   ],
+   [
+    ".",
+    -0.04
+   ],
+   [
+    "\u2581Get",
+    -0.023
+   ],
+   [
+    "\u2581hudson",
+    -0.023
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    "\u2581Jolie",
+    0.014
+   ],
+   [
+    ".",
+    0.014
+   ],
+   [
+    "\u2581The",
+    -0.014
+   ]
+  ],
+  "text_head": "oliver hudson jokes about brad pitt dating sister kate hudson The Rules of Engagement actor took to Instagram on Friday to jokingly vent about Brad Pitt reportedly living at his home, saying \"He's messy as s---\" Oliver Hudson has a bone to "
+ },
+ {
+  "id": "MC-Fake:RealHealth-145767",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.011,
+  "top_tokens": [
+   [
+    ".",
+    -0.18
+   ],
+   [
+    ".",
+    -0.038
+   ],
+   [
+    "\u2014",
+    -0.029
+   ],
+   [
+    "[",
+    -0.023
+   ],
+   [
+    "\u2014",
+    -0.021
+   ],
+   [
+    "or",
+    -0.017
+   ],
+   [
+    "\"",
+    -0.012
+   ],
+   [
+    "\u2581Could",
+    0.011
+   ]
+  ],
+  "text_head": "Study Says Food Allergies Could Affect Kids' Mental Health For children with food allergies, the issue may go beyond a safety concern and affect their mental health. New research published this week from Columbia University's Mailman School"
+ },
+ {
+  "id": "MC-Fake:gossipcop-852850",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.065,
+  "top_tokens": [
+   [
+    ".",
+    -0.124
+   ],
+   [
+    "ardo",
+    -0.023
+   ],
+   [
+    "low",
+    -0.021
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    "uil",
+    -0.015
+   ],
+   [
+    "\u2581mont",
+    -0.014
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    ".",
+    -0.011
+   ]
+  ],
+  "text_head": "'lowriders' director ricardo de montreuil on subverting clich\u00e9s When Peruvian filmmaker Ricardo de Montreuil (M\u00e1ncora) moved to Los Angeles 12 years ago, he started hanging out with some of his friends in neighborhoods like Echo Park and Bo"
+ },
+ {
+  "id": "MC-Fake:gossipcop-921529",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.019,
+  "top_tokens": [
+   [
+    ".",
+    -0.064
+   ],
+   [
+    "ney",
+    -0.055
+   ],
+   [
+    "\u2019",
+    0.04
+   ],
+   [
+    ".",
+    -0.037
+   ],
+   [
+    "ison",
+    -0.036
+   ],
+   [
+    "!",
+    -0.031
+   ],
+   [
+    "!",
+    -0.028
+   ],
+   [
+    ",",
+    -0.027
+   ]
+  ],
+  "text_head": "allison janney celebrates her oscar win with shirtless hunks on 'ellen' - watch! Allison Janney is celebrating her big win! The I, Tonya actress makes an appearance on The Ellen DeGeneres Show on Monday (March 19). During her appearance, Al"
+ },
+ {
+  "id": "MC-Fake:gossipcop-887582",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.058
+   ],
+   [
+    ".",
+    -0.044
+   ],
+   [
+    ".",
+    -0.037
+   ],
+   [
+    ".",
+    -0.033
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    "\u2581Vogue",
+    -0.018
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    "\u2581\u2014",
+    -0.013
+   ]
+  ],
+  "text_head": "powerful people in entertainment who have been accused of sexual harassment or assault Trigger Warning: This post contains language about sexual harassment and assault that some readers may find disturbing. On October 5, 2017, The New York "
+ },
+ {
+  "id": "MC-Fake:RealHealth-579660",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.13
+   ],
+   [
+    ".",
+    -0.107
+   ],
+   [
+    ".",
+    -0.057
+   ],
+   [
+    "\u2581.",
+    -0.022
+   ],
+   [
+    "in",
+    0.021
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    ".",
+    -0.014
+   ]
+  ],
+  "text_head": "Ginger Zee and Patti Murin Talk Mental Health Battles Two of Hollywood\u2019s outspoken and passionate advocates about mental health are coming together to talk about their experiences and how they work to remove the stigma surrounding mental he"
+ },
+ {
+  "id": "MC-Fake:RealHealth-944141",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "Reuters",
+    -0.046
+   ],
+   [
+    ",",
+    -0.032
+   ],
+   [
+    ",",
+    -0.03
+   ],
+   [
+    ",",
+    -0.024
+   ],
+   [
+    "\u2581-",
+    -0.023
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    "-",
+    0.02
+   ],
+   [
+    ".",
+    -0.016
+   ]
+  ],
+  "text_head": "U.S.-Cuban biotech venture created to bring new cancer therapies to USA HAVANA (Reuters) - U.S. and Cuban research institutes said on Wednesday they were creating the first joint U.S.-Cuban biotech venture to be headquartered on the Communi"
+ },
+ {
+  "id": "MC-Fake:RealHealth-866886",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.134
+   ],
+   [
+    ".",
+    0.066
+   ],
+   [
+    "CNN",
+    -0.045
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    ".",
+    0.027
+   ],
+   [
+    "\u2581(",
+    0.017
+   ],
+   [
+    ".",
+    -0.012
+   ],
+   [
+    ".",
+    -0.011
+   ]
+  ],
+  "text_head": "Hawaii Rep. Mark Takai dies after cancer battle Washington (CNN)Rep. Mark Takai of Hawaii has died after a battle with pancreatic cancer, his office announced Wednesday. He was 49. \"The Takai family thanks the people of Hawaii for their sup"
+ },
+ {
+  "id": "MC-Fake:gossipcop-953064",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ".",
+    -0.146
+   ],
+   [
+    ".",
+    -0.023
+   ],
+   [
+    "\u2581(",
+    -0.022
+   ],
+   [
+    "y",
+    -0.021
+   ],
+   [
+    "\u2581esp",
+    -0.02
+   ],
+   [
+    ",",
+    -0.017
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    ".",
+    -0.015
+   ]
+  ],
+  "text_head": "espys 2018 red carpet fashion: see celeb dresses, gowns With an unusually quiet week on the sports calendar (the NFL, NHL and NBA seasons are over, while the MLB in the midst of its All Star break and Wimbledon and the World Cup just wrappi"
+ },
+ {
+  "id": "MC-Fake:gossipcop-5411760543",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.883,
+  "top_tokens": [
+   [
+    ".",
+    -0.172
+   ],
+   [
+    ".",
+    -0.11
+   ],
+   [
+    "once",
+    0.044
+   ],
+   [
+    "\u2581Beyonce",
+    -0.02
+   ],
+   [
+    "y",
+    0.02
+   ],
+   [
+    "EB",
+    -0.018
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    "\u2581CEL",
+    0.013
+   ]
+  ],
+  "text_head": "folks lost their minds over how thick beyonce is\u2026.guess they forgot she recently birthed two whole people Beyonce decided to hit up a skating rink over the weekend and people lost it. Not just because she was out in a very public place, but"
+ },
+ {
+  "id": "MC-Fake:gossipcop-926903",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.033,
+  "top_tokens": [
+   [
+    ".",
+    -0.231
+   ],
+   [
+    ".",
+    -0.052
+   ],
+   [
+    ".",
+    -0.034
+   ],
+   [
+    "yn",
+    -0.034
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    "ik",
+    -0.012
+   ],
+   [
+    "fia",
+    -0.012
+   ],
+   [
+    ")",
+    0.011
+   ]
+  ],
+  "text_head": "zayn malik fans think sofia jamora in his \"let me\" video looks like ex gigi hadid Zayn Malik released the action-packed video for his new single \"Let Me\" on Thursday (April 12), and fans were quick to notice a face that was quite similar to"
+ },
+ {
+  "id": "MC-Fake:RealPolitics-90820",
+  "dataset": "mc_fake",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.148
+   ],
+   [
+    ".",
+    0.11
+   ],
+   [
+    ".",
+    0.095
+   ],
+   [
+    ".",
+    0.086
+   ],
+   [
+    ".",
+    0.019
+   ],
+   [
+    "Reuters",
+    -0.018
+   ],
+   [
+    ".",
+    -0.012
+   ],
+   [
+    ".",
+    0.009
+   ]
+  ],
+  "text_head": "Exclusive: White House delivered EU-skeptic message before Pence visit - sources BERLIN (Reuters) - In the week before U.S. Vice President Mike Pence visited Brussels and pledged America\u2019s \u201csteadfast and enduring\u201d commitment to the European"
+ },
+ {
+  "id": "MC-Fake:gossipcop-920667",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.141,
+  "top_tokens": [
+   [
+    ".",
+    0.252
+   ],
+   [
+    ".",
+    -0.052
+   ],
+   [
+    "yn",
+    -0.021
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    "id",
+    -0.009
+   ],
+   [
+    "\u2581Jonas",
+    -0.009
+   ],
+   [
+    ",",
+    -0.009
+   ],
+   [
+    "\u2581Jonas",
+    -0.007
+   ]
+  ],
+  "text_head": "zayn malik and gigi hadid's relationship timeline You'd be forgiven for not knowing Zayn Malik and Gigi Hadid's relationship timeline off by heart. So here's a detailed look back at the highs and lows of their love story so far, starting wa"
+ },
+ {
+  "id": "MC-Fake:RealPolitics-1850",
+  "dataset": "mc_fake",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ",",
+    -0.064
+   ],
+   [
+    "S",
+    0.045
+   ],
+   [
+    "\u2581economic",
+    0.037
+   ],
+   [
+    ".",
+    -0.034
+   ],
+   [
+    ",",
+    -0.033
+   ],
+   [
+    "Reuters",
+    -0.028
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    ",",
+    -0.027
+   ]
+  ],
+  "text_head": "White House economic adviser Hassett still looking at 3% GDP year: CNBC (Reuters) - U.S. gross domestic product could still grow at a 3% rate this year, White House Council of Economic Advisers Chairman Kevin Hassett told CNBC on Friday. \u201cW"
+ },
+ {
+  "id": "MC-Fake:gossipcop-941658",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.013,
+  "top_tokens": [
+   [
+    ".",
+    -0.047
+   ],
+   [
+    ".",
+    -0.032
+   ],
+   [
+    ".",
+    -0.031
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    "\u2581bent",
+    -0.025
+   ],
+   [
+    "ley",
+    -0.021
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    ",",
+    0.016
+   ]
+  ],
+  "text_head": "dierks bentley + cassidy black -- country love stories Dierks Bentley and Cassidy Black first met in eighth grade at Ingleside Middle School in Phoenix, Ariz. The country crooner fell hard but admits he \"wasn't cool enough\" yet for his futu"
+ },
+ {
+  "id": "MC-Fake:RealCovid_000629",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.184
+   ],
+   [
+    "virus",
+    -0.046
+   ],
+   [
+    "Reuters",
+    -0.041
+   ],
+   [
+    ".",
+    0.034
+   ],
+   [
+    "\u2581corona",
+    -0.025
+   ],
+   [
+    ".",
+    0.023
+   ],
+   [
+    "virus",
+    -0.019
+   ],
+   [
+    "\u2581corona",
+    -0.017
+   ]
+  ],
+  "text_head": "Chinese players will not be banned from events due to coronavirus: BWF (Reuters) - The Badminton World Federation (BWF) has said that it will not restrict Chinese players from participating in international competitions due to the coronavir"
+ },
+ {
+  "id": "MC-Fake:gossipcop-2897235761",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.921,
+  "top_tokens": [
+   [
+    ".",
+    0.194
+   ],
+   [
+    ".",
+    0.159
+   ],
+   [
+    ".",
+    0.107
+   ],
+   [
+    ".",
+    0.053
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    "\u2581and",
+    0.012
+   ],
+   [
+    ".",
+    -0.009
+   ],
+   [
+    "\u2019",
+    0.008
+   ]
+  ],
+  "text_head": "are kim kardashian and kanye west actually heading for divorce? an investigation. A recent comment from Kanye West has some fans convinced that Kim Kardashian and Kanye West are heading for divorce. In an interview with the New York Times, "
+ },
+ {
+  "id": "MC-Fake:SyriaHealth-152949",
+  "dataset": "mc_fake",
+  "domain": "conflict",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "?",
+    -0.03
+   ],
+   [
+    ".",
+    0.025
+   ],
+   [
+    ".",
+    0.023
+   ],
+   [
+    ".",
+    0.022
+   ],
+   [
+    ".",
+    0.022
+   ],
+   [
+    ".",
+    0.022
+   ],
+   [
+    ".",
+    0.022
+   ],
+   [
+    ".",
+    -0.02
+   ]
+  ],
+  "text_head": "Questions That Remain After Trump's Sudden Syria Missile Strike When Donald Trump launched 59 cruise missiles at a Syrian airbase on Thursday night, it was in one sense entirely ordinary. Politicians on both sides of the aisle, including Hi"
+ },
+ {
+  "id": "MC-Fake:news_reviews_00032",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.613,
+  "top_tokens": [
+   [
+    ".",
+    -0.081
+   ],
+   [
+    ".",
+    -0.051
+   ],
+   [
+    "\u2581will",
+    0.026
+   ],
+   [
+    ".",
+    -0.025
+   ],
+   [
+    "\u2581pediatricians",
+    0.019
+   ],
+   [
+    ",",
+    -0.014
+   ],
+   [
+    "\u2581will",
+    0.013
+   ],
+   [
+    ",",
+    -0.013
+   ]
+  ],
+  "text_head": "first-ever rapid response test for levels of bifidobacterium in baby's gut microbiome Evivo's quick and non-invasive test measures the presence of markers that indicate low or high levels of good Bifidobacterium , such as acetate and lactat"
+ },
+ {
+  "id": "MC-Fake:SyriaHealth-426778",
+  "dataset": "mc_fake",
+  "domain": "conflict",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.1
+   ],
+   [
+    ".",
+    -0.065
+   ],
+   [
+    ".",
+    -0.037
+   ],
+   [
+    ".",
+    -0.036
+   ],
+   [
+    ".",
+    -0.035
+   ],
+   [
+    ".",
+    -0.031
+   ],
+   [
+    ".",
+    -0.029
+   ],
+   [
+    "Reuters",
+    -0.025
+   ]
+  ],
+  "text_head": "Rebels seek ceasefire with Syrian army closer to retaking Aleppo BEIRUT (Reuters) - Syrian rebels in besieged eastern Aleppo called on Wednesday for an immediate five-day ceasefire and the evacuation of civilians and wounded, but gave no in"
+ },
+ {
+  "id": "MC-Fake:gossipcop-9489003614",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.473,
+  "top_tokens": [
+   [
+    ".",
+    -0.104
+   ],
+   [
+    ".",
+    -0.05
+   ],
+   [
+    "\u2581E",
+    -0.039
+   ],
+   [
+    ".",
+    0.03
+   ],
+   [
+    ",",
+    -0.029
+   ],
+   [
+    "\u2581jenn",
+    -0.027
+   ],
+   [
+    "\u2581jenn",
+    -0.027
+   ],
+   [
+    ".",
+    0.023
+   ]
+  ],
+  "text_head": "kylie jenner reportedly an emotional wreck following caitlyn jenner\u2019s transition Kylie Jenner Reportedly An Emotional Wreck Following Caitlyn Jenner\u2019s Transition Not all of Caitlyn Jenner\u2018s kids are dealing with her transition gracefully. W"
+ },
+ {
+  "id": "MC-Fake:RealCovid_004583",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.156
+   ],
+   [
+    ".",
+    0.143
+   ],
+   [
+    ".",
+    0.052
+   ],
+   [
+    ",",
+    -0.022
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    ".",
+    0.013
+   ],
+   [
+    "\u2581will",
+    0.013
+   ],
+   [
+    ".",
+    0.012
+   ]
+  ],
+  "text_head": "Coronavirus outbreak: Mongolia closes China border Dr. Janette Nesheiwat explains the risks and symptoms. The government of Mongolia said Monday it has closed its large border with China, and Malaysia announced that it would bar visitors fr"
+ },
+ {
+  "id": "MC-Fake:RealHealth-697249",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "long",
+    -0.024
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    "telli",
+    -0.017
+   ],
+   [
+    ",",
+    0.017
+   ],
+   [
+    ",",
+    0.016
+   ],
+   [
+    ",",
+    0.014
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    ",",
+    0.013
+   ]
+  ],
+  "text_head": "Former WWE Star Matt Cappotelli Dies After Battle with Cancer Former WWE star Matt Cappotelli has died after a year-long battle with cancer. He was 38. Cappotelli was diagnosed with a brain tumor on June 27, 2017, according to a blog post w"
+ },
+ {
+  "id": "MC-Fake:SyriaHealth-752296",
+  "dataset": "mc_fake",
+  "domain": "conflict",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.224
+   ],
+   [
+    ".",
+    -0.014
+   ],
+   [
+    "\u2581.",
+    -0.013
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    "Reuters",
+    -0.013
+   ],
+   [
+    "\u2581.",
+    -0.011
+   ],
+   [
+    "\u2581area",
+    0.01
+   ],
+   [
+    "S",
+    0.01
+   ]
+  ],
+  "text_head": "Northern Syria administration says U.S. troop decision will protect area BEIRUT (Reuters) - The Kurdish-led administration that runs much of northern Syria welcomed a U.S. decision to keep 200 American troops in the country after a pullout,"
+ },
+ {
+  "id": "MC-Fake:gossipcop-850325",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.026,
+  "top_tokens": [
+   [
+    "!",
+    -0.028
+   ],
+   [
+    "y",
+    -0.027
+   ],
+   [
+    "\u2581mile",
+    -0.024
+   ],
+   [
+    ".",
+    -0.024
+   ],
+   [
+    ",",
+    0.022
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    "\u201d",
+    0.017
+   ]
+  ],
+  "text_head": "miley cyrus returns with new single \u2018nothing breaks like a heart\u2019 Miley Cyrus is back with another banger! The pop star and Mark Ronson released their new single and music video, \u201cNothing Breaks Like a Heart,\u201d on Thursday, November 29. This"
+ },
+ {
+  "id": "MC-Fake:RealCovid_005899",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    0.09
+   ],
+   [
+    ".",
+    0.071
+   ],
+   [
+    ".",
+    0.07
+   ],
+   [
+    ".",
+    0.062
+   ],
+   [
+    ".",
+    0.061
+   ],
+   [
+    ".",
+    0.056
+   ],
+   [
+    ".",
+    0.047
+   ],
+   [
+    ".",
+    0.045
+   ]
+  ],
+  "text_head": "Blanchard & Starrett: Coronavirus is moving faster than government bureaucrats \u2013 CDC must be more proactive Fox News medical correspondent Dr. Marc Siegel discusses the coronavirus as the death toll tops 1,000. The current Wuhan coronavirus"
+ },
+ {
+  "id": "MC-Fake:gossipcop-848667",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.009,
+  "top_tokens": [
+   [
+    ",",
+    -0.053
+   ],
+   [
+    ")",
+    0.045
+   ],
+   [
+    "!",
+    -0.043
+   ],
+   [
+    "s",
+    -0.037
+   ],
+   [
+    "\u2581guide",
+    -0.036
+   ],
+   [
+    ":",
+    -0.03
+   ],
+   [
+    ".",
+    -0.025
+   ],
+   [
+    "\u2581to",
+    -0.025
+   ]
+  ],
+  "text_head": "tom sandoval and ariana madix\u2019s guide to the kentucky derby: how to eat, drink and party all weekend long Bust out the big hats and bright outfits: The 2017 Kentucky Derby is officially here! If you haven\u2019t marked it on your calendars yet, "
+ },
+ {
+  "id": "MC-Fake:SyriaHealth-945418",
+  "dataset": "mc_fake",
+  "domain": "conflict",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.087
+   ],
+   [
+    ".",
+    -0.041
+   ],
+   [
+    ".",
+    0.039
+   ],
+   [
+    "Reuters",
+    -0.038
+   ],
+   [
+    "\u2581-",
+    -0.03
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    ".",
+    -0.02
+   ],
+   [
+    "torn",
+    -0.015
+   ]
+  ],
+  "text_head": "Olympics: From war-torn Syria to Rio, Mardini's giant leap BERLIN (Reuters) - Syrian teenager Yusra Mardini has faced obstacles as a refugee from a war-torn country that most people cannot even begin to imagine and now she wants to go the R"
+ },
+ {
+  "id": "MC-Fake:RealCovid_006515",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.23
+   ],
+   [
+    ".",
+    -0.075
+   ],
+   [
+    ".",
+    -0.039
+   ],
+   [
+    ".",
+    -0.018
+   ],
+   [
+    ".",
+    -0.018
+   ],
+   [
+    "\u2581Naomi",
+    -0.009
+   ],
+   [
+    ".",
+    -0.009
+   ],
+   [
+    ",",
+    -0.009
+   ]
+  ],
+  "text_head": "Naomi Campbell wears hazmat suit to airport: 'Safety first' Dr. Saralyn Marks, former White House senior adviser during the Ebola crisis, weighs in on \u2018The Daily Briefing.\u2019 Supermodel Naomi Campbell is the latest celebrity to take extreme p"
+ },
+ {
+  "id": "MC-Fake:RealCovid_006008",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.16
+   ],
+   [
+    ".",
+    -0.038
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    "\u2581China",
+    0.017
+   ],
+   [
+    "\u2581robots",
+    0.012
+   ],
+   [
+    "\u2581Corona",
+    0.01
+   ],
+   [
+    "/",
+    0.009
+   ]
+  ],
+  "text_head": "Coronavirus: China deploys drones, robots and big data in tech-savvy nationwide battle BEIJING/HONG KONG - From deploying drones to chide citizens for not donning masks in public to using robot assistants to deliver medical goods and conduc"
+ },
+ {
+  "id": "MC-Fake:gossipcop-858521",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.004,
+  "top_tokens": [
+   [
+    ".",
+    -0.136
+   ],
+   [
+    ".",
+    -0.059
+   ],
+   [
+    ".",
+    -0.015
+   ],
+   [
+    "\u2019",
+    -0.012
+   ],
+   [
+    "ina",
+    -0.011
+   ],
+   [
+    "m",
+    -0.01
+   ],
+   [
+    ",",
+    -0.01
+   ],
+   [
+    "\u2581christ",
+    -0.01
+   ]
+  ],
+  "text_head": "christina el moussa and boyfriend ant anstead show pda \u201cGreat to be jet lagged and back in Cali,\" says the Flip or Flop star's British boyfriend Christina El Moussa Is 'the Lucky One' in Love As She Reunites with Boyfriend Ant Anstead Ant A"
+ },
+ {
+  "id": "MC-Fake:story_reviews_00482",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    -0.222
+   ],
+   [
+    ".",
+    -0.082
+   ],
+   [
+    ".",
+    0.069
+   ],
+   [
+    ".",
+    -0.056
+   ],
+   [
+    ".",
+    -0.014
+   ],
+   [
+    ".",
+    0.012
+   ],
+   [
+    "\u2581could",
+    -0.009
+   ],
+   [
+    "\u2581implant",
+    -0.009
+   ]
+  ],
+  "text_head": "could this opioid implant really end the opioid epidemic? In a bid for New Hampshire voters, presidential candidates have called for compassion for heroin and painkiller addicts. Off the campaign trail, there's intense debate over using opi"
+ },
+ {
+  "id": "MC-Fake:RealHealth-732027",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.002,
+  "top_tokens": [
+   [
+    ".",
+    -0.056
+   ],
+   [
+    "\u2014",
+    -0.019
+   ],
+   [
+    "\u2581will",
+    0.018
+   ],
+   [
+    "\u2014",
+    -0.017
+   ],
+   [
+    ",",
+    -0.017
+   ],
+   [
+    "\u2014",
+    -0.014
+   ],
+   [
+    "\u2581which",
+    -0.011
+   ],
+   [
+    "and",
+    -0.011
+   ]
+  ],
+  "text_head": "How to Ease Withdrawal Symptoms When You Quit Sugar, According to a Nutritionist Eating less sugar can lower your risk of diabetes, help you lose weight, and even lead to brighter, younger-looking skin. But for most people, quitting the swe"
+ },
+ {
+  "id": "MC-Fake:gossipcop-898531523",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.578,
+  "top_tokens": [
+   [
+    ".",
+    0.137
+   ],
+   [
+    ".",
+    0.129
+   ],
+   [
+    ".",
+    0.052
+   ],
+   [
+    ".",
+    0.039
+   ],
+   [
+    ".",
+    0.034
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    "\u2581Pitt",
+    0.015
+   ],
+   [
+    "ina",
+    -0.014
+   ]
+  ],
+  "text_head": "angelina jolie's nanny breaks silence to claim she is unfairly demonizing brad pitt Angelina Jolie's former nanny has broken her silence to dramatically call on the actress to end her war with husband Brad Pitt. Devastated Krisann Morel say"
+ },
+ {
+  "id": "MC-Fake:gossipcop-892998",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.02,
+  "top_tokens": [
+   [
+    ".",
+    -0.055
+   ],
+   [
+    ".",
+    -0.045
+   ],
+   [
+    ".",
+    -0.036
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    ",",
+    0.021
+   ],
+   [
+    ",",
+    0.017
+   ],
+   [
+    "\u2581opens",
+    -0.016
+   ],
+   [
+    "\u2019",
+    -0.015
+   ]
+  ],
+  "text_head": "aly raisman opens up about sexual abuse by usa gymnastics doctor larry nassar On Jan. 24, 2018, Larry Nassar was sentenced in Michigan state court to 40 years to 175 years in prison on criminal sexual conduct charges. He is also serving a f"
+ },
+ {
+  "id": "MC-Fake:Covid_0285",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.096,
+  "top_tokens": [
+   [
+    ".",
+    -0.104
+   ],
+   [
+    "virus",
+    -0.037
+   ],
+   [
+    "rona",
+    -0.036
+   ],
+   [
+    "\u2581Corona",
+    -0.02
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    "\u2581I",
+    0.016
+   ],
+   [
+    "\u2581China",
+    0.015
+   ],
+   [
+    "virus",
+    -0.015
+   ]
+  ],
+  "text_head": "Watch: How China Is Enforcing The Corona Quarantine By Drone The country is using drones, specifically DJI drones with front-mounted speakers, to fly around towns and yell at anyone who isn\u2019t wearing a mask China has found new ways to respo"
+ },
+ {
+  "id": "MC-Fake:gossipcop-2727285145",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.826,
+  "top_tokens": [
+   [
+    ".",
+    -0.06
+   ],
+   [
+    ".",
+    -0.033
+   ],
+   [
+    "x",
+    -0.033
+   ],
+   [
+    "ney",
+    -0.021
+   ],
+   [
+    "\u2581Insider",
+    -0.017
+   ],
+   [
+    "\u2019",
+    0.015
+   ],
+   [
+    "\u2019",
+    0.014
+   ],
+   [
+    ".",
+    -0.013
+   ]
+  ],
+  "text_head": "courteney cox, justin theroux want you to leave jennifer aniston out of the brangelina split Courteney Cox, Justin Theroux want you to leave Jennifer Aniston out of the Brangelina split Jennifer Aniston\u2019s hubby, Justin Theroux, and her best"
+ },
+ {
+  "id": "MC-Fake:politifact13827",
+  "dataset": "mc_fake",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.997,
+  "top_tokens": [
+   [
+    ".",
+    0.058
+   ],
+   [
+    ".",
+    0.055
+   ],
+   [
+    "\u201d",
+    0.046
+   ],
+   [
+    "opi",
+    -0.029
+   ],
+   [
+    "\u2019",
+    0.029
+   ],
+   [
+    "\u201d",
+    0.026
+   ],
+   [
+    "\u2581\u201c",
+    0.023
+   ],
+   [
+    "\u2019",
+    0.018
+   ]
+  ],
+  "text_head": "whoopi goldberg: navy seal widow was \u201clooking for attention\u201d Whoopi Goldberg is in hot water after comments she made Wednesday regarding the Navy SEAL widow that was honored last night during President Donald Trump\u2019s historical speech. \u201cShe"
+ },
+ {
+  "id": "MC-Fake:gossipcop-923659",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.055,
+  "top_tokens": [
+   [
+    ".",
+    -0.157
+   ],
+   [
+    ".",
+    -0.115
+   ],
+   [
+    "'",
+    0.021
+   ],
+   [
+    ")",
+    0.019
+   ],
+   [
+    ".",
+    -0.018
+   ],
+   [
+    "h",
+    -0.017
+   ],
+   [
+    ":",
+    -0.013
+   ],
+   [
+    "\u2581\"",
+    -0.013
+   ]
+  ],
+  "text_head": "savannah guthrie apologizes for her live 'today' show swear Yes, Savannah your microphone is definitely working. Today show host Savannah Guthrie took to Twitter Wednesday to apologize for accidentally swearing on live TV, when she wasn't a"
+ },
+ {
+  "id": "MC-Fake:gossipcop-896519",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.008,
+  "top_tokens": [
+   [
+    "\u2581E",
+    -0.026
+   ],
+   [
+    ".",
+    -0.025
+   ],
+   [
+    "cha",
+    -0.025
+   ],
+   [
+    "ton",
+    -0.023
+   ],
+   [
+    "!",
+    -0.022
+   ],
+   [
+    "!",
+    -0.017
+   ],
+   [
+    "\u2581E",
+    -0.017
+   ],
+   [
+    "\u2019",
+    0.015
+   ]
+  ],
+  "text_head": "mischa barton's ex-boyfriend agrees he won't release sex tape Mischa Barton\u2019s ex-boyfriend agreed to not release a sex tape of the actress but still won't admit he has an intimate video and photos of her, court documents stated on Monday. A"
+ },
+ {
+  "id": "MC-Fake:RealCovid_005734",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.146
+   ],
+   [
+    ".",
+    -0.054
+   ],
+   [
+    ".",
+    -0.03
+   ],
+   [
+    ".",
+    -0.027
+   ],
+   [
+    ".",
+    -0.026
+   ],
+   [
+    "\u2581-",
+    -0.023
+   ],
+   [
+    "virus",
+    -0.02
+   ],
+   [
+    "RON",
+    -0.02
+   ]
+  ],
+  "text_head": "Pence, tapped to lead coronavirus response, vows US \u2018ready for anything\u2019 Vice President Mike Pence speaks at CPAC about the potential impact of coronavirus and steps being taken to protect the American people Vice President Pence, on the he"
+ },
+ {
+  "id": "MC-Fake:gossipcop-916090",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ".",
+    -0.065
+   ],
+   [
+    ".",
+    0.024
+   ],
+   [
+    "\u2581flash",
+    -0.023
+   ],
+   [
+    ")",
+    0.023
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    ",",
+    -0.018
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    ".",
+    -0.012
+   ]
+  ],
+  "text_head": "walking dead recap: flash-forward to new characters, new couples and (finally!) the arrival of the whisperers So this is what life after Rick looks like, huh? Intriguing. Picking up where \u201cWhat Comes After\u201d left off, Sunday\u2019s episode of The"
+ },
+ {
+  "id": "MC-Fake:RealPolitics-2800",
+  "dataset": "mc_fake",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.003,
+  "top_tokens": [
+   [
+    ".",
+    0.131
+   ],
+   [
+    ".",
+    0.113
+   ],
+   [
+    ".",
+    0.102
+   ],
+   [
+    ".",
+    0.101
+   ],
+   [
+    ".",
+    0.05
+   ],
+   [
+    ".",
+    0.035
+   ],
+   [
+    "\u2581Trump",
+    -0.009
+   ],
+   [
+    "\u201d",
+    -0.007
+   ]
+  ],
+  "text_head": "Meet the Trump voters who want more government health care, not less Meet the Trump voters who want more government health care, not less Meet the Trump voters who want more government health care, not less CANTON, North Carolina \u2014 Marina H"
+ },
+ {
+  "id": "MC-Fake:gossipcop-871201",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.014,
+  "top_tokens": [
+   [
+    ".",
+    0.159
+   ],
+   [
+    ".",
+    0.099
+   ],
+   [
+    ".",
+    0.047
+   ],
+   [
+    "\u2581is",
+    0.023
+   ],
+   [
+    "\u2581van",
+    -0.02
+   ],
+   [
+    ".",
+    -0.019
+   ],
+   [
+    "\u2581doing",
+    0.015
+   ],
+   [
+    "\u2581james",
+    -0.015
+   ]
+  ],
+  "text_head": "what is james van der beek doing in what would diplo do? James Van Der Beek, not Diplo, stars in What Would Diplo Do? (Photo: Shane McCauley/Viceland) Reviews What Would Diplo Do? B- What Would Diplo Do? Season 1 Advertisement The best cele"
+ },
+ {
+  "id": "MC-Fake:gossipcop-953191",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.065,
+  "top_tokens": [
+   [
+    ".",
+    -0.256
+   ],
+   [
+    "ane",
+    -0.035
+   ],
+   [
+    ",",
+    -0.025
+   ],
+   [
+    ",",
+    -0.02
+   ],
+   [
+    "\u2019",
+    0.019
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    "\u2581.",
+    -0.015
+   ],
+   [
+    ".",
+    -0.013
+   ]
+  ],
+  "text_head": "diane von furstenberg thinks viagra is \u2018the worst thing\u2019 Diane von Furstenberg. Photo: Darren Gerrish/WireImage According to Diane von Furstenberg, Viagra is the \u201cworst thing that has happened to women in the last 15 years.\u201d In a new interv"
+ },
+ {
+  "id": "MC-Fake:Covid_2935",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.017,
+  "top_tokens": [
+   [
+    ".",
+    -0.093
+   ],
+   [
+    ".",
+    -0.088
+   ],
+   [
+    ".",
+    -0.044
+   ],
+   [
+    "virus",
+    -0.032
+   ],
+   [
+    "\u2581corona",
+    -0.028
+   ],
+   [
+    "virus",
+    -0.016
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    ".",
+    -0.015
+   ]
+  ],
+  "text_head": "B.C. confirms first case of coronavirus 2019-nCoV The first case of the novel coronavirus 2019-nCoV, which is rapidly spreading across the globe and has killed at least 106 people, has shown up in British Columbia. B.C. provincial health of"
+ },
+ {
+  "id": "MC-Fake:RealCovid_004573",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "Reuters",
+    -0.065
+   ],
+   [
+    ",",
+    -0.058
+   ],
+   [
+    "'",
+    0.055
+   ],
+   [
+    ".",
+    -0.047
+   ],
+   [
+    ".",
+    -0.042
+   ],
+   [
+    ",",
+    -0.041
+   ],
+   [
+    ",",
+    -0.035
+   ],
+   [
+    "\u2581-",
+    -0.032
+   ]
+  ],
+  "text_head": "China's Wuhan city revises up total coronavirus death toll by 1,290 SHANGHAI (Reuters) - China\u2019s Wuhan city, the epicentre of the coronavirus outbreak, said on Friday it had revised up its total coronavirus death toll by 1,290, according to"
+ },
+ {
+  "id": "MC-Fake:RealPolitics-2641133",
+  "dataset": "mc_fake",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.121
+   ],
+   [
+    ".",
+    -0.071
+   ],
+   [
+    ".",
+    -0.034
+   ],
+   [
+    ".",
+    -0.032
+   ],
+   [
+    ".",
+    -0.017
+   ],
+   [
+    ".",
+    0.015
+   ],
+   [
+    ".",
+    -0.013
+   ],
+   [
+    ",",
+    0.011
+   ]
+  ],
+  "text_head": "'The Hunt' is not about elite liberals hunting deplorables Insider was one of the first to see the controversial thriller, \"The Hunt.\"Universal announced on Tuesday that it's releasing the movie on March 13. Previously, the movie was to ope"
+ },
+ {
+  "id": "MC-Fake:RealCovid_006361",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    "virus",
+    -0.092
+   ],
+   [
+    "virus",
+    -0.039
+   ],
+   [
+    "\u2581corona",
+    -0.035
+   ],
+   [
+    "\u2581-",
+    -0.018
+   ],
+   [
+    "\u2581-",
+    -0.017
+   ],
+   [
+    "virus",
+    -0.016
+   ],
+   [
+    ".",
+    -0.016
+   ],
+   [
+    "\u2581corona",
+    -0.014
+   ]
+  ],
+  "text_head": "Hunter Biden cites coronavirus, wife's pregnancy to avoid deposition until after Election Day Are establishment Democrats and their allies in the media doing what they can to protect Democratic presidential candidate Joe Biden from looking "
+ },
+ {
+  "id": "MC-Fake:RealPolitics-193",
+  "dataset": "mc_fake",
+  "domain": "politics",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.001,
+  "top_tokens": [
+   [
+    ".",
+    0.185
+   ],
+   [
+    ".",
+    0.162
+   ],
+   [
+    ".",
+    0.143
+   ],
+   [
+    ".",
+    0.064
+   ],
+   [
+    ".",
+    0.061
+   ],
+   [
+    ".",
+    0.013
+   ],
+   [
+    ".",
+    0.01
+   ],
+   [
+    ".",
+    -0.009
+   ]
+  ],
+  "text_head": "Today in Obamacare: why Republicans have a much tougher task than Obama did Members of Congress meeting constituents in their district this week are likely to encounter an unusual dynamic: Obamacare supporters who suddenly seem to outnumber"
+ },
+ {
+  "id": "MC-Fake:RealHealth-197280",
+  "dataset": "mc_fake",
+  "domain": "health",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    "\u2581\"",
+    0.04
+   ],
+   [
+    "\u2581.",
+    -0.038
+   ],
+   [
+    "\"",
+    0.031
+   ],
+   [
+    ",",
+    0.028
+   ],
+   [
+    "e",
+    0.025
+   ],
+   [
+    ".",
+    -0.021
+   ],
+   [
+    ".",
+    0.02
+   ],
+   [
+    "\u2581the",
+    -0.018
+   ]
+  ],
+  "text_head": "Powers Boothe Died of Heart Attack Due to Pancreatic Cancer, According to Death Certificate Powers Boothe was suffering from pancreatic cancer, which led to him dying from cardiopulmonary arrest ... this according to the death certificate o"
+ },
+ {
+  "id": "MC-Fake:gossipcop-901252",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.014,
+  "top_tokens": [
+   [
+    "ina",
+    -0.033
+   ],
+   [
+    "era",
+    -0.031
+   ],
+   [
+    ".",
+    -0.028
+   ],
+   [
+    ",",
+    -0.028
+   ],
+   [
+    ".",
+    -0.023
+   ],
+   [
+    ".",
+    -0.018
+   ],
+   [
+    "!",
+    -0.018
+   ],
+   [
+    "guil",
+    -0.017
+   ]
+  ],
+  "text_head": "christina aguilera is pretty in pink at birthday party that includes a 'real housewives' twister mat! Jennifer Lawrence is going to want Christina Aguilera's party favor! The pop star turned 37 on Monday and celebrated by having a party tha"
+ },
+ {
+  "id": "MC-Fake:politifact14112",
+  "dataset": "mc_fake",
+  "domain": "politics",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.811,
+  "top_tokens": [
+   [
+    ".",
+    -0.066
+   ],
+   [
+    ".",
+    -0.049
+   ],
+   [
+    ".",
+    -0.045
+   ],
+   [
+    "\u2581CNN",
+    0.03
+   ],
+   [
+    "\u2581breaking",
+    0.029
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    "\u2581foundation",
+    -0.018
+   ],
+   [
+    "We",
+    -0.016
+   ]
+  ],
+  "text_head": "breaking: clinton foundation cargo ship raided at port of baltimore reveals sick secret A ship owned and operated by the Clinton Foundation was raided as it arrived from Africa this morning at the Port of Baltimore. The ship, which was supp"
+ },
+ {
+  "id": "MC-Fake:SyriaHealth-607905",
+  "dataset": "mc_fake",
+  "domain": "conflict",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.0,
+  "top_tokens": [
+   [
+    ".",
+    -0.152
+   ],
+   [
+    ".",
+    -0.145
+   ],
+   [
+    ".",
+    -0.076
+   ],
+   [
+    ".",
+    -0.05
+   ],
+   [
+    ".",
+    -0.022
+   ],
+   [
+    ".",
+    0.02
+   ],
+   [
+    "\u2581.",
+    -0.016
+   ],
+   [
+    "\u2581say",
+    0.014
+   ]
+  ],
+  "text_head": "Syrian rebels say army attacks wrecking ceasefire efforts AMMAN (Reuters) - Syrian rebel groups who have participated in peace talks said on Sunday that an upsurge in Syrian army shelling and bombing was wrecking the prospects of maintainin"
+ },
+ {
+  "id": "MC-Fake:gossipcop-951090",
+  "dataset": "mc_fake",
+  "domain": "entertainment",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.034,
+  "top_tokens": [
+   [
+    "my",
+    -0.054
+   ],
+   [
+    "\u2581em",
+    -0.04
+   ],
+   [
+    "\u2581here",
+    -0.027
+   ],
+   [
+    "\u2581a",
+    0.018
+   ],
+   [
+    "\u25812018",
+    -0.016
+   ],
+   [
+    "\u2581awards",
+    -0.016
+   ],
+   [
+    "\u2581and",
+    -0.015
+   ],
+   [
+    ".",
+    -0.014
+   ]
+  ],
+  "text_head": "emmy awards 2018: here\u2019s a list of the winners and nominees advertisement advertisement The 70th Emmy Awards have already created some historic moments. In the lead up to tonight\u2019s main show, several Emmys were awarded\u2013most notably to John "
+ },
+ {
+  "id": "pomt-11553",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.98,
+  "top_tokens": [
+   [
+    ".",
+    -0.173
+   ],
+   [
+    "Smoking",
+    0.141
+   ],
+   [
+    "\u2581in",
+    0.139
+   ],
+   [
+    "\u2581with",
+    -0.126
+   ],
+   [
+    "\"",
+    0.12
+   ],
+   [
+    "\u2581starting",
+    -0.089
+   ],
+   [
+    "\u2581cars",
+    0.069
+   ],
+   [
+    "\u2581illegal",
+    -0.032
+   ]
+  ],
+  "text_head": "\"Smoking in cars with children is illegal starting January 30, 2018.\""
+ },
+ {
+  "id": "snes-01744",
+  "dataset": "multifc",
+  "domain": "snes",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ".",
+    0.244
+   ],
+   [
+    "\u2581his",
+    -0.104
+   ],
+   [
+    "\u2581film",
+    -0.091
+   ],
+   [
+    "\u2581Jennifer",
+    0.082
+   ],
+   [
+    "\u2581due",
+    -0.065
+   ],
+   [
+    "\u2581disrespected",
+    0.057
+   ],
+   [
+    "\u2581fired",
+    0.055
+   ],
+   [
+    "\u2581Stan",
+    0.043
+   ]
+  ],
+  "text_head": "Stan Lee fired Jennifer Lawrence from an upcoming film due to his belief she disrespected President Trump."
+ },
+ {
+  "id": "tron-02241",
+  "dataset": "multifc",
+  "domain": "tron",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    "\u2581Increases",
+    0.402
+   ],
+   [
+    "\u2581Attacks",
+    0.167
+   ],
+   [
+    "\u2581&",
+    -0.159
+   ],
+   [
+    "\u2581Heart",
+    0.098
+   ],
+   [
+    "\u2581Stroke",
+    -0.088
+   ],
+   [
+    "\u2581Bull",
+    -0.046
+   ],
+   [
+    "\u2581Red",
+    -0.039
+   ],
+   [
+    "s",
+    -0.002
+   ]
+  ],
+  "text_head": "Red Bull Increases Heart Attacks & Strokes"
+ },
+ {
+  "id": "pomt-12371",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.14,
+  "top_tokens": [
+   [
+    ".",
+    0.165
+   ],
+   [
+    "\u2581\"",
+    0.16
+   ],
+   [
+    "\u2581(",
+    0.127
+   ],
+   [
+    ")",
+    0.121
+   ],
+   [
+    "\u2581Agreement",
+    -0.059
+   ],
+   [
+    "\"",
+    0.056
+   ],
+   [
+    "the",
+    -0.049
+   ],
+   [
+    "\u2581of",
+    0.039
+   ]
+  ],
+  "text_head": "\"A majority of President Trump's supporters and voters wanted (the United States) to stay in\" the Paris Agreement."
+ },
+ {
+  "id": "vogo-00468",
+  "dataset": "multifc",
+  "domain": "vogo",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.132,
+  "top_tokens": [
+   [
+    ":",
+    0.197
+   ],
+   [
+    ".",
+    -0.091
+   ],
+   [
+    "\u2581be",
+    -0.067
+   ],
+   [
+    "\u201d",
+    0.065
+   ],
+   [
+    "-",
+    0.061
+   ],
+   [
+    "\u2581legends",
+    -0.058
+   ],
+   [
+    "\u2581in",
+    0.038
+   ],
+   [
+    "the",
+    -0.029
+   ]
+  ],
+  "text_head": "Statement: There used to be an unidentified petroleum-based build up underneath San Diego called \u201cthe blob,\u201d readers said in response to our call to Fact Check local urban legends."
+ },
+ {
+  "id": "pomt-02119",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.861,
+  "top_tokens": [
+   [
+    ".",
+    0.229
+   ],
+   [
+    ",",
+    0.115
+   ],
+   [
+    ".",
+    0.071
+   ],
+   [
+    "\u2581\"",
+    0.069
+   ],
+   [
+    "\"",
+    0.069
+   ],
+   [
+    "\u2581attacks",
+    0.051
+   ],
+   [
+    "\u2581died",
+    0.043
+   ],
+   [
+    ".",
+    0.039
+   ]
+  ],
+  "text_head": "\"During the George W. Bush period, there were 13 attacks on various embassies and consulates around the world. Sixty people died.\""
+ },
+ {
+  "id": "pomt-07354",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.132,
+  "top_tokens": [
+   [
+    "\u2581over",
+    -0.181
+   ],
+   [
+    "\u2581last",
+    -0.116
+   ],
+   [
+    "\u2581growth",
+    0.116
+   ],
+   [
+    "\u2581the",
+    -0.107
+   ],
+   [
+    ".",
+    -0.1
+   ],
+   [
+    "\u2581decade",
+    -0.065
+   ],
+   [
+    "\u2581of",
+    0.057
+   ],
+   [
+    "\u2581to",
+    0.046
+   ]
+  ],
+  "text_head": "Says close to 90 percent of the population growth in Texas over the last decade was non-Anglo."
+ },
+ {
+  "id": "pomt-03501",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.414,
+  "top_tokens": [
+   [
+    "should",
+    -0.119
+   ],
+   [
+    "\"",
+    0.097
+   ],
+   [
+    "\u2581of",
+    0.065
+   ],
+   [
+    "\u2581implied",
+    0.059
+   ],
+   [
+    "\u2581Says",
+    0.05
+   ],
+   [
+    "\u2581the",
+    -0.049
+   ],
+   [
+    "\u2581cash",
+    0.048
+   ],
+   [
+    "\u2581be",
+    0.047
+   ]
+  ],
+  "text_head": "Says Gov. John Kasich implied that a portion of workers\u2019 compensation rebates to employers \"should be directed back to him in the form of campaign cash.\""
+ },
+ {
+  "id": "pomt-04346",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.669,
+  "top_tokens": [
+   [
+    ",",
+    0.085
+   ],
+   [
+    "class",
+    0.079
+   ],
+   [
+    "-",
+    0.07
+   ],
+   [
+    "\u2581per",
+    -0.061
+   ],
+   [
+    "\"",
+    -0.053
+   ],
+   [
+    "3",
+    0.047
+   ],
+   [
+    ".",
+    -0.045
+   ],
+   [
+    ".",
+    0.044
+   ]
+  ],
+  "text_head": "Says U.S. Senate rival Tammy Baldwin supports a \"tax increase that President Obama says\" would cost middle-class families $3,000 per year."
+ },
+ {
+  "id": "pomt-04632",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    ",",
+    0.249
+   ],
+   [
+    ",",
+    0.207
+   ],
+   [
+    "\u2581a",
+    -0.072
+   ],
+   [
+    "\u2581and",
+    -0.055
+   ],
+   [
+    ".",
+    0.051
+   ],
+   [
+    "\u2581had",
+    -0.047
+   ],
+   [
+    "\u2581Obama",
+    0.046
+   ],
+   [
+    "\u2581were",
+    -0.045
+   ]
+  ],
+  "text_head": "Under Obama, home values in Florida collapsed, construction jobs were lost and the state had a high foreclosure rate."
+ },
+ {
+  "id": "tron-00693",
+  "dataset": "multifc",
+  "domain": "tron",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.43,
+  "top_tokens": [
+   [
+    "\u2581versus",
+    -0.35
+   ],
+   [
+    "\u2581the",
+    0.194
+   ],
+   [
+    "\u2581politicians",
+    0.108
+   ],
+   [
+    "\u2581stars",
+    -0.095
+   ],
+   [
+    "\u2581of",
+    0.093
+   ],
+   [
+    "\u2581the",
+    0.074
+   ],
+   [
+    "\u2581the",
+    -0.04
+   ],
+   [
+    "\u2581Comparing",
+    0.036
+   ]
+  ],
+  "text_head": "Comparing the backgrounds of the stars versus the politicians"
+ },
+ {
+  "id": "pomt-10261",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.151,
+  "top_tokens": [
+   [
+    "\"",
+    0.23
+   ],
+   [
+    ".",
+    0.134
+   ],
+   [
+    "\u2581of",
+    0.098
+   ],
+   [
+    "\u2581\"",
+    0.089
+   ],
+   [
+    "\u2581health",
+    -0.082
+   ],
+   [
+    "\u2581than",
+    0.059
+   ],
+   [
+    "\u2581cents",
+    0.036
+   ],
+   [
+    "\u2581every",
+    -0.034
+   ]
+  ],
+  "text_head": "\"Less than four cents of every health care dollar is spent on prevention and public health.\""
+ },
+ {
+  "id": "pomt-08295",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.984,
+  "top_tokens": [
+   [
+    "\u2581benefits",
+    0.198
+   ],
+   [
+    "\u2581Says",
+    -0.17
+   ],
+   [
+    "\u2581Russ",
+    0.128
+   ],
+   [
+    "\u2581Security",
+    0.112
+   ],
+   [
+    "\u2581illegal",
+    0.107
+   ],
+   [
+    "\u2581to",
+    -0.104
+   ],
+   [
+    "\u2581to",
+    -0.062
+   ],
+   [
+    "\u2581give",
+    0.04
+   ]
+  ],
+  "text_head": "Says Russ Feingold voted to give Social Security benefits to illegal immigrants"
+ },
+ {
+  "id": "pomt-04396",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.31,
+  "top_tokens": [
+   [
+    "Bill",
+    -0.217
+   ],
+   [
+    ".",
+    -0.175
+   ],
+   [
+    "\u2581Nelson",
+    -0.174
+   ],
+   [
+    "\u2581times",
+    0.116
+   ],
+   [
+    "\u2581taxes",
+    0.101
+   ],
+   [
+    "\u2581\"",
+    -0.064
+   ],
+   [
+    "\u2581higher",
+    0.06
+   ],
+   [
+    "\u2581for",
+    -0.05
+   ]
+  ],
+  "text_head": "\"Bill Nelson voted for higher taxes 150 times.\""
+ },
+ {
+  "id": "pomt-12330",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.197,
+  "top_tokens": [
+   [
+    "There",
+    -0.131
+   ],
+   [
+    "\u2581currently",
+    -0.099
+   ],
+   [
+    "\u2581the",
+    -0.084
+   ],
+   [
+    "\u2581million",
+    -0.083
+   ],
+   [
+    "\u2581gap",
+    -0.079
+   ],
+   [
+    "\u2581this",
+    -0.061
+   ],
+   [
+    "\u2581are",
+    -0.057
+   ],
+   [
+    ".",
+    -0.048
+   ]
+  ],
+  "text_head": "\"There are currently 6 million jobs available in this country that are due in part to the skills gap.\""
+ },
+ {
+  "id": "pomt-09524",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.239,
+  "top_tokens": [
+   [
+    ".",
+    0.394
+   ],
+   [
+    "\u2581prosecuted",
+    0.14
+   ],
+   [
+    "\u2581The",
+    -0.098
+   ],
+   [
+    "\u2581courts",
+    0.083
+   ],
+   [
+    "\u2581in",
+    -0.054
+   ],
+   [
+    "\u2581federal",
+    -0.053
+   ],
+   [
+    "\u2581Bush",
+    -0.044
+   ],
+   [
+    "\u2581190",
+    -0.043
+   ]
+  ],
+  "text_head": "The Bush administration prosecuted 190 suspected terrorists in federal courts."
+ },
+ {
+  "id": "pomt-02266",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.304,
+  "top_tokens": [
+   [
+    "\u2581\"",
+    0.18
+   ],
+   [
+    "\"",
+    0.163
+   ],
+   [
+    "\u2581Medicare",
+    0.076
+   ],
+   [
+    "\u2581are",
+    0.07
+   ],
+   [
+    "\u2581Advantage",
+    -0.063
+   ],
+   [
+    "\u2581$",
+    0.053
+   ],
+   [
+    "s",
+    0.049
+   ],
+   [
+    "\u2581see",
+    0.047
+   ]
+  ],
+  "text_head": "\"Seniors enrolled in Medicare Advantage are going to see an average premium increase between $50 and $90 per month.\""
+ },
+ {
+  "id": "pomt-04829",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.94,
+  "top_tokens": [
+   [
+    ",",
+    0.144
+   ],
+   [
+    ",",
+    0.114
+   ],
+   [
+    "'",
+    0.103
+   ],
+   [
+    "\"",
+    0.048
+   ],
+   [
+    "\u2581Says",
+    0.047
+   ],
+   [
+    "\u2581\"",
+    0.045
+   ],
+   [
+    "If",
+    0.043
+   ],
+   [
+    "\u2581of",
+    0.041
+   ]
+  ],
+  "text_head": "Says President Obama said of the national debt, \"If I don't have this done in three years, then there's going to be a one-term proposition.\""
+ },
+ {
+  "id": "pomt-00913",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.106,
+  "top_tokens": [
+   [
+    "\u2019",
+    0.339
+   ],
+   [
+    ".",
+    -0.089
+   ],
+   [
+    ",",
+    0.068
+   ],
+   [
+    ",",
+    0.059
+   ],
+   [
+    "\u2581nation",
+    0.051
+   ],
+   [
+    "\u258110",
+    0.049
+   ],
+   [
+    "\u2581of",
+    0.041
+   ],
+   [
+    "\u2581Six",
+    0.039
+   ]
+  ],
+  "text_head": "Six of the nation\u2019s 10 wealthiest counties, \"according to median income, are in and around the Washington, D.C. area.\""
+ },
+ {
+  "id": "goop-00884",
+  "dataset": "multifc",
+  "domain": "goop",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "\u2019",
+    0.195
+   ],
+   [
+    "s",
+    0.153
+   ],
+   [
+    "\u2581Trying",
+    0.097
+   ],
+   [
+    "\u2581The",
+    0.097
+   ],
+   [
+    "\u2581Gomez",
+    0.082
+   ],
+   [
+    "\u2581Jennifer",
+    0.076
+   ],
+   [
+    "\u2581Aniston",
+    0.064
+   ],
+   [
+    "\u2581Steal",
+    0.048
+   ]
+  ],
+  "text_head": "Selena Gomez Trying To Steal Jennifer Aniston\u2019s Life And Justin Theroux?"
+ },
+ {
+  "id": "snes-01641",
+  "dataset": "multifc",
+  "domain": "snes",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.319,
+  "top_tokens": [
+   [
+    "s",
+    -0.136
+   ],
+   [
+    "?",
+    0.126
+   ],
+   [
+    "s",
+    -0.09
+   ],
+   [
+    "\u2581Are",
+    -0.085
+   ],
+   [
+    "\u2581Case",
+    -0.075
+   ],
+   [
+    "\u2581the",
+    -0.074
+   ],
+   [
+    "'",
+    -0.068
+   ],
+   [
+    "\u2581Hurricane",
+    -0.062
+   ]
+  ],
+  "text_head": "Are the Spires on Disney World's Cinderella Castle Removable in Case of Hurricane?"
+ },
+ {
+  "id": "pomt-02743",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.725,
+  "top_tokens": [
+   [
+    "\"",
+    0.176
+   ],
+   [
+    ",",
+    0.139
+   ],
+   [
+    "\u2581\"",
+    0.126
+   ],
+   [
+    "\u2581federal",
+    -0.11
+   ],
+   [
+    "\u2581passes",
+    0.095
+   ],
+   [
+    "\u2581medical",
+    -0.055
+   ],
+   [
+    "\u2581or",
+    0.05
+   ],
+   [
+    ".",
+    0.047
+   ]
+  ],
+  "text_head": "\"Whether the Amendment passes or not, the medical use of marijuana is a federal criminal offense.\""
+ },
+ {
+  "id": "goop-00382",
+  "dataset": "multifc",
+  "domain": "goop",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "\u201d",
+    0.218
+   ],
+   [
+    "\u2581\u201c",
+    0.188
+   ],
+   [
+    "\u201d",
+    0.113
+   ],
+   [
+    "\u2581Garner",
+    -0.091
+   ],
+   [
+    "\u2581Lindsay",
+    -0.052
+   ],
+   [
+    "\u2581That",
+    -0.049
+   ],
+   [
+    "us",
+    -0.043
+   ],
+   [
+    "\u2581Will",
+    -0.042
+   ]
+  ],
+  "text_head": "Jennifer Garner \u201cWarning\u201d Ben Affleck That Lindsay Shookus Will \u201cTrap\u201d Him?"
+ },
+ {
+  "id": "pomt-02639",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.139,
+  "top_tokens": [
+   [
+    "\"",
+    0.221
+   ],
+   [
+    "\u2581\"",
+    0.16
+   ],
+   [
+    ".",
+    0.103
+   ],
+   [
+    "\u2581nearly",
+    -0.081
+   ],
+   [
+    "\u2581buy",
+    0.05
+   ],
+   [
+    ",",
+    0.042
+   ],
+   [
+    "\u2581world",
+    -0.039
+   ],
+   [
+    "For",
+    0.038
+   ]
+  ],
+  "text_head": "\"For the first time in nearly two decades, we produce more oil here in the United States than we buy from the rest of the world.\""
+ },
+ {
+  "id": "pomt-14011",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.441,
+  "top_tokens": [
+   [
+    "\u2581hoax",
+    -0.134
+   ],
+   [
+    "Donald",
+    -0.119
+   ],
+   [
+    "\u2581change",
+    -0.107
+   ],
+   [
+    "\u2581climate",
+    -0.106
+   ],
+   [
+    "\u2581Trump",
+    -0.088
+   ],
+   [
+    "\u2581Chinese",
+    -0.084
+   ],
+   [
+    "\u2581says",
+    -0.066
+   ],
+   [
+    ".",
+    -0.066
+   ]
+  ],
+  "text_head": "Says \"Donald Trump says climate change is a hoax invented by the Chinese.\""
+ },
+ {
+  "id": "pomt-04263",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.033,
+  "top_tokens": [
+   [
+    ".",
+    -0.159
+   ],
+   [
+    "\u2581than",
+    -0.137
+   ],
+   [
+    "\u2581for",
+    -0.102
+   ],
+   [
+    ",",
+    0.094
+   ],
+   [
+    "\u2581school",
+    -0.049
+   ],
+   [
+    "\u2581past",
+    0.049
+   ],
+   [
+    "\u258120",
+    0.042
+   ],
+   [
+    "\u2581more",
+    -0.041
+   ]
+  ],
+  "text_head": "Says that over the past 20 years, Texas public school spending rose 142 percent and per-pupil spending more than tripled when adjusted for inflation."
+ },
+ {
+  "id": "snes-04900",
+  "dataset": "multifc",
+  "domain": "snes",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.999,
+  "top_tokens": [
+   [
+    "\u2581a",
+    -0.276
+   ],
+   [
+    "\u2581his",
+    -0.133
+   ],
+   [
+    "\u2581with",
+    -0.105
+   ],
+   [
+    "\u2581speech",
+    -0.105
+   ],
+   [
+    ".",
+    -0.094
+   ],
+   [
+    "\u2581political",
+    -0.074
+   ],
+   [
+    "\u2581of",
+    -0.054
+   ],
+   [
+    "\u2581Staff",
+    -0.044
+   ]
+  ],
+  "text_head": "Joint Chiefs of Staff Chairman Joseph Dunford announced his retirement with a fiery political resignation speech."
+ },
+ {
+  "id": "goop-02432",
+  "dataset": "multifc",
+  "domain": "goop",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ",",
+    0.28
+   ],
+   [
+    "\u2581Over",
+    0.107
+   ],
+   [
+    "\u2581Hadid",
+    0.095
+   ],
+   [
+    "?",
+    0.087
+   ],
+   [
+    "s",
+    0.083
+   ],
+   [
+    "\u2581Gigi",
+    0.076
+   ],
+   [
+    "\u2019",
+    0.072
+   ],
+   [
+    "\u2581Bella",
+    0.07
+   ]
+  ],
+  "text_head": "Gigi, Bella Hadid Upset Over Mom Yolanda\u2019s Book?"
+ },
+ {
+  "id": "pomt-07211",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.81,
+  "top_tokens": [
+   [
+    "\u2581Says",
+    0.145
+   ],
+   [
+    "ah",
+    -0.126
+   ],
+   [
+    "\u2581El",
+    -0.069
+   ],
+   [
+    "\u2581broke",
+    -0.061
+   ],
+   [
+    "\u2581for",
+    -0.057
+   ],
+   [
+    "en",
+    -0.049
+   ],
+   [
+    ".",
+    -0.043
+   ],
+   [
+    ")",
+    0.042
+   ]
+  ],
+  "text_head": "Says Wisconsin state Senate President Michael Elllis (R-Neenah) broke Senate rules during debate on a photo ID bill for voters."
+ },
+ {
+  "id": "pomt-03511",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.52,
+  "top_tokens": [
+   [
+    "\"",
+    0.144
+   ],
+   [
+    "\u2581wanted",
+    -0.131
+   ],
+   [
+    "\u2581\"",
+    0.122
+   ],
+   [
+    "\u2581was",
+    0.109
+   ],
+   [
+    "\u2581slaves",
+    -0.053
+   ],
+   [
+    ".",
+    0.049
+   ],
+   [
+    "\u2581Klan",
+    -0.045
+   ],
+   [
+    "\u2581Ku",
+    -0.042
+   ]
+  ],
+  "text_head": "The National Rifle Association was \"founded by religious leaders who wanted to protect freed slaves from the Ku Klux Klan.\""
+ },
+ {
+  "id": "tron-01423",
+  "dataset": "multifc",
+  "domain": "tron",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.047,
+  "top_tokens": [
+   [
+    "\u2581Awarded",
+    -0.247
+   ],
+   [
+    "75",
+    -0.161
+   ],
+   [
+    "\u2581Suit",
+    -0.122
+   ],
+   [
+    "\u2581Class",
+    -0.105
+   ],
+   [
+    "\u2581to",
+    -0.1
+   ],
+   [
+    "\u2581Action",
+    -0.087
+   ],
+   [
+    "ers",
+    -0.075
+   ],
+   [
+    "\u2581Drink",
+    -0.034
+   ]
+  ],
+  "text_head": "Class Action Suit Awarded $75 to Naked Juice Drinkers"
+ },
+ {
+  "id": "goop-01483",
+  "dataset": "multifc",
+  "domain": "goop",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "?",
+    0.296
+   ],
+   [
+    ",",
+    0.188
+   ],
+   [
+    "\u2581Pre",
+    0.111
+   ],
+   [
+    "n",
+    -0.08
+   ],
+   [
+    "\u2581Over",
+    0.067
+   ],
+   [
+    "\u2581Battling",
+    0.067
+   ],
+   [
+    "\u2581Foxx",
+    0.065
+   ],
+   [
+    "\u2581Katie",
+    0.045
+   ]
+  ],
+  "text_head": "Katie Holmes, Jamie Foxx Battling Over Prenup?"
+ },
+ {
+  "id": "hoer-00695",
+  "dataset": "multifc",
+  "domain": "hoer",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.953,
+  "top_tokens": [
+   [
+    "\u2581His",
+    -0.221
+   ],
+   [
+    "\u2581Dog",
+    -0.194
+   ],
+   [
+    "\u2581Around",
+    -0.154
+   ],
+   [
+    "out",
+    -0.139
+   ],
+   [
+    "\u2581Deadly",
+    0.136
+   ],
+   [
+    "\u2581Sn",
+    0.051
+   ],
+   [
+    "\u2581With",
+    0.048
+   ],
+   [
+    "\u2581Comes",
+    -0.037
+   ]
+  ],
+  "text_head": "Dog Comes Home With Deadly Snake Around His Snout"
+ },
+ {
+  "id": "hoer-00091",
+  "dataset": "multifc",
+  "domain": "hoer",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.985,
+  "top_tokens": [
+   [
+    "\u2581Hash",
+    0.314
+   ],
+   [
+    "\u2581Phone",
+    -0.285
+   ],
+   [
+    "\u2581Scam",
+    0.267
+   ],
+   [
+    "\u2581Nine",
+    -0.082
+   ],
+   [
+    "\u2581Zero",
+    -0.052
+   ],
+   [
+    "[CLS]",
+    0.0
+   ],
+   [
+    "[SEP]",
+    0.0
+   ]
+  ],
+  "text_head": "Nine Zero Hash Phone Scam"
+ },
+ {
+  "id": "pomt-09955",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.178,
+  "top_tokens": [
+   [
+    "\"",
+    0.219
+   ],
+   [
+    "\u2581\"",
+    0.179
+   ],
+   [
+    "\u2581prisons",
+    -0.111
+   ],
+   [
+    "super",
+    -0.077
+   ],
+   [
+    ".",
+    0.075
+   ],
+   [
+    "\u2581from",
+    0.057
+   ],
+   [
+    "max",
+    -0.046
+   ],
+   [
+    "\u2581has",
+    0.04
+   ]
+  ],
+  "text_head": "\"Nobody has ever escaped from one of our federal 'supermax' prisons.\""
+ },
+ {
+  "id": "pomt-06218",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.797,
+  "top_tokens": [
+   [
+    "\u2581\"",
+    0.162
+   ],
+   [
+    "\"",
+    0.136
+   ],
+   [
+    "\u2581because",
+    0.084
+   ],
+   [
+    ".",
+    -0.054
+   ],
+   [
+    ".",
+    0.053
+   ],
+   [
+    "\u2581out",
+    -0.044
+   ],
+   [
+    "\u2581pool",
+    -0.042
+   ],
+   [
+    "\u2581is",
+    0.041
+   ]
+  ],
+  "text_head": "\"The only reason the unemployment rate is going down is because \u2026 twice as many people dropped out of the employment pool as the number of jobs were created.\""
+ },
+ {
+  "id": "pomt-03641",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.462,
+  "top_tokens": [
+   [
+    "S",
+    0.096
+   ],
+   [
+    "\u2581says",
+    0.094
+   ],
+   [
+    "\u2581immigration",
+    -0.089
+   ],
+   [
+    "\"",
+    0.082
+   ],
+   [
+    "\u2581Graham",
+    -0.081
+   ],
+   [
+    ".",
+    -0.072
+   ],
+   [
+    "has",
+    -0.063
+   ],
+   [
+    "\u2581U",
+    0.058
+   ]
+  ],
+  "text_head": "U.S. Sen. Lindsey Graham says South Carolina \"has a labor shortage and wants more immigration.\""
+ },
+ {
+  "id": "tron-02206",
+  "dataset": "multifc",
+  "domain": "tron",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.908,
+  "top_tokens": [
+   [
+    "s",
+    0.422
+   ],
+   [
+    "\u2581Puerto",
+    -0.099
+   ],
+   [
+    "\u2581English",
+    0.097
+   ],
+   [
+    "\u2581They",
+    0.082
+   ],
+   [
+    "\u2019",
+    -0.073
+   ],
+   [
+    "\u2581Because",
+    0.068
+   ],
+   [
+    "\u2581Don",
+    0.06
+   ],
+   [
+    "\u2581Speak",
+    -0.03
+   ]
+  ],
+  "text_head": "Puerto Ricans Get Disability Because They Don\u2019t Speak English"
+ },
+ {
+  "id": "vees-00021",
+  "dataset": "multifc",
+  "domain": "vees",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.362,
+  "top_tokens": [
+   [
+    ":",
+    -0.409
+   ],
+   [
+    "\u2581reporter",
+    -0.314
+   ],
+   [
+    "\u2581Marcos",
+    -0.136
+   ],
+   [
+    "\u2581asked",
+    -0.077
+   ],
+   [
+    "\u2581The",
+    0.064
+   ],
+   [
+    "[CLS]",
+    0.0
+   ],
+   [
+    "[SEP]",
+    0.0
+   ]
+  ],
+  "text_head": "The reporter asked Marcos:"
+ },
+ {
+  "id": "tron-03358",
+  "dataset": "multifc",
+  "domain": "tron",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.055,
+  "top_tokens": [
+   [
+    "\u2581Sue",
+    -0.14
+   ],
+   [
+    "half",
+    -0.122
+   ],
+   [
+    "\u2581Government",
+    -0.114
+   ],
+   [
+    "\u2581The",
+    -0.111
+   ],
+   [
+    "d",
+    -0.083
+   ],
+   [
+    "\u2581Truck",
+    -0.069
+   ],
+   [
+    "\u2581Not",
+    -0.069
+   ],
+   [
+    "\u2581for",
+    -0.062
+   ]
+  ],
+  "text_head": "The Government Sued on Behalf of Muslim Truck Drivers Fired for Not Delivering Beer"
+ },
+ {
+  "id": "pomt-10006",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.133,
+  "top_tokens": [
+   [
+    "\u2581a",
+    0.079
+   ],
+   [
+    "\u2581\"",
+    0.075
+   ],
+   [
+    "\"",
+    0.063
+   ],
+   [
+    ",",
+    0.056
+   ],
+   [
+    "\u2581'",
+    0.048
+   ],
+   [
+    "s",
+    0.034
+   ],
+   [
+    ",",
+    0.033
+   ],
+   [
+    "\u2581Bush",
+    0.032
+   ]
+  ],
+  "text_head": "\"As a percentage of gross domestic product, we are reducing nondefense discretionary spending to its lowest level since the '60s, lower than it was under Reagan, lower than it was under Clinton, lower than it was under Bush, or both Bushes."
+ },
+ {
+  "id": "goop-00350",
+  "dataset": "multifc",
+  "domain": "goop",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ",",
+    0.137
+   ],
+   [
+    "\u2581\u201c",
+    0.105
+   ],
+   [
+    "\u201d",
+    0.105
+   ],
+   [
+    "\u2581Kardashian",
+    0.082
+   ],
+   [
+    "\u2581If",
+    0.077
+   ],
+   [
+    "\u2581Comments",
+    0.066
+   ],
+   [
+    "\u2581Slavery",
+    0.063
+   ],
+   [
+    "\u2019",
+    0.061
+   ]
+  ],
+  "text_head": "Kim Kardashian Did \u201cThreaten Divorce\u201d If Kanye West Didn\u2019t Apologize For Slavery Comments,"
+ },
+ {
+  "id": "snes-05051",
+  "dataset": "multifc",
+  "domain": "snes",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.649,
+  "top_tokens": [
+   [
+    ".",
+    0.134
+   ],
+   [
+    "\u2581accused",
+    0.107
+   ],
+   [
+    ",",
+    0.071
+   ],
+   [
+    "\u2581Dalton",
+    -0.069
+   ],
+   [
+    "\u2581as",
+    0.067
+   ],
+   [
+    "\u2581Brian",
+    -0.06
+   ],
+   [
+    "\u2581a",
+    0.059
+   ],
+   [
+    "\u2581of",
+    0.054
+   ]
+  ],
+  "text_head": "Jason Brian Dalton, who as accused of killing six people during a shooting spree in February 2016, is suing Uber for $10 million in damages."
+ },
+ {
+  "id": "pomt-04338",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.316,
+  "top_tokens": [
+   [
+    "\u2581\"",
+    0.086
+   ],
+   [
+    "re",
+    -0.085
+   ],
+   [
+    "\u2019",
+    0.074
+   ],
+   [
+    "\u258121",
+    -0.073
+   ],
+   [
+    "\u258165",
+    0.054
+   ],
+   [
+    "\u2581retirement",
+    0.051
+   ],
+   [
+    ".",
+    0.05
+   ],
+   [
+    ",",
+    0.05
+   ]
+  ],
+  "text_head": "\"There\u2019s 21 congressmen and senators that have been convicted of felonies that still get their retirement, even in jail. They don\u2019t have to wait until they\u2019re 65.\""
+ },
+ {
+  "id": "pomt-03771",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.414,
+  "top_tokens": [
+   [
+    "\"",
+    0.141
+   ],
+   [
+    "\u2581\"",
+    0.116
+   ],
+   [
+    "\u2581or",
+    -0.093
+   ],
+   [
+    "\u2581a",
+    -0.085
+   ],
+   [
+    "\u2581being",
+    -0.072
+   ],
+   [
+    "\u2581is",
+    0.07
+   ],
+   [
+    "\u2581tenant",
+    0.053
+   ],
+   [
+    "\u2581gay",
+    -0.05
+   ]
+  ],
+  "text_head": "\"It is legal in Ohio to fire an employee or evict a tenant just for being gay.\""
+ },
+ {
+  "id": "snes-00047",
+  "dataset": "multifc",
+  "domain": "snes",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.986,
+  "top_tokens": [
+   [
+    "\u2581became",
+    -0.223
+   ],
+   [
+    ".",
+    0.135
+   ],
+   [
+    "\u2581cellphone",
+    0.108
+   ],
+   [
+    "\u2581vagina",
+    0.089
+   ],
+   [
+    "\u2581lawsuit",
+    0.081
+   ],
+   [
+    "\u2581A",
+    -0.079
+   ],
+   [
+    "\u2581Samsung",
+    0.059
+   ],
+   [
+    "\u2581a",
+    0.053
+   ]
+  ],
+  "text_head": "A woman filed a lawsuit against Samsung after her cellphone became stuck in her vagina."
+ },
+ {
+  "id": "snes-01105",
+  "dataset": "multifc",
+  "domain": "snes",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.996,
+  "top_tokens": [
+   [
+    "\u2581announced",
+    0.15
+   ],
+   [
+    "s",
+    0.114
+   ],
+   [
+    "ing",
+    0.112
+   ],
+   [
+    "\u2581February",
+    0.109
+   ],
+   [
+    "\u2581in",
+    -0.094
+   ],
+   [
+    "\u2581The",
+    0.08
+   ],
+   [
+    "\u2581anthem",
+    0.047
+   ],
+   [
+    "\u2581Super",
+    -0.045
+   ]
+  ],
+  "text_head": "The NFL announced that it will not be televising the national anthem before the Super Bowl in February 2018."
+ },
+ {
+  "id": "pomt-05262",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.173,
+  "top_tokens": [
+   [
+    "\"",
+    0.223
+   ],
+   [
+    "\u2581\"",
+    0.198
+   ],
+   [
+    ".",
+    0.077
+   ],
+   [
+    "\u25812",
+    0.075
+   ],
+   [
+    "\u2581country",
+    -0.062
+   ],
+   [
+    "\u2581high",
+    -0.058
+   ],
+   [
+    "\u2581schools",
+    -0.056
+   ],
+   [
+    "\u2581the",
+    -0.048
+   ]
+  ],
+  "text_head": "\"Only 2 percent of public high schools in the country offer PE classes.\""
+ },
+ {
+  "id": "pomt-15322",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.591,
+  "top_tokens": [
+   [
+    "\"",
+    0.237
+   ],
+   [
+    ",",
+    -0.184
+   ],
+   [
+    "In",
+    -0.11
+   ],
+   [
+    "\u2581\"",
+    0.08
+   ],
+   [
+    ".",
+    0.08
+   ],
+   [
+    "\u2581are",
+    -0.067
+   ],
+   [
+    "\u2581Orleans",
+    0.046
+   ],
+   [
+    "\u2581nearly",
+    -0.036
+   ]
+  ],
+  "text_head": "\"In New Orleans, nearly 100 percent of our kids are in charter schools.\""
+ },
+ {
+  "id": "afck-00399",
+  "dataset": "multifc",
+  "domain": "afck",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.204,
+  "top_tokens": [
+   [
+    "\u2019",
+    0.192
+   ],
+   [
+    "Deliver",
+    -0.077
+   ],
+   [
+    "\u2581Cape",
+    -0.076
+   ],
+   [
+    "s",
+    -0.069
+   ],
+   [
+    "\u2581\u201c",
+    0.067
+   ],
+   [
+    "\u2581its",
+    -0.062
+   ],
+   [
+    "\u2581Govt",
+    -0.052
+   ],
+   [
+    ".",
+    -0.042
+   ]
+  ],
+  "text_head": "\u201cThe W Cape Govt spends R33.6mil on its Premier\u2019s Advancement of Youth Project & its youth wage subsidy programme every year. #DADelivers\u201d"
+ },
+ {
+  "id": "snes-05641",
+  "dataset": "multifc",
+  "domain": "snes",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "\u2581stealing",
+    0.327
+   ],
+   [
+    "\u2581through",
+    -0.129
+   ],
+   [
+    "\u2581batteries",
+    0.106
+   ],
+   [
+    "\u2581a",
+    0.085
+   ],
+   [
+    "\u2581phone",
+    -0.078
+   ],
+   [
+    "\u2581is",
+    0.072
+   ],
+   [
+    "\u2581microchip",
+    -0.056
+   ],
+   [
+    "\u2581mobile",
+    -0.041
+   ]
+  ],
+  "text_head": "Samsung is stealing data through a secret microchip in its mobile phone batteries."
+ },
+ {
+  "id": "pomt-10312",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.295,
+  "top_tokens": [
+   [
+    ",",
+    -0.269
+   ],
+   [
+    "\u2581as",
+    -0.112
+   ],
+   [
+    "\u2581now",
+    -0.086
+   ],
+   [
+    "\u2581John",
+    -0.075
+   ],
+   [
+    "\u2581same",
+    -0.061
+   ],
+   [
+    "\u2581tax",
+    -0.056
+   ],
+   [
+    "\u25810",
+    0.056
+   ],
+   [
+    "\u2581it",
+    -0.052
+   ]
+  ],
+  "text_head": "John McCain will keep the estate tax at 0 percent, the same as it is now."
+ },
+ {
+  "id": "tron-01467",
+  "dataset": "multifc",
+  "domain": "tron",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "\u2581and",
+    0.421
+   ],
+   [
+    "\u2581for",
+    0.111
+   ],
+   [
+    "\u2581Affair",
+    0.092
+   ],
+   [
+    "\u2581Years",
+    0.086
+   ],
+   [
+    "\u2581an",
+    -0.071
+   ],
+   [
+    "\u2581Mueller",
+    0.067
+   ],
+   [
+    "\u2581Robert",
+    -0.053
+   ],
+   [
+    "\u258113",
+    -0.027
+   ]
+  ],
+  "text_head": "Robert Mueller and Nancy Pelosi Had an Affair for 13 Years"
+ },
+ {
+  "id": "pomt-13368",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.133,
+  "top_tokens": [
+   [
+    "\"",
+    0.201
+   ],
+   [
+    "\u2581\"",
+    0.143
+   ],
+   [
+    ".",
+    0.133
+   ],
+   [
+    "\u2581Portman",
+    0.084
+   ],
+   [
+    "\u2581Says",
+    0.076
+   ],
+   [
+    "\u2581Rob",
+    0.069
+   ],
+   [
+    "\u2581terrorism",
+    0.051
+   ],
+   [
+    "\u2581voted",
+    0.037
+   ]
+  ],
+  "text_head": "Says Rob Portman \"even voted to allow people on the terrorism watch list to buy guns.\""
+ },
+ {
+  "id": "pomt-14630",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.386,
+  "top_tokens": [
+   [
+    "\u2581\"",
+    0.191
+   ],
+   [
+    "\u2581(",
+    0.121
+   ],
+   [
+    "\"",
+    0.094
+   ],
+   [
+    "Missouri",
+    -0.077
+   ],
+   [
+    ".",
+    0.068
+   ],
+   [
+    "\u2581city",
+    0.062
+   ],
+   [
+    "A",
+    0.059
+   ],
+   [
+    ")",
+    0.058
+   ]
+  ],
+  "text_head": "\"A third of the budget for the city of Ferguson (Missouri) was being reaped by civil fines.\""
+ },
+ {
+  "id": "pomt-15319",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.635,
+  "top_tokens": [
+   [
+    "than",
+    -0.43
+   ],
+   [
+    "\u2581any",
+    -0.087
+   ],
+   [
+    "\u2581are",
+    0.074
+   ],
+   [
+    "\u2581abortion",
+    0.073
+   ],
+   [
+    "\u2581more",
+    -0.051
+   ],
+   [
+    "\"",
+    0.037
+   ],
+   [
+    ".",
+    0.034
+   ],
+   [
+    "\u2581times",
+    -0.032
+   ]
+  ],
+  "text_head": "Says Scott Walker's views on abortion are more restrictive \"than any Republican president in recent times.\""
+ },
+ {
+  "id": "pomt-05590",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.987,
+  "top_tokens": [
+   [
+    "\u2581than",
+    -0.094
+   ],
+   [
+    "\u2581\"",
+    0.089
+   ],
+   [
+    "\u2581what",
+    -0.088
+   ],
+   [
+    "-",
+    0.079
+   ],
+   [
+    "\u2581$",
+    0.057
+   ],
+   [
+    "\u2581estimates",
+    0.05
+   ],
+   [
+    "\u2581for",
+    -0.045
+   ],
+   [
+    "\u2581was",
+    -0.044
+   ]
+  ],
+  "text_head": "Says \"new estimates from the Congressional Budget Office conclude the final price-tag\" for the health care law \"will exceed $2 trillion \u2014 more than double what was initially reported.\""
+ },
+ {
+  "id": "snes-02821",
+  "dataset": "multifc",
+  "domain": "snes",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.992,
+  "top_tokens": [
+   [
+    ".",
+    0.219
+   ],
+   [
+    "-",
+    0.121
+   ],
+   [
+    "the",
+    0.093
+   ],
+   [
+    "-",
+    0.08
+   ],
+   [
+    "\u2581Over",
+    0.063
+   ],
+   [
+    "\u2581is",
+    0.061
+   ],
+   [
+    "\u2581with",
+    0.056
+   ],
+   [
+    "\u2581and",
+    0.039
+   ]
+  ],
+  "text_head": "Over-the-counter painkiller paracetamol is contaminated with the Machupo virus and should be avoided."
+ },
+ {
+  "id": "pomt-06843",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.132,
+  "top_tokens": [
+   [
+    ".",
+    0.276
+   ],
+   [
+    ",",
+    0.119
+   ],
+   [
+    "\u2581\"",
+    0.071
+   ],
+   [
+    ".",
+    0.058
+   ],
+   [
+    ".",
+    0.053
+   ],
+   [
+    "\u2581a",
+    0.049
+   ],
+   [
+    "\"",
+    0.04
+   ],
+   [
+    "\u2581domestic",
+    0.031
+   ]
+  ],
+  "text_head": "\"As a percentage of our gross domestic product, the defense budget remains just 3.6 percent. This figure is low by all historical standards.\""
+ },
+ {
+  "id": "pomt-05434",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.124,
+  "top_tokens": [
+   [
+    "\"",
+    0.179
+   ],
+   [
+    ",",
+    0.154
+   ],
+   [
+    "\u2581\"",
+    0.143
+   ],
+   [
+    "\u2581now",
+    -0.115
+   ],
+   [
+    ".",
+    0.068
+   ],
+   [
+    "\u2581that",
+    -0.057
+   ],
+   [
+    "000",
+    0.042
+   ],
+   [
+    "\u2581are",
+    -0.04
+   ]
+  ],
+  "text_head": "\"About 230,000 people that were on unemployment when I took office are not on unemployment now.\""
+ },
+ {
+  "id": "pomt-00643",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.316,
+  "top_tokens": [
+   [
+    "\u2581that",
+    -0.12
+   ],
+   [
+    ".",
+    0.087
+   ],
+   [
+    "\u2581average",
+    -0.077
+   ],
+   [
+    "\u2581about",
+    0.077
+   ],
+   [
+    "\u2581the",
+    -0.056
+   ],
+   [
+    "\u2581four",
+    0.055
+   ],
+   [
+    "\u2581while",
+    0.055
+   ],
+   [
+    "\u2581are",
+    -0.052
+   ]
+  ],
+  "text_head": "The average age of planes in the Qatar Airways fleet is about four years while Delta Air Lines flies planes that are 35 years old."
+ },
+ {
+  "id": "pomt-13244",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.388,
+  "top_tokens": [
+   [
+    "\u2581avg",
+    -0.128
+   ],
+   [
+    "save",
+    -0.121
+   ],
+   [
+    "\u2581$",
+    0.081
+   ],
+   [
+    ".",
+    -0.075
+   ],
+   [
+    "\u2581sold",
+    0.074
+   ],
+   [
+    "\u2581compared",
+    -0.061
+   ],
+   [
+    "\u2581model",
+    0.057
+   ],
+   [
+    "\u2581car",
+    0.043
+   ]
+  ],
+  "text_head": "Says that compared to direct sales by manufacturers, consumers \"save avg of $500 per car sold through franchised dealer model.\""
+ },
+ {
+  "id": "pomt-12136",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ",",
+    0.131
+   ],
+   [
+    "\u2581Emails",
+    0.102
+   ],
+   [
+    "\u2581and",
+    0.084
+   ],
+   [
+    "\"",
+    0.069
+   ],
+   [
+    "\u2581and",
+    0.053
+   ],
+   [
+    "\"",
+    0.05
+   ],
+   [
+    "\u2581by",
+    0.049
+   ],
+   [
+    "\u2581Democrats",
+    0.042
+   ]
+  ],
+  "text_head": "Emails show Democrats, Hillary Clinton and George Soros instigated and orchestrated racial protests in Charlottesville by trying to \"control\" and keep people \"desperate.\""
+ },
+ {
+  "id": "pomt-09239",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.557,
+  "top_tokens": [
+   [
+    "llum",
+    -0.172
+   ],
+   [
+    "McC",
+    -0.099
+   ],
+   [
+    "it",
+    -0.099
+   ],
+   [
+    "\u2581reporters",
+    0.06
+   ],
+   [
+    "'",
+    0.044
+   ],
+   [
+    "\u2581crisis",
+    0.033
+   ],
+   [
+    ",",
+    0.033
+   ],
+   [
+    "\u2581exaggerated",
+    0.033
+   ]
+  ],
+  "text_head": "\"McCollum admitted he didn't think that the subprime mortgage crisis was a big deal, telling reporters he thought that the subprime collapse had been exaggerated by the media and investors and that 'it's not the end of the world.' \""
+ },
+ {
+  "id": "pomt-06351",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.129,
+  "top_tokens": [
+   [
+    "\"",
+    0.115
+   ],
+   [
+    "\u2581\"",
+    0.088
+   ],
+   [
+    "\u2581$",
+    0.075
+   ],
+   [
+    "\u2581than",
+    0.074
+   ],
+   [
+    "\u2581costs",
+    0.071
+   ],
+   [
+    "\u2581taxes",
+    0.057
+   ],
+   [
+    "The",
+    0.052
+   ],
+   [
+    "\u2581homeowner",
+    0.05
+   ]
+  ],
+  "text_head": "\"The average homeowner spends more than $2,000 each year on energy costs \u2013 more than on either real estate taxes or homeowners insurance.\""
+ },
+ {
+  "id": "pomt-08016",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.26,
+  "top_tokens": [
+   [
+    ".",
+    -0.097
+   ],
+   [
+    "\u2581bullets",
+    0.082
+   ],
+   [
+    ".",
+    -0.066
+   ],
+   [
+    "\u2581'",
+    -0.065
+   ],
+   [
+    "\u2581that",
+    -0.063
+   ],
+   [
+    "\u2581don",
+    -0.037
+   ],
+   [
+    "S",
+    0.031
+   ],
+   [
+    "\u2581the",
+    -0.03
+   ]
+  ],
+  "text_head": "Says the person who Florida U.S. Rep. Allen West first hired as chief of staff told people attending a Tea Party rally that, 'We will use bullets if ballots don't work.'"
+ },
+ {
+  "id": "pomt-14821",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.555,
+  "top_tokens": [
+   [
+    "\"",
+    0.242
+   ],
+   [
+    "\u2581\"",
+    0.203
+   ],
+   [
+    ".",
+    0.087
+   ],
+   [
+    "\u2581Iran",
+    0.052
+   ],
+   [
+    "\u2581months",
+    0.051
+   ],
+   [
+    "\u2581putting",
+    0.049
+   ],
+   [
+    "\u2581together",
+    -0.039
+   ],
+   [
+    "I",
+    0.037
+   ]
+  ],
+  "text_head": "\"I spent 18 months putting together the sanctions against Iran so that we could force them to the negotiating table.\""
+ },
+ {
+  "id": "pomt-13321",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 0,
+  "p_fake": 0.253,
+  "top_tokens": [
+   [
+    "\"",
+    0.251
+   ],
+   [
+    ",",
+    0.206
+   ],
+   [
+    "\u2581\"",
+    0.148
+   ],
+   [
+    ".",
+    0.125
+   ],
+   [
+    "\u2581I",
+    -0.083
+   ],
+   [
+    "\u2581Second",
+    0.051
+   ],
+   [
+    "\u2581state",
+    -0.042
+   ],
+   [
+    "\u2581rights",
+    -0.03
+   ]
+  ],
+  "text_head": "\"In the state legislature, I supported Second Amendment rights.\""
+ },
+ {
+  "id": "tron-02425",
+  "dataset": "multifc",
+  "domain": "tron",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.884,
+  "top_tokens": [
+   [
+    "\u2581cross",
+    -0.159
+   ],
+   [
+    "\u2581removed",
+    0.119
+   ],
+   [
+    "\u2581a",
+    -0.11
+   ],
+   [
+    "\u2581suit",
+    -0.104
+   ],
+   [
+    "\u2581shaped",
+    -0.098
+   ],
+   [
+    "\u2581military",
+    -0.086
+   ],
+   [
+    "\u2581all",
+    0.083
+   ],
+   [
+    "\u2581ACLU",
+    0.059
+   ]
+  ],
+  "text_head": "The ACLU has filed a suit to have all military cross shaped headstones removed"
+ },
+ {
+  "id": "goop-00286",
+  "dataset": "multifc",
+  "domain": "goop",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "\u2581\u2018",
+    0.279
+   ],
+   [
+    "\u2019",
+    0.199
+   ],
+   [
+    "Eye",
+    0.164
+   ],
+   [
+    "?",
+    0.112
+   ],
+   [
+    "\u2581DiCaprio",
+    0.073
+   ],
+   [
+    "\u2581Leonardo",
+    -0.065
+   ],
+   [
+    "\u2581Has",
+    0.057
+   ],
+   [
+    "\u2581Margot",
+    -0.031
+   ]
+  ],
+  "text_head": "Leonardo DiCaprio Has \u2018Eye On\u2019 Margot Robbie?"
+ },
+ {
+  "id": "pomt-09513",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.314,
+  "top_tokens": [
+   [
+    "As",
+    -0.288
+   ],
+   [
+    "'",
+    0.255
+   ],
+   [
+    ",",
+    -0.061
+   ],
+   [
+    "\"",
+    0.061
+   ],
+   [
+    "\u2581\"",
+    0.055
+   ],
+   [
+    "\u2581lead",
+    -0.036
+   ],
+   [
+    "\u2581Houston",
+    0.034
+   ],
+   [
+    "\u2581in",
+    -0.032
+   ]
+  ],
+  "text_head": "\"As Houston's mayor, I helped our area lead the nation in job growth.\""
+ },
+ {
+  "id": "goop-01418",
+  "dataset": "multifc",
+  "domain": "goop",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "\u2581The",
+    0.172
+   ],
+   [
+    "\u2581Gomez",
+    0.113
+   ],
+   [
+    "\u2581Hitting",
+    0.108
+   ],
+   [
+    "?",
+    0.105
+   ],
+   [
+    "\u2581On",
+    0.1
+   ],
+   [
+    "\u2581Jennifer",
+    0.083
+   ],
+   [
+    "\u2581Aniston",
+    0.082
+   ],
+   [
+    "\u2581Selena",
+    0.068
+   ]
+  ],
+  "text_head": "Justin Theroux Hitting On Selena Gomez Following Jennifer Aniston Split?"
+ },
+ {
+  "id": "pomt-10834",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.985,
+  "top_tokens": [
+   [
+    "\u2581a",
+    0.162
+   ],
+   [
+    ",",
+    0.141
+   ],
+   [
+    ",",
+    0.111
+   ],
+   [
+    "\"",
+    0.106
+   ],
+   [
+    "\u2581\"",
+    0.106
+   ],
+   [
+    "\u2581go",
+    -0.05
+   ],
+   [
+    "\u2581to",
+    0.039
+   ],
+   [
+    ".",
+    0.037
+   ]
+  ],
+  "text_head": "Poor people go to a \"payday lender...and they pay 300, 400, 500 percent interest.\""
+ },
+ {
+  "id": "pomt-07372",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 0,
+  "p_fake": 0.27,
+  "top_tokens": [
+   [
+    "\u2581\"",
+    0.218
+   ],
+   [
+    "\u2581that",
+    0.156
+   ],
+   [
+    "\"",
+    0.147
+   ],
+   [
+    "\u2581show",
+    0.081
+   ],
+   [
+    "s",
+    0.073
+   ],
+   [
+    "\u2581Care",
+    0.059
+   ],
+   [
+    "\u2581repeal",
+    -0.04
+   ],
+   [
+    "\u2581Act",
+    -0.038
+   ]
+  ],
+  "text_head": "\"Polls show that Floridians don't want to repeal the Affordable Care Act.\""
+ },
+ {
+  "id": "goop-00109",
+  "dataset": "multifc",
+  "domain": "goop",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "\u201d",
+    0.271
+   ],
+   [
+    "\u201d",
+    0.221
+   ],
+   [
+    "\u2581\u201c",
+    0.126
+   ],
+   [
+    "\u2581\u201c",
+    0.072
+   ],
+   [
+    "?",
+    0.05
+   ],
+   [
+    "down",
+    0.048
+   ],
+   [
+    "\u2581Having",
+    0.041
+   ],
+   [
+    "\u2581Perry",
+    0.04
+   ]
+  ],
+  "text_head": "Katy Perry Having \u201cMeltdown\u201d Because Of \u201cFlirty\u201d Orlando Bloom?"
+ },
+ {
+  "id": "goop-00065",
+  "dataset": "multifc",
+  "domain": "goop",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "?",
+    0.192
+   ],
+   [
+    ",",
+    0.185
+   ],
+   [
+    "\u2581Jolie",
+    0.146
+   ],
+   [
+    "\u2581Pitt",
+    0.098
+   ],
+   [
+    "\u2581Angelina",
+    0.096
+   ],
+   [
+    "\u2581To",
+    0.049
+   ],
+   [
+    "\u2581Had",
+    0.046
+   ],
+   [
+    "\u2581In",
+    0.043
+   ]
+  ],
+  "text_head": "Brad Pitt, Angelina Jolie Had Secret Reunion In London To Repair Marriage?"
+ },
+ {
+  "id": "pomt-00052",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    "\"",
+    0.129
+   ],
+   [
+    "\"",
+    0.124
+   ],
+   [
+    ":",
+    0.079
+   ],
+   [
+    "\u2581BILLION",
+    0.073
+   ],
+   [
+    "\u2581\"",
+    0.07
+   ],
+   [
+    "\u2581from",
+    0.064
+   ],
+   [
+    "\u2581$",
+    0.062
+   ],
+   [
+    ".",
+    0.057
+   ]
+  ],
+  "text_head": "\"Liberal Democrats\" who back Dan McCready \"cut $716 BILLION from Medicare to fund their healthcare scheme: Obamacare.\""
+ },
+ {
+  "id": "pomt-12331",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 1.0,
+  "top_tokens": [
+   [
+    ",",
+    0.202
+   ],
+   [
+    "\u2581was",
+    0.084
+   ],
+   [
+    ".",
+    0.08
+   ],
+   [
+    "\"",
+    0.075
+   ],
+   [
+    "\u2581\"",
+    0.044
+   ],
+   [
+    "\u2581from",
+    0.042
+   ],
+   [
+    "\u2581of",
+    0.04
+   ],
+   [
+    "\u2581leftists",
+    0.038
+   ]
+  ],
+  "text_head": "Says Loretta Lynch was part of \"a stunning collection of calls to violence and murder from the intolerant, unhinged leftists in the Democrat party.\""
+ },
+ {
+  "id": "pomt-07884",
+  "dataset": "multifc",
+  "domain": "pomt",
+  "label": 1,
+  "pred": 1,
+  "p_fake": 0.688,
+  "top_tokens": [
+   [
+    "\"",
+    0.199
+   ],
+   [
+    "\u2581aliens",
+    0.15
+   ],
+   [
+    "\u2581\"",
+    0.135
+   ],
+   [
+    "legal",
+    -0.081
+   ],
+   [
+    "\u2581Island",
+    -0.08
+   ],
+   [
+    "\u2581state",
+    -0.067
+   ],
+   [
+    "\u2581Rhode",
+    -0.059
+   ],
+   [
+    "Il",
+    0.053
+   ]
+  ],
+  "text_head": "\"Illegal aliens cost the state of Rhode Island $400 million a year.\""
+ },
+ {
+  "id": "tron-00426",
+  "dataset": "multifc",
+  "domain": "tron",
+  "label": 0,
+  "pred": 1,
+  "p_fake": 0.967,
+  "top_tokens": [
+   [
+    "\u2581in",
+    -0.202
+   ],
+   [
+    "\u2581Vote",
+    -0.144
+   ],
+   [
+    "\u2581Zoo",
+    -0.12
+   ],
+   [
+    "\u2581Palm",
+    0.103
+   ],
+   [
+    "\u2581the",
+    -0.091
+   ],
+   [
+    "\u2581Beach",
+    -0.09
+   ],
+   [
+    "\u2581for",
+    0.08
+   ],
+   [
+    "!",
+    -0.073
+   ]
+  ],
+  "text_head": "Vote for the Palm Beach Zoo in Microsoft Contest!"
+ }
+]

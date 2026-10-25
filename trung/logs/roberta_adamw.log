@@ -1,0 +1,54 @@
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+{'train': 45871, 'dev': 5727, 'test': 5715}
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at roberta-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+ep0 step 100/4302 loss 0.6408 42020 tok/s
+ep0 step 200/4302 loss 0.5005 38455 tok/s
+ep0 step 300/4302 loss 0.4281 36224 tok/s
+ep0 step 400/4302 loss 0.4175 36759 tok/s
+ep0 step 500/4302 loss 0.3842 37413 tok/s
+ep0 step 600/4302 loss 0.3827 37725 tok/s
+ep0 step 700/4302 loss 0.3877 38214 tok/s
+ep0 step 800/4302 loss 0.3749 38473 tok/s
+ep0 step 900/4302 loss 0.3789 38492 tok/s
+ep0 step 1000/4302 loss 0.3645 39505 tok/s
+ep0 step 1100/4302 loss 0.3515 40772 tok/s
+ep0 step 1200/4302 loss 0.3552 41850 tok/s
+ep0 step 1300/4302 loss 0.3444 42819 tok/s
+ep0 step 1400/4302 loss 0.3558 43661 tok/s
+== epoch 1 dev mean macro-F1 0.8146 | amt:0.792 jruvika:0.975 mc_fake:0.811 multifc:0.681
+ep1 step 1500/4302 loss 0.2039 43759 tok/s
+ep1 step 1600/4302 loss 0.3066 44458 tok/s
+ep1 step 1700/4302 loss 0.3128 45205 tok/s
+ep1 step 1800/4302 loss 0.3083 45746 tok/s
+ep1 step 1900/4302 loss 0.3112 46282 tok/s
+ep1 step 2000/4302 loss 0.2969 46782 tok/s
+ep1 step 2100/4302 loss 0.3063 47254 tok/s
+ep1 step 2200/4302 loss 0.3018 47703 tok/s
+ep1 step 2300/4302 loss 0.2971 48104 tok/s
+ep1 step 2400/4302 loss 0.2856 48496 tok/s
+ep1 step 2500/4302 loss 0.3014 48870 tok/s
+ep1 step 2600/4302 loss 0.3015 49207 tok/s
+ep1 step 2700/4302 loss 0.3072 49545 tok/s
+ep1 step 2800/4302 loss 0.3026 49845 tok/s
+== epoch 2 dev mean macro-F1 0.8255 | amt:0.786 jruvika:0.985 mc_fake:0.816 multifc:0.715
+ep2 step 2900/4302 loss 0.0821 49748 tok/s
+ep2 step 3000/4302 loss 0.2459 50073 tok/s
+ep2 step 3100/4302 loss 0.2711 50313 tok/s
+ep2 step 3200/4302 loss 0.2360 50567 tok/s
+ep2 step 3300/4302 loss 0.2416 50750 tok/s
+ep2 step 3400/4302 loss 0.2447 50944 tok/s
+ep2 step 3500/4302 loss 0.2545 51159 tok/s
+ep2 step 3600/4302 loss 0.2332 51363 tok/s
+ep2 step 3700/4302 loss 0.2450 51560 tok/s
+ep2 step 3800/4302 loss 0.2537 51745 tok/s
+ep2 step 3900/4302 loss 0.2470 51885 tok/s
+ep2 step 4000/4302 loss 0.2350 52052 tok/s
+ep2 step 4100/4302 loss 0.2427 52353 tok/s
+ep2 step 4200/4302 loss 0.2516 52627 tok/s
+ep2 step 4300/4302 loss 0.2412 52782 tok/s
+== epoch 3 dev mean macro-F1 0.8356 | amt:0.810 jruvika:0.985 mc_fake:0.837 multifc:0.710
+TEST {"amt": 0.8322, "jruvika": 0.985, "mc_fake": 0.8155, "multifc": 0.6901} overall 0.8317 | train 10.6 min

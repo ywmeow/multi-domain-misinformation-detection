@@ -1,0 +1,425 @@
+{
+ "name": "deberta_adamw",
+ "args": {
+  "name": "deberta_adamw",
+  "model": "microsoft/deberta-v3-base",
+  "optim": "adamw",
+  "lr": 2e-05,
+  "head_lr": null,
+  "wd": 0.01,
+  "epochs": 3,
+  "bs": 32,
+  "max_len": 512,
+  "warmup": 0.06,
+  "seed": 42,
+  "train_sets": "amt,multifc,mc_fake,jruvika",
+  "max_steps": 0,
+  "no_save": false
+ },
+ "gpu": "NVIDIA H100 80GB HBM3",
+ "n_params_M": 184.4,
+ "best_epoch": 3,
+ "best_dev_selection_f1": 0.8385,
+ "train_time_s": 1103.5,
+ "test_infer_time_s": 5.0,
+ "train_tokens_per_s": 29710,
+ "peak_gpu_mem_GB": 24.4,
+ "history": [
+  {
+   "epoch": 1,
+   "dev_selection_f1": 0.805,
+   "dev": {
+    "amt": {
+     "n": 48.0,
+     "acc": 0.7917,
+     "macro_f1": 0.7884,
+     "f1_fake": 0.7619,
+     "f1_real": 0.8148,
+     "pos_rate": 0.5,
+     "auroc": 0.9115
+    },
+    "jruvika": {
+     "n": 399.0,
+     "acc": 0.9825,
+     "macro_f1": 0.9824,
+     "f1_fake": 0.9835,
+     "f1_real": 0.9812,
+     "pos_rate": 0.5313,
+     "auroc": 0.9987
+    },
+    "mc_fake": {
+     "n": 2835.0,
+     "acc": 0.9041,
+     "macro_f1": 0.7704,
+     "f1_fake": 0.5952,
+     "f1_real": 0.9456,
+     "pos_rate": 0.157,
+     "auroc": 0.9306
+    },
+    "multifc": {
+     "n": 2445.0,
+     "acc": 0.7411,
+     "macro_f1": 0.6789,
+     "f1_fake": 0.8202,
+     "f1_real": 0.5376,
+     "pos_rate": 0.6757,
+     "auroc": 0.8066
+    }
+   },
+   "elapsed_s": 590.4
+  },
+  {
+   "epoch": 2,
+   "dev_selection_f1": 0.8315,
+   "dev": {
+    "amt": {
+     "n": 48.0,
+     "acc": 0.8333,
+     "macro_f1": 0.8307,
+     "f1_fake": 0.8095,
+     "f1_real": 0.8519,
+     "pos_rate": 0.5,
+     "auroc": 0.9271
+    },
+    "jruvika": {
+     "n": 399.0,
+     "acc": 0.9799,
+     "macro_f1": 0.9799,
+     "f1_fake": 0.9811,
+     "f1_real": 0.9786,
+     "pos_rate": 0.5313,
+     "auroc": 0.9987
+    },
+    "mc_fake": {
+     "n": 2835.0,
+     "acc": 0.9136,
+     "macro_f1": 0.7996,
+     "f1_fake": 0.6485,
+     "f1_real": 0.9507,
+     "pos_rate": 0.157,
+     "auroc": 0.9489
+    },
+    "multifc": {
+     "n": 2445.0,
+     "acc": 0.7546,
+     "macro_f1": 0.7156,
+     "f1_fake": 0.8209,
+     "f1_real": 0.6104,
+     "pos_rate": 0.6757,
+     "auroc": 0.82
+    }
+   },
+   "elapsed_s": 848.2
+  },
+  {
+   "epoch": 3,
+   "dev_selection_f1": 0.8385,
+   "dev": {
+    "amt": {
+     "n": 48.0,
+     "acc": 0.8333,
+     "macro_f1": 0.8307,
+     "f1_fake": 0.8095,
+     "f1_real": 0.8519,
+     "pos_rate": 0.5,
+     "auroc": 0.9375
+    },
+    "jruvika": {
+     "n": 399.0,
+     "acc": 0.9825,
+     "macro_f1": 0.9824,
+     "f1_fake": 0.9835,
+     "f1_real": 0.9812,
+     "pos_rate": 0.5313,
+     "auroc": 0.9988
+    },
+    "mc_fake": {
+     "n": 2835.0,
+     "acc": 0.9185,
+     "macro_f1": 0.8235,
+     "f1_fake": 0.694,
+     "f1_real": 0.953,
+     "pos_rate": 0.157,
+     "auroc": 0.949
+    },
+    "multifc": {
+     "n": 2445.0,
+     "acc": 0.746,
+     "macro_f1": 0.7172,
+     "f1_fake": 0.8074,
+     "f1_real": 0.627,
+     "pos_rate": 0.6757,
+     "auroc": 0.8105
+    }
+   },
+   "elapsed_s": 1103.2
+  }
+ ],
+ "test": {
+  "overall": {
+   "n": 5715.0,
+   "acc": 0.8416,
+   "macro_f1": 0.8337,
+   "f1_fake": 0.7975,
+   "f1_real": 0.87,
+   "pos_rate": 0.4066,
+   "auroc": 0.9337
+  },
+  "dataset": {
+   "amt": {
+    "n": 48.0,
+    "acc": 0.8542,
+    "macro_f1": 0.851,
+    "f1_fake": 0.8293,
+    "f1_real": 0.8727,
+    "pos_rate": 0.5,
+    "auroc": 0.8898
+   },
+   "jruvika": {
+    "n": 401.0,
+    "acc": 0.9751,
+    "macro_f1": 0.975,
+    "f1_fake": 0.9763,
+    "f1_real": 0.9737,
+    "pos_rate": 0.5337,
+    "auroc": 0.9936
+   },
+   "mc_fake": {
+    "n": 2832.0,
+    "acc": 0.9117,
+    "macro_f1": 0.8105,
+    "f1_fake": 0.6719,
+    "f1_real": 0.949,
+    "pos_rate": 0.1564,
+    "auroc": 0.9503
+   },
+   "multifc": {
+    "n": 2434.0,
+    "acc": 0.7379,
+    "macro_f1": 0.7052,
+    "f1_fake": 0.8033,
+    "f1_real": 0.6071,
+    "pos_rate": 0.675,
+    "auroc": 0.8091
+   }
+  },
+  "domain": {
+   "jruvika/business": {
+    "n": 20.0,
+    "acc": 1.0,
+    "macro_f1": 1.0,
+    "f1_fake": 1.0,
+    "f1_real": 1.0,
+    "pos_rate": 0.25,
+    "auroc": 1.0
+   },
+   "jruvika/conflict": {
+    "n": 17.0,
+    "acc": 0.9412,
+    "macro_f1": 0.9377,
+    "f1_fake": 0.9231,
+    "f1_real": 0.9524,
+    "pos_rate": 0.4118,
+    "auroc": 0.9
+   },
+   "jruvika/entertainment": {
+    "n": 37.0,
+    "acc": 0.9459,
+    "macro_f1": 0.9407,
+    "f1_fake": 0.9231,
+    "f1_real": 0.9583,
+    "pos_rate": 0.3514,
+    "auroc": 0.9936
+   },
+   "jruvika/environment": {
+    "n": 10.0,
+    "acc": 0.9,
+    "macro_f1": 0.8667,
+    "f1_fake": 0.8,
+    "f1_real": 0.9333,
+    "pos_rate": 0.3,
+    "auroc": 1.0
+   },
+   "jruvika/health": {
+    "n": 12.0,
+    "acc": 0.9167,
+    "macro_f1": 0.9161,
+    "f1_fake": 0.9231,
+    "f1_real": 0.9091,
+    "pos_rate": 0.5,
+    "auroc": 1.0
+   },
+   "jruvika/other": {
+    "n": 27.0,
+    "acc": 0.963,
+    "macro_f1": 0.9594,
+    "f1_fake": 0.9714,
+    "f1_real": 0.9474,
+    "pos_rate": 0.6667,
+    "auroc": 1.0
+   },
+   "jruvika/politics": {
+    "n": 70.0,
+    "acc": 1.0,
+    "macro_f1": 1.0,
+    "f1_fake": 1.0,
+    "f1_real": 1.0,
+    "pos_rate": 0.3857,
+    "auroc": 1.0
+   },
+   "jruvika/society": {
+    "n": 73.0,
+    "acc": 0.9863,
+    "macro_f1": 0.9863,
+    "f1_fake": 0.9863,
+    "f1_real": 0.9863,
+    "pos_rate": 0.5068,
+    "auroc": 0.9925
+   },
+   "jruvika/sports": {
+    "n": 107.0,
+    "acc": 0.9813,
+    "macro_f1": 0.9739,
+    "f1_fake": 0.9878,
+    "f1_real": 0.96,
+    "pos_rate": 0.7757,
+    "auroc": 1.0
+   },
+   "jruvika/technology": {
+    "n": 28.0,
+    "acc": 0.9643,
+    "macro_f1": 0.9642,
+    "f1_fake": 0.9655,
+    "f1_real": 0.963,
+    "pos_rate": 0.5357,
+    "auroc": 0.9949
+   },
+   "mc_fake/conflict": {
+    "n": 242.0,
+    "acc": 0.905,
+    "macro_f1": 0.6936,
+    "f1_fake": 0.439,
+    "f1_real": 0.9481,
+    "pos_rate": 0.0785,
+    "auroc": 0.9421
+   },
+   "mc_fake/entertainment": {
+    "n": 1143.0,
+    "acc": 0.8819,
+    "macro_f1": 0.8084,
+    "f1_fake": 0.6897,
+    "f1_real": 0.9271,
+    "pos_rate": 0.2266,
+    "auroc": 0.9177
+   },
+   "mc_fake/health": {
+    "n": 1194.0,
+    "acc": 0.9288,
+    "macro_f1": 0.8067,
+    "f1_fake": 0.6531,
+    "f1_real": 0.9603,
+    "pos_rate": 0.1198,
+    "auroc": 0.9639
+   },
+   "mc_fake/politics": {
+    "n": 253.0,
+    "acc": 0.9723,
+    "macro_f1": 0.9071,
+    "f1_fake": 0.8293,
+    "f1_real": 0.9849,
+    "pos_rate": 0.087,
+    "auroc": 0.9957
+   },
+   "multifc/afck": {
+    "n": 29.0,
+    "acc": 0.5862,
+    "macro_f1": 0.5167,
+    "f1_fake": 0.3333,
+    "f1_real": 0.7,
+    "pos_rate": 0.3793,
+    "auroc": 0.5556
+   },
+   "multifc/chct": {
+    "n": 31.0,
+    "acc": 0.6774,
+    "macro_f1": 0.6771,
+    "f1_fake": 0.6875,
+    "f1_real": 0.6667,
+    "pos_rate": 0.4839,
+    "auroc": 0.7458
+   },
+   "multifc/farg": {
+    "n": 26.0,
+    "acc": 0.8462,
+    "macro_f1": 0.4583,
+    "f1_fake": 0.9167,
+    "f1_real": 0.0,
+    "pos_rate": 1.0,
+    "auroc": null
+   },
+   "multifc/goop": {
+    "n": 246.0,
+    "acc": 1.0,
+    "macro_f1": 1.0,
+    "f1_fake": 1.0,
+    "f1_real": 1.0,
+    "pos_rate": 0.9919,
+    "auroc": 1.0
+   },
+   "multifc/hoer": {
+    "n": 53.0,
+    "acc": 0.7358,
+    "macro_f1": 0.7358,
+    "f1_fake": 0.7407,
+    "f1_real": 0.7308,
+    "pos_rate": 0.4528,
+    "auroc": 0.852
+   },
+   "multifc/para": {
+    "n": 18.0,
+    "acc": 0.5556,
+    "macro_f1": 0.5556,
+    "f1_fake": 0.5556,
+    "f1_real": 0.5556,
+    "pos_rate": 0.5556,
+    "auroc": 0.6875
+   },
+   "multifc/pomt": {
+    "n": 1211.0,
+    "acc": 0.6738,
+    "macro_f1": 0.669,
+    "f1_fake": 0.7089,
+    "f1_real": 0.6291,
+    "pos_rate": 0.5805,
+    "auroc": 0.7484
+   },
+   "multifc/snes": {
+    "n": 494.0,
+    "acc": 0.8057,
+    "macro_f1": 0.6524,
+    "f1_fake": 0.8832,
+    "f1_real": 0.4217,
+    "pos_rate": 0.8198,
+    "auroc": 0.7656
+   },
+   "multifc/tron": {
+    "n": 246.0,
+    "acc": 0.6992,
+    "macro_f1": 0.6527,
+    "f1_fake": 0.7798,
+    "f1_real": 0.5256,
+    "pos_rate": 0.6707,
+    "auroc": 0.7522
+   },
+   "multifc/vogo": {
+    "n": 32.0,
+    "acc": 0.625,
+    "macro_f1": 0.6113,
+    "f1_fake": 0.5385,
+    "f1_real": 0.6842,
+    "pos_rate": 0.4688,
+    "auroc": 0.6118
+   }
+  }
+ }
+}

@@ -1,0 +1,48 @@
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/data/projects/13003558/trung/conda-envs/lmm/lib/python3.12/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Token indices sequence length is longer than the specified maximum sequence length for this model (610 > 512). Running this sequence through the model will result in indexing errors
+{
+ "ece": {
+  "amt": 0.1469,
+  "jruvika": 0.0226,
+  "mc_fake": 0.0262,
+  "multifc": 0.09,
+  "overall": 0.0517
+ },
+ "errors_shared_by_all": 490,
+ "errors_any": 1346,
+ "oracle_acc_any_model_right": 0.9143,
+ "majority_vote": {
+  "amt": 0.873,
+  "jruvika": 0.9875,
+  "mc_fake": 0.8139,
+  "multifc": 0.7121
+ }
+}
+                               n    acc  macro_f1
+dataset len_bucket                               
+amt     33-128              12.0  0.917     0.911
+        129-256             35.0  0.800     0.794
+        257-512              1.0  1.000       NaN
+jruvika <=32                 1.0  1.000       NaN
+        33-128              37.0  1.000     1.000
+        129-256             50.0  1.000     1.000
+        257-512             97.0  1.000     1.000
+        >512 (truncated)   216.0  0.972     0.972
+mc_fake <=32                39.0  0.846     0.838
+        33-128             124.0  0.952     0.850
+        129-256            270.0  0.915     0.809
+        257-512            788.0  0.902     0.815
+        >512 (truncated)  1611.0  0.915     0.811
+multifc <=32              2084.0  0.743     0.696
+        33-128             341.0  0.639     0.633
+        129-256              8.0  0.875     0.795
+        >512 (truncated)     1.0  1.000       NaN
+         FP(real->fake)  FN(fake->real)     n
+dataset                                      
+amt                   2               6    48
+jruvika               0               6   401
+mc_fake              73             176  2832
+multifc             336             323  2434
