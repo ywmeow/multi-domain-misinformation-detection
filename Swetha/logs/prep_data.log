@@ -1,0 +1,15 @@
+{
+  "manifest_sha256": "7c9496b878075a4df410c648838c5e1224171bef95aaff84b693a10b39ff8ad2",
+  "split_fingerprints": {
+    "train": "1f1d3b6d4a731fe6e8ae7ff74440d9f654df2021664c84619ad636024240b4fe",
+    "dev": "47f977900301588ed0a480f3a136d4fc4bf9fa24f3cf66e41d8e210f0601b364",
+    "test": "d8a3c0f9246ccaafb8aab7145302be3e038a1bc2362c3835467e48aff82cb074"
+  },
+  "rows": {
+    "train": 45364,
+    "dev": 5712,
+    "test": 5699
+  },
+  "text_hashes_verified": true,
+  "split_overlap_checks_passed": true
+}

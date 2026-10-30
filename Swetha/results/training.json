@@ -1,0 +1,635 @@
+{
+  "amt": {
+    "config": {
+      "dataset": "amt",
+      "architecture": "two-layer cosine-weighted mean GraphSAGE",
+      "independently_trained": true,
+      "seed": 42,
+      "train_rows": 384,
+      "dev_rows": 48,
+      "dimensions": 128,
+      "hidden_dimensions": 64,
+      "dropout": 0.3,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "optimizer": "AdamW",
+      "loss": "training-class-balanced cross entropy",
+      "max_epochs": 300,
+      "early_stopping": "8 non-improving dev checks, evaluated at epoch 1 then every 5 epochs",
+      "selected_epoch": 45,
+      "selected_dev_macro_f1": 0.7078260869565217,
+      "last_epoch": 85,
+      "k": 10,
+      "graph_edges": 3840,
+      "graph_policy": "directed cosine-weighted kNN; no self edges; row normalized; separate learned self transform",
+      "selection": "development macro F1 only; no test data loaded",
+      "training_seconds": 8.193789005279541,
+      "device": "cuda",
+      "python": "3.12.7",
+      "versions": {
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.13.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "joblib": "1.4.2",
+        "threadpoolctl": "3.5.0"
+      },
+      "data_hashes": {
+        "train": "19893faef2fc23c300639706a4a96003e00f7418f9b0fed043ab7fa559379d1c",
+        "dev": "616bf2c5415f4df7124ea7f6522732c855bd0df22b9cd2c22d43d9fedf022096"
+      },
+      "deployment_logits_checked": true,
+      "training_sources": [
+        "amt"
+      ],
+      "dev_sources": [
+        "amt"
+      ],
+      "source_counts": {
+        "amt": 384
+      },
+      "tfidf_max_features": 40000,
+      "dev_selection": "pooled source-development macro-F1; excluded datasets dev labels are not used",
+      "recorded_data_hash_method": "historical evaluated pickle byte hashes; caches removed after exact source reconstruction",
+      "current_split_fingerprints": {
+        "train": "1f1d3b6d4a731fe6e8ae7ff74440d9f654df2021664c84619ad636024240b4fe",
+        "dev": "47f977900301588ed0a480f3a136d4fc4bf9fa24f3cf66e41d8e210f0601b364"
+      },
+      "split_manifest": "results/split_manifest.json.gz"
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "training_loss": 0.7079731822013855,
+        "dev_macro_f1": 0.3333333333333333
+      },
+      {
+        "epoch": 5,
+        "training_loss": 0.6918869614601135,
+        "dev_macro_f1": 0.4318064848172928
+      },
+      {
+        "epoch": 10,
+        "training_loss": 0.6854257583618164,
+        "dev_macro_f1": 0.4453781512605042
+      },
+      {
+        "epoch": 15,
+        "training_loss": 0.678070604801178,
+        "dev_macro_f1": 0.5897435897435896
+      },
+      {
+        "epoch": 20,
+        "training_loss": 0.6669666171073914,
+        "dev_macro_f1": 0.625
+      },
+      {
+        "epoch": 25,
+        "training_loss": 0.6582311987876892,
+        "dev_macro_f1": 0.6862745098039216
+      },
+      {
+        "epoch": 30,
+        "training_loss": 0.6455132365226746,
+        "dev_macro_f1": 0.6456795484151108
+      },
+      {
+        "epoch": 35,
+        "training_loss": 0.6235120892524719,
+        "dev_macro_f1": 0.6456795484151108
+      },
+      {
+        "epoch": 40,
+        "training_loss": 0.606380045413971,
+        "dev_macro_f1": 0.625
+      },
+      {
+        "epoch": 45,
+        "training_loss": 0.5882529616355896,
+        "dev_macro_f1": 0.7078260869565217
+      },
+      {
+        "epoch": 50,
+        "training_loss": 0.5671920776367188,
+        "dev_macro_f1": 0.6873643074250977
+      },
+      {
+        "epoch": 55,
+        "training_loss": 0.5565226674079895,
+        "dev_macro_f1": 0.6660869565217391
+      },
+      {
+        "epoch": 60,
+        "training_loss": 0.5263528823852539,
+        "dev_macro_f1": 0.6660869565217391
+      },
+      {
+        "epoch": 65,
+        "training_loss": 0.5054861903190613,
+        "dev_macro_f1": 0.6660869565217391
+      },
+      {
+        "epoch": 70,
+        "training_loss": 0.4752355515956878,
+        "dev_macro_f1": 0.6660869565217391
+      },
+      {
+        "epoch": 75,
+        "training_loss": 0.467886358499527,
+        "dev_macro_f1": 0.6444444444444444
+      },
+      {
+        "epoch": 80,
+        "training_loss": 0.4391893446445465,
+        "dev_macro_f1": 0.6643356643356644
+      },
+      {
+        "epoch": 85,
+        "training_loss": 0.4140191376209259,
+        "dev_macro_f1": 0.6643356643356644
+      }
+    ]
+  },
+  "multifc": {
+    "config": {
+      "dataset": "multifc",
+      "architecture": "two-layer cosine-weighted mean GraphSAGE",
+      "independently_trained": true,
+      "seed": 42,
+      "train_rows": 19591,
+      "dev_rows": 2445,
+      "dimensions": 128,
+      "hidden_dimensions": 64,
+      "dropout": 0.3,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "optimizer": "AdamW",
+      "loss": "training-class-balanced cross entropy",
+      "max_epochs": 300,
+      "early_stopping": "8 non-improving dev checks, evaluated at epoch 1 then every 5 epochs",
+      "selected_epoch": 25,
+      "selected_dev_macro_f1": 0.6329755892255893,
+      "last_epoch": 65,
+      "k": 10,
+      "graph_edges": 195870,
+      "graph_policy": "directed cosine-weighted kNN; no self edges; row normalized; separate learned self transform",
+      "selection": "development macro F1 only; no test data loaded",
+      "training_seconds": 82.62933588027954,
+      "device": "cuda",
+      "python": "3.12.7",
+      "versions": {
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.13.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "joblib": "1.4.2",
+        "threadpoolctl": "3.5.0"
+      },
+      "data_hashes": {
+        "train": "19893faef2fc23c300639706a4a96003e00f7418f9b0fed043ab7fa559379d1c",
+        "dev": "616bf2c5415f4df7124ea7f6522732c855bd0df22b9cd2c22d43d9fedf022096"
+      },
+      "deployment_logits_checked": true,
+      "training_sources": [
+        "multifc"
+      ],
+      "dev_sources": [
+        "multifc"
+      ],
+      "source_counts": {
+        "multifc": 19591
+      },
+      "tfidf_max_features": 40000,
+      "dev_selection": "pooled source-development macro-F1; excluded datasets dev labels are not used",
+      "recorded_data_hash_method": "historical evaluated pickle byte hashes; caches removed after exact source reconstruction",
+      "current_split_fingerprints": {
+        "train": "1f1d3b6d4a731fe6e8ae7ff74440d9f654df2021664c84619ad636024240b4fe",
+        "dev": "47f977900301588ed0a480f3a136d4fc4bf9fa24f3cf66e41d8e210f0601b364"
+      },
+      "split_manifest": "results/split_manifest.json.gz"
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "training_loss": 0.7088705897331238,
+        "dev_macro_f1": 0.4032218696607273
+      },
+      {
+        "epoch": 5,
+        "training_loss": 0.6838086247444153,
+        "dev_macro_f1": 0.5865174753939848
+      },
+      {
+        "epoch": 10,
+        "training_loss": 0.6631620526313782,
+        "dev_macro_f1": 0.5777318195049383
+      },
+      {
+        "epoch": 15,
+        "training_loss": 0.6412162184715271,
+        "dev_macro_f1": 0.6016607019484146
+      },
+      {
+        "epoch": 20,
+        "training_loss": 0.6210395693778992,
+        "dev_macro_f1": 0.6321575931017798
+      },
+      {
+        "epoch": 25,
+        "training_loss": 0.6081429123878479,
+        "dev_macro_f1": 0.6329755892255893
+      },
+      {
+        "epoch": 30,
+        "training_loss": 0.602256178855896,
+        "dev_macro_f1": 0.6271782988947655
+      },
+      {
+        "epoch": 35,
+        "training_loss": 0.5959003567695618,
+        "dev_macro_f1": 0.6299914221447227
+      },
+      {
+        "epoch": 40,
+        "training_loss": 0.5909025073051453,
+        "dev_macro_f1": 0.6288562502995421
+      },
+      {
+        "epoch": 45,
+        "training_loss": 0.5860337615013123,
+        "dev_macro_f1": 0.6281521183568706
+      },
+      {
+        "epoch": 50,
+        "training_loss": 0.5825323462486267,
+        "dev_macro_f1": 0.6280040258455801
+      },
+      {
+        "epoch": 55,
+        "training_loss": 0.5784522294998169,
+        "dev_macro_f1": 0.6279097402028844
+      },
+      {
+        "epoch": 60,
+        "training_loss": 0.5737735629081726,
+        "dev_macro_f1": 0.6300852280096919
+      },
+      {
+        "epoch": 65,
+        "training_loss": 0.570451021194458,
+        "dev_macro_f1": 0.6310325053571968
+      }
+    ]
+  },
+  "mc_fake": {
+    "config": {
+      "dataset": "mc_fake",
+      "architecture": "two-layer cosine-weighted mean GraphSAGE",
+      "independently_trained": true,
+      "seed": 42,
+      "train_rows": 22617,
+      "dev_rows": 2835,
+      "dimensions": 128,
+      "hidden_dimensions": 64,
+      "dropout": 0.3,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "optimizer": "AdamW",
+      "loss": "training-class-balanced cross entropy",
+      "max_epochs": 300,
+      "early_stopping": "8 non-improving dev checks, evaluated at epoch 1 then every 5 epochs",
+      "selected_epoch": 15,
+      "selected_dev_macro_f1": 0.7082214248427792,
+      "last_epoch": 55,
+      "k": 10,
+      "graph_edges": 226170,
+      "graph_policy": "directed cosine-weighted kNN; no self edges; row normalized; separate learned self transform",
+      "selection": "development macro F1 only; no test data loaded",
+      "training_seconds": 153.08414149284363,
+      "device": "cuda",
+      "python": "3.12.7",
+      "versions": {
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.13.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "joblib": "1.4.2",
+        "threadpoolctl": "3.5.0"
+      },
+      "data_hashes": {
+        "train": "19893faef2fc23c300639706a4a96003e00f7418f9b0fed043ab7fa559379d1c",
+        "dev": "616bf2c5415f4df7124ea7f6522732c855bd0df22b9cd2c22d43d9fedf022096"
+      },
+      "deployment_logits_checked": true,
+      "training_sources": [
+        "mc_fake"
+      ],
+      "dev_sources": [
+        "mc_fake"
+      ],
+      "source_counts": {
+        "mc_fake": 22617
+      },
+      "tfidf_max_features": 40000,
+      "dev_selection": "pooled source-development macro-F1; excluded datasets dev labels are not used",
+      "recorded_data_hash_method": "historical evaluated pickle byte hashes; caches removed after exact source reconstruction",
+      "current_split_fingerprints": {
+        "train": "1f1d3b6d4a731fe6e8ae7ff74440d9f654df2021664c84619ad636024240b4fe",
+        "dev": "47f977900301588ed0a480f3a136d4fc4bf9fa24f3cf66e41d8e210f0601b364"
+      },
+      "split_manifest": "results/split_manifest.json.gz"
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "training_loss": 0.7115573883056641,
+        "dev_macro_f1": 0.135670731707317
+      },
+      {
+        "epoch": 5,
+        "training_loss": 0.6674695611000061,
+        "dev_macro_f1": 0.4680001594414166
+      },
+      {
+        "epoch": 10,
+        "training_loss": 0.6133741140365601,
+        "dev_macro_f1": 0.7064940292499664
+      },
+      {
+        "epoch": 15,
+        "training_loss": 0.5478119254112244,
+        "dev_macro_f1": 0.7082214248427792
+      },
+      {
+        "epoch": 20,
+        "training_loss": 0.4875507354736328,
+        "dev_macro_f1": 0.6878489804035552
+      },
+      {
+        "epoch": 25,
+        "training_loss": 0.4514449536800384,
+        "dev_macro_f1": 0.6869419667181504
+      },
+      {
+        "epoch": 30,
+        "training_loss": 0.4308541417121887,
+        "dev_macro_f1": 0.6946250816198714
+      },
+      {
+        "epoch": 35,
+        "training_loss": 0.4177227914333343,
+        "dev_macro_f1": 0.6959183673469388
+      },
+      {
+        "epoch": 40,
+        "training_loss": 0.4085489213466644,
+        "dev_macro_f1": 0.7034189174019525
+      },
+      {
+        "epoch": 45,
+        "training_loss": 0.40381720662117,
+        "dev_macro_f1": 0.7075702198493865
+      },
+      {
+        "epoch": 50,
+        "training_loss": 0.3981798589229584,
+        "dev_macro_f1": 0.706179960448253
+      },
+      {
+        "epoch": 55,
+        "training_loss": 0.3936277627944946,
+        "dev_macro_f1": 0.7047960721827374
+      }
+    ]
+  },
+  "jruvika": {
+    "config": {
+      "dataset": "jruvika",
+      "architecture": "two-layer cosine-weighted mean GraphSAGE",
+      "independently_trained": true,
+      "seed": 42,
+      "train_rows": 2772,
+      "dev_rows": 384,
+      "dimensions": 128,
+      "hidden_dimensions": 64,
+      "dropout": 0.3,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "optimizer": "AdamW",
+      "loss": "training-class-balanced cross entropy",
+      "max_epochs": 300,
+      "early_stopping": "8 non-improving dev checks, evaluated at epoch 1 then every 5 epochs",
+      "selected_epoch": 120,
+      "selected_dev_macro_f1": 0.9869748383726689,
+      "last_epoch": 160,
+      "k": 10,
+      "graph_edges": 27720,
+      "graph_policy": "directed cosine-weighted kNN; no self edges; row normalized; separate learned self transform",
+      "selection": "development macro F1 only; no test data loaded",
+      "training_seconds": 11.118093013763428,
+      "device": "cuda",
+      "python": "3.12.7",
+      "versions": {
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "scipy": "1.13.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "joblib": "1.4.2",
+        "threadpoolctl": "3.5.0"
+      },
+      "data_hashes": {
+        "train": "19893faef2fc23c300639706a4a96003e00f7418f9b0fed043ab7fa559379d1c",
+        "dev": "616bf2c5415f4df7124ea7f6522732c855bd0df22b9cd2c22d43d9fedf022096"
+      },
+      "deployment_logits_checked": true,
+      "training_sources": [
+        "jruvika"
+      ],
+      "dev_sources": [
+        "jruvika"
+      ],
+      "source_counts": {
+        "jruvika": 2772
+      },
+      "tfidf_max_features": 40000,
+      "dev_selection": "pooled source-development macro-F1; excluded datasets dev labels are not used",
+      "recorded_data_hash_method": "historical evaluated pickle byte hashes; caches removed after exact source reconstruction",
+      "current_split_fingerprints": {
+        "train": "1f1d3b6d4a731fe6e8ae7ff74440d9f654df2021664c84619ad636024240b4fe",
+        "dev": "47f977900301588ed0a480f3a136d4fc4bf9fa24f3cf66e41d8e210f0601b364"
+      },
+      "split_manifest": "results/split_manifest.json.gz"
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "training_loss": 0.7108746767044067,
+        "dev_macro_f1": 0.3390705679862306
+      },
+      {
+        "epoch": 5,
+        "training_loss": 0.6419684886932373,
+        "dev_macro_f1": 0.8811807661365183
+      },
+      {
+        "epoch": 10,
+        "training_loss": 0.5477607846260071,
+        "dev_macro_f1": 0.8979328957860517
+      },
+      {
+        "epoch": 15,
+        "training_loss": 0.4319328069686889,
+        "dev_macro_f1": 0.8952765353987128
+      },
+      {
+        "epoch": 20,
+        "training_loss": 0.3064505159854889,
+        "dev_macro_f1": 0.9191123009913909
+      },
+      {
+        "epoch": 25,
+        "training_loss": 0.2059986144304275,
+        "dev_macro_f1": 0.9479152537775004
+      },
+      {
+        "epoch": 30,
+        "training_loss": 0.1362266391515731,
+        "dev_macro_f1": 0.9609308761386682
+      },
+      {
+        "epoch": 35,
+        "training_loss": 0.0942858904600143,
+        "dev_macro_f1": 0.9713493091683568
+      },
+      {
+        "epoch": 40,
+        "training_loss": 0.069748118519783,
+        "dev_macro_f1": 0.9713493091683568
+      },
+      {
+        "epoch": 45,
+        "training_loss": 0.0539663396775722,
+        "dev_macro_f1": 0.973951973951974
+      },
+      {
+        "epoch": 50,
+        "training_loss": 0.0474802404642105,
+        "dev_macro_f1": 0.973951973951974
+      },
+      {
+        "epoch": 55,
+        "training_loss": 0.0417314954102039,
+        "dev_macro_f1": 0.976558525683201
+      },
+      {
+        "epoch": 60,
+        "training_loss": 0.0366748087108135,
+        "dev_macro_f1": 0.976558525683201
+      },
+      {
+        "epoch": 65,
+        "training_loss": 0.0339827761054039,
+        "dev_macro_f1": 0.976558525683201
+      },
+      {
+        "epoch": 70,
+        "training_loss": 0.0318585895001888,
+        "dev_macro_f1": 0.976558525683201
+      },
+      {
+        "epoch": 75,
+        "training_loss": 0.0302365981042385,
+        "dev_macro_f1": 0.976558525683201
+      },
+      {
+        "epoch": 80,
+        "training_loss": 0.0280435960739851,
+        "dev_macro_f1": 0.976558525683201
+      },
+      {
+        "epoch": 85,
+        "training_loss": 0.0274349115788936,
+        "dev_macro_f1": 0.976558525683201
+      },
+      {
+        "epoch": 90,
+        "training_loss": 0.025280499830842,
+        "dev_macro_f1": 0.976558525683201
+      },
+      {
+        "epoch": 95,
+        "training_loss": 0.0218241922557353,
+        "dev_macro_f1": 0.9791615791615792
+      },
+      {
+        "epoch": 100,
+        "training_loss": 0.0224962271749973,
+        "dev_macro_f1": 0.9791615791615792
+      },
+      {
+        "epoch": 105,
+        "training_loss": 0.0211769361048936,
+        "dev_macro_f1": 0.9817677421980452
+      },
+      {
+        "epoch": 110,
+        "training_loss": 0.0194042641669511,
+        "dev_macro_f1": 0.9791615791615792
+      },
+      {
+        "epoch": 115,
+        "training_loss": 0.019471202045679,
+        "dev_macro_f1": 0.984368215371255
+      },
+      {
+        "epoch": 120,
+        "training_loss": 0.0183809883892536,
+        "dev_macro_f1": 0.9869748383726688
+      },
+      {
+        "epoch": 125,
+        "training_loss": 0.0180261526256799,
+        "dev_macro_f1": 0.984368215371255
+      },
+      {
+        "epoch": 130,
+        "training_loss": 0.0170876272022724,
+        "dev_macro_f1": 0.984368215371255
+      },
+      {
+        "epoch": 135,
+        "training_loss": 0.0170902516692876,
+        "dev_macro_f1": 0.984368215371255
+      },
+      {
+        "epoch": 140,
+        "training_loss": 0.015669098123908,
+        "dev_macro_f1": 0.984368215371255
+      },
+      {
+        "epoch": 145,
+        "training_loss": 0.0150459380820393,
+        "dev_macro_f1": 0.984368215371255
+      },
+      {
+        "epoch": 150,
+        "training_loss": 0.0157101415097713,
+        "dev_macro_f1": 0.984368215371255
+      },
+      {
+        "epoch": 155,
+        "training_loss": 0.0132525339722633,
+        "dev_macro_f1": 0.984368215371255
+      },
+      {
+        "epoch": 160,
+        "training_loss": 0.0134757310152053,
+        "dev_macro_f1": 0.984368215371255
+      }
+    ]
+  }
+}

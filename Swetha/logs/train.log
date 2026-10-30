@@ -1,0 +1,13 @@
+Training GraphSAGE on cuda
+amt: fitting source-only TF-IDF/SVD (384 training rows)
+amt: train=384, dev=48; building training-only graph
+amt: saved GNN, best epoch=45, dev macro-F1=0.7078, seconds=8.2
+multifc: fitting source-only TF-IDF/SVD (19591 training rows)
+multifc: train=19591, dev=2445; building training-only graph
+multifc: saved GNN, best epoch=25, dev macro-F1=0.6330, seconds=82.6
+mc_fake: fitting source-only TF-IDF/SVD (22617 training rows)
+mc_fake: train=22617, dev=2835; building training-only graph
+mc_fake: saved GNN, best epoch=15, dev macro-F1=0.7082, seconds=153.1
+jruvika: fitting source-only TF-IDF/SVD (2772 training rows)
+jruvika: train=2772, dev=384; building training-only graph
+jruvika: saved GNN, best epoch=120, dev macro-F1=0.9870, seconds=11.1

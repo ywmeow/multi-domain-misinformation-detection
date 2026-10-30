@@ -1,0 +1,24 @@
+train=amt      test=amt      n=  48 macro-F1=0.6457 accuracy=0.6458
+train=amt      test=multifc  n=2433 macro-F1=0.5064 accuracy=0.5134
+train=amt      test=mc_fake  n=2832 macro-F1=0.5096 accuracy=0.5978
+train=amt      test=jruvika  n= 386 macro-F1=0.5997 accuracy=0.6010
+train=multifc  test=amt      n=  48 macro-F1=0.3778 accuracy=0.4167
+train=multifc  test=multifc  n=2433 macro-F1=0.6367 accuracy=0.6535
+train=multifc  test=mc_fake  n=2832 macro-F1=0.5892 accuracy=0.7585
+train=multifc  test=jruvika  n= 386 macro-F1=0.4856 accuracy=0.5337
+train=mc_fake  test=amt      n=  48 macro-F1=0.4198 accuracy=0.5417
+train=mc_fake  test=multifc  n=2433 macro-F1=0.4719 accuracy=0.4768
+train=mc_fake  test=mc_fake  n=2832 macro-F1=0.7172 accuracy=0.8280
+train=mc_fake  test=jruvika  n= 386 macro-F1=0.5964 accuracy=0.6347
+train=jruvika  test=amt      n=  48 macro-F1=0.4074 accuracy=0.5208
+train=jruvika  test=multifc  n=2433 macro-F1=0.3953 accuracy=0.4081
+train=jruvika  test=mc_fake  n=2832 macro-F1=0.5244 accuracy=0.8217
+train=jruvika  test=jruvika  n= 386 macro-F1=0.9792 accuracy=0.9793
+
+Macro-F1: train row -> test column
+test_dataset     amt  multifc  mc_fake  jruvika
+train / test                                   
+amt           0.6457   0.5064   0.5096   0.5997
+multifc       0.3778   0.6367   0.5892   0.4856
+mc_fake       0.4198   0.4719   0.7172   0.5964
+jruvika       0.4074   0.3953   0.5244   0.9792
