@@ -1,0 +1,7 @@
+/data/
+/checkpoints/
+/cache/
+
+# Personal experiment notebooks and planning notes.
+/notebook/
+/PLAN.md

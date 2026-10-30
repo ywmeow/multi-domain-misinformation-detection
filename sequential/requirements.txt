@@ -1,0 +1,7 @@
+# Data preparation and BiLSTM training (Python 3.10+).
+pandas>=2.2,<4
+pyarrow>=17,<27
+spacy>=3.8,<4
+torch>=2.4,<3
+scikit-learn>=1.5,<2
+psutil>=5.9,<8
