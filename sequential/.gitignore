@@ -1,6 +1,11 @@
 /data/
-/checkpoints/
 /cache/
+
+# Keep the selected, self-contained model available to teammates.
+# The parent exception also overrides machine-local checkpoint exclusions.
+!/checkpoints/
+/checkpoints/*
+!/checkpoints/bilstm_glove100_seed42/
 
 # Personal experiment notebooks and planning notes.
 /notebook/

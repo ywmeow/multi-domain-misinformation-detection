@@ -1,0 +1,64 @@
+{
+  "training": {
+    "cache": "/content/bilstm/sequential/cache",
+    "output": "/content/drive/MyDrive/bilstm_runs/bilstm_glove100_seed42_20261027_061113_utc",
+    "epochs": 10,
+    "batch_size": 32,
+    "embedding_dim": 100,
+    "hidden_size": 128,
+    "dropout": 0.3,
+    "embedding_dropout": 0.3,
+    "glove": "/content/glove/glove.6B.100d.txt",
+    "embedding_lr": 0.0001,
+    "freeze_epochs": 1,
+    "patience": 3,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "seed": 42,
+    "threads": 4,
+    "device": "cuda"
+  },
+  "model": {
+    "vocab_size": 50002,
+    "embedding_dim": 100,
+    "hidden_size": 128,
+    "dropout": 0.3,
+    "embedding_dropout": 0.3,
+    "pad_id": 0
+  },
+  "tokenizer": {
+    "tokenizer": "spacy.blank(\"en\")",
+    "min_freq": 2,
+    "max_vocab": 50000,
+    "vocab_size": 50002,
+    "special_tokens": {
+      "<PAD>": 0,
+      "<UNK>": 1
+    },
+    "max_length": 512,
+    "truncation": "head",
+    "padding": "longest_in_batch",
+    "empty_text": "<UNK>",
+    "versions": {
+      "python": "3.12.13",
+      "pandas": "3.0.5",
+      "pyarrow": "25.0.1",
+      "spacy": "3.8.14",
+      "torch": "2.14.0+cpu"
+    }
+  },
+  "embeddings": {
+    "source": "/content/glove/glove.6B.100d.txt",
+    "embedding_dim": 100,
+    "ordinary_tokens": 50000,
+    "exact_matches": 27205,
+    "lowercase_matches": 20049,
+    "oov_tokens": 2746,
+    "vocab_coverage": 0.94508
+  },
+  "versions": {
+    "torch": "2.11.0+cu130",
+    "sklearn": "1.6.1",
+    "psutil": "5.9.5"
+  }
+}

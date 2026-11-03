@@ -11,11 +11,12 @@ exports and preserves their train/dev/test split membership.
 | `embeddings.py` | Load GloVe vectors for the vocabulary and report coverage. |
 | `model.py` | Define the BiLSTM and its forward pass. |
 | `train.py` | Train, validate, select a checkpoint, and evaluate test. |
+| `predict.py` | Load the distributed checkpoint and classify new text. |
 
 ## Setup
 
-Requires Python 3.10+ and 7-Zip for extracting the dataset archives. Run all
-commands from the repository root.
+Requires Python 3.10+. Training-data preparation also requires 7-Zip for
+extracting the dataset archives. Run all commands from the repository root.
 
 ```sh
 python -m venv .venv
@@ -35,6 +36,55 @@ python -m pip install -r sequential/requirements.txt
 For GPU training, install a CUDA-enabled PyTorch build using the
 [PyTorch installation guide](https://pytorch.org/get-started/locally/).
 The training script automatically selects CUDA when available, otherwise CPU.
+
+## Predict with the saved model
+
+The selected GloVe 100d BiLSTM run is included in
+`sequential/checkpoints/bilstm_glove100_seed42/`. After installing the
+dependencies, run:
+
+```sh
+python sequential/predict.py --text "The council approved a new public transport plan."
+```
+
+The command returns JSON with `label_id` (`0=real`, `1=fake`), `label`, and
+`p_fake`. It uses CPU by default; `--device cuda` enables a compatible GPU.
+Use `--checkpoint path/to/run` to load another saved run directory.
+
+Prediction needs `best.pt`, its matching `vocab.json`, and
+`tokenizer_settings.json`, together with `model.py`, `predict.py`, PyTorch,
+and spaCy. The distributed run also includes its configuration, history,
+metrics, and dev/test predictions for review. Original Colab paths in the
+configuration record the training environment; they do not need to exist locally.
+
+No training-data extraction, token cache, original GloVe download, or retraining
+is required for prediction. The checkpoint already contains the fine-tuned
+embedding table. New input receives NFC Unicode normalization and whitespace
+collapse, then the same spaCy tokenizer and saved vocabulary, with head
+truncation at 512 tokens. Unknown words map to `<UNK>`; the vocabulary and
+embeddings stay fixed. Keep each checkpoint's vocabulary and tokenizer settings
+with that checkpoint, even if you regenerate a training cache later.
+
+These are classifier scores, not independent fact verification. Headline-only
+input is supported, but the recorded evaluation includes claims and full
+articles; it does not establish accuracy on a new headline-only collection.
+
+## What is shared through Git
+
+| Path under `sequential/` | Git policy | Purpose |
+|---|---|---|
+| `data/` | Ignored | Extracted JSONL, pooled data, and optional source GloVe vectors; recreate for training. |
+| `cache/` | Ignored | Training vocabulary and tokenized splits; regenerate with `data.py`. |
+| `checkpoints/bilstm_glove100_seed42/` | Included | The selected trained model and its matching inference files and results. |
+| Other directories under `checkpoints/` | Ignored | New experiments; share a selected run explicitly when needed. |
+| `notebook/`, `PLAN.md` | Ignored | Local notebooks, bundles, and planning notes. |
+
+Cloning the repository provides the selected model and source code. Teammates
+who only need predictions can stop after setup and the prediction command.
+For training, recreate `data/` and `cache/` using the steps below, or obtain
+matching generated files separately. Once the token cache exists, `train.py`
+can train directly from it without the pooled or extracted data. GloVe training
+additionally needs the original vector file to initialize a fresh model.
 
 ## Prepare the data
 
@@ -129,8 +179,12 @@ Download the GloVe 6B archive from the
 `glove.6B.100d.txt` to `sequential/data/embeddings/`. Then run:
 
 ```sh
-python sequential/train.py --glove sequential/data/embeddings/glove.6B.100d.txt --embedding-dim 100 --output sequential/checkpoints/bilstm_glove100
+python sequential/train.py --glove sequential/data/embeddings/glove.6B.100d.txt --embedding-dim 100 --epochs 10 --output sequential/checkpoints/bilstm_glove100_retrain
 ```
+
+This command uses the distributed run's 10-epoch cap. Omitting `--epochs`
+uses the current trainer's default of 20; each attempt needs a new output
+directory. The distributed checkpoint remains in its separate run directory.
 
 | Setting | Value |
 |---|---|
@@ -141,7 +195,7 @@ python sequential/train.py --glove sequential/data/embeddings/glove.6B.100d.txt 
 | Optimizer | AdamW, learning rate `1e-3`, weight decay `0.01` |
 | Embedding warmup | Frozen for epoch 1, then fine-tuned at `1e-4` |
 | Loss / gradient clipping | Unweighted cross-entropy / norm 1.0 |
-| Epoch limit / early-stopping patience | 20 / 3 |
+| Default epoch limit / early-stopping patience | 20 / 3; distributed run capped at 10 |
 
 GloVe lookup prefers exact spelling, then lowercase fallback. Missing tokens
 and UNK receive small random vectors. Coverage of ordinary vocabulary entries
@@ -195,21 +249,31 @@ For inference, load `best.pt` with `torch.load(..., map_location="cpu",
 weights_only=True)`, construct `BiLSTM(**checkpoint["model_config"])`, load
 `checkpoint["model"]` with `load_state_dict`, and call `eval()`. The source
 GloVe file is unnecessary for inference. Optimizer state is not saved for
-training resumption. Generated data, caches, and checkpoints are ignored by Git.
+training resumption. Generated data, caches, and new checkpoint directories are
+ignored by Git. The selected `bilstm_glove100_seed42` run is explicitly included
+so teammates receive the trained weights and matching inference files.
 
 ## Recorded results
 
 | Model | Pooled test macro-F1 | AMT | MultiFC | MC-Fake | Jruvika |
 |---|---:|---:|---:|---:|---:|
-| BiLSTM, random embeddings, selected epoch 2 | 0.7914 | 0.5312 | 0.6040 | 0.7439 | 0.9127 |
-| BiLSTM, GloVe 100d, selected epoch 12 | 0.8092 | 0.4844 | 0.6486 | 0.7743 | 0.9423 |
+| Distributed BiLSTM, GloVe 100d, selected epoch 10 | 0.8103 | 0.4535 | 0.6589 | 0.7695 | 0.9374 |
 | TF-IDF + logistic regression | 0.8144 | 0.5781 | 0.6463 | 0.7577 | 0.9450 |
 
-The GloVe run stopped after 15 epochs, selecting epoch 12 with dev mean dataset
-macro-F1 **0.7529**. Its test accuracy was **0.8138**, mean dataset macro-F1
-**0.7124**, cross-entropy **0.4092**, and AUROC **0.9051**. The random-embedding
-reference used no embedding dropout. Transformer reference results and their
-training settings are documented in [trung/README.md](../trung/README.md).
+These GloVe results come from the distributed run's
+[metrics.json](checkpoints/bilstm_glove100_seed42/metrics.json), with its
+configuration in [config.json](checkpoints/bilstm_glove100_seed42/config.json).
+It completed all 10 configured epochs and selected epoch 10 with dev mean
+dataset macro-F1 **0.7468**. Its test accuracy was **0.8163**, mean dataset
+macro-F1 **0.7048**, cross-entropy **0.3761**, and AUROC **0.9077**. GloVe matched
+**94.51%** of the 50,000 ordinary vocabulary entries. Training took approximately
+**10.1 minutes on a Tesla T4**. These are single-seed results, and AMT has only
+48 test examples.
+
+The reference baseline is recorded in
+[Trung's baseline metrics](../trung/results/tfidf_lr/metrics.json).
+Transformer reference results and their training settings are documented in
+[trung/README.md](../trung/README.md).
 
 ## Checks
 
@@ -218,4 +282,5 @@ python -m unittest discover -s sequential/tests -v
 ```
 
 The small CPU tests cover GloVe matching and validation, freezing/unfreezing,
-padding invariance, early stopping, checkpoint reload, and prediction alignment.
+padding invariance, early stopping, checkpoint reload, prediction alignment,
+and prediction using only a saved model, vocabulary, and tokenizer settings.

@@ -17,6 +17,7 @@ sys.path.insert(0, str(ROOT))
 from data import collate_batch
 from embeddings import load_glove
 from model import BiLSTM
+from predict import MisinformationDetector
 
 
 class TrainingTests(unittest.TestCase):
@@ -146,6 +147,31 @@ class TrainingTests(unittest.TestCase):
                     [row["embeddings_frozen"] for row in other_history],
                     [epoch <= freeze for epoch in range(1, expected_epochs + 1)],
                 )
+
+    def test_prediction_uses_saved_vocabulary_without_training_inputs(self):
+        output = self.root / "inference_only"
+        output.mkdir()
+        config = {
+            "vocab_size": len(self.vocab), "embedding_dim": 3, "hidden_size": 4,
+            "dropout": 0.9, "embedding_dropout": 0.9, "pad_id": 0,
+        }
+        model = BiLSTM(**config).eval()
+        torch.save({"model": model.state_dict(), "model_config": config}, output / "best.pt")
+        (output / "vocab.json").write_text(json.dumps(self.vocab), encoding="utf-8")
+        settings = {"tokenizer": 'spacy.blank("en")', "vocab_size": len(self.vocab), "max_length": 3}
+        (output / "tokenizer_settings.json").write_text(json.dumps(settings), encoding="utf-8")
+        detector = MisinformationDetector(output)
+        text = "\tKnown   Case unseen known\n"
+        # Case is preserved, unseen becomes UNK, and the fourth token is truncated.
+        with torch.no_grad():
+            expected = model(torch.tensor([[3, 4, 1]]), torch.tensor([3])).softmax(1)[0, 1].item()
+        prediction = detector.predict(text)
+        self.assertAlmostEqual(prediction["p_fake"], expected, places=7)
+        self.assertEqual(prediction, detector.predict(text))
+        self.assertEqual(prediction["label_id"], int(expected >= 0.5))
+        self.assertEqual(prediction["label"], "fake" if expected >= 0.5 else "real")
+        with self.assertRaises(ValueError):
+            detector.predict(" \n\t")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,21 @@
+{
+  "tokenizer": "spacy.blank(\"en\")",
+  "min_freq": 2,
+  "max_vocab": 50000,
+  "vocab_size": 50002,
+  "special_tokens": {
+    "<PAD>": 0,
+    "<UNK>": 1
+  },
+  "max_length": 512,
+  "truncation": "head",
+  "padding": "longest_in_batch",
+  "empty_text": "<UNK>",
+  "versions": {
+    "python": "3.12.13",
+    "pandas": "3.0.5",
+    "pyarrow": "25.0.1",
+    "spacy": "3.8.14",
+    "torch": "2.14.0+cpu"
+  }
+}
