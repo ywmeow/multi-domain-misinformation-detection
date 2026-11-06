@@ -25,8 +25,17 @@ def build_graph(x, k=10):
 
 def query_adjacency(x, neighbors, anchor_count, k):
     distance, indices = neighbors.kneighbors(x, n_neighbors=k)
+    return weighted_adjacency(distance, indices, anchor_count)
+
+
+def weighted_adjacency(distance, indices, anchor_count):
+    batch_size, neighbor_count = indices.shape
     weights = np.maximum(1-distance, 0).astype('float32')
-    adjacency = sparse.csr_matrix((weights.ravel(), (np.repeat(np.arange(len(x)), k), indices.ravel())), shape=(len(x),anchor_count))
+    rows = np.repeat(np.arange(batch_size), neighbor_count)
+    adjacency = sparse.csr_matrix(
+        (weights.ravel(), (rows, indices.ravel())),
+        shape=(batch_size, anchor_count),
+    )
     return normalize(adjacency, norm='l1', axis=1)
 
 

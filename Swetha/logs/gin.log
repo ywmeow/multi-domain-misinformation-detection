@@ -1,0 +1,31 @@
+Evaluating amt
+gin              amt      -> amt      F1=0.5623
+gin              amt      -> multifc  F1=0.4278
+gin              amt      -> mc_fake  F1=0.4360
+gin              amt      -> jruvika  F1=0.4920
+Evaluating multifc
+gin              multifc  -> amt      F1=0.3706
+gin              multifc  -> multifc  F1=0.6224
+gin              multifc  -> mc_fake  F1=0.5734
+gin              multifc  -> jruvika  F1=0.5225
+Evaluating mc_fake
+gin              mc_fake  -> amt      F1=0.5613
+gin              mc_fake  -> multifc  F1=0.4638
+gin              mc_fake  -> mc_fake  F1=0.7636
+gin              mc_fake  -> jruvika  F1=0.5489
+Evaluating jruvika
+gin              jruvika  -> amt      F1=0.4454
+gin              jruvika  -> multifc  F1=0.3876
+gin              jruvika  -> mc_fake  F1=0.5155
+gin              jruvika  -> jruvika  F1=0.9689
+model                evaluation
+gcn                  cross-dataset transfer    0.4787
+                     within-dataset            0.7351
+gin                  cross-dataset transfer    0.4787
+                     within-dataset            0.7293
+graphsage            cross-dataset transfer    0.4903
+                     within-dataset            0.7447
+graphsage_retrained  cross-dataset transfer    0.5028
+                     within-dataset            0.7440
+graphsage_tuned      cross-dataset transfer    0.4699
+                     within-dataset            0.7488

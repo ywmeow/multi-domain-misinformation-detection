@@ -30,7 +30,8 @@ class MisinformationDetector:
         return np.asarray(probabilities)
 
     def predict(self,texts):
-        return [{'dataset_model':self.bundle['dataset'],'label_id':int(p>=.5),'label':'fake' if p>=.5 else 'real','fake_probability':float(p)} for p in self.predict_proba(texts)]
+        threshold = self.bundle.get('threshold', .5)
+        return [{'dataset_model':self.bundle['dataset'],'label_id':int(p>=threshold),'label':'fake' if p>=threshold else 'real','fake_probability':float(p)} for p in self.predict_proba(texts)]
 
 
 def predict_all_models(text):
@@ -46,7 +47,7 @@ def predict_all_models(text):
 
 def main():
     print('Model: two-layer cosine-weighted mean GraphSAGE graph neural network')
-    print('TF-IDF -> SVD (128 features) -> GraphSAGE (64, ReLU) -> GraphSAGE (2) -> softmax')
+    print('TF-IDF -> SVD -> GraphSAGE -> softmax')
     print('Paste one article or claim below. Finish with a blank line (press Enter twice):')
     lines = []
     while True:

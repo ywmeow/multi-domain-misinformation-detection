@@ -21,7 +21,7 @@ def torch_sparse(a, device):
     return torch.sparse_coo_tensor(torch.tensor(np.vstack([a.row,a.col]), dtype=torch.long), torch.tensor(a.data, dtype=torch.float32), a.shape).coalesce().to(device)
 
 
-def train_dataset(dataset, train, dev, device):
+def train_dataset(dataset, train, dev, device, save=True):
     sources = (dataset,)
     start = time.time()
     np.random.seed(42)
@@ -91,13 +91,55 @@ def train_dataset(dataset, train, dev, device):
     deployed = numpy_logits(d,da,x,anchor_hidden,state)
     if not np.allclose(expected,deployed,atol=2e-5,rtol=2e-5):
         raise AssertionError('Deployment logits differ from PyTorch')
-    bundle = {'architecture':'two-layer cosine-weighted mean GraphSAGE','dataset':dataset,'training_sources':list(sources),'vectorizer':vectorizer,'svd':svd,'neighbors':neighbors,'anchors':x,'anchor_hidden':anchor_hidden,'state':state,'k':k,'label_mapping':{0:'real',1:'fake'}}
-    joblib.dump(bundle,models_dir/f'{dataset}_graphsage.joblib',compress=3)
-    config = {'dataset':dataset,'architecture':bundle['architecture'],'independently_trained':True,'seed':42,'train_rows':len(train),'dev_rows':len(dev),'dimensions':dimensions,'hidden_dimensions':64,'dropout':.3,'learning_rate':.003,'weight_decay':1e-4,'optimizer':'AdamW','loss':'training-class-balanced cross entropy','max_epochs':300,'early_stopping':'8 non-improving dev checks, evaluated at epoch 1 then every 5 epochs','selected_epoch':best_epoch,'selected_dev_macro_f1':best,'last_epoch':epoch,'k':k,'graph_edges':int(adjacency.nnz),'graph_policy':'directed cosine-weighted kNN; no self edges; row normalized; separate learned self transform','selection':'source train/dev partitions only; test partition not requested','training_seconds':time.time()-start,'device':str(device),'python':platform.python_version(),'versions':{name:importlib.metadata.version(name) for name in ['numpy','pandas','scipy','scikit-learn','torch','joblib','threadpoolctl']},'deployment_logits_checked':True}
+    bundle = {
+        'architecture': 'two-layer cosine-weighted mean GraphSAGE',
+        'dataset': dataset,
+        'training_sources': list(sources),
+        'vectorizer': vectorizer,
+        'svd': svd,
+        'neighbors': neighbors,
+        'anchors': x,
+        'anchor_hidden': anchor_hidden,
+        'state': state,
+        'k': k,
+        'label_mapping': {0:'real',1:'fake'},
+    }
+    config = {
+        'dataset': dataset,
+        'architecture': bundle['architecture'],
+        'independently_trained': True,
+        'seed': 42,
+        'train_rows': len(train),
+        'dev_rows': len(dev),
+        'dimensions': dimensions,
+        'hidden_dimensions': 64,
+        'dropout': .3,
+        'learning_rate': .003,
+        'weight_decay': 1e-4,
+        'optimizer': 'AdamW',
+        'loss': 'training-class-balanced cross entropy',
+        'max_epochs': 300,
+        'early_stopping': '8 non-improving dev checks, evaluated at epoch 1 then every 5 epochs',
+        'selected_epoch': best_epoch,
+        'selected_dev_macro_f1': best,
+        'last_epoch': epoch,
+        'k': k,
+        'graph_edges': int(adjacency.nnz),
+        'graph_policy': 'directed cosine-weighted kNN; no self edges; row normalized; separate learned self transform',
+        'selection': 'source train/dev partitions only; test partition not requested',
+        'training_seconds': time.time()-start,
+        'device': str(device),
+        'python': platform.python_version(),
+        'versions': {name:importlib.metadata.version(name) for name in ['numpy','pandas','scipy','scikit-learn','torch','joblib','threadpoolctl']},
+        'deployment_logits_checked': True,
+    }
     config.update({'training_sources':list(sources),'dev_sources':list(sources),'source_counts':train.dataset.value_counts().to_dict(),'tfidf_max_features':40000,'dev_selection':'source-development macro-F1 only; other datasets dev labels are not used'})
     config['data_hashes'] = {split:split_fingerprint(split) for split in ['train','dev']}
     config['data_hash_method'] = 'text-free split metadata with verified text keys'
     config['split_manifest'] = 'results/split_manifest.json.gz'
+    if not save:
+        return bundle, config
+    joblib.dump(bundle,models_dir/f'{dataset}_graphsage.joblib',compress=3)
     training_path = results/'training.json'
     training = json.loads(training_path.read_text()) if training_path.exists() else {}
     training[dataset] = {'config':config,'history':history}

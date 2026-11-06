@@ -2,11 +2,64 @@
 
 Four GraphSAGE models are trained separately on AMT, MultiFC, MC-Fake and Jruvika. Each model is tested on all four datasets, giving 16 train/test pairs. Labels are **0=real** and **1=fake**.
 
+## Experimental design
+
+Five methods use the same 16 train/test pairs:
+
+| Method | Configuration |
+|---|---|
+| `graphsage` | Original checkpoint, 10 query neighbors and threshold 0.5. |
+| `graphsage_tuned` | Same checkpoint with query neighbor count and threshold selected on source dev. |
+| `graphsage_retrained` | GraphSAGE retrained with hidden size, dropout, learning rate and weight decay selected on source dev. |
+| `gin` | Two-layer Graph Isomorphism Network with sum aggregation and a two-layer MLP at each graph layer. |
+| `gcn` | Two-layer graph convolutional network with row-normalized aggregation and self-loops. |
+
+GraphSAGE inference tuning tries 5, 10, 20 and 30 query neighbors. The threshold search tries 0.35 through 0.65 in steps of 0.05. Selection uses source-development macro-F1. GraphSAGE tuning changes how new documents query the fixed training anchors and how scores become labels. Each selected configuration is applied unchanged to all four test sets.
+
+GCN, GIN and GraphSAGE use the same source-fitted SVD features and 10-neighbor graph topology. GCN averages a node's representation with its weighted neighbor mean and applies a shared projection. GraphSAGE learns separate projections for the node and its neighbors. GIN uses unweighted positive edges and adds the node's own features to the sum of its neighbors before applying an MLP, with the self coefficient fixed to one. The baselines use 64 hidden units, dropout 0.3, AdamW, class-balanced loss and up to 300 epochs. Their checkpoints and thresholds are selected on source dev. [GIN paper by Xu et al.](https://arxiv.org/abs/1810.00826)
+
+The retraining search tests three configurations on each source:
+
+| Hidden units | Dropout | Learning rate | Weight decay |
+|---:|---:|---:|---:|
+| 64 | 0.10 | 0.003 | 0.001 |
+| 96 | 0.30 | 0.002 | 0.001 |
+| 128 | 0.50 | 0.003 | 0.010 |
+
+Each run uses seed 42, class-balanced cross entropy and the same source training graph. Source-dev macro-F1 selects the configuration, epoch and decision threshold. Each run checks epoch 1 and every fifth epoch up to 300, with early stopping after eight checks without improvement. The retrained comparison uses 10 query neighbors. `test.py` selects between the retrained and inference-tuned GraphSAGE on source dev, preferring the retrained candidate on a tie. It reloads and checks each selected joblib against the evaluated predictions before replacing the four files in `Models/`. `implementation.py` uses each file's saved query neighbor count and decision threshold.
+
 ## Results
 
 Accuracy, precision, recall and F1-score are recorded for every train/test pair. Precision, recall and F1 use **macro averaging**: calculate each metric separately for real and fake, then average the two class scores equally. Per-class scores are also retained in the CSV.
 
-Within-dataset results:
+### Baseline comparison
+
+| Method | Mean within-dataset macro-F1 (4 pairs) | Mean cross-dataset macro-F1 (12 pairs) |
+|---|---:|---:|
+| GraphSAGE | 0.7447 | 0.4903 |
+| GraphSAGE with dev-selected settings | **0.7488** | 0.4699 |
+| Retrained GraphSAGE (saved checkpoints) | 0.7440 | **0.5028** |
+| GIN | 0.7293 | 0.4787 |
+| GCN | 0.7351 | 0.4787 |
+
+Each pair receives equal weight. The development search kept the original settings for AMT and Jruvika. It selected 30 neighbors and a 0.45 threshold for MultiFC, and 20 neighbors and a 0.55 threshold for MC-Fake. Within-dataset macro-F1 rose from 0.6367 to 0.6441 on MultiFC and from 0.7172 to 0.7263 on MC-Fake. Mean transfer macro-F1 fell from 0.4903 to 0.4699, suggesting that settings chosen on the source development data did not generalize consistently across targets.
+
+Retraining raised average transfer macro-F1 from 0.4903 to 0.5028. Average within-dataset performance was nearly flat at 0.7440 versus 0.7447. MC-Fake gained the most within its dataset, from 0.7172 to 0.7851. AMT fell from 0.6457 to 0.5608 on its 48-item test set, while its average transfer improved from 0.5386 to 0.5502. The strongest individual transfer was retrained MC-Fake → Jruvika at 0.6246. Transfer remains weak overall.
+
+### Checkpoints used by inference
+
+All four source-dev winners were retrained GraphSAGE candidates. They replace the original joblibs at the same paths under `Models/`.
+
+| Source | Hidden units | Fake threshold | Source-dev macro-F1 | Within-dataset macro-F1 | Mean transfer macro-F1 |
+|---|---:|---:|---:|---:|---:|
+| AMT | 64 | 0.35 | 0.7290 | 0.5608 | **0.5502** |
+| MultiFC | 96 | 0.40 | 0.6662 | 0.6482 | 0.4942 |
+| MC-Fake | 64 | 0.65 | 0.7755 | 0.7851 | 0.5235 |
+| Jruvika | 64 | 0.55 | 0.9870 | **0.9818** | 0.4432 |
+
+Each saved checkpoint carries its query neighbor count, decision threshold and tuning settings. The CSV records the joblib hash on the matching evaluation rows.
+
+Within-dataset results for the original GraphSAGE checkpoints:
 
 | Dataset | Accuracy | Precision (macro) | Recall (macro) | F1 (macro) |
 |---|---:|---:|---:|---:|
@@ -24,11 +77,11 @@ Test macro-F1, with training datasets as rows and test datasets as columns:
 | MC-Fake | 0.4198 | 0.4719 | 0.7172 | 0.5964 |
 | Jruvika | 0.4074 | 0.3953 | 0.5244 | 0.9792 |
 
-Jruvika gives the best within-dataset result: **0.9792 macro-F1 and 97.93% accuracy**. Its performance drops to 0.3953–0.5244 macro-F1 on other datasets. The best cross-dataset result is **AMT → Jruvika, 0.5997**. Average macro-F1 is 0.7447 on the diagonal and 0.4903 off the diagonal, showing limited transfer between datasets.
+For original GraphSAGE, Jruvika gives the best within-dataset result at **0.9792 macro-F1 and 97.93% accuracy**. Its performance drops to 0.3953–0.5244 macro-F1 on other datasets. The strongest GraphSAGE transfer pair is **AMT → Jruvika at 0.5997**. Average macro-F1 is 0.7447 on the diagonal and 0.4903 off the diagonal.
 
 AMT has only 48 test samples, so its scores are sensitive to individual errors. MC-Fake has a large real-class majority; macro-F1 and fake recall are more informative than accuracy alone. Jruvika contains repeated or mismatched article bodies, and MultiFC uses short claims with source-specific ratings. Dataset style and source cues may influence predictions. These are single-seed results, without a statistical-significance claim.
 
-### Which trained model transfers best?
+### Which original GraphSAGE checkpoint transfers best?
 
 The table below averages each source model's results on the **other three datasets**, excluding its own test set. Each target dataset receives equal weight, regardless of test-set size.
 
@@ -53,12 +106,25 @@ The following factors could explain the transfer gap:
 
 These are plausible explanations supported by the experiment setup and known data limitations, not isolated causal findings. The 4×4 evaluation does not determine how much each factor contributes.
 
-All 16 evaluations are in [results/results.csv](results/results.csv). The main columns are `accuracy`, `macro_precision`, `macro_recall` and `macro_f1`. Each row also contains sample counts, balanced accuracy, per-class precision/recall/F1, ROC-AUC, average precision, confusion counts, checkpoint selection, training time and model/data hashes. Confusion columns mean:
+All 80 evaluations are in [results/results.csv](results/results.csv), with one row per method and train/test pair. The main columns are `accuracy`, `macro_precision`, `macro_recall` and `macro_f1`. The CSV also records per-class metrics, ROC-AUC, average precision, confusion counts, source-dev scores, selected settings and data hashes. Confusion columns mean:
 
 - `true_real`: real predicted as real.
 - `false_fake`: real predicted as fake.
 - `false_real`: fake predicted as real.
 - `true_fake`: fake predicted as fake.
+
+## Where each step runs
+
+| File | What it does |
+|---|---|
+| [prep_data.py](prep_data.py) | Loads the shared datasets and verifies the fixed train, development and test splits. |
+| [model.py](model.py) | Builds the cosine neighbor graph and defines the GraphSAGE layers and NumPy scoring. |
+| [train.py](train.py) | Trains the original GraphSAGE checkpoint for each source and records its settings in `results/training.json`. |
+| [test.py](test.py) | Runs the full comparison. `baseline_scores()` trains and evaluates GCN or GIN. `graph_scores()` evaluates the original GraphSAGE with different query neighbor counts. `retrained_graphsage()` trains the alternative GraphSAGE configurations. `source_predictions()` selects settings on source dev, scores the test documents and checks the chosen checkpoint before it is saved. |
+| [evaluation_utils.py](evaluation_utils.py) | Calculates the metrics and confusion counts used by the evaluation script. |
+| [implementation.py](implementation.py) | Loads the four selected GraphSAGE joblibs and runs the same input through each. |
+
+Run `python Swetha/test.py` from the repository root to train both baselines and compare them with the three GraphSAGE variants. Run `python Swetha/test.py --gin-only` to update GIN using the saved GraphSAGE input features and existing splits. The GIN-only run replaces the former neighbor-voting rows in the CSV and retains the other evaluations and GraphSAGE joblibs. Look for `gcn` and `gin` in the `model` column of [results/results.csv](results/results.csv). The previous comparison and GIN update are recorded in [logs/test.log](logs/test.log) and [logs/gin.log](logs/gin.log).
 
 ## Folder structure
 
@@ -79,6 +145,7 @@ Swetha/
     mc_fake_graphsage.joblib
     jruvika_graphsage.joblib
   logs/
+    gin.log
     prep_data.log
     train.log
     test.log
@@ -148,6 +215,6 @@ python Swetha/test.py
 
 `prep_data.py` validates shared source files and split separation. It reads AMT/MultiFC from existing preprocessing CSVs, Jruvika from its existing source CSV, and MC-Fake directly from its original 7z member in memory. No datasets are copied or extracted into this folder.
 
-`train.py` saves four source-specific checkpoints and updates `results/training.json`. It automatically uses CUDA when available; `python Swetha/train.py --device cpu` forces CPU. `test.py` evaluates all 16 pairs and replaces `results/results.csv`. It does not select or tune models using test results. The README records the completed run; subsequent training runs may produce slightly different scores.
+`train.py` creates the initial source checkpoints and records their settings in `results/training.json`. It uses CUDA when available. `python Swetha/train.py --device cpu` forces CPU. Run `test.py` after training to evaluate the five methods and save the selected checkpoints and `results/results.csv`. When `test.py` starts with selected checkpoints, it rebuilds the original comparison in memory. Subsequent training runs may produce slightly different scores.
 
 Paths resolve from the scripts, so they also run from an IDE. The shared sources and `results/split_manifest.json.gz` must remain available for training/testing. `requirements-lock.txt` records the installed versions; use a PyTorch build suitable for the machine's CPU/CUDA setup.
