@@ -26,18 +26,38 @@ class InputAndFailureTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     inference.normalize_text(text)
 
-    def test_saved_threshold_and_absent_transformer(self):
+    def test_saved_threshold_applies_to_every_model(self):
         detector = SimpleNamespace(predict=lambda text: (0.53, 0.55, False))
         with patch.object(inference, "load_detector", return_value=detector) as loader:
             result = inference.analyze("A test claim.")
-        self.assertEqual([call.args[0] for call in loader.call_args_list], ["bilstm", "graphsage"])
-        self.assertEqual(result["predictions"][1]["label"], "real")
-        self.assertEqual(result["predictions"][2]["status"], "unavailable")
-        self.assertIsNone(result["predictions"][2]["p_fake"])
+        self.assertEqual([call.args[0] for call in loader.call_args_list], list(inference.MODELS))
+        self.assertEqual([p["label"] for p in result["predictions"]], ["real"] * 3)
+        self.assertEqual(result["agreement"], "agree")
+
+    def test_missing_transformer_is_unavailable_not_an_error(self):
+        detector = SimpleNamespace(predict=lambda text: (0.7, 0.5, False))
+        missing = inference.ModelUnavailable("RoBERTa weights are not on this machine.")
+        with patch.object(inference, "load_detector", side_effect=[detector, detector, missing]):
+            result = inference.analyze("A test claim.")
+        transformer = result["predictions"][2]
+        self.assertEqual(transformer["status"], "unavailable")
+        self.assertIsNone(transformer["p_fake"])
+        self.assertIn("not on this machine", transformer["message"])
+        self.assertEqual(result["completed"], 2)
+        self.assertEqual(result["agreement"], "agree")
+
+    def test_disagreement_counts_fake_votes(self):
+        scores = iter([0.9, 0.2, 0.8])
+        detector = SimpleNamespace(predict=lambda text: (next(scores), 0.5, False))
+        with patch.object(inference, "load_detector", return_value=detector):
+            result = inference.analyze("A test claim.")
+        self.assertEqual(result["agreement"], "disagree")
+        self.assertEqual(result["fake_votes"], 2)
 
     def test_failure_preserves_other_prediction_without_claiming_agreement(self):
         detector = SimpleNamespace(predict=lambda text: (0.7, 0.55, False))
-        with patch.object(inference, "load_detector", side_effect=[FileNotFoundError(), detector]):
+        missing = inference.ModelUnavailable("not set up")
+        with patch.object(inference, "load_detector", side_effect=[FileNotFoundError(), detector, missing]):
             with self.assertLogs(inference.__name__, level="ERROR"):
                 result = inference.analyze("A test claim.")
         self.assertEqual(result["predictions"][0]["status"], "error")
@@ -87,11 +107,46 @@ class NativeCheckpointParityTests(unittest.TestCase):
         self.assertEqual(threshold, self.native_graph.bundle["threshold"])
         self.assertEqual(int(score >= threshold), expected["label_id"])
 
+    def test_batch_scores_match_single_predictions(self):
+        texts = ["The council approved a new public transport plan.",
+                 "Shocking video shows what they are hiding from you."]
+        for name, detector in (("bilstm", self.bilstm), ("graphsage", self.graphsage)):
+            with self.subTest(model=name):
+                batch = detector.predict_batch(texts)
+                for text, score in zip(texts, batch):
+                    self.assertAlmostEqual(float(score), detector.predict(text)[0], places=5)
+
     def test_long_text_matches_native_truncation(self):
         text = "word " * 520
         score, _, truncated = self.bilstm.predict(text)
         self.assertTrue(truncated)
         self.assertAlmostEqual(score, self.native_bilstm.predict(text)["p_fake"], places=6)
+
+
+class TransformerCheckpointTests(unittest.TestCase):
+    """Runs only once the RoBERTa weights have been downloaded."""
+
+    @classmethod
+    def setUpClass(cls):
+        try:
+            cls.detector = inference.load_detector("transformer")
+        except inference.ModelUnavailable as error:
+            raise unittest.SkipTest(str(error))
+
+    def test_matches_plain_transformers_usage(self):
+        # Same steps as the usage example in Trung's Hugging Face README.
+        import torch
+        text = "The council approved a new public transport plan after a public consultation."
+        encoded = self.detector.tokenizer(text, truncation=True, max_length=512, return_tensors="pt")
+        with torch.inference_mode():
+            expected = self.detector.model(**encoded).logits.softmax(-1)[0, 1].item()
+        score, threshold, truncated = self.detector.predict(text)
+        self.assertAlmostEqual(score, expected, places=5)
+        self.assertEqual(threshold, 0.5)
+        self.assertFalse(truncated)
+
+    def test_reports_truncation_beyond_512_tokens(self):
+        self.assertTrue(self.detector.predict("word " * 600)[2])
 
 
 if __name__ == "__main__":

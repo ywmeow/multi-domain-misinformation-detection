@@ -1,9 +1,15 @@
-# Prediction-only dependencies; datasets, training libraries and transformers are unnecessary.
+# Prediction and explanation dependencies; datasets and training libraries are unnecessary.
 streamlit>=1.56,<2
 torch>=2.5,<3
 spacy>=3.8,<4
 numpy>=1.26,<3
 scipy>=1.12,<2
+# The GraphSAGE bundles were saved with scikit-learn 1.5.2; other versions may warn.
 scikit-learn>=1.5,<2
 joblib>=1.3,<2
 threadpoolctl>=3.2,<4
+# RoBERTa panel (weights fetched once by dashboard/download_transformer.py).
+transformers>=4.45,<5
+huggingface_hub>=0.25
+# "Explain predictions" (LIME word weights).
+lime==0.2.0.1

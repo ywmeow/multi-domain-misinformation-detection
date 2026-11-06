@@ -1,8 +1,9 @@
 # Signal dashboard
 
-A Streamlit app with a hero and a workspace for comparing the saved BiLSTM and
-**Jruvika GraphSAGE** classifiers on the same headline, claim, or article.
-The RoBERTa + Muon panel stays unavailable until its weights are added.
+A Streamlit app with a hero and a workspace for comparing the saved BiLSTM,
+**Jruvika GraphSAGE** and fine-tuned **RoBERTa + Muon** classifiers on the same
+headline, claim, or article. **Explain predictions** highlights the words that pushed
+each model towards fake or real, using LIME.
 
 ## Run locally
 
@@ -10,8 +11,15 @@ From the repository root, using Python 3.10+:
 
 ```powershell
 python -m pip install -r dashboard/requirements.txt
+python dashboard/download_transformer.py
 python -m streamlit run dashboard/app.py
 ```
+
+`download_transformer.py` is needed once per machine. It fetches Trung's fine-tuned
+`models/roberta-base-muon` (about 500 MB) from the public Hugging Face repository
+`ngqtrung/ee6405-misinfo-detection`, pinned to commit `7837df8`, into the standard
+Hugging Face cache. Without it the app still runs; the RoBERTa card shows
+"Not connected" with the command to run.
 
 For the project's existing Windows environment:
 
@@ -20,8 +28,9 @@ For the project's existing Windows environment:
 ```
 
 Open the local URL printed by Streamlit (normally `http://localhost:8501`).
-CPU is used for both classifiers. No training datasets, original GloVe vectors,
-Hugging Face account, or GPU are required.
+All three classifiers run on CPU. No training datasets, original GloVe vectors,
+Hugging Face account, or GPU are required. The app itself never downloads anything:
+RoBERTa is loaded with `local_files_only=True`.
 
 ## Behavior
 
@@ -31,6 +40,8 @@ Hugging Face account, or GPU are required.
   then apply their own saved preprocessing.
 - The BiLSTM uses the first 512 spaCy tokens and a 0.5 fake-class threshold.
   A truncation notice appears if the input exceeds that token limit.
+- RoBERTa uses the first 512 subword tokens and a 0.5 threshold (label 1 = fake, as in
+  training). Its score matches the usage example in Trung's Hugging Face README.
 - GraphSAGE uses the trusted local Jruvika bundle, including its fitted TF-IDF,
   SVD, neighbors, anchors, neural weights, and saved decision threshold (currently 0.55).
 - Models are loaded lazily and cached in the server process. A lock protects
@@ -39,8 +50,26 @@ Hugging Face account, or GPU are required.
   and prediction time. Total time also includes initial model loading.
 - Results identify the last submitted text; editing the input marks existing
   results as out of date. Clear resets both the input and results.
-- Download results exports JSON, including unavailable/error states. No ensemble
-  verdict is generated, and the absent transformer is never included in agreement.
+- The status line reports whether all completed models agree, or how many say fake.
+  No ensemble verdict is generated, and a model that did not run is never counted.
+- **Explain predictions** runs LIME on the analyzed text for every model that
+  produced a result. LIME deletes random subsets of words, re-scores each variant and
+  fits a local linear model; each word's weight is how much it raised (orange, towards
+  fake) or lowered (lime, towards real) that model's fake-class score. Each card then
+  shows the highlighted text and its strongest words in each direction. Hover a word to
+  see its weight.
+- LIME needs hundreds of model calls, so it runs only on request. BiLSTM and GraphSAGE
+  use 300 perturbations of the first 200 words (under 2 s). RoBERTa uses 100
+  perturbations of the first 100 words and every CPU core while it runs, about
+  5-15 s on a 12-thread laptop. Results are seeded, so the same text gives the same
+  explanation.
+- When a model is so confident that deleting any word moves its score by less than one
+  point, the card says so instead of showing near-zero weights as evidence.
+- Explanations reuse `lime_explain` from `explainability/explainers.py`, so the app and
+  the project's explainability analysis compute them the same way. They show what a
+  model relies on, not whether the text is true.
+- Download results exports JSON, including unavailable/error states and the current
+  explanation.
 - Checkpoint failures are isolated, so the other model can still return a result.
 
 The app does not write submitted text to disk or use browser storage. Text is
@@ -51,11 +80,13 @@ sent to the Streamlit server and retained in the active session's memory.
 | File | Purpose |
 | --- | --- |
 | `app.py` | Streamlit page setup, session state, and request handling. |
-| `inference.py` | Cached CPU model loaders and a common prediction result. |
+| `inference.py` | Cached CPU model loaders (BiLSTM, GraphSAGE, RoBERTa) and a common prediction result. |
+| `explain.py` | On-demand LIME explanations for every model that produced a prediction. |
+| `download_transformer.py` | One-time download of the pinned RoBERTa + Muon checkpoint. |
 | `frontend/index.html` | The hero, input form, and model panels. |
 | `frontend/styles.css` | Component styles, grouped by section and responsive layout. |
 | `frontend/streamlit.css` | Styles for the surrounding Streamlit page and the font import. |
-| `frontend/app.js` | Input events, result rendering, and JSON downloads. |
+| `frontend/app.js` | Input events, result rendering, word highlighting, and JSON downloads. |
 
 The interface uses Streamlit's v2 component API without a separate frontend
 build. Animations use CSS and respect reduced-motion preferences. Geist fonts
@@ -72,6 +103,7 @@ sequential/checkpoints/bilstm_glove100_seed42/
   vocab.json
   tokenizer_settings.json
 graph/Models/jruvika_graphsage.joblib
+explainability/explainers.py
 ```
 
 The GraphSAGE bundle was saved with scikit-learn 1.5.2; the original environment
@@ -91,10 +123,11 @@ mixed claim/article evaluation.
 python -m unittest discover -s dashboard/tests -v
 ```
 
-## Adding the transformer later
+## Transformer checkpoint
 
-Add a local-only inference adapter for the fine-tuned `roberta_muon_lr5e-5`
-checkpoint, its matching tokenizer and configuration, and then enable the third
-panel. `analyze()` returns a common prediction structure with model ID, status,
-class, fake-class score, threshold and time. No transformer dependency or
-download is included at this stage.
+The RoBERTa card uses `models/roberta-base-muon`: roberta-base fine-tuned on the
+pooled four datasets with the Muon optimizer (0.839 overall test macro-F1, the best
+run in `trung/README.md`). The weights are too large for Git, so they stay on
+Hugging Face. `TRANSFORMER_REVISION` in `inference.py` pins the repository commit;
+change it there and rerun `download_transformer.py` to use a newer upload. Its tests
+in `tests/test_inference.py` are skipped until the weights are downloaded.

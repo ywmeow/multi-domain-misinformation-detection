@@ -596,6 +596,176 @@ h3 {
   font-size: 11px;
 }
 
+.model-card[data-label="unavailable"] {
+  border-style: dashed;
+  background: linear-gradient(145deg, #1d201c, #141713);
+}
+
+.model-card[data-label="unavailable"] .model-symbol {
+  stroke: #8b9b77;
+}
+
+.model-card[data-label="unavailable"] .prediction {
+  color: #b1bca5;
+}
+
+.model-card[data-label="unavailable"] .availability {
+  color: #929c87;
+}
+
+.model-card[data-label="unavailable"] .availability .status-dot {
+  background: #748064;
+}
+
+/* LIME explanations: shared legend, highlighted text and cue lists. */
+.result-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.explanation-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px 9px;
+  margin: 0 0 18px;
+  color: #b4bea8;
+  font-size: 10px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.swatch-fake {
+  background: #eeb294;
+}
+
+.swatch-real {
+  background: var(--accent);
+  margin-left: 8px;
+}
+
+.legend-note {
+  margin-left: 8px;
+  color: #8f9a83;
+}
+
+.explanation {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #313a28;
+}
+
+.explanation-title {
+  margin: 0 0 10px;
+  color: #c1cab5;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.explanation-message {
+  margin: 0;
+  color: #a2ae93;
+  font-size: 11px;
+}
+
+.highlighted-text {
+  max-height: 150px;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border-radius: 5px;
+  background: #121510;
+  color: #c9d1bf;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.word {
+  padding: 1px 2px;
+  border-radius: 3px;
+}
+
+/* --strength runs from 0 to 1: the model's strongest word is fully coloured. */
+.word-fake {
+  background: rgb(238 178 148 / calc(var(--strength) * 0.85));
+}
+
+.word-real {
+  background: rgb(210 243 135 / calc(var(--strength) * 0.75));
+}
+
+/* Dark text on strongly coloured words keeps them readable. */
+.word-strong {
+  color: #101210;
+}
+
+.cue-lists {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cue-heading {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cue-fake {
+  color: #eeb294;
+}
+
+.cue-real {
+  color: var(--accent);
+}
+
+.cue-lists ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cue-lists li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 2px 0;
+  color: #d6deca;
+  font-size: 11px;
+}
+
+.cue-lists li span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cue-lists small {
+  color: #8f9a83;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cue-lists .cue-empty {
+  color: #8f9a83;
+}
+
+.explanation-meta {
+  margin: 12px 0 0;
+  color: #8a977a;
+  font-size: 9px;
+}
+
 .input-changed .model-card:not(.model-pending) {
   opacity: 0.6;
 }

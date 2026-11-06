@@ -68,13 +68,23 @@
         <span class="status-dot" aria-hidden="true"></span>
         <span id="analysis-status" role="status" aria-live="polite">Ready when you are</span>
         <span class="status-divider" aria-hidden="true">/</span>
-        <span id="analysis-summary">2 models available</span>
+        <span id="analysis-summary">3 models available</span>
       </div>
-      <button type="button" class="export-button" id="export-button" disabled>
-        Download results <span aria-hidden="true">↓</span>
-      </button>
+      <div class="result-actions">
+        <button type="button" class="export-button" id="explain-button" disabled>
+          <span id="explain-button-label">Explain predictions</span> <span aria-hidden="true">✦</span>
+        </button>
+        <button type="button" class="export-button" id="export-button" disabled>
+          Download results <span aria-hidden="true">↓</span>
+        </button>
+      </div>
     </div>
     <p class="submitted-text" id="submitted-text" hidden></p>
+    <p class="explanation-legend" id="explanation-legend" hidden>
+      <span class="swatch swatch-fake" aria-hidden="true"></span> pushed toward fake
+      <span class="swatch swatch-real" aria-hidden="true"></span> pushed toward real
+      <span class="legend-note">LIME word weights: what each model relies on, not whether the text is true.</span>
+    </p>
 
     <div class="results-grid" aria-label="Model predictions">
       <article class="model-card" data-model="bilstm">
@@ -112,6 +122,22 @@
           <span data-detail>First 512 tokens</span>
           <span data-time>— ms</span>
         </div>
+        <section class="explanation" data-explanation hidden>
+          <p class="explanation-title">Why this prediction</p>
+          <p class="explanation-message" data-explanation-message hidden></p>
+          <p class="highlighted-text" data-highlight></p>
+          <div class="cue-lists">
+            <div>
+              <span class="cue-heading cue-fake">Toward fake</span>
+              <ul data-cues-fake></ul>
+            </div>
+            <div>
+              <span class="cue-heading cue-real">Toward real</span>
+              <ul data-cues-real></ul>
+            </div>
+          </div>
+          <p class="explanation-meta" data-explanation-meta></p>
+        </section>
       </article>
 
       <article class="model-card" data-model="graphsage">
@@ -152,12 +178,28 @@
           <span data-detail>Jruvika checkpoint</span>
           <span data-time>— ms</span>
         </div>
+        <section class="explanation" data-explanation hidden>
+          <p class="explanation-title">Why this prediction</p>
+          <p class="explanation-message" data-explanation-message hidden></p>
+          <p class="highlighted-text" data-highlight></p>
+          <div class="cue-lists">
+            <div>
+              <span class="cue-heading cue-fake">Toward fake</span>
+              <ul data-cues-fake></ul>
+            </div>
+            <div>
+              <span class="cue-heading cue-real">Toward real</span>
+              <ul data-cues-real></ul>
+            </div>
+          </div>
+          <p class="explanation-meta" data-explanation-meta></p>
+        </section>
       </article>
 
-      <article class="model-card model-pending" data-model="transformer">
+      <article class="model-card" data-model="transformer">
         <div class="model-card-top">
           <span class="model-family">TRANSFORMER</span>
-          <span class="availability pending"><span class="status-dot"></span>Not connected</span>
+          <span class="availability"><span class="status-dot"></span>Available</span>
         </div>
         <div class="model-identity">
           <svg class="model-symbol" viewBox="0 0 48 48" aria-hidden="true">
@@ -169,9 +211,44 @@
           </svg>
           <h3>RoBERTa</h3>
         </div>
-        <p class="model-training">Contextual attention · Muon training</p>
-        <div class="prediction">Weights not added</div>
-        <p class="pending-description">Analysis uses BiLSTM and GraphSAGE until this checkpoint is connected.</p>
+        <p class="model-training">Contextual attention · Muon · pooled training</p>
+        <div class="prediction" data-prediction>Awaiting your text</div>
+        <p class="prediction-message" data-message></p>
+        <div class="score-label">
+          <span>Fake-class score</span>
+          <strong data-score>—</strong>
+        </div>
+        <div
+          class="score-track"
+          role="meter"
+          aria-label="RoBERTa fake-class score"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuetext="No prediction yet"
+        >
+          <span class="score-fill"></span>
+        </div>
+        <div class="score-scale"><span>Real</span><span>Fake</span></div>
+        <div class="model-card-footer">
+          <span data-detail>First 512 tokens</span>
+          <span data-time>— ms</span>
+        </div>
+        <section class="explanation" data-explanation hidden>
+          <p class="explanation-title">Why this prediction</p>
+          <p class="explanation-message" data-explanation-message hidden></p>
+          <p class="highlighted-text" data-highlight></p>
+          <div class="cue-lists">
+            <div>
+              <span class="cue-heading cue-fake">Toward fake</span>
+              <ul data-cues-fake></ul>
+            </div>
+            <div>
+              <span class="cue-heading cue-real">Toward real</span>
+              <ul data-cues-real></ul>
+            </div>
+          </div>
+          <p class="explanation-meta" data-explanation-meta></p>
+        </section>
       </article>
     </div>
 

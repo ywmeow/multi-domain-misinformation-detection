@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from dashboard.explain import explain
 from dashboard.inference import MAX_CHARACTERS, analyze
 
 
@@ -35,17 +36,25 @@ def dashboard_component(html: str, css: str, javascript: str):
 
 
 def process_request(request: dict) -> None:
-    """Apply a submitted analysis or reset to the current Streamlit session."""
+    """Apply a submitted analysis, explanation or reset to the current session."""
     state = st.session_state
     state.last_request_id = request["id"]
     state.input_error = None
 
     if request["action"] == "reset":
         state.analysis = None
+        state.explanation = None
+        return
+
+    if request["action"] == "explain":
+        # Explain the text that was analyzed, never an unsubmitted draft.
+        if state.analysis:
+            state.explanation = explain(state.analysis["text"], state.analysis["predictions"])
         return
 
     try:
         state.analysis = analyze(request.get("text", ""))
+        state.explanation = None
     except ValueError as error:
         state.input_error = str(error)
 
@@ -59,7 +68,7 @@ def main() -> None:
     st.html(f"<style>{read_asset('streamlit.css')}</style>")
 
     state = st.session_state
-    for key in ("analysis", "last_request_id", "input_error"):
+    for key in ("analysis", "explanation", "last_request_id", "input_error"):
         state.setdefault(key, None)
 
     result = dashboard_component(
@@ -70,6 +79,7 @@ def main() -> None:
         key="signal",
         data={
             "analysis": state.analysis,
+            "explanation": state.explanation,
             "last_request_id": state.last_request_id,
             "error": state.input_error,
             "max_characters": MAX_CHARACTERS,

@@ -1,4 +1,8 @@
-"""CPU inference adapters; no training data or network access is required."""
+"""CPU inference adapters; no training data or network access is required.
+
+The RoBERTa weights are not stored in Git. ``python dashboard/download_transformer.py``
+fetches them once into the local Hugging Face cache; the app itself never downloads.
+"""
 
 from __future__ import annotations
 
@@ -18,6 +22,18 @@ ROOT = Path(__file__).resolve().parents[1]
 MAX_CHARACTERS = 20_000
 INFERENCE_LOCK = RLock()
 LOGGER = logging.getLogger(__name__)
+
+MODELS = ("bilstm", "graphsage", "transformer")
+# Trung's fine-tuned roberta-base (Muon optimizer), pinned to one repository commit
+# so every teammate loads identical weights.
+TRANSFORMER_REPO = "ngqtrung/ee6405-misinfo-detection"
+TRANSFORMER_SUBFOLDER = "models/roberta-base-muon"
+TRANSFORMER_REVISION = "7837df88331f0b16f9bcbda8fc5e0e4f859a8ccc"
+TRANSFORMER_MAX_TOKENS = 512
+
+
+class ModelUnavailable(RuntimeError):
+    """A model that is optional and not set up on this machine (not an error)."""
 
 
 @dataclass(frozen=True)
@@ -87,6 +103,16 @@ class BiLSTMDetector:
         self.model.load_state_dict(checkpoint["model"])
         self.model.eval()
 
+    threshold = 0.5
+
+    def _ids(self, text: str) -> list[int]:
+        unknown = self.vocab["<UNK>"]
+        tokens = self.tokenizer(text)
+        return [
+            self.vocab.get(token.text, unknown)
+            for token in tokens[:self.max_length]
+        ] or [unknown]
+
     def predict(self, text: str) -> tuple[float, float, bool]:
         tokens = self.tokenizer(text)
         unknown = self.vocab["<UNK>"]
@@ -98,7 +124,24 @@ class BiLSTMDetector:
             inputs = self.torch.tensor([ids], dtype=self.torch.long)
             lengths = self.torch.tensor([len(ids)], dtype=self.torch.long)
             probability = self.model(inputs, lengths).softmax(dim=1)[0, 1].item()
-        return probability, 0.5, len(tokens) > self.max_length
+        return probability, self.threshold, len(tokens) > self.max_length
+
+    def predict_batch(self, texts: list[str], batch_size: int = 64):
+        """Fake-class scores for many texts (used by LIME's perturbations)."""
+        import numpy as np
+
+        torch = self.torch
+        pad = self.vocab["<PAD>"]
+        scores = []
+        with torch.inference_mode():
+            for start in range(0, len(texts), batch_size):
+                batch = [self._ids(text) for text in texts[start:start + batch_size]]
+                lengths = torch.tensor([len(ids) for ids in batch], dtype=torch.long)
+                inputs = torch.full((len(batch), int(lengths.max())), pad, dtype=torch.long)
+                for row, ids in enumerate(batch):
+                    inputs[row, :len(ids)] = torch.tensor(ids, dtype=torch.long)
+                scores.append(self.model(inputs, lengths).softmax(dim=1)[:, 1].numpy())
+        return np.concatenate(scores)
 
 
 class GraphSAGEDetector:
@@ -116,39 +159,106 @@ class GraphSAGEDetector:
         self.threshold = float(self.bundle.get("threshold", 0.5))
 
     def predict(self, text: str) -> tuple[float, float, bool]:
+        return float(self.predict_batch([text])[0]), self.threshold, False
+
+    def predict_batch(self, texts: list[str], batch_size: int = 256):
+        """Fake-class scores for many texts (used by LIME's perturbations)."""
         import numpy as np
         from sklearn.preprocessing import normalize
 
         bundle = self.bundle
-        tfidf = bundle["vectorizer"].transform([text])
-        features = normalize(bundle["svd"].transform(tfidf)).astype("float32")
-        adjacency = self.graph.query_adjacency(
-            features, bundle["neighbors"], len(bundle["anchors"]), bundle["k"]
-        )
-        logits = self.graph.numpy_logits(
-            features,
-            adjacency,
-            bundle["anchors"],
-            bundle["anchor_hidden"],
-            bundle["state"],
-        )
-        exponentials = np.exp(logits - logits.max(axis=1, keepdims=True))
-        probabilities = exponentials / exponentials.sum(axis=1, keepdims=True)
-        return float(probabilities[0, 1]), self.threshold, False
+        scores = []
+        for start in range(0, len(texts), batch_size):
+            tfidf = bundle["vectorizer"].transform(texts[start:start + batch_size])
+            features = normalize(bundle["svd"].transform(tfidf)).astype("float32")
+            adjacency = self.graph.query_adjacency(
+                features, bundle["neighbors"], len(bundle["anchors"]), bundle["k"]
+            )
+            logits = self.graph.numpy_logits(
+                features,
+                adjacency,
+                bundle["anchors"],
+                bundle["anchor_hidden"],
+                bundle["state"],
+            )
+            exponentials = np.exp(logits - logits.max(axis=1, keepdims=True))
+            scores.append((exponentials / exponentials.sum(axis=1, keepdims=True))[:, 1])
+        return np.concatenate(scores)
 
 
-@lru_cache(maxsize=2)
+class TransformerDetector:
+    """Fine-tuned roberta-base (Muon), loaded only from the local Hugging Face cache."""
+
+    threshold = 0.5
+
+    def __init__(self):
+        try:
+            import torch
+            from transformers import AutoModelForSequenceClassification, AutoTokenizer
+        except ImportError as error:
+            raise ModelUnavailable(
+                "Install the transformers package to enable RoBERTa."
+            ) from error
+
+        self.torch = torch
+        source = dict(
+            subfolder=TRANSFORMER_SUBFOLDER,
+            revision=TRANSFORMER_REVISION,
+            local_files_only=True,  # never download from inside the app
+        )
+        try:
+            self.tokenizer = AutoTokenizer.from_pretrained(TRANSFORMER_REPO, **source)
+            self.model = AutoModelForSequenceClassification.from_pretrained(
+                TRANSFORMER_REPO, **source
+            )
+        except OSError as error:
+            raise ModelUnavailable(
+                "RoBERTa weights are not on this machine. "
+                "Run python dashboard/download_transformer.py once."
+            ) from error
+        self.model.eval()
+
+    def _encode(self, texts: list[str]):
+        return self.tokenizer(
+            texts,
+            truncation=True,
+            max_length=TRANSFORMER_MAX_TOKENS,
+            padding=True,
+            return_tensors="pt",
+        )
+
+    def predict(self, text: str) -> tuple[float, float, bool]:
+        # Encode one token past the limit: enough to detect truncation without a warning.
+        encoded = self.tokenizer(text, truncation=True, max_length=TRANSFORMER_MAX_TOKENS + 1)
+        truncated = len(encoded["input_ids"]) > TRANSFORMER_MAX_TOKENS
+        return float(self.predict_batch([text])[0]), self.threshold, truncated
+
+    def predict_batch(self, texts: list[str], batch_size: int = 16):
+        """Fake-class scores for many texts (label 1 = fake, as in training)."""
+        import numpy as np
+
+        scores = []
+        with self.torch.inference_mode():
+            for start in range(0, len(texts), batch_size):
+                logits = self.model(**self._encode(list(texts[start:start + batch_size]))).logits
+                scores.append(logits.float().softmax(dim=-1)[:, 1].numpy())
+        return np.concatenate(scores)
+
+
+@lru_cache(maxsize=len(MODELS))
 def load_detector(model: str):
     """Keep trusted local checkpoints loaded across Streamlit reruns/sessions."""
     if model == "bilstm":
         return BiLSTMDetector()
     if model == "graphsage":
         return GraphSAGEDetector()
+    if model == "transformer":
+        return TransformerDetector()
     raise ValueError(f"Unknown model: {model}")
 
 
 def _predict_one(model: str, text: str) -> Prediction:
-    """Keep a checkpoint failure from hiding the other model's result."""
+    """Keep a checkpoint failure from hiding the other models' results."""
     try:
         detector = load_detector(model)
         started = perf_counter()
@@ -164,6 +274,9 @@ def _predict_one(model: str, text: str) -> Prediction:
             elapsed_ms=round((perf_counter() - started) * 1000, 2),
             truncated=truncated,
         )
+    except ModelUnavailable as error:
+        # Optional model not set up here: show how to enable it, not an error.
+        return Prediction(model=model, status="unavailable", message=str(error))
     except Exception as error:
         LOGGER.exception("Prediction failed for %s", model)
         if isinstance(error, FileNotFoundError):
@@ -174,30 +287,25 @@ def _predict_one(model: str, text: str) -> Prediction:
 
 
 def analyze(text: str) -> dict:
-    """Normalize the input and run both available classifiers on CPU."""
+    """Normalize the input and run every available classifier on CPU."""
     from threadpoolctl import threadpool_limits
 
     text = normalize_text(text)
     started = perf_counter()
     # Cached PyTorch/spaCy instances are shared across sessions; run them serially.
     with INFERENCE_LOCK, threadpool_limits(limits=4):
-        predictions = [_predict_one(model, text) for model in ("bilstm", "graphsage")]
+        predictions = [_predict_one(model, text) for model in MODELS]
 
-    predictions.append(
-        Prediction(
-            model="transformer",
-            status="unavailable",
-            message="RoBERTa + Muon is planned. Its checkpoint has not been added.",
-        )
-    )
     completed = [p for p in predictions if p.status == "ready"]
+    fake_votes = sum(p.label == "fake" for p in completed)
     agreement = None
-    if len(completed) == 2:
-        agreement = "agree" if completed[0].label == completed[1].label else "disagree"
+    if len(completed) >= 2:
+        agreement = "agree" if fake_votes in (0, len(completed)) else "disagree"
     return {
         "text": text,
         "predictions": [asdict(p) for p in predictions],
         "agreement": agreement,
         "completed": len(completed),
+        "fake_votes": fake_votes,
         "elapsed_ms": round((perf_counter() - started) * 1000, 2),
     }
