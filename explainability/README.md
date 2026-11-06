@@ -9,7 +9,7 @@ traditional, sequential and graph models, without retraining or modifying them.
 |---|---|---|---|
 | Traditional | TF-IDF (1–2 gram) + logistic regression | pooled 4 datasets; also one per dataset | same settings as `trung/baseline_tfidf.py`, refitted here |
 | Sequential | GloVe-100d BiLSTM | pooled 4 datasets | `sequential/checkpoints/bilstm_glove100_seed42` |
-| Graph | GraphSAGE on a TF-IDF/SVD kNN document graph | one model per dataset | `Swetha/Models/*.joblib` |
+| Graph | GraphSAGE on a TF-IDF/SVD kNN document graph | one model per dataset | `graph/Models/*.joblib` |
 | Transformer | RoBERTa/DeBERTa (optional) | pooled | Trung's Hugging Face repo, see [below](#transformers) |
 
 The wrappers reproduce the recorded test scores (BiLSTM exactly; TF-IDF within 0.012 on AMT;

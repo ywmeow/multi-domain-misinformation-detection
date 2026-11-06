@@ -12,7 +12,7 @@ function, so the same explainer code runs on every model family:
                          (needs ``transformers`` and a download; see README).
 
 Models are loaded from the existing team folders without changing them. Modules are
-imported by file path because ``sequential/`` and ``Swetha/`` both have a ``model.py``.
+imported by file path because ``sequential/`` and ``graph/`` both have a ``model.py``.
 """
 
 from functools import lru_cache
@@ -141,12 +141,12 @@ class GraphSAGEModel(Model):
     def __init__(self, dataset="multifc", batch_size=256):
         from sklearn.preprocessing import normalize
 
-        self.sage = _import_file("swetha_model", ROOT / "Swetha/model.py")
+        self.sage = _import_file("swetha_model", ROOT / "graph/model.py")
         self.normalize = normalize
         self.dataset = dataset
         self.name = f"graphsage:{dataset}"
         self.batch_size = batch_size
-        self.bundle = joblib.load(ROOT / "Swetha/Models" / f"{dataset}_graphsage.joblib")
+        self.bundle = joblib.load(ROOT / "graph/Models" / f"{dataset}_graphsage.joblib")
 
     def predict_proba(self, texts):
         b = self.bundle

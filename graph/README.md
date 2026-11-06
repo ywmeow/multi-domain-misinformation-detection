@@ -124,12 +124,12 @@ All 80 evaluations are in [results/results.csv](results/results.csv), with one r
 | [evaluation_utils.py](evaluation_utils.py) | Calculates the metrics and confusion counts used by the evaluation script. |
 | [implementation.py](implementation.py) | Loads the four selected GraphSAGE joblibs and runs the same input through each. |
 
-Run `python Swetha/test.py` from the repository root to train both baselines and compare them with the three GraphSAGE variants. Run `python Swetha/test.py --gin-only` to update GIN using the saved GraphSAGE input features and existing splits. The GIN-only run replaces the former neighbor-voting rows in the CSV and retains the other evaluations and GraphSAGE joblibs. Look for `gcn` and `gin` in the `model` column of [results/results.csv](results/results.csv). The previous comparison and GIN update are recorded in [logs/test.log](logs/test.log) and [logs/gin.log](logs/gin.log).
+Run `python graph/test.py` from the repository root to train both baselines and compare them with the three GraphSAGE variants. Run `python graph/test.py --gin-only` to update GIN using the saved GraphSAGE input features and existing splits. The GIN-only run replaces the former neighbor-voting rows in the CSV and retains the other evaluations and GraphSAGE joblibs. Look for `gcn` and `gin` in the `model` column of [results/results.csv](results/results.csv). The previous comparison and GIN update are recorded in [logs/test.log](logs/test.log) and [logs/gin.log](logs/gin.log).
 
 ## Folder structure
 
 ```text
-Swetha/
+graph/
   README.md
   requirements.txt
   requirements-lock.txt
@@ -197,7 +197,7 @@ Open `implementation.py` and press Run in the IDE. Paste an article or claim and
 From the repository root, the equivalent command is:
 
 ```powershell
-python Swetha/implementation.py
+python graph/implementation.py
 ```
 
 Probabilities are uncalibrated classifier scores. The predictions do not independently verify factual claims.
@@ -207,14 +207,14 @@ Probabilities are uncalibrated classifier scores. The predictions do not indepen
 Python 3.10+ and Windows `tar` are required. From the repository root:
 
 ```powershell
-python -m pip install -r Swetha/requirements.txt
-python Swetha/prep_data.py
-python Swetha/train.py
-python Swetha/test.py
+python -m pip install -r graph/requirements.txt
+python graph/prep_data.py
+python graph/train.py
+python graph/test.py
 ```
 
 `prep_data.py` validates shared source files and split separation. It reads AMT/MultiFC from existing preprocessing CSVs, Jruvika from its existing source CSV, and MC-Fake directly from its original 7z member in memory. No datasets are copied or extracted into this folder.
 
-`train.py` creates the initial source checkpoints and records their settings in `results/training.json`. It uses CUDA when available. `python Swetha/train.py --device cpu` forces CPU. Run `test.py` after training to evaluate the five methods and save the selected checkpoints and `results/results.csv`. When `test.py` starts with selected checkpoints, it rebuilds the original comparison in memory. Subsequent training runs may produce slightly different scores.
+`train.py` creates the initial source checkpoints and records their settings in `results/training.json`. It uses CUDA when available. `python graph/train.py --device cpu` forces CPU. Run `test.py` after training to evaluate the five methods and save the selected checkpoints and `results/results.csv`. When `test.py` starts with selected checkpoints, it rebuilds the original comparison in memory. Subsequent training runs may produce slightly different scores.
 
 Paths resolve from the scripts, so they also run from an IDE. The shared sources and `results/split_manifest.json.gz` must remain available for training/testing. `requirements-lock.txt` records the installed versions; use a PyTorch build suitable for the machine's CPU/CUDA setup.
