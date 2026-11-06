@@ -98,11 +98,13 @@ def deletion_check(model, text, weights, k=5, seed=0):
     than deleting k random words?
 
     Words are taken in the direction of the predicted class (fake cues if the model
-    says fake, real cues otherwise). Returns the drop in predicted-class probability
-    for the explained words and for random words.
+    says fake, real cues otherwise, using the model's own decision threshold). Returns
+    the drop in predicted-class probability for the explained words and for random
+    words, and whether deleting the explained words flips the label.
     """
     p = float(model.p_fake([text])[0])
-    sign = 1 if p >= 0.5 else -1
+    threshold = getattr(model, "threshold", 0.5)
+    sign = 1 if p >= threshold else -1
     supporting = [w for w, v in sorted(weights.items(), key=lambda kv: -sign * kv[1]) if sign * v > 0][:k]
     vocab = sorted({w.lower() for w in WORD.findall(text)})
     if not supporting or len(vocab) <= k:
@@ -117,8 +119,9 @@ def deletion_check(model, text, weights, k=5, seed=0):
     probs = model.p_fake([remove(supporting), remove(random_words)])
     to_class = (lambda q: q) if sign > 0 else (lambda q: 1 - q)
     base = to_class(p)
+    flipped = (probs[0] >= threshold) != (p >= threshold)
     return {"explained_drop": float(base - to_class(probs[0])), "random_drop": float(base - to_class(probs[1])),
-            "k": len(supporting)}
+            "flipped": bool(flipped), "k": len(supporting)}
 
 
 def highlight_html(text, weights, max_abs=None):

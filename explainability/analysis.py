@@ -62,7 +62,11 @@ def _append(path, record):
 
 def _read(path):
     with open(path, encoding="utf-8") as stream:
-        return pd.DataFrame([json.loads(line) for line in stream])
+        frame = pd.DataFrame([json.loads(line) for line in stream])
+    if "threshold" not in frame:
+        frame["threshold"] = 0.5
+    frame["threshold"] = frame.threshold.fillna(0.5)
+    return frame
 
 
 # --------------------------------------------------------------------------- explain
@@ -85,7 +89,7 @@ def run_explain(args):
                     _append(EXPLAIN_FILE, {
                         "dataset": dataset, "id": row.id, "domain": row.domain, "label_id": int(row.label_id),
                         "model": name, "family": model.family, "method": method,
-                        "p_fake": result["p_fake"], "weights": result["weights"],
+                        "p_fake": result["p_fake"], "threshold": model.threshold, "weights": result["weights"],
                         "local_r2": result.get("local_r2"), "deletion": check, "text": result["text"],
                     })
                     count += 1
@@ -107,7 +111,7 @@ def run_transfer(args):
         model = load_model(f"tfidf_lr:{source}")
         for target in DATASETS:
             test = load_split(target, "test")
-            pred = model.predict_proba(list(test.text)).argmax(1)
+            pred = model.predict(list(test.text))
             rows.append({"train": source, "test": target, "macro_f1": f1_score(test.label_id, pred, average="macro")})
     matrix = pd.DataFrame(rows).pivot(index="train", columns="test", values="macro_f1").loc[list(DATASETS), list(DATASETS)]
     matrix.round(4).to_csv(RESULTS / "tfidf_transfer_matrix.csv")
@@ -128,8 +132,8 @@ def run_transfer(args):
                     result = explain(model, row.text, "lime", num_samples=args.lime_samples, max_words=args.max_words)
                     _append(TRANSFER_FILE, {
                         "source_model": name, "kind": kind, "source": source, "target": target, "id": row.id,
-                        "label_id": int(row.label_id), "p_fake": result["p_fake"], "weights": result["weights"],
-                        "text": result["text"],
+                        "label_id": int(row.label_id), "p_fake": result["p_fake"], "threshold": model.threshold,
+                        "weights": result["weights"], "text": result["text"],
                     })
                     count += 1
                 print(f"{name:20s} -> {DISPLAY[target]:8s} {count:3d} new in {time.time() - start:5.0f}s", flush=True)
@@ -195,7 +199,7 @@ def run_report(args):
 
     frame = _read(EXPLAIN_FILE)
     frame["family_name"] = frame.model.map(model_label)
-    frame["pred"] = (frame.p_fake >= 0.5).astype(int)
+    frame["pred"] = (frame.p_fake >= frame.threshold).astype(int)
     frame["correct"] = frame.pred == frame.label_id
 
     # 1. Global cues per dataset x model (LIME and SHAP).
@@ -262,8 +266,14 @@ def run_report(args):
     faith = frame.dropna(subset=["deletion"]).copy()
     faith["explained_drop"] = faith.deletion.map(lambda d: d["explained_drop"])
     faith["random_drop"] = faith.deletion.map(lambda d: d["random_drop"])
-    faith["flipped"] = faith.apply(lambda r: (r.p_fake >= 0.5) and (r.explained_drop > r.p_fake - 0.5)
-                                   or (r.p_fake < 0.5) and (r.explained_drop > 0.5 - r.p_fake), axis=1)
+    def flipped(row):
+        if "flipped" in row.deletion:
+            return row.deletion["flipped"]
+        # Older records: the label flips if the drop crosses the decision threshold.
+        if row.p_fake >= row.threshold:
+            return row.explained_drop > row.p_fake - row.threshold
+        return row.explained_drop >= row.threshold - row.p_fake
+    faith["flipped"] = faith.apply(flipped, axis=1)
     faith_table = faith.groupby(["family_name", "method"]).agg(
         explained_drop=("explained_drop", "mean"), random_drop=("random_drop", "mean"),
         flip_rate=("flipped", "mean"), n=("id", "size")).round(3).reset_index()
@@ -348,7 +358,7 @@ def transfer_report(plt):
             mean_hits = np.mean([len(t & cue_words) for t in tokens])
             on_cues = np.mean([sum(abs(v) for w, v in ws.items() if w in cue_words) / (sum(abs(v) for v in ws.values()) or 1)
                                for ws in tgroup.weights])
-            pred = (tgroup.p_fake >= 0.5).astype(int)
+            pred = (tgroup.p_fake >= tgroup.threshold).astype(int)
             rows.append({"source_model": name, "kind": group.kind.iloc[0], "source": source, "target": target,
                          "sample_acc": (pred == tgroup.label_id).mean(), "pred_fake_rate": pred.mean(),
                          "true_fake_rate": tgroup.label_id.mean(),
@@ -418,7 +428,7 @@ def write_examples_html(frame, per_dataset=3):
             label = ["real", "fake"][int(rows.label_id.iloc[0])]
             parts.append(f"<h3>{html_escape(text_id)}</h3><div class='meta'>true label: <b>{label}</b></div>")
             for row in rows.sort_values(["model", "method"]).itertuples():
-                pred = "fake" if row.p_fake >= 0.5 else "real"
+                pred = "fake" if row.p_fake >= row.threshold else "real"
                 parts.append(f"<div class='box'><div class='meta'><b>{model_label(row.model)}</b> "
                              f"({row.method.upper()}) — P(fake) = {row.p_fake:.2f} → predicts <b>{pred}</b></div>"
                              f"{highlight_html(row.text, row.weights)}</div>")
@@ -452,9 +462,9 @@ def run_stress(args):
         test = load_split(dataset, "test")
         for name in models_for(dataset):
             model = load_model(name)
-            base = model.p_fake(list(test.text)) >= 0.5
+            base = model.predict(list(test.text)).astype(bool)
             for edit, fn in EDITS.items():
-                edited = model.p_fake([fn(t) for t in test.text]) >= 0.5
+                edited = model.predict([fn(t) for t in test.text]).astype(bool)
                 for label, label_name in ((1, "fake"), (0, "real")):
                     mask = test.label_id.to_numpy() == label
                     rows.append({"dataset": dataset, "model": model_label(name), "edit": edit,

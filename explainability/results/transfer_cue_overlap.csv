@@ -1,10 +1,10 @@
 kind,pair,fake_cue_jaccard,real_cue_jaccard,flipped_cues
-graphsage,amt / jruvika,0.0,0.02,"['department', 'saying', 'state', 'tuesday']"
-graphsage,amt / mc_fake,0.0,0.064,"['best', 'know', 'march', 'state', 'white']"
+graphsage,amt / jruvika,0.0,0.042,"['state', 'tuesday']"
+graphsage,amt / mc_fake,0.02,0.042,"['know', 'order', 'white']"
 graphsage,amt / multifc,0.0,0.0,['said']
-graphsage,jruvika / mc_fake,0.02,0.02,"['hollywood', 'tuesday']"
+graphsage,jruvika / mc_fake,0.02,0.042,"['hollywood', 'make', 'season', 'state', 'tuesday']"
 graphsage,jruvika / multifc,0.0,0.0,['said']
-graphsage,mc_fake / multifc,0.0,0.0,[]
+graphsage,mc_fake / multifc,0.0,0.037,"['said', 'years']"
 tfidf_lr,amt / jruvika,0.02,0.064,"['fans', 'think']"
 tfidf_lr,amt / mc_fake,0.0,0.087,[]
 tfidf_lr,amt / multifc,0.0,0.034,[]

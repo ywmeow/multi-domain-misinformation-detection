@@ -39,6 +39,10 @@ def _import_file(name, path):
 class Model:
     name = "model"
     family = "-"
+    threshold = 0.5  # P(fake) at or above this is labelled fake
+
+    def predict(self, texts):
+        return (self.p_fake(texts) >= self.threshold).astype(int)
 
     def predict_proba(self, texts):
         raise NotImplementedError
@@ -147,6 +151,8 @@ class GraphSAGEModel(Model):
         self.name = f"graphsage:{dataset}"
         self.batch_size = batch_size
         self.bundle = joblib.load(ROOT / "graph/Models" / f"{dataset}_graphsage.joblib")
+        # The retrained checkpoints carry a decision threshold selected on source dev.
+        self.threshold = float(self.bundle.get("threshold", 0.5))
 
     def predict_proba(self, texts):
         b = self.bundle

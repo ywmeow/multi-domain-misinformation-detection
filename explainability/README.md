@@ -9,12 +9,16 @@ traditional, sequential and graph models, without retraining or modifying them.
 |---|---|---|---|
 | Traditional | TF-IDF (1–2 gram) + logistic regression | pooled 4 datasets; also one per dataset | same settings as `trung/baseline_tfidf.py`, refitted here |
 | Sequential | GloVe-100d BiLSTM | pooled 4 datasets | `sequential/checkpoints/bilstm_glove100_seed42` |
-| Graph | GraphSAGE on a TF-IDF/SVD kNN document graph | one model per dataset | `graph/Models/*.joblib` |
+| Graph | GraphSAGE on a TF-IDF/SVD kNN document graph | one model per dataset | `graph/Models/*.joblib` (retrained checkpoints, each with its own dev-selected decision threshold) |
 | Transformer | RoBERTa/DeBERTa (optional) | pooled | Trung's Hugging Face repo, see [below](#transformers) |
 
-The wrappers reproduce the recorded test scores (BiLSTM exactly; TF-IDF within 0.012 on AMT;
-GraphSAGE MultiFC 0.6368 vs 0.6367). GraphSAGE Jruvika gives 0.990 rather than 0.979
-because Swetha's split manifest drops 15 duplicate texts from that test set.
+The wrappers reproduce the recorded test scores: the BiLSTM exactly, TF-IDF within 0.012
+on AMT, and GraphSAGE (using each checkpoint's saved threshold) 0.5608 on AMT and 0.6483 on
+MultiFC, against 0.5608 and 0.6482 in [graph/README.md](../graph/README.md). Two small gaps
+come from the test texts, not the models: Jruvika gives 0.990 rather than 0.982 because the
+graph split manifest drops 15 duplicate texts, and MC-Fake gives 0.793 rather than 0.785
+because the graph code rebuilds MC-Fake text from the source CSV, while this module reads
+the team's shared `binary_*.jsonl` exports.
 
 ## How the explanations work
 
@@ -49,7 +53,7 @@ prediction far more than deleting random words. It does
 |---|---:|---:|---:|
 | TF-IDF+LR (LIME / SHAP) | 0.34 / 0.28 | 0.01 / 0.02 | 65% / 54% |
 | BiLSTM (LIME / SHAP) | 0.30 / 0.20 | 0.02 / 0.01 | 57% / 40% |
-| GraphSAGE (LIME / SHAP) | 0.17 / 0.14 | 0.02 / 0.02 | 60% / 54% |
+| GraphSAGE (LIME / SHAP) | 0.26 / 0.18 | 0.02 / 0.02 | 57% / 43% |
 
 Removing just five words flips about half of all predictions. LIME scores slightly higher
 here because its perturbations are deletions, like this test. Partition SHAP, at 500
@@ -91,6 +95,7 @@ a blog source line (*"Source: http://www.conservativedailynews.com news"*):
 | MC-Fake, TF-IDF+LR | 49% → 26% | 4% → 13% |
 | MC-Fake, BiLSTM | 54% → 38% | 5% → 16% |
 | Jruvika, BiLSTM | 94% → 77% | 6% → **31%** |
+| MultiFC, GraphSAGE | 79% → 64% | 50% → 52% |
 | Jruvika, GraphSAGE | 99% → 97% | 1% → 12% |
 
 A one-line byline hides most fake claims from the bag-of-words and sequential models. Short
@@ -100,12 +105,12 @@ single line barely changes which documents those are.
 
 ### 4. Families agree on short claims and disagree on articles
 On the same texts, word rankings correlate only weakly between families on long articles
-(Spearman 0.11–0.39, top-10 Jaccard 0.06–0.31). On MultiFC claims they correlate more
-strongly (Spearman 0.31–0.44, Jaccard 0.56–0.69). LIME and SHAP agree with each other in
-the same way: 0.19–0.55 on articles and 0.76–0.84 on claims
+(Spearman 0.11–0.39, top-10 Jaccard 0.05–0.30). On MultiFC claims they correlate more
+strongly (Spearman 0.31–0.44, Jaccard 0.55–0.70). LIME and SHAP agree with each other in
+the same way: 0.19–0.55 on articles and 0.76–0.83 on claims
 ([agreement.csv](results/agreement.csv)).
 
-On claims, the top 5 words carry 65–78% of all attribution, against 15–28% on articles
+On claims, the top 5 words carry 65–75% of all attribution, against 15–28% on articles
 ([evidence_concentration.csv](results/evidence_concentration.csv)). A claim is decided by
 a handful of words, so every model and method finds the same handful. An article offers
 many redundant cues, and each model latches onto a different subset. On articles,
