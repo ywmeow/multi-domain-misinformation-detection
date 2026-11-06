@@ -1,0 +1,180 @@
+<main class="signal-app">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-image" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="hero-content page-width">
+      <p class="eyebrow">MULTI-DOMAIN MISINFORMATION DETECTION</p>
+      <h1 id="hero-title">
+        Read beyond<br>
+        the <span class="inline-image" aria-hidden="true"></span> headline.
+      </h1>
+      <p class="hero-description">
+        Compare how different models classify the same headline, claim, or article.
+      </p>
+      <a class="button button-lime" href="#workspace" id="workspace-link">
+        Analyze a headline <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="workspace page-width" id="workspace" aria-labelledby="workspace-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">WORKSPACE</p>
+        <h2 id="workspace-title">Same words. <span class="muted">Different signals.</span></h2>
+      </div>
+    </div>
+
+    <form class="input-panel" id="analysis-form">
+      <div class="input-heading">
+        <label for="headline-input">What are you reading?</label>
+        <span class="private-note">Analyzed on this server</span>
+      </div>
+      <textarea
+        id="headline-input"
+        name="headline"
+        rows="4"
+        maxlength="20000"
+        placeholder="Paste a headline, claim, or article here…"
+        aria-describedby="input-help input-error"
+        required
+      ></textarea>
+      <div class="input-meta">
+        <span id="input-help">English text works best.</span>
+        <span id="character-count">0 / 20,000</span>
+      </div>
+
+      <div class="input-bottom">
+        <div class="examples">
+          <span>Try a prompt</span>
+          <button type="button" class="example-button" data-example="news">Everyday news</button>
+          <button type="button" class="example-button" data-example="health">A health claim</button>
+          <button type="button" class="example-button" data-example="science">A science story</button>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="clear-button" id="clear-button">Clear</button>
+          <button type="submit" class="button button-lime" id="analyze-button">
+            <span id="analyze-button-label">Analyze text</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </div>
+      <p class="input-error" id="input-error" role="alert" hidden></p>
+    </form>
+
+    <div class="results-heading">
+      <div>
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="analysis-status" role="status" aria-live="polite">Ready when you are</span>
+        <span class="status-divider" aria-hidden="true">/</span>
+        <span id="analysis-summary">2 models available</span>
+      </div>
+      <button type="button" class="export-button" id="export-button" disabled>
+        Download results <span aria-hidden="true">↓</span>
+      </button>
+    </div>
+    <p class="submitted-text" id="submitted-text" hidden></p>
+
+    <div class="results-grid" aria-label="Model predictions">
+      <article class="model-card" data-model="bilstm">
+        <div class="model-card-top">
+          <span class="model-family">SEQUENTIAL</span>
+          <span class="availability"><span class="status-dot"></span>Available</span>
+        </div>
+        <div class="model-identity">
+          <svg class="model-symbol" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M5 13h8l7 22 9-22h14M5 35h8l7-22 9 22h14"/>
+            <circle cx="5" cy="13" r="2"/>
+            <circle cx="43" cy="35" r="2"/>
+          </svg>
+          <h3>BiLSTM</h3>
+        </div>
+        <p class="model-training">GloVe embeddings · pooled training</p>
+        <div class="prediction" data-prediction>Awaiting your text</div>
+        <p class="prediction-message" data-message></p>
+        <div class="score-label">
+          <span>Fake-class score</span>
+          <strong data-score>—</strong>
+        </div>
+        <div
+          class="score-track"
+          role="meter"
+          aria-label="BiLSTM fake-class score"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuetext="No prediction yet"
+        >
+          <span class="score-fill"></span>
+        </div>
+        <div class="score-scale"><span>Real</span><span>Fake</span></div>
+        <div class="model-card-footer">
+          <span data-detail>First 512 tokens</span>
+          <span data-time>— ms</span>
+        </div>
+      </article>
+
+      <article class="model-card" data-model="graphsage">
+        <div class="model-card-top">
+          <span class="model-family">GRAPH</span>
+          <span class="availability"><span class="status-dot"></span>Available</span>
+        </div>
+        <div class="model-identity">
+          <svg class="model-symbol" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="m24 8-15 28h30L24 8v28M9 36l30-17M9 19l30 17"/>
+            <circle cx="24" cy="8" r="4"/>
+            <circle cx="9" cy="36" r="4"/>
+            <circle cx="39" cy="36" r="4"/>
+            <circle cx="9" cy="19" r="3"/>
+            <circle cx="39" cy="19" r="3"/>
+          </svg>
+          <h3>GraphSAGE</h3>
+        </div>
+        <p class="model-training">Document similarity · Jruvika training</p>
+        <div class="prediction" data-prediction>Awaiting your text</div>
+        <p class="prediction-message" data-message></p>
+        <div class="score-label">
+          <span>Fake-class score</span>
+          <strong data-score>—</strong>
+        </div>
+        <div
+          class="score-track"
+          role="meter"
+          aria-label="GraphSAGE fake-class score"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuetext="No prediction yet"
+        >
+          <span class="score-fill"></span>
+        </div>
+        <div class="score-scale"><span>Real</span><span>Fake</span></div>
+        <div class="model-card-footer">
+          <span data-detail>Jruvika checkpoint</span>
+          <span data-time>— ms</span>
+        </div>
+      </article>
+
+      <article class="model-card model-pending" data-model="transformer">
+        <div class="model-card-top">
+          <span class="model-family">TRANSFORMER</span>
+          <span class="availability pending"><span class="status-dot"></span>Not connected</span>
+        </div>
+        <div class="model-identity">
+          <svg class="model-symbol" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M8 10h32M8 24h32M8 38h32M13 10l22 28M35 10 13 38M13 10v28m22-28v28"/>
+            <circle cx="13" cy="10" r="3"/>
+            <circle cx="35" cy="10" r="3"/>
+            <circle cx="13" cy="38" r="3"/>
+            <circle cx="35" cy="38" r="3"/>
+          </svg>
+          <h3>RoBERTa</h3>
+        </div>
+        <p class="model-training">Contextual attention · Muon training</p>
+        <div class="prediction">Weights not added</div>
+        <p class="pending-description">Analysis uses BiLSTM and GraphSAGE until this checkpoint is connected.</p>
+      </article>
+    </div>
+
+    <p class="interpretation">Model predictions are not fact checks. Verify important claims with reliable sources.</p>
+  </section>
+</main>

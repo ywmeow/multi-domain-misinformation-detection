@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;550;600&display=swap");
+
+.stApp {
+  background: #101210;
+}
+
+.stMainBlockContainer {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+[data-testid="stHeader"],
+[data-testid="stToolbar"],
+[data-testid="stDecoration"] {
+  display: none;
+}
+
+[data-testid="stMain"] {
+  overflow-x: clip;
+}
+
+[data-testid="stVerticalBlock"] {
+  gap: 0;
+}

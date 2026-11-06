@@ -1,0 +1,9 @@
+# Prediction-only dependencies; datasets, training libraries and transformers are unnecessary.
+streamlit>=1.56,<2
+torch>=2.5,<3
+spacy>=3.8,<4
+numpy>=1.26,<3
+scipy>=1.12,<2
+scikit-learn>=1.5,<2
+joblib>=1.3,<2
+threadpoolctl>=3.2,<4

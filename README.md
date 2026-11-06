@@ -1,5 +1,12 @@
 # multi-domain-misinformation-detection
 EE6405 Group 43 2026/S1
+
+## Dashboard
+
+See the [Signal dashboard guide](dashboard/README.md) to run the Streamlit app.
+It compares the included BiLSTM and Jruvika GraphSAGE checkpoints on new text;
+the transformer panel is reserved until its weights are added.
+
 ## Preprocessing
 
 See the [preprocessing guide](preprocessing/README.md) for setup,
