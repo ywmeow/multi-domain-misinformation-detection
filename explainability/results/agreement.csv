@@ -1,0 +1,37 @@
+dataset,comparison,method,spearman,top10_jaccard,n
+amt,BiLSTM vs GraphSAGE,lime,0.123,0.056,30
+amt,BiLSTM vs TF-IDF+LR,lime,0.243,0.143,30
+amt,GraphSAGE vs TF-IDF+LR,lime,0.167,0.108,30
+amt,BiLSTM vs GraphSAGE,shap,0.157,0.093,30
+amt,BiLSTM vs TF-IDF+LR,shap,0.317,0.148,30
+amt,GraphSAGE vs TF-IDF+LR,shap,0.18,0.187,30
+amt,TF-IDF+LR: LIME vs SHAP,both,0.547,0.282,30
+amt,BiLSTM: LIME vs SHAP,both,0.342,0.27,30
+amt,GraphSAGE: LIME vs SHAP,both,0.521,0.32,30
+jruvika,BiLSTM vs GraphSAGE,lime,0.144,0.108,30
+jruvika,BiLSTM vs TF-IDF+LR,lime,0.235,0.168,30
+jruvika,GraphSAGE vs TF-IDF+LR,lime,0.21,0.175,30
+jruvika,BiLSTM vs GraphSAGE,shap,0.154,0.157,30
+jruvika,BiLSTM vs TF-IDF+LR,shap,0.389,0.173,30
+jruvika,GraphSAGE vs TF-IDF+LR,shap,0.279,0.305,30
+jruvika,TF-IDF+LR: LIME vs SHAP,both,0.396,0.194,30
+jruvika,BiLSTM: LIME vs SHAP,both,0.194,0.162,30
+jruvika,GraphSAGE: LIME vs SHAP,both,0.218,0.109,30
+mc_fake,BiLSTM vs GraphSAGE,lime,0.106,0.118,30
+mc_fake,BiLSTM vs TF-IDF+LR,lime,0.253,0.135,30
+mc_fake,GraphSAGE vs TF-IDF+LR,lime,0.199,0.181,30
+mc_fake,BiLSTM vs GraphSAGE,shap,0.154,0.173,30
+mc_fake,BiLSTM vs TF-IDF+LR,shap,0.333,0.201,30
+mc_fake,GraphSAGE vs TF-IDF+LR,shap,0.272,0.168,30
+mc_fake,TF-IDF+LR: LIME vs SHAP,both,0.42,0.266,30
+mc_fake,BiLSTM: LIME vs SHAP,both,0.229,0.19,30
+mc_fake,GraphSAGE: LIME vs SHAP,both,0.347,0.254,30
+multifc,BiLSTM vs GraphSAGE,lime,0.31,0.557,120
+multifc,BiLSTM vs TF-IDF+LR,lime,0.439,0.608,120
+multifc,GraphSAGE vs TF-IDF+LR,lime,0.312,0.594,120
+multifc,BiLSTM vs GraphSAGE,shap,0.353,0.635,120
+multifc,BiLSTM vs TF-IDF+LR,shap,0.435,0.668,120
+multifc,GraphSAGE vs TF-IDF+LR,shap,0.34,0.693,120
+multifc,TF-IDF+LR: LIME vs SHAP,both,0.835,0.73,120
+multifc,BiLSTM: LIME vs SHAP,both,0.765,0.632,120
+multifc,GraphSAGE: LIME vs SHAP,both,0.761,0.713,120

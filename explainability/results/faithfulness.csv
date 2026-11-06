@@ -1,0 +1,7 @@
+family_name,method,explained_drop,random_drop,flip_rate,n
+BiLSTM,lime,0.298,0.016,0.565,207
+BiLSTM,shap,0.204,0.014,0.401,207
+GraphSAGE,lime,0.17,0.017,0.599,207
+GraphSAGE,shap,0.141,0.017,0.536,207
+TF-IDF+LR,lime,0.336,0.012,0.652,207
+TF-IDF+LR,shap,0.277,0.02,0.541,207

@@ -1,0 +1,5 @@
+dataset,BiLSTM,GraphSAGE,TF-IDF+LR
+amt,0.282,0.236,0.206
+jruvika,0.202,0.147,0.165
+mc_fake,0.218,0.222,0.164
+multifc,0.683,0.778,0.65
