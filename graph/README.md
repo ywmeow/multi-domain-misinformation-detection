@@ -10,21 +10,23 @@ Run from the repository root:
 
 ```bash
 python graph/Model_pooled/train.py
+python graph/Model_pooled/tune.py
 python graph/Model_pooled/evaluate.py
 python graph/Model_pooled/predict.py
 ```
 
-Training writes `Models/Model_pooled.joblib` and `Model_pooled/training.json` under `graph/`. Evaluation updates the five `Model_pooled` rows in [results/results.csv](results/results.csv). Prediction accepts an article or claim followed by a blank line.
+Training writes `Models/Model_pooled.joblib` and `Model_pooled/training.json` under `graph/`. Tuning searches query neighbor counts of 3, 5, 8, 10, 12, 15, 20, 25 and 30 and fake-class thresholds of 0.35 through 0.65 in steps of 0.01. It selects the pair by mean per-dataset development macro-F1 and saves the settings in the checkpoint. Evaluation updates the five `Model_pooled` rows in [results/results.csv](results/results.csv). Prediction accepts an article or claim followed by a blank line.
 
-The saved checkpoint used 45,364 training rows. On 5,699 test rows, it reached 0.7978 overall macro-F1 and 0.7014 mean per-dataset macro-F1.
+The checkpoint used 45,364 training rows. Tuning selected 5 neighbors and a 0.53 threshold, raising mean development macro-F1 from 0.7391 to 0.7417. On 5,699 test rows, overall macro-F1 fell from 0.7978 to 0.7958.
 
-| Test set | Macro-F1 |
-|---|---:|
-| AMT | 0.5530 |
-| MultiFC | 0.5675 |
-| MC-Fake | 0.7627 |
-| Jruvika | 0.9222 |
-| Combined | 0.7978 |
+| Test set | Default macro-F1 | Tuned macro-F1 |
+|---|---:|---:|
+| AMT | 0.5530 | 0.5344 |
+| MultiFC | 0.5675 | 0.5859 |
+| MC-Fake | 0.7627 | 0.7535 |
+| Jruvika | 0.9222 | 0.9145 |
+| Mean across datasets | 0.7014 | 0.6971 |
+| Combined | 0.7978 | 0.7958 |
 
 ## Experimental design
 
@@ -171,6 +173,7 @@ graph/
     Model_pooled.joblib
   Model_pooled/
     train.py
+    tune.py
     evaluate.py
     predict.py
     training.json

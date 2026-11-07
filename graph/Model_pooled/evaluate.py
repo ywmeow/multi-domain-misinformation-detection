@@ -35,8 +35,13 @@ def main():
                 'hidden_dimensions', 'dropout', 'learning_rate', 'weight_decay')}
     settings.update(query_k=detector.bundle['k'], model_file=CHECKPOINT.relative_to(GRAPH_DIR).as_posix(),
                     model_sha256=digest(CHECKPOINT))
+    tuning = detector.bundle.get('tuning', {})
+    if tuning:
+        if tuning['dev_split_fingerprint'] != config['data_hashes']['dev']:
+            raise ValueError('Tuning and training development splits differ')
+        settings['selection_seconds'] = tuning['selection_seconds']
     result = (MODEL_NAME, probability, detector.bundle.get('threshold', .5),
-              config['selected_dev_macro_f1'], settings)
+              tuning.get('selected_mean_dev_macro_f1', config['selected_dev_macro_f1']), settings)
     rows = list(evaluation_rows('pooled', result, test, targets, fingerprints))
     for row in rows:
         row['evaluation'] = 'pooled overall' if row['test_dataset'] == 'pooled' else 'pooled per dataset'
