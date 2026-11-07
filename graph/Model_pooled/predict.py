@@ -1,4 +1,7 @@
+from copy import copy
+from gzip import GzipFile
 from pathlib import Path
+import pickle
 import sys
 
 from threadpoolctl import threadpool_limits
@@ -14,6 +17,14 @@ CHECKPOINT = GRAPH_DIR / 'Models' / f'{MODEL_NAME}.joblib'
 
 def load_model():
     return MisinformationDetector(path=CHECKPOINT)
+
+
+def write_checkpoint(bundle, path):
+    # Pickle stores the shared anchor array once. The brute-force index keeps
+    # a reference to that array, and joblib.load can read the compressed pickle.
+    neighbors = copy(bundle['neighbors']).fit(bundle['anchors'])
+    with path.open('wb') as stream, GzipFile(fileobj=stream, mode='wb', compresslevel=3, mtime=0) as compressed:
+        pickle.dump(dict(bundle, neighbors=neighbors), compressed, protocol=5)
 
 
 def main():

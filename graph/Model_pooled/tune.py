@@ -3,12 +3,11 @@ from itertools import product
 from pathlib import Path
 from time import perf_counter, sleep
 
-import joblib
 import numpy as np
 from sklearn.metrics import f1_score
 from threadpoolctl import threadpool_limits
 
-from predict import CHECKPOINT, load_model
+from predict import CHECKPOINT, load_model, write_checkpoint
 from graph.test import graph_scores
 from model import DATASETS
 from prep_data import load_splits, split_fingerprint
@@ -51,7 +50,7 @@ def main():
         'selection_seconds': perf_counter() - start,
     })
     staging = CHECKPOINT.with_suffix('.tuning.tmp')
-    joblib.dump(bundle, staging, compress=3)
+    write_checkpoint(bundle, staging)
     for attempt in range(5):
         try:
             staging.replace(CHECKPOINT)

@@ -17,6 +17,8 @@ python graph/Model_pooled/predict.py
 
 Training writes `Models/Model_pooled.joblib` and `Model_pooled/training.json` under `graph/`. Tuning searches query neighbor counts of 3, 5, 8, 10, 12, 15, 20, 25 and 30 and fake-class thresholds of 0.35 through 0.65 in steps of 0.01. It selects the pair by mean per-dataset development macro-F1 and saves the settings in the checkpoint. Evaluation updates the five `Model_pooled` rows in [results/results.csv](results/results.csv). Prediction accepts an article or claim followed by a blank line.
 
+The checkpoint is 47.77 MB. It stores a single copy of the training anchors shared by the neighbor index and the GraphSAGE layers.
+
 The checkpoint used 45,364 training rows. Tuning selected 5 neighbors and a 0.53 threshold, raising mean development macro-F1 from 0.7391 to 0.7417. On 5,699 test rows, overall macro-F1 fell from 0.7978 to 0.7958.
 
 | Test set | Default macro-F1 | Tuned macro-F1 |

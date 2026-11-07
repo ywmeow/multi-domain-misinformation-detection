@@ -4,7 +4,6 @@ import platform
 from pathlib import Path
 import time
 import importlib.metadata
-import joblib
 import numpy as np
 import torch
 from sklearn.decomposition import TruncatedSVD
@@ -12,7 +11,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import normalize
 from sklearn.metrics import f1_score
 from threadpoolctl import threadpool_limits
-from predict import CHECKPOINT, MODEL_NAME
+from predict import CHECKPOINT, MODEL_NAME, write_checkpoint
 from prep_data import split_fingerprint, load_splits
 from model import DATASETS, build_graph, query_adjacency, numpy_logits, make_network
 from graph.train import torch_sparse
@@ -142,7 +141,7 @@ def train_pooled(train, dev, device):
     config['data_hashes'] = {split:split_fingerprint(split) for split in ['train','dev']}
     config['data_hash_method'] = 'text-free split metadata with verified text keys'
     config['split_manifest'] = 'results/split_manifest.json.gz'
-    joblib.dump(bundle, CHECKPOINT, compress=3)
+    write_checkpoint(bundle, CHECKPOINT)
     training_path = Path(__file__).with_name('training.json')
     training_path.write_text(json.dumps({'config': config, 'history': history}, indent=2) + '\n', encoding='utf-8')
     print(f'{MODEL_NAME}: selected epoch {best_epoch}, mean dev macro-F1 {best:.4f}', flush=True)
