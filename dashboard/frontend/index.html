@@ -68,7 +68,7 @@
         <span class="status-dot" aria-hidden="true"></span>
         <span id="analysis-status" role="status" aria-live="polite">Ready when you are</span>
         <span class="status-divider" aria-hidden="true">/</span>
-        <span id="analysis-summary">3 models available</span>
+        <span id="analysis-summary">4 models available</span>
       </div>
       <button type="button" class="export-button" id="export-button" disabled>
         Download results <span aria-hidden="true">↓</span>
@@ -82,6 +82,60 @@
     </p>
 
     <div class="results-grid" aria-label="Model predictions">
+      <article class="model-card" data-model="tfidf">
+        <div class="model-card-top">
+          <span class="model-family">TRADITIONAL <span class="model-tag">[BASELINE]</span></span>
+          <span class="availability"><span class="status-dot"></span>Available</span>
+        </div>
+        <div class="model-identity">
+          <svg class="model-symbol" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M11 5h19l8 8v30H11zM30 5v8h8M16 21h17M16 28h11M16 35h14"/>
+            <circle cx="33" cy="21" r="2"/>
+            <circle cx="27" cy="28" r="2"/>
+            <circle cx="30" cy="35" r="2"/>
+          </svg>
+          <h3>TF-IDF + LR</h3>
+        </div>
+        <p class="model-training">Word n-gram weights · pooled training</p>
+        <div class="prediction" data-prediction>Awaiting your text</div>
+        <p class="prediction-message" data-message></p>
+        <div class="score-label">
+          <span>Fake-class score</span>
+          <strong data-score>—</strong>
+        </div>
+        <div
+          class="score-track"
+          role="meter"
+          aria-label="TF-IDF fake-class score"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuetext="No prediction yet"
+        >
+          <span class="score-fill"></span>
+        </div>
+        <div class="score-scale"><span>Real</span><span>Fake</span></div>
+        <div class="model-card-footer">
+          <span data-detail>Whole text</span>
+          <span data-time>— ms</span>
+        </div>
+        <section class="explanation" data-explanation hidden>
+          <p class="explanation-title">Why this prediction</p>
+          <p class="explanation-message" data-explanation-message hidden></p>
+          <p class="highlighted-text" data-highlight></p>
+          <div class="cue-lists">
+            <div>
+              <span class="cue-heading cue-fake">Toward fake</span>
+              <ul data-cues-fake></ul>
+            </div>
+            <div>
+              <span class="cue-heading cue-real">Toward real</span>
+              <ul data-cues-real></ul>
+            </div>
+          </div>
+          <p class="explanation-meta" data-explanation-meta></p>
+        </section>
+      </article>
+
       <article class="model-card" data-model="bilstm">
         <div class="model-card-top">
           <span class="model-family">SEQUENTIAL</span>
@@ -151,7 +205,7 @@
           </svg>
           <h3>GraphSAGE</h3>
         </div>
-        <p class="model-training">Document similarity · Jruvika training</p>
+        <p class="model-training">Document similarity · pooled training</p>
         <div class="prediction" data-prediction>Awaiting your text</div>
         <p class="prediction-message" data-message></p>
         <div class="score-label">
@@ -170,7 +224,7 @@
         </div>
         <div class="score-scale"><span>Real</span><span>Fake</span></div>
         <div class="model-card-footer">
-          <span data-detail>Jruvika checkpoint</span>
+          <span data-detail>Pooled checkpoint</span>
           <span data-time>— ms</span>
         </div>
         <section class="explanation" data-explanation hidden>

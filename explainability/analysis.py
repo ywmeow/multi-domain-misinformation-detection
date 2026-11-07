@@ -43,8 +43,12 @@ def stopwords():
 
 
 def models_for(dataset, extra=()):
-    """One model per family that has seen ``dataset`` during training."""
-    return ["tfidf_lr", "bilstm", f"graphsage:{dataset}", *extra]
+    """Models that have seen ``dataset`` during training.
+
+    TF-IDF, BiLSTM and the pooled GraphSAGE share the same pooled training data, so they
+    form the like-for-like comparison; the single-dataset GraphSAGE is kept alongside.
+    """
+    return ["tfidf_lr", "bilstm", f"graphsage:{dataset}", "graphsage:pooled", *extra]
 
 
 def _done_keys(path, fields):
@@ -187,8 +191,10 @@ def topk_overlap(a, b, k=10):
 
 def model_label(name):
     kind, _, arg = name.partition(":")
-    return {"tfidf_lr": "TF-IDF+LR", "bilstm": "BiLSTM", "graphsage": "GraphSAGE",
-            "transformer": "Transformer"}.get(kind, kind)
+    if kind == "graphsage":
+        # Two GraphSAGE variants are compared, so always say which one.
+        return "GraphSAGE (pooled)" if arg == "pooled" else "GraphSAGE (single)"
+    return {"tfidf_lr": "TF-IDF+LR", "bilstm": "BiLSTM", "transformer": "Transformer"}.get(kind, kind)
 
 
 # --------------------------------------------------------------------------- report

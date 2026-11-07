@@ -31,23 +31,24 @@ class InputAndFailureTests(unittest.TestCase):
         with patch.object(inference, "load_detector", return_value=detector) as loader:
             result = inference.analyze("A test claim.")
         self.assertEqual([call.args[0] for call in loader.call_args_list], list(inference.MODELS))
-        self.assertEqual([p["label"] for p in result["predictions"]], ["real"] * 3)
+        self.assertEqual([p["label"] for p in result["predictions"]], ["real"] * 4)
         self.assertEqual(result["agreement"], "agree")
 
     def test_missing_transformer_is_unavailable_not_an_error(self):
         detector = SimpleNamespace(predict=lambda text: (0.7, 0.5, False))
         missing = inference.ModelUnavailable("RoBERTa weights are not on this machine.")
-        with patch.object(inference, "load_detector", side_effect=[detector, detector, missing]):
+        with patch.object(inference, "load_detector", side_effect=[detector, detector, detector, missing]):
             result = inference.analyze("A test claim.")
-        transformer = result["predictions"][2]
+        transformer = result["predictions"][3]
+        self.assertEqual(transformer["model"], "transformer")
         self.assertEqual(transformer["status"], "unavailable")
         self.assertIsNone(transformer["p_fake"])
         self.assertIn("not on this machine", transformer["message"])
-        self.assertEqual(result["completed"], 2)
+        self.assertEqual(result["completed"], 3)
         self.assertEqual(result["agreement"], "agree")
 
     def test_disagreement_counts_fake_votes(self):
-        scores = iter([0.9, 0.2, 0.8])
+        scores = iter([0.9, 0.2, 0.8, 0.1])
         detector = SimpleNamespace(predict=lambda text: (next(scores), 0.5, False))
         with patch.object(inference, "load_detector", return_value=detector):
             result = inference.analyze("A test claim.")
@@ -57,11 +58,13 @@ class InputAndFailureTests(unittest.TestCase):
     def test_failure_preserves_other_prediction_without_claiming_agreement(self):
         detector = SimpleNamespace(predict=lambda text: (0.7, 0.55, False))
         missing = inference.ModelUnavailable("not set up")
-        with patch.object(inference, "load_detector", side_effect=[FileNotFoundError(), detector, missing]):
+        failures = [FileNotFoundError(), detector, FileNotFoundError(), missing]
+        with patch.object(inference, "load_detector", side_effect=failures):
             with self.assertLogs(inference.__name__, level="ERROR"):
                 result = inference.analyze("A test claim.")
         self.assertEqual(result["predictions"][0]["status"], "error")
         self.assertEqual(result["predictions"][1]["status"], "ready")
+        self.assertEqual(result["predictions"][2]["status"], "error")
         self.assertEqual(result["completed"], 1)
         self.assertIsNone(result["agreement"])
 
@@ -78,6 +81,7 @@ class NativeCheckpointParityTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         root = inference.ROOT
+        cls.tfidf = inference.load_detector("tfidf")
         cls.bilstm = inference.load_detector("bilstm")
         cls.graphsage = inference.load_detector("graphsage")
         # Existing CLI modules use unqualified imports. Isolate these imports
@@ -89,7 +93,8 @@ class NativeCheckpointParityTests(unittest.TestCase):
         graph_model = import_file("native_graph", root / "graph/model.py")
         with patch.dict(sys.modules, {"model": graph_model, "prep_data": SimpleNamespace(BASE=root / "graph")}):
             graph_predict = import_file("native_graph_predict", root / "graph/implementation.py")
-        cls.native_graph = graph_predict.MisinformationDetector(dataset="jruvika")
+        # The pooled checkpoint, loaded the way graph/Model_pooled/predict.py does.
+        cls.native_graph = graph_predict.MisinformationDetector(path=inference.GRAPHSAGE_CHECKPOINT)
 
     def test_bilstm_matches_original_predictor(self):
         for text in ("The council approved a new public transport plan.", "Cafe\u0301\n  news in the city."):
@@ -110,11 +115,27 @@ class NativeCheckpointParityTests(unittest.TestCase):
     def test_batch_scores_match_single_predictions(self):
         texts = ["The council approved a new public transport plan.",
                  "Shocking video shows what they are hiding from you."]
-        for name, detector in (("bilstm", self.bilstm), ("graphsage", self.graphsage)):
+        detectors = (("tfidf", self.tfidf), ("bilstm", self.bilstm), ("graphsage", self.graphsage))
+        for name, detector in detectors:
             with self.subTest(model=name):
                 batch = detector.predict_batch(texts)
                 for text, score in zip(texts, batch):
                     self.assertAlmostEqual(float(score), detector.predict(text)[0], places=5)
+
+    def test_graphsage_uses_the_pooled_checkpoint(self):
+        bundle = self.graphsage.bundle
+        self.assertEqual(sorted(bundle["training_sources"]), sorted(inference.POOLED_SOURCES))
+        self.assertEqual(self.graphsage.threshold, bundle["threshold"])
+
+    def test_tfidf_matches_saved_pipeline_and_baseline_score(self):
+        text = "Officials said on Tuesday that the council approved the plan."
+        score, threshold, truncated = self.tfidf.predict(text)
+        expected = self.tfidf.pipeline.predict_proba([text])[0, 1]
+        self.assertAlmostEqual(score, float(expected), places=6)
+        self.assertEqual(threshold, 0.5)
+        self.assertFalse(truncated)
+        # trung/results/tfidf_lr/metrics.json records 0.8144 for the same settings.
+        self.assertAlmostEqual(self.tfidf.bundle["test_macro_f1"]["overall"], 0.8144, delta=0.002)
 
     def test_long_text_matches_native_truncation(self):
         text = "word " * 520

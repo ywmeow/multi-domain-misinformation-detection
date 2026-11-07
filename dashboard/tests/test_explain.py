@@ -64,8 +64,8 @@ class ExplanationTests(unittest.TestCase):
 
 
 class RealModelExplanationTests(unittest.TestCase):
-    def test_bilstm_and_graphsage_explanations_run(self):
-        predictions = [{"model": "bilstm", "status": "ready"}, {"model": "graphsage", "status": "ready"}]
+    def test_saved_model_explanations_run(self):
+        predictions = [{"model": name, "status": "ready"} for name in ("tfidf", "bilstm", "graphsage")]
         result = explain.explain("Officials said on Tuesday that the new bridge will open in May.", predictions)
         for item in result["explanations"]:
             with self.subTest(model=item["model"]):

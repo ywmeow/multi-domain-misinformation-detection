@@ -1,5 +1,5 @@
-dataset,BiLSTM,GraphSAGE,TF-IDF+LR
-amt,0.282,0.221,0.206
-jruvika,0.202,0.146,0.165
-mc_fake,0.218,0.183,0.164
-multifc,0.683,0.746,0.65
+dataset,BiLSTM,GraphSAGE (pooled),GraphSAGE (single),TF-IDF+LR
+amt,0.282,0.246,0.221,0.206
+jruvika,0.202,0.18,0.146,0.165
+mc_fake,0.218,0.18,0.183,0.164
+multifc,0.683,0.725,0.746,0.65

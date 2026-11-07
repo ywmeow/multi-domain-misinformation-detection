@@ -1,44 +1,51 @@
 dataset,word,cue_for,models,in_fake_docs,in_real_docs,ratio_fake_to_real
-amt,time,fake,GraphSAGE,0.125,0.25,0.5
-amt,media,fake,"BiLSTM, GraphSAGE",0.042,0.083,0.51
+amt,time,fake,GraphSAGE (single),0.125,0.25,0.5
+amt,media,fake,"BiLSTM, GraphSAGE (single)",0.042,0.083,0.51
 amt,movement,fake,BiLSTM,0.042,0.083,0.51
-amt,plans,fake,GraphSAGE,0.042,0.083,0.51
-amt,best,fake,"GraphSAGE, TF-IDF+LR",0.083,0.083,1.0
+amt,plans,fake,GraphSAGE (single),0.042,0.083,0.51
+amt,students,fake,GraphSAGE (pooled),0.167,0.208,0.8
+amt,best,fake,"GraphSAGE (single), TF-IDF+LR",0.083,0.083,1.0
 amt,plays,fake,TF-IDF+LR,0.083,0.083,1.0
-amt,trump,fake,TF-IDF+LR,0.25,0.208,1.2
-amt,donald,fake,BiLSTM,0.167,0.125,1.33
+amt,trump,fake,"GraphSAGE (pooled), TF-IDF+LR",0.25,0.208,1.2
+amt,donald,fake,"BiLSTM, GraphSAGE (pooled)",0.167,0.125,1.33
+amt,school,fake,GraphSAGE (pooled),0.167,0.125,1.33
 amt,education,fake,BiLSTM,0.125,0.083,1.49
-amt,public,fake,GraphSAGE,0.125,0.083,1.49
-amt,order,fake,"BiLSTM, GraphSAGE, TF-IDF+LR",0.083,0.042,1.98
+amt,public,fake,GraphSAGE (single),0.125,0.083,1.49
+amt,president,fake,GraphSAGE (pooled),0.25,0.167,1.5
+amt,order,fake,"BiLSTM, GraphSAGE (single), TF-IDF+LR",0.083,0.042,1.98
 amt,signed,fake,TF-IDF+LR,0.083,0.042,1.98
 amt,comment,fake,TF-IDF+LR,0.167,0.0,167.67
-amt,technology,real,GraphSAGE,0.0,0.125,0.01
-amt,year,real,TF-IDF+LR,0.125,0.375,0.34
-amt,executive,real,"BiLSTM, GraphSAGE",0.042,0.083,0.51
+amt,technology,real,GraphSAGE (single),0.0,0.125,0.01
+amt,year,real,"GraphSAGE (pooled), TF-IDF+LR",0.125,0.375,0.34
+amt,executive,real,"BiLSTM, GraphSAGE (single)",0.042,0.083,0.51
 amt,instagram,real,BiLSTM,0.042,0.083,0.51
-amt,said,real,"BiLSTM, GraphSAGE, TF-IDF+LR",0.292,0.458,0.64
-amt,tuesday,real,"BiLSTM, GraphSAGE, TF-IDF+LR",0.125,0.167,0.75
+amt,said,real,"BiLSTM, GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.292,0.458,0.64
+amt,tuesday,real,"BiLSTM, GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.125,0.167,0.75
 amt,companies,real,BiLSTM,0.083,0.083,1.0
 amt,department,real,TF-IDF+LR,0.125,0.125,1.0
-jruvika,news,fake,"BiLSTM, GraphSAGE, TF-IDF+LR",0.724,0.251,2.87
-jruvika,com,fake,"BiLSTM, GraphSAGE, TF-IDF+LR",0.617,0.07,8.76
+amt,house,real,GraphSAGE (pooled),0.125,0.125,1.0
+amt,company,real,GraphSAGE (pooled),0.125,0.042,2.95
+jruvika,news,fake,"BiLSTM, GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.724,0.251,2.87
+jruvika,com,fake,"BiLSTM, GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.617,0.07,8.76
 jruvika,source,fake,BiLSTM,0.678,0.075,8.94
-jruvika,www,fake,"BiLSTM, GraphSAGE, TF-IDF+LR",0.547,0.016,32.14
-jruvika,http,fake,GraphSAGE,0.659,0.011,56.42
+jruvika,www,fake,"BiLSTM, GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.547,0.016,32.14
+jruvika,http,fake,"GraphSAGE (pooled), GraphSAGE (single)",0.659,0.011,56.42
 jruvika,cdn,fake,"BiLSTM, TF-IDF+LR",0.22,0.0,220.63
-jruvika,conservativedailynews,fake,"BiLSTM, GraphSAGE, TF-IDF+LR",0.22,0.0,220.63
-jruvika,reuters,real,"BiLSTM, TF-IDF+LR",0.019,0.321,0.06
+jruvika,conservativedailynews,fake,"BiLSTM, GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.22,0.0,220.63
+jruvika,reuters,real,"BiLSTM, GraphSAGE (pooled), TF-IDF+LR",0.019,0.321,0.06
 jruvika,region,real,TF-IDF+LR,0.009,0.096,0.11
 jruvika,spokesman,real,BiLSTM,0.023,0.096,0.25
 jruvika,monday,real,TF-IDF+LR,0.056,0.16,0.35
-jruvika,said,real,"BiLSTM, GraphSAGE, TF-IDF+LR",0.294,0.802,0.37
-jruvika,family,real,TF-IDF+LR,0.121,0.214,0.57
-jruvika,statement,real,BiLSTM,0.112,0.16,0.7
-jruvika,national,real,GraphSAGE,0.196,0.23,0.85
-jruvika,stand,real,GraphSAGE,0.084,0.096,0.88
-jruvika,players,real,GraphSAGE,0.182,0.123,1.48
-jruvika,anthem,real,GraphSAGE,0.093,0.043,2.16
-mc_fake,trump,fake,GraphSAGE,0.104,0.171,0.61
+jruvika,said,real,"BiLSTM, GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.294,0.802,0.37
+jruvika,year,real,GraphSAGE (pooled),0.252,0.481,0.53
+jruvika,family,real,"GraphSAGE (pooled), TF-IDF+LR",0.121,0.214,0.57
+jruvika,statement,real,"BiLSTM, GraphSAGE (pooled)",0.112,0.16,0.7
+jruvika,national,real,GraphSAGE (single),0.196,0.23,0.85
+jruvika,stand,real,GraphSAGE (single),0.084,0.096,0.88
+jruvika,players,real,GraphSAGE (single),0.182,0.123,1.48
+jruvika,anthem,real,GraphSAGE (single),0.093,0.043,2.16
+mc_fake,president,fake,GraphSAGE (pooled),0.122,0.231,0.53
+mc_fake,trump,fake,"GraphSAGE (pooled), GraphSAGE (single)",0.104,0.171,0.61
 mc_fake,school,fake,BiLSTM,0.077,0.097,0.79
 mc_fake,follow,fake,BiLSTM,0.081,0.09,0.9
 mc_fake,wear,fake,TF-IDF+LR,0.032,0.029,1.08
@@ -46,41 +53,44 @@ mc_fake,music,fake,TF-IDF+LR,0.084,0.071,1.17
 mc_fake,completely,fake,BiLSTM,0.063,0.052,1.21
 mc_fake,remember,fake,TF-IDF+LR,0.054,0.044,1.22
 mc_fake,children,fake,TF-IDF+LR,0.181,0.126,1.43
-mc_fake,study,fake,"GraphSAGE, TF-IDF+LR",0.163,0.113,1.43
+mc_fake,study,fake,"GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.163,0.113,1.43
 mc_fake,site,fake,BiLSTM,0.074,0.05,1.47
-mc_fake,couple,fake,GraphSAGE,0.163,0.098,1.65
-mc_fake,researchers,fake,GraphSAGE,0.129,0.072,1.77
+mc_fake,couple,fake,GraphSAGE (single),0.163,0.098,1.65
+mc_fake,researchers,fake,"GraphSAGE (pooled), GraphSAGE (single)",0.129,0.072,1.77
 mc_fake,web,fake,BiLSTM,0.036,0.018,2.0
-mc_fake,relationship,fake,GraphSAGE,0.203,0.086,2.34
-mc_fake,reuters,real,"BiLSTM, GraphSAGE, TF-IDF+LR",0.054,0.186,0.3
+mc_fake,relationship,fake,"GraphSAGE (pooled), GraphSAGE (single)",0.203,0.086,2.34
+mc_fake,reuters,real,"BiLSTM, GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.054,0.186,0.3
 mc_fake,friday,real,TF-IDF+LR,0.068,0.145,0.47
 mc_fake,thursday,real,TF-IDF+LR,0.07,0.151,0.47
 mc_fake,coronavirus,real,BiLSTM,0.115,0.208,0.55
 mc_fake,monday,real,TF-IDF+LR,0.099,0.143,0.7
-mc_fake,health,real,GraphSAGE,0.23,0.304,0.76
-mc_fake,hospital,real,GraphSAGE,0.099,0.131,0.76
-mc_fake,said,real,"BiLSTM, TF-IDF+LR",0.519,0.684,0.76
-mc_fake,says,real,GraphSAGE,0.221,0.262,0.84
-mc_fake,risk,real,GraphSAGE,0.12,0.129,0.93
+mc_fake,health,real,"GraphSAGE (pooled), GraphSAGE (single)",0.23,0.304,0.76
+mc_fake,hospital,real,GraphSAGE (single),0.099,0.131,0.76
+mc_fake,said,real,"BiLSTM, GraphSAGE (pooled), TF-IDF+LR",0.519,0.684,0.76
+mc_fake,week,real,GraphSAGE (pooled),0.212,0.268,0.79
+mc_fake,says,real,GraphSAGE (single),0.221,0.262,0.84
+mc_fake,risk,real,GraphSAGE (single),0.12,0.129,0.93
 mc_fake,told,real,BiLSTM,0.37,0.37,1.0
 mc_fake,imported,real,BiLSTM,0.027,0.026,1.03
+mc_fake,baby,real,GraphSAGE (pooled),0.131,0.056,2.31
+multifc,pay,fake,GraphSAGE (pooled),0.012,0.018,0.67
 multifc,red,fake,BiLSTM,0.002,0.004,0.72
 multifc,illegal,fake,"BiLSTM, TF-IDF+LR",0.013,0.016,0.79
 multifc,plan,fake,TF-IDF+LR,0.012,0.014,0.88
-multifc,obama,fake,"GraphSAGE, TF-IDF+LR",0.058,0.053,1.1
-multifc,president,fake,BiLSTM,0.072,0.054,1.32
-multifc,shows,fake,"BiLSTM, GraphSAGE, TF-IDF+LR",0.03,0.019,1.54
-multifc,clinton,fake,GraphSAGE,0.03,0.019,1.57
-multifc,trump,fake,GraphSAGE,0.071,0.042,1.69
+multifc,obama,fake,"GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.058,0.053,1.1
+multifc,president,fake,"BiLSTM, GraphSAGE (pooled)",0.072,0.054,1.32
+multifc,shows,fake,"BiLSTM, GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.03,0.019,1.54
+multifc,clinton,fake,GraphSAGE (single),0.03,0.019,1.57
+multifc,trump,fake,"GraphSAGE (pooled), GraphSAGE (single)",0.071,0.042,1.69
 multifc,killed,fake,BiLSTM,0.01,0.005,1.87
-multifc,hillary,fake,"GraphSAGE, TF-IDF+LR",0.022,0.01,2.06
-multifc,average,real,"BiLSTM, TF-IDF+LR",0.005,0.027,0.21
-multifc,percent,real,"GraphSAGE, TF-IDF+LR",0.03,0.083,0.37
-multifc,state,real,GraphSAGE,0.03,0.078,0.39
-multifc,times,real,BiLSTM,0.008,0.018,0.48
+multifc,hillary,fake,"GraphSAGE (single), TF-IDF+LR",0.022,0.01,2.06
+multifc,average,real,"BiLSTM, GraphSAGE (pooled), TF-IDF+LR",0.005,0.027,0.21
+multifc,percent,real,"GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.03,0.083,0.37
+multifc,state,real,GraphSAGE (single),0.03,0.078,0.39
+multifc,times,real,"BiLSTM, GraphSAGE (pooled)",0.008,0.018,0.48
 multifc,years,real,BiLSTM,0.026,0.056,0.48
 multifc,percentage,real,BiLSTM,0.003,0.006,0.55
-multifc,day,real,"GraphSAGE, TF-IDF+LR",0.009,0.016,0.58
-multifc,year,real,GraphSAGE,0.033,0.052,0.65
-multifc,million,real,"GraphSAGE, TF-IDF+LR",0.033,0.048,0.7
+multifc,day,real,"GraphSAGE (single), TF-IDF+LR",0.009,0.016,0.58
+multifc,year,real,"GraphSAGE (pooled), GraphSAGE (single)",0.033,0.052,0.65
+multifc,million,real,"GraphSAGE (pooled), GraphSAGE (single), TF-IDF+LR",0.033,0.048,0.7
 multifc,said,real,"BiLSTM, TF-IDF+LR",0.033,0.037,0.92

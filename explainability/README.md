@@ -9,13 +9,21 @@ traditional, sequential and graph models, without retraining or modifying them.
 |---|---|---|---|
 | Traditional | TF-IDF (1–2 gram) + logistic regression | pooled 4 datasets; also one per dataset | same settings as `trung/baseline_tfidf.py`, refitted here |
 | Sequential | GloVe-100d BiLSTM | pooled 4 datasets | `sequential/checkpoints/bilstm_glove100_seed42` |
-| Graph | GraphSAGE on a TF-IDF/SVD kNN document graph | one model per dataset | `graph/Models/*.joblib` (retrained checkpoints, each with its own dev-selected decision threshold) |
+| Graph | GraphSAGE (single) on a TF-IDF/SVD kNN document graph | one model per dataset | `graph/Models/*_graphsage.joblib` (retrained checkpoints, each with its own dev-selected decision threshold) |
+| Graph | GraphSAGE (pooled), same architecture | pooled 4 datasets | `graph/Models/Model_pooled.joblib` (dev-selected 5 neighbours, threshold 0.53) |
 | Transformer | RoBERTa/DeBERTa (optional) | pooled | Trung's Hugging Face repo, see [below](#transformers) |
+
+TF-IDF+LR, the BiLSTM and **GraphSAGE (pooled)** share the same pooled training data, so
+they are the like-for-like comparison of model families. **GraphSAGE (single)** explains
+each dataset with the model trained on that dataset alone; it is kept because it shows how
+much the training data, rather than the architecture, shapes a model's behaviour
+(findings 3 and 5). The dashboard's GraphSAGE card uses the pooled model.
 
 The wrappers reproduce the recorded test scores: the BiLSTM exactly, TF-IDF within 0.012
 on AMT, and GraphSAGE (using each checkpoint's saved threshold) 0.5608 on AMT and 0.6483 on
-MultiFC, against 0.5608 and 0.6482 in [graph/README.md](../graph/README.md). Two small gaps
-come from the test texts, not the models: Jruvika gives 0.990 rather than 0.982 because the
+MultiFC, against 0.5608 and 0.6482 in [graph/README.md](../graph/README.md). The pooled
+GraphSAGE gives 0.534 on AMT and 0.586 on MultiFC, as in that README, and 0.798 overall
+against its 0.796. The small gaps come from the test texts, not the models: Jruvika gives 0.990 rather than 0.982 because the
 graph split manifest drops 15 duplicate texts, and MC-Fake gives 0.793 rather than 0.785
 because the graph code rebuilds MC-Fake text from the source CSV, while this module reads
 the team's shared `binary_*.jsonl` exports.
@@ -37,7 +45,7 @@ Long articles are cut to their first 256 words before explaining. The BiLSTM and
 transformers read only the head of the text anyway.
 
 **Sample.** 30 label-balanced test texts per dataset (150 for MultiFC, whose claims are
-short) × 3 families × 2 methods = 1,260 local explanations. A further 640 LIME
+short) × 4 models × 2 methods = 1,680 local explanations. A further 640 LIME
 explanations cover the single-source models on every train → test pair. Global "cues" are
 averaged over the local explanations, ranked by mean weight × √(texts containing the word),
 with stopwords removed.
@@ -53,7 +61,8 @@ prediction far more than deleting random words. It does
 |---|---:|---:|---:|
 | TF-IDF+LR (LIME / SHAP) | 0.34 / 0.28 | 0.01 / 0.02 | 65% / 54% |
 | BiLSTM (LIME / SHAP) | 0.30 / 0.20 | 0.02 / 0.01 | 57% / 40% |
-| GraphSAGE (LIME / SHAP) | 0.26 / 0.18 | 0.02 / 0.02 | 57% / 43% |
+| GraphSAGE (pooled) (LIME / SHAP) | 0.22 / 0.14 | 0.005 / 0.004 | 46% / 33% |
+| GraphSAGE (single) (LIME / SHAP) | 0.26 / 0.18 | 0.02 / 0.02 | 57% / 43% |
 
 Removing just five words flips about half of all predictions. LIME scores slightly higher
 here because its perturbations are deletions, like this test. Partition SHAP, at 500
@@ -65,12 +74,14 @@ evaluations, spreads credit over neighbouring words.
 The [shortcut audit](results/shortcut_audit.csv) counts how often each top cue occurs in
 fake versus real documents across the whole test set:
 
-* **Jruvika.** All three families put their top "fake" weight on the footprint of one
+* **Jruvika.** Every model put its top "fake" weight on the footprint of one
   publisher: `conservativedailynews` and `cdn` appear in 22% of fake articles and **0%** of
   real ones. `www` appears in 55% of fakes vs 1.6% of reals, and `http` in 66% vs 1.1%. The
   top "real" cue is `reuters` (32% of real articles, 1.9% of fakes), then wire-report
   vocabulary (`said`, `spokesman`, `statement`, `monday`). This explains why even TF-IDF
-  scores 0.945 on Jruvika: the label can be read off the source.
+  scores 0.945 on Jruvika: the label can be read off the source. The figure also shows the
+  effect of pooling: GraphSAGE (single) never uses `reuters`, but GraphSAGE (pooled) makes it
+  its strongest "real" word, like the BiLSTM and TF-IDF.
 * **MC-Fake.** "Real" is again newswire style (`reuters`, `told`, `said`, weekdays).
   "Fake" is celebrity gossip (`kardashian`, `dating`, `rumors`, `insider`, `exclusively`,
   `source`). The label is largely a topic and genre label.
@@ -95,19 +106,29 @@ a blog source line (*"Source: http://www.conservativedailynews.com news"*):
 | MC-Fake, TF-IDF+LR | 49% → 26% | 4% → 13% |
 | MC-Fake, BiLSTM | 54% → 38% | 5% → 16% |
 | Jruvika, BiLSTM | 94% → 77% | 6% → **31%** |
-| MultiFC, GraphSAGE | 79% → 64% | 50% → 52% |
-| Jruvika, GraphSAGE | 99% → 97% | 1% → 12% |
+| MultiFC, GraphSAGE (pooled) | 88% → 18% | 71% → 99% |
+| AMT, GraphSAGE (pooled) | 42% → 8% | 33% → 79% |
+| Jruvika, GraphSAGE (pooled) | 89% → 87% | 5% → 21% |
+| MultiFC, GraphSAGE (single) | 79% → 64% | 50% → 52% |
+| AMT, GraphSAGE (single) | 63% → 38% | 50% → 54% |
+| Jruvika, GraphSAGE (single) | 99% → 97% | 1% → 12% |
 
-A one-line byline hides most fake claims from the bag-of-words and sequential models. Short
-claims are hit hardest because the added words outweigh the claim. GraphSAGE is the most
-robust: its prediction also averages over the 10 most similar training documents, and a
-single line barely changes which documents those are.
+A one-line byline hides most fake claims from every pooled model, whatever its
+architecture. Short claims are hit hardest because the added words outweigh the claim.
+
+The two GraphSAGE versions show where robustness comes from. GraphSAGE (single) barely
+reacts on MultiFC and AMT, but GraphSAGE (pooled), with the same architecture, is fooled
+almost as easily as TF-IDF and the BiLSTM. A model trained only on MultiFC claims never
+learned that `reuters`, `said` or a URL mean anything; pooling adds Jruvika and MC-Fake,
+where they decide the label, and the model carries those shortcuts into every domain. So
+the single model's robustness came from its narrow training data, not from the graph.
+Pooling raises in-domain scores partly by importing each dataset's shortcuts everywhere.
 
 ### 4. Families agree on short claims and disagree on articles
 On the same texts, word rankings correlate only weakly between families on long articles
 (Spearman 0.11–0.39, top-10 Jaccard 0.05–0.30). On MultiFC claims they correlate more
-strongly (Spearman 0.31–0.44, Jaccard 0.55–0.70). LIME and SHAP agree with each other in
-the same way: 0.19–0.55 on articles and 0.76–0.83 on claims
+strongly (Spearman 0.28–0.47, Jaccard 0.55–0.74). LIME and SHAP agree with each other in
+the same way: 0.19–0.55 on articles and 0.66–0.83 on claims
 ([agreement.csv](results/agreement.csv)).
 
 On claims, the top 5 words carry 65–75% of all attribution, against 15–28% on articles
@@ -167,7 +188,7 @@ artefacts, not by learning veracity. The fixes these findings suggest:
 |---|---|
 | `data.py` | Loads `binary_{train,dev,test}` for all four datasets; extracts the MC-Fake/Jruvika 7z archives with py7zr. |
 | `models.py` | One `predict_proba(texts)` interface for each model (registry names: `tfidf_lr`, `tfidf_lr:<dataset>`, `bilstm`, `graphsage:<dataset>`, `transformer:<run>`). |
-| `explainers.py` | `lime_explain`, `shap_explain`, `deletion_check`, `highlight_html`. Plain-dict outputs, reusable by the Streamlit app. |
+| `explainers.py` | `lime_explain`, `shap_explain`, `deletion_check`, `highlight_html`. Plain-dict outputs; the dashboard's **Explain predictions** calls `lime_explain` from here (`dashboard/explain.py`). |
 | `analysis.py` | The `explain`, `transfer`, `stress` and `report` stages. |
 | `tests/test_explainers.py` | Checks LIME and SHAP on a toy model whose cue words are known. |
 | `results/` | All tables and figures above, the raw explanations (`*.jsonl`), and [`examples.html`](results/examples.html) with highlighted side-by-side explanations. |
@@ -210,7 +231,7 @@ GraphSAGE models were saved with. The `explain` and `transfer` stages append to 
 JSONL files and skip finished work, so re-running resumes an interrupted run. Extracted
 data and the fitted TF-IDF models go to `explainability/cache/` (ignored by Git).
 
-Using it from other code (for example the Streamlit app):
+Using it from other code (`dashboard/explain.py` does this for the Streamlit app):
 
 ```python
 import sys; sys.path.insert(0, "explainability")
@@ -223,9 +244,13 @@ result["p_fake"], highlight_html(result["text"], result["weights"])
 ```
 
 ### Transformers
-`--extra-models transformer:roberta_adamw` (or `deberta_adamw`, `roberta_muon_lr5e-5`) adds
-Trung's fine-tuned models from `ngqtrung/ee6405-misinfo-detection`. This needs
-`pip install transformers` and downloads each checkpoint (about 0.5 GB). A GPU is
+`--extra-models transformer:roberta_adamw` (or `transformer:roberta_muon_lr5e-5`,
+`transformer:deberta_adamw`) adds Trung's fine-tuned models from
+`ngqtrung/ee6405-misinfo-detection`. The run names map to the repository's
+`models/roberta-base-adamw`, `models/roberta-base-muon` and `models/deberta-v3-base-adamw`
+folders, pinned to the same commit as the dashboard. This needs `pip install transformers`
+and downloads each checkpoint on first use (about 0.5 GB); `roberta_muon_lr5e-5` reuses the
+weights fetched by `dashboard/download_transformer.py`. A GPU is
 recommended, because LIME calls the model 500 times per text. These runs are not included
 in the results above. Trung's [Integrated Gradients analysis](../trung/README.md#interpretation-files-in-resultsruninterp)
 already found the same `reuters` / `caption` / `copyright` publisher cues for RoBERTa.

@@ -8,8 +8,10 @@ function, so the same explainer code runs on every model family:
 * ``tfidf_lr:<dataset>`` the same baseline trained on one dataset only (cross-domain).
 * ``bilstm``             sequential model, the shipped GloVe BiLSTM checkpoint (pooled).
 * ``graphsage:<dataset>`` graph model, one of Swetha's four single-source checkpoints.
-* ``transformer``        optional: a fine-tuned RoBERTa/DeBERTa from Hugging Face
-                         (needs ``transformers`` and a download; see README).
+* ``graphsage:pooled``   her GraphSAGE trained on all four datasets (``Model_pooled.joblib``).
+* ``transformer:<run>``  optional: a fine-tuned RoBERTa/DeBERTa from Hugging Face, by
+                         Trung's run name (``roberta_adamw``, ``roberta_muon_lr5e-5``,
+                         ``deberta_adamw``); needs ``transformers`` and a download.
 
 Models are loaded from the existing team folders without changing them. Modules are
 imported by file path because ``sequential/`` and ``graph/`` both have a ``model.py``.
@@ -134,10 +136,12 @@ class BiLSTMModel(Model):
 
 
 class GraphSAGEModel(Model):
-    """Inference for Swetha's saved single-source GraphSAGE models (numpy only).
+    """Inference for Swetha's saved GraphSAGE models (numpy only).
 
-    A new text becomes a node: TF-IDF -> SVD features, connected to its 10 most
-    similar training documents, then passed through the two GraphSAGE layers.
+    ``dataset`` is one of the four datasets (a single-source model) or ``"pooled"``
+    (``Model_pooled.joblib``, trained on all four). A new text becomes a node: TF-IDF ->
+    SVD features, connected to its most similar training documents (the checkpoint's
+    saved neighbour count), then passed through the two GraphSAGE layers.
     """
 
     family = "graph"
@@ -150,7 +154,8 @@ class GraphSAGEModel(Model):
         self.dataset = dataset
         self.name = f"graphsage:{dataset}"
         self.batch_size = batch_size
-        self.bundle = joblib.load(ROOT / "graph/Models" / f"{dataset}_graphsage.joblib")
+        filename = "Model_pooled.joblib" if dataset == "pooled" else f"{dataset}_graphsage.joblib"
+        self.bundle = joblib.load(ROOT / "graph/Models" / filename)
         # The retrained checkpoints carry a decision threshold selected on source dev.
         self.threshold = float(self.bundle.get("threshold", 0.5))
 
@@ -167,21 +172,41 @@ class GraphSAGEModel(Model):
         return np.concatenate(out)
 
 
+TRANSFORMER_REPO = "ngqtrung/ee6405-misinfo-detection"
+# Same commit as the dashboard (dashboard/inference.py), so both load identical weights.
+TRANSFORMER_REVISION = "7837df88331f0b16f9bcbda8fc5e0e4f859a8ccc"
+# Trung's run names (trung/results/<run>) and the Hugging Face folders that hold them.
+TRANSFORMER_RUNS = {
+    "roberta_adamw": "models/roberta-base-adamw",
+    "roberta_muon_lr5e-5": "models/roberta-base-muon",
+    "deberta_adamw": "models/deberta-v3-base-adamw",
+}
+
+
 class TransformerModel(Model):
-    """Optional: a fine-tuned checkpoint from Trung's Hugging Face repo."""
+    """Optional: one of Trung's fine-tuned checkpoints from Hugging Face.
+
+    ``run`` is a run name from ``TRANSFORMER_RUNS``. Weights already in the local
+    Hugging Face cache (e.g. fetched by ``dashboard/download_transformer.py``) are reused;
+    otherwise ``transformers`` downloads them (about 0.5 GB each).
+    """
 
     family = "transformer"
 
-    def __init__(self, repo="ngqtrung/ee6405-misinfo-detection", subfolder="roberta_adamw", batch_size=16, device=None):
+    def __init__(self, run="roberta_adamw", batch_size=16, device=None):
         import torch
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
+        if run not in TRANSFORMER_RUNS:
+            raise ValueError(f"Unknown transformer run {run!r}; choose from {sorted(TRANSFORMER_RUNS)}")
+        source = dict(subfolder=TRANSFORMER_RUNS[run], revision=TRANSFORMER_REVISION)
         self.torch = torch
-        self.name = f"transformer:{subfolder}"
+        self.name = f"transformer:{run}"
         self.batch_size = batch_size
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
-        self.tokenizer = AutoTokenizer.from_pretrained(repo, subfolder=subfolder)
-        self.model = AutoModelForSequenceClassification.from_pretrained(repo, subfolder=subfolder).to(self.device).eval()
+        self.tokenizer = AutoTokenizer.from_pretrained(TRANSFORMER_REPO, **source)
+        self.model = AutoModelForSequenceClassification.from_pretrained(TRANSFORMER_REPO, **source)
+        self.model.to(self.device).eval()
 
     def predict_proba(self, texts):
         torch = self.torch
@@ -205,11 +230,11 @@ def load_model(name):
     if kind == "graphsage":
         return GraphSAGEModel(arg or "multifc")
     if kind == "transformer":
-        return TransformerModel(subfolder=arg or "roberta_adamw")
+        return TransformerModel(run=arg or "roberta_adamw")
     raise ValueError(f"Unknown model: {name}")
 
 
 # Models trained on all four datasets: compared like-for-like in the main analysis.
-POOLED_MODELS = ("tfidf_lr", "bilstm")
+POOLED_MODELS = ("tfidf_lr", "bilstm", "graphsage:pooled")
 # Single-source models: used for the cross-domain transfer analysis.
 SOURCE_MODELS = tuple(f"{kind}:{d}" for kind in ("tfidf_lr", "graphsage") for d in DATASETS)

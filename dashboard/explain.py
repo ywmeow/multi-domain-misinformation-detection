@@ -21,6 +21,7 @@ from dashboard.inference import INFERENCE_LOCK, LOGGER, ROOT, ModelUnavailable, 
 # (perturbed samples, words explained). More samples = more stable weights, slower.
 # RoBERTa costs ~0.1 s per perturbed text on a 12-thread laptop CPU, so it gets less.
 SETTINGS = {
+    "tfidf": (500, 256),
     "bilstm": (300, 200),
     "graphsage": (300, 200),
     "transformer": (100, 100),

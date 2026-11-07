@@ -23,7 +23,12 @@ MAX_CHARACTERS = 20_000
 INFERENCE_LOCK = RLock()
 LOGGER = logging.getLogger(__name__)
 
-MODELS = ("bilstm", "graphsage", "transformer")
+# Card order: traditional, sequential, graph, transformer.
+MODELS = ("tfidf", "bilstm", "graphsage", "transformer")
+# Every card uses a model trained on the same pooled training splits.
+POOLED_SOURCES = ("amt", "multifc", "mc_fake", "jruvika")
+GRAPHSAGE_CHECKPOINT = ROOT / "graph/Models/Model_pooled.joblib"
+TFIDF_CHECKPOINT = ROOT / "dashboard/models/tfidf_lr.joblib"
 # Trung's fine-tuned roberta-base (Muon optimizer), pinned to one repository commit
 # so every teammate loads identical weights.
 TRANSFORMER_REPO = "ngqtrung/ee6405-misinfo-detection"
@@ -64,6 +69,32 @@ def _module(name: str, path: Path):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+class TfidfDetector:
+    """Traditional baseline: TF-IDF (word 1-2 grams) + logistic regression, pooled training.
+
+    Saved by ``dashboard/train_tfidf.py`` with the settings of ``trung/baseline_tfidf.py``.
+    """
+
+    def __init__(self, checkpoint_path: Path | None = None):
+        import joblib
+
+        self.bundle = joblib.load(checkpoint_path or TFIDF_CHECKPOINT)
+        if self.bundle.get("architecture") != "tfidf + logistic regression":
+            raise ValueError("The selected file is not a TF-IDF + logistic regression checkpoint.")
+        if sorted(self.bundle.get("training_sources", [])) != sorted(POOLED_SOURCES):
+            raise ValueError("This dashboard expects the pooled TF-IDF checkpoint.")
+        self.pipeline = self.bundle["pipeline"]
+        self.threshold = float(self.bundle.get("threshold", 0.5))
+
+    def predict(self, text: str) -> tuple[float, float, bool]:
+        # Bag of words: the whole text is used, so nothing is ever truncated.
+        return float(self.predict_batch([text])[0]), self.threshold, False
+
+    def predict_batch(self, texts: list[str]):
+        """Fake-class scores for many texts (used by LIME's perturbations)."""
+        return self.pipeline.predict_proba(list(texts))[:, 1]
 
 
 class BiLSTMDetector:
@@ -145,17 +176,19 @@ class BiLSTMDetector:
 
 
 class GraphSAGEDetector:
+    """Swetha's pooled GraphSAGE: trained on all four datasets, like the other cards."""
+
     def __init__(self, checkpoint_path: Path | None = None):
         import joblib
 
-        checkpoint_path = checkpoint_path or ROOT / "graph/Models/jruvika_graphsage.joblib"
+        checkpoint_path = checkpoint_path or GRAPHSAGE_CHECKPOINT
         self.bundle = joblib.load(checkpoint_path)
         if self.bundle.get("architecture") != "two-layer cosine-weighted mean GraphSAGE":
             raise ValueError("The selected file is not a compatible GraphSAGE checkpoint.")
-        if self.bundle.get("dataset") != "jruvika":
-            raise ValueError("This dashboard expects the Jruvika GraphSAGE checkpoint.")
+        if sorted(self.bundle.get("training_sources", [])) != sorted(POOLED_SOURCES):
+            raise ValueError("This dashboard expects the pooled GraphSAGE checkpoint.")
         self.graph = _module("dashboard_graphsage_model", ROOT / "graph/model.py")
-        # The current Jruvika artifact uses 0.55, selected on development data.
+        # The pooled artifact stores its dev-selected threshold (0.53) and neighbor count (5).
         self.threshold = float(self.bundle.get("threshold", 0.5))
 
     def predict(self, text: str) -> tuple[float, float, bool]:
@@ -248,6 +281,8 @@ class TransformerDetector:
 @lru_cache(maxsize=len(MODELS))
 def load_detector(model: str):
     """Keep trusted local checkpoints loaded across Streamlit reruns/sessions."""
+    if model == "tfidf":
+        return TfidfDetector()
     if model == "bilstm":
         return BiLSTMDetector()
     if model == "graphsage":

@@ -1,37 +1,65 @@
 dataset,comparison,method,spearman,top10_jaccard,n
-amt,BiLSTM vs GraphSAGE,lime,0.113,0.053,30
+amt,BiLSTM vs GraphSAGE (single),lime,0.113,0.053,30
+amt,BiLSTM vs GraphSAGE (pooled),lime,0.16,0.058,30
 amt,BiLSTM vs TF-IDF+LR,lime,0.243,0.143,30
-amt,GraphSAGE vs TF-IDF+LR,lime,0.176,0.099,30
-amt,BiLSTM vs GraphSAGE,shap,0.172,0.097,30
+amt,GraphSAGE (single) vs GraphSAGE (pooled),lime,0.169,0.187,30
+amt,GraphSAGE (single) vs TF-IDF+LR,lime,0.176,0.099,30
+amt,GraphSAGE (pooled) vs TF-IDF+LR,lime,0.245,0.157,30
+amt,BiLSTM vs GraphSAGE (single),shap,0.172,0.097,30
+amt,BiLSTM vs GraphSAGE (pooled),shap,0.216,0.091,30
 amt,BiLSTM vs TF-IDF+LR,shap,0.317,0.148,30
-amt,GraphSAGE vs TF-IDF+LR,shap,0.244,0.199,30
+amt,GraphSAGE (single) vs GraphSAGE (pooled),shap,0.192,0.205,30
+amt,GraphSAGE (single) vs TF-IDF+LR,shap,0.244,0.199,30
+amt,GraphSAGE (pooled) vs TF-IDF+LR,shap,0.239,0.218,30
 amt,TF-IDF+LR: LIME vs SHAP,both,0.547,0.282,30
 amt,BiLSTM: LIME vs SHAP,both,0.342,0.27,30
-amt,GraphSAGE: LIME vs SHAP,both,0.452,0.292,30
-jruvika,BiLSTM vs GraphSAGE,lime,0.137,0.103,30
+amt,GraphSAGE (single): LIME vs SHAP,both,0.452,0.292,30
+amt,GraphSAGE (pooled): LIME vs SHAP,both,0.291,0.258,30
+jruvika,BiLSTM vs GraphSAGE (single),lime,0.137,0.103,30
+jruvika,BiLSTM vs GraphSAGE (pooled),lime,0.182,0.108,30
 jruvika,BiLSTM vs TF-IDF+LR,lime,0.235,0.168,30
-jruvika,GraphSAGE vs TF-IDF+LR,lime,0.203,0.162,30
-jruvika,BiLSTM vs GraphSAGE,shap,0.156,0.152,30
+jruvika,GraphSAGE (single) vs GraphSAGE (pooled),lime,0.226,0.154,30
+jruvika,GraphSAGE (single) vs TF-IDF+LR,lime,0.203,0.162,30
+jruvika,GraphSAGE (pooled) vs TF-IDF+LR,lime,0.284,0.204,30
+jruvika,BiLSTM vs GraphSAGE (single),shap,0.156,0.152,30
+jruvika,BiLSTM vs GraphSAGE (pooled),shap,0.237,0.176,30
 jruvika,BiLSTM vs TF-IDF+LR,shap,0.389,0.173,30
-jruvika,GraphSAGE vs TF-IDF+LR,shap,0.293,0.305,30
+jruvika,GraphSAGE (single) vs GraphSAGE (pooled),shap,0.244,0.222,30
+jruvika,GraphSAGE (single) vs TF-IDF+LR,shap,0.293,0.305,30
+jruvika,GraphSAGE (pooled) vs TF-IDF+LR,shap,0.332,0.286,30
 jruvika,TF-IDF+LR: LIME vs SHAP,both,0.396,0.194,30
 jruvika,BiLSTM: LIME vs SHAP,both,0.194,0.162,30
-jruvika,GraphSAGE: LIME vs SHAP,both,0.205,0.094,30
-mc_fake,BiLSTM vs GraphSAGE,lime,0.16,0.104,30
+jruvika,GraphSAGE (single): LIME vs SHAP,both,0.205,0.094,30
+jruvika,GraphSAGE (pooled): LIME vs SHAP,both,0.197,0.166,30
+mc_fake,BiLSTM vs GraphSAGE (single),lime,0.16,0.104,30
+mc_fake,BiLSTM vs GraphSAGE (pooled),lime,0.223,0.112,30
 mc_fake,BiLSTM vs TF-IDF+LR,lime,0.253,0.135,30
-mc_fake,GraphSAGE vs TF-IDF+LR,lime,0.229,0.188,30
-mc_fake,BiLSTM vs GraphSAGE,shap,0.189,0.152,30
+mc_fake,GraphSAGE (single) vs GraphSAGE (pooled),lime,0.322,0.221,30
+mc_fake,GraphSAGE (single) vs TF-IDF+LR,lime,0.229,0.188,30
+mc_fake,GraphSAGE (pooled) vs TF-IDF+LR,lime,0.319,0.234,30
+mc_fake,BiLSTM vs GraphSAGE (single),shap,0.189,0.152,30
+mc_fake,BiLSTM vs GraphSAGE (pooled),shap,0.208,0.141,30
 mc_fake,BiLSTM vs TF-IDF+LR,shap,0.333,0.201,30
-mc_fake,GraphSAGE vs TF-IDF+LR,shap,0.319,0.176,30
+mc_fake,GraphSAGE (single) vs GraphSAGE (pooled),shap,0.354,0.193,30
+mc_fake,GraphSAGE (single) vs TF-IDF+LR,shap,0.319,0.176,30
+mc_fake,GraphSAGE (pooled) vs TF-IDF+LR,shap,0.384,0.26,30
 mc_fake,TF-IDF+LR: LIME vs SHAP,both,0.42,0.266,30
 mc_fake,BiLSTM: LIME vs SHAP,both,0.229,0.19,30
-mc_fake,GraphSAGE: LIME vs SHAP,both,0.34,0.191,30
-multifc,BiLSTM vs GraphSAGE,lime,0.312,0.549,120
+mc_fake,GraphSAGE (single): LIME vs SHAP,both,0.34,0.191,30
+mc_fake,GraphSAGE (pooled): LIME vs SHAP,both,0.264,0.219,30
+multifc,BiLSTM vs GraphSAGE (single),lime,0.312,0.549,120
+multifc,BiLSTM vs GraphSAGE (pooled),lime,0.292,0.565,120
 multifc,BiLSTM vs TF-IDF+LR,lime,0.439,0.608,120
-multifc,GraphSAGE vs TF-IDF+LR,lime,0.371,0.597,120
-multifc,BiLSTM vs GraphSAGE,shap,0.392,0.635,120
+multifc,GraphSAGE (single) vs GraphSAGE (pooled),lime,0.462,0.687,120
+multifc,GraphSAGE (single) vs TF-IDF+LR,lime,0.371,0.597,120
+multifc,GraphSAGE (pooled) vs TF-IDF+LR,lime,0.36,0.619,120
+multifc,BiLSTM vs GraphSAGE (single),shap,0.392,0.635,120
+multifc,BiLSTM vs GraphSAGE (pooled),shap,0.282,0.637,120
 multifc,BiLSTM vs TF-IDF+LR,shap,0.435,0.668,120
-multifc,GraphSAGE vs TF-IDF+LR,shap,0.414,0.7,120
+multifc,GraphSAGE (single) vs GraphSAGE (pooled),shap,0.47,0.736,120
+multifc,GraphSAGE (single) vs TF-IDF+LR,shap,0.414,0.7,120
+multifc,GraphSAGE (pooled) vs TF-IDF+LR,shap,0.355,0.698,120
 multifc,TF-IDF+LR: LIME vs SHAP,both,0.835,0.73,120
 multifc,BiLSTM: LIME vs SHAP,both,0.765,0.632,120
-multifc,GraphSAGE: LIME vs SHAP,both,0.761,0.708,120
+multifc,GraphSAGE (single): LIME vs SHAP,both,0.761,0.708,120
+multifc,GraphSAGE (pooled): LIME vs SHAP,both,0.661,0.651,120

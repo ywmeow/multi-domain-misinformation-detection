@@ -413,9 +413,10 @@ textarea:focus-visible {
   font-size: 11px;
 }
 
+/* Four model families as a 2 x 2 grid; explanations need the wider cards. */
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-flow: dense;
   gap: 12px;
 }
@@ -450,6 +451,12 @@ textarea:focus-visible {
   color: #c1cab5;
   font-size: 9px;
   letter-spacing: 1.5px;
+}
+
+/* Marks the reference model the others are compared against. */
+.model-tag {
+  margin-left: 6px;
+  color: var(--accent);
 }
 
 .availability {

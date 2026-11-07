@@ -8,8 +8,9 @@ const EXAMPLES = {
 };
 
 const MODEL_DETAILS = {
+  tfidf: "Whole text",
   bilstm: "First 512 tokens",
-  graphsage: "Jruvika checkpoint",
+  graphsage: "Pooled checkpoint",
   transformer: "First 512 tokens"
 };
 const MODEL_COUNT = Object.keys(MODEL_DETAILS).length;
@@ -274,7 +275,7 @@ export default function mountDashboard(component) {
         ? "Clearing analysis…"
         : explaining
           ? "Explaining with LIME · this can take up to a minute…"
-          : "Analyzing with BiLSTM, GraphSAGE and RoBERTa…";
+          : "Analyzing with TF-IDF, BiLSTM, GraphSAGE and RoBERTa…";
     }
   }
 
