@@ -321,11 +321,17 @@ def main(gin_only=False):
                 print(f'{row["model"]:16s} {source:8s} -> {row["test_dataset"]:8s} F1={row["macro_f1"]:.4f}', flush=True)
     frame = pd.DataFrame(records)
     assert len(frame)==80 and not frame.duplicated(['model','train_dataset','test_dataset']).any()
+    results_path = out/'results.csv'
+    if results_path.exists():
+        existing = pd.read_csv(results_path)
+        pooled = existing.loc[existing.model.eq('Model_pooled')]
+        if not pooled.empty and all(pooled[key].eq(value).all() for key, value in fingerprints.items()):
+            frame = pd.concat([frame, pooled], ignore_index=True)
     temp = out/'results.csv.tmp'
     frame.to_csv(temp,index=False)
     for staging, destination in checkpoints:
         staging.replace(destination)
-    temp.replace(out/'results.csv')
+    temp.replace(results_path)
     summary = frame.groupby(['model','evaluation']).macro_f1.mean().round(4).to_string()
     print('\n'.join(line.rstrip() for line in summary.splitlines()), flush=True)
 
