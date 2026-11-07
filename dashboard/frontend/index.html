@@ -70,14 +70,9 @@
         <span class="status-divider" aria-hidden="true">/</span>
         <span id="analysis-summary">3 models available</span>
       </div>
-      <div class="result-actions">
-        <button type="button" class="export-button" id="explain-button" disabled>
-          <span id="explain-button-label">Explain predictions</span> <span aria-hidden="true">✦</span>
-        </button>
-        <button type="button" class="export-button" id="export-button" disabled>
-          Download results <span aria-hidden="true">↓</span>
-        </button>
-      </div>
+      <button type="button" class="export-button" id="export-button" disabled>
+        Download results <span aria-hidden="true">↓</span>
+      </button>
     </div>
     <p class="submitted-text" id="submitted-text" hidden></p>
     <p class="explanation-legend" id="explanation-legend" hidden>
@@ -250,6 +245,12 @@
           <p class="explanation-meta" data-explanation-meta></p>
         </section>
       </article>
+    </div>
+
+    <div class="result-actions">
+      <button type="button" class="button button-secondary" id="explain-button" disabled>
+        <span id="explain-button-label">Explain predictions</span>
+      </button>
     </div>
 
     <p class="interpretation">Model predictions are not fact checks. Verify important claims with reliable sources.</p>
