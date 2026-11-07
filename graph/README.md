@@ -2,6 +2,34 @@
 
 Four GraphSAGE models are trained separately on AMT, MultiFC, MC-Fake and Jruvika. Each model is tested on all four datasets, giving 16 train/test pairs. Labels are **0=real** and **1=fake**.
 
+## Model_pooled
+
+`Model_pooled` is a separately trained GraphSAGE checkpoint using the combined AMT, MultiFC, MC-Fake and Jruvika training splits. Its TF-IDF vocabulary, SVD and neighbor graph are fitted on those training rows. Checkpoint selection averages the four per-dataset development macro-F1 scores with equal weight.
+
+Run from the repository root:
+
+```bash
+python graph/Model_pooled/train.py
+python graph/Model_pooled/tune.py
+python graph/Model_pooled/evaluate.py
+python graph/Model_pooled/predict.py
+```
+
+Training writes `Models/Model_pooled.joblib` and `Model_pooled/training.json` under `graph/`. Tuning searches query neighbor counts of 3, 5, 8, 10, 12, 15, 20, 25 and 30 and fake-class thresholds of 0.35 through 0.65 in steps of 0.01. It selects the pair by mean per-dataset development macro-F1 and saves the settings in the checkpoint. Evaluation updates the five `Model_pooled` rows in [results/results.csv](results/results.csv). Prediction accepts an article or claim followed by a blank line.
+
+The checkpoint is 47.77 MB. It stores a single copy of the training anchors shared by the neighbor index and the GraphSAGE layers.
+
+The checkpoint used 45,364 training rows. Tuning selected 5 neighbors and a 0.53 threshold, raising mean development macro-F1 from 0.7391 to 0.7417. On 5,699 test rows, overall macro-F1 fell from 0.7978 to 0.7958.
+
+| Test set | Default macro-F1 | Tuned macro-F1 |
+|---|---:|---:|
+| AMT | 0.5530 | 0.5344 |
+| MultiFC | 0.5675 | 0.5859 |
+| MC-Fake | 0.7627 | 0.7535 |
+| Jruvika | 0.9222 | 0.9145 |
+| Mean across datasets | 0.7014 | 0.6971 |
+| Combined | 0.7978 | 0.7958 |
+
 ## Experimental design
 
 Five methods use the same 16 train/test pairs:
@@ -106,7 +134,7 @@ The following factors could explain the transfer gap:
 
 These are plausible explanations supported by the experiment setup and known data limitations, not isolated causal findings. The 4×4 evaluation does not determine how much each factor contributes.
 
-All 80 evaluations are in [results/results.csv](results/results.csv), with one row per method and train/test pair. The main columns are `accuracy`, `macro_precision`, `macro_recall` and `macro_f1`. The CSV also records per-class metrics, ROC-AUC, average precision, confusion counts, source-dev scores, selected settings and data hashes. Confusion columns mean:
+The 80 single-source evaluations and five `Model_pooled` evaluations are in [results/results.csv](results/results.csv), with one row per method and train/test pair. The main columns are `accuracy`, `macro_precision`, `macro_recall` and `macro_f1`. The CSV also records per-class metrics, ROC-AUC, average precision, confusion counts, development scores, selected settings and data hashes. Confusion columns mean:
 
 - `true_real`: real predicted as real.
 - `false_fake`: real predicted as fake.
@@ -144,6 +172,13 @@ graph/
     multifc_graphsage.joblib
     mc_fake_graphsage.joblib
     jruvika_graphsage.joblib
+    Model_pooled.joblib
+  Model_pooled/
+    train.py
+    tune.py
+    evaluate.py
+    predict.py
+    training.json
   logs/
     gin.log
     prep_data.log
@@ -155,7 +190,7 @@ graph/
     split_manifest.json.gz
 ```
 
-`results.csv` is the only CSV. `training.json` holds the four training configurations and epoch histories. `split_manifest.json.gz` contains IDs, labels, groups, split membership and text hashes, without article text; it is needed to reproduce the evaluated splits.
+`results.csv` holds the single-source and pooled scores. `results/training.json` holds the four original training configurations and epoch histories. `split_manifest.json.gz` contains IDs, labels, groups, split membership and text hashes, without article text; it is needed to reproduce the evaluated splits.
 
 ## Model architecture
 
@@ -187,6 +222,7 @@ Training uses AdamW, learning rate 0.003, weight decay 0.0001, class-balanced cr
 | `Models/multifc_graphsage.joblib` | MultiFC train / MultiFC dev |
 | `Models/mc_fake_graphsage.joblib` | MC-Fake train / MC-Fake dev |
 | `Models/jruvika_graphsage.joblib` | Jruvika train / Jruvika dev |
+| `Models/Model_pooled.joblib` | Combined train / mean per-dataset dev macro-F1 |
 
 Joblib is the serialization format. Each file contains the fitted vectorizer/SVD, neural weights, neighbor index and numerical training-anchor representations. Four saved models cover all 16 evaluations. Inference uses NumPy calculations checked against the trained PyTorch network; it does not require PyTorch or source datasets. Load only trusted joblib files with compatible dependencies.
 
