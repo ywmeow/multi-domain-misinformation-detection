@@ -38,8 +38,50 @@ For the project's existing Windows environment:
 
 Open the local URL printed by Streamlit (normally `http://localhost:8501`).
 All four classifiers run on CPU. No training datasets, original GloVe vectors,
-Hugging Face account, or GPU are required. The app itself never downloads anything:
-RoBERTa is loaded with `local_files_only=True`.
+Hugging Face account, or GPU are required. With this local launch command, the app
+does not download models: RoBERTa is loaded with `local_files_only=True`. The
+separate cloud entrypoint below downloads it before opening the dashboard.
+
+## Deploy to Streamlit Community Cloud
+
+The cloud entrypoint reuses the same interface and inference code. It downloads the
+pinned public RoBERTa checkpoint into the Hugging Face cache before opening the
+dashboard. Successful preparation is cached across Streamlit reruns and sessions;
+after a server replacement or cache reset it may need to run again. No Hugging Face
+token, Docker installation, or paid Hugging Face Space is needed.
+
+1. Commit and push `dashboard/cloud/app.py`, `dashboard/cloud/requirements.txt`, and
+   this README to your GitHub repository. Keep the existing dashboard, frontend,
+   TF-IDF checkpoint, `sequential/model.py`, BiLSTM checkpoint/tokenizer files,
+   `graph/model.py`, `graph/Models/Model_pooled.joblib`, and
+   `explainability/explainers.py` available in that repository at their current paths.
+2. Sign in to <https://share.streamlit.io/> and connect the GitHub account that can
+   access `ywmeow/multi-domain-misinformation-detection`.
+3. Choose **Create app**, then deploy an existing app from that repository. Select
+   the branch containing the deployment files (currently `main`) and enter
+   **`dashboard/cloud/app.py`** as the main file path.
+4. In **Advanced settings**, select **Python 3.11**. No secrets are required for
+   the public checkpoint. Choose an available app URL and deploy.
+5. Watch the build logs while dependencies install, then wait for the initial
+   model download (about 500 MB). The requirements next to the cloud entrypoint
+   install CPU-only PyTorch and compatible scikit-learn/NumPy/SciPy versions;
+   do not copy a training environment's dependencies into this folder.
+6. Check a short input and a long input, all four prediction cards, **Explain
+   predictions**, and **Download results**. Check memory use in the hosted
+   environment before relying on the deployment for a presentation.
+7. Share the resulting `https://<your-subdomain>.streamlit.app` link. Later pushes
+   to the selected branch automatically update the hosted app.
+
+The three smaller checkpoint files are already tracked in this repository. Leave
+RoBERTa on Hugging Face rather than adding its weights to GitHub. The app does not
+need training datasets, notebooks, the local `.venv`, or a Dockerfile.
+
+If deployment reports a missing component API, verify it used
+`dashboard/cloud/requirements.txt` and the cloud entrypoint above. For dependency
+installation errors, first confirm Python 3.11 is selected. For download failures,
+inspect **Manage app** logs and reboot the app to retry. A hosted memory-limit
+failure requires reducing memory use; the local memory test is not a guarantee of
+the hosted server's usage or allocation.
 
 ## Behavior
 
